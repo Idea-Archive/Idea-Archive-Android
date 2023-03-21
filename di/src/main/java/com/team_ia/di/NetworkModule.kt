@@ -34,4 +34,9 @@ object NetworkModule {
             .addConverterFactory(gsonConverterFactory)
             .build()
     }
+
+    @Provides
+    fun provideGsonConverterFactory(): GsonConverterFactory {
+        return GsonConverterFactory.create()
+    }
 }

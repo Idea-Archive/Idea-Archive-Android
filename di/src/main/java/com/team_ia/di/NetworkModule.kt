@@ -1,6 +1,7 @@
 package com.team_ia.di
 
-import com.team_ia.data.remote.api.AuthApi
+import com.team_ia.data.remote.api.AuthAPI
+import com.team_ia.data.remote.api.PostAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -8,7 +9,6 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import java.util.concurrent.TimeUnit
 
 @Module
@@ -43,6 +43,10 @@ object NetworkModule {
     }
 
     @Provides
-    fun provideAuthAPI(retrofit: Retrofit): AuthApi =
-        retrofit.create(AuthApi::class.java)
+    fun provideAuthAPI(retrofit: Retrofit): AuthAPI =
+        retrofit.create(AuthAPI::class.java)
+
+    @Provides
+    fun providePostAPI(retrofit: Retrofit): PostAPI =
+        retrofit.create(PostAPI::class.java)
 }

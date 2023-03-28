@@ -13,6 +13,7 @@ buildscript {
         classpath(Dependency.GradlePlugin.GRADLE_KOTLIN)
         classpath(Dependency.GradlePlugin.GRADLE_HILT)
         classpath(Dependency.GradlePlugin.GRADLE_KTLINT)
+        classpath("com.android.tools.build:gradle:7.4.1")
     }
 }
 plugins {

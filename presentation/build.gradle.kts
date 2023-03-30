@@ -1,9 +1,8 @@
 plugins {
     id("com.android.application")
     id("dagger.hilt.android.plugin")
-    kotlin("android")
-    kotlin("kapt")
     id("kotlin-android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -49,10 +48,10 @@ dependencies {
     implementation(Dependency.AndroidX.FRAGMENT_KTX)
     implementation(Dependency.AndroidX.CONSTRAINT_LAYOUT)
     implementation(Dependency.AndroidX.LIFECYCLE_VIEWMODEL_KTX)
+    implementation(Dependency.AndroidX.LIFECYCLE_RUNTIME)
     implementation(Dependency.AndroidX.RECYCLER_VIEW)
 
     implementation(Dependency.AndroidX.ROOM_KTX)
-    implementation(Dependency.AndroidX.LEGACY_SUPPORT)
     kapt(Dependency.AndroidX.ROOM_COMPILER)
 
     implementation(Dependency.Kotlin.COROUTINES_CORE)
@@ -84,12 +83,8 @@ dependencies {
 
     implementation(Dependency.ImageLoad.GLIDE)
 
-    implementation(Dependency.Google.LIVEDATA)
 
     implementation(Dependency.Libraries.SHIMMER)
-    implementation(Dependency.Coroutine.COROUTINE)
 
     implementation(Dependency.Lottie.LOTTIE)
-
-    kapt("org.xerial:sqlite-jdbc:3.34.0")
 }

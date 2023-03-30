@@ -38,7 +38,6 @@ android {
         dataBinding = true
     }
 }
-
 dependencies {
     implementation(project(":domain"))
     implementation(project(":di"))
@@ -82,7 +81,6 @@ dependencies {
     implementation(Dependency.Rx.RX_ANDROID)
 
     implementation(Dependency.ImageLoad.GLIDE)
-
 
     implementation(Dependency.Libraries.SHIMMER)
 

@@ -15,7 +15,7 @@ object Versions {
 
     const val CONSTRAINT_LAYOUT = "2.1.2"
     const val CORE_KTX = "1.5.0"
-    const val APP_COMPAT = "1.4.1"
+    const val APP_COMPAT = "1.6.0"
     const val ACTIVITY_KTX = "1.2.3"
     const val FRAGMENT_KTX = "1.3.4"
     const val LIFECYCLE_KTX = "2.3.1"

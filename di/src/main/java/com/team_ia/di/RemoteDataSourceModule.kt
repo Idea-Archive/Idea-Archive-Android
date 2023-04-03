@@ -1,9 +1,6 @@
 package com.team_ia.di
 
-import com.team_ia.data.remote.datasource.AuthDataSourceImpl
-import com.team_ia.data.remote.datasource.AuthDatasource
-import com.team_ia.data.remote.datasource.PostDataSource
-import com.team_ia.data.remote.datasource.PostDataSourceImpl
+import com.team_ia.data.remote.datasource.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -22,4 +19,9 @@ abstract class RemoteDataSourceModule {
     abstract fun providePostDataSource(
         postDataSourceImpl: PostDataSourceImpl
     ): PostDataSource
+
+    @Binds
+    abstract fun provideMemberDataSource(
+        memberDataSourceImpl: MemberDataSourceImpl
+    ): MemberDataSource
 }

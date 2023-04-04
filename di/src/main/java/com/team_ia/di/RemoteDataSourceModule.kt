@@ -24,4 +24,9 @@ abstract class RemoteDataSourceModule {
     abstract fun provideMemberDataSource(
         memberDataSourceImpl: MemberDataSourceImpl
     ): MemberDataSource
+
+    @Binds
+    abstract fun provideEmailDataSource(
+        emailDataSourceImpl: EmailDataSourceImpl
+    ): EmailDataSource
 }

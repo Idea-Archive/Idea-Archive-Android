@@ -1,9 +1,11 @@
 package com.team_ia.di
 
 import com.team_ia.data.repository.AuthRepositoryImpl
+import com.team_ia.data.repository.EmailRepositoryImpl
 import com.team_ia.data.repository.MemberRepositoryImpl
 import com.team_ia.data.repository.PostRepositoryImpl
 import com.team_ia.domain.repository.AuthRepository
+import com.team_ia.domain.repository.EmailRepository
 import com.team_ia.domain.repository.MemberRepository
 import com.team_ia.domain.repository.PostRepository
 import dagger.Binds
@@ -29,4 +31,9 @@ abstract class RepositoryModule {
     abstract fun provideMemberRepository(
         memberRepositoryImpl: MemberRepositoryImpl
     ): MemberRepository
+
+    @Binds
+    abstract fun provideEmailRepository(
+        emailRepositoryImpl: EmailRepositoryImpl
+    ): EmailRepository
 }

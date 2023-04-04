@@ -24,7 +24,7 @@ object Versions {
     const val RECYCLERVIEW = "1.1.0"
     const val PREFERENCE_KTX = "1.2.0"
 
-    const val HILT = "2.44"
+    const val HILT = "2.45"
     const val MATERIAL = "1.3.0"
     const val GMS_PLAY_SERVICE_BASE = "18.0.1"
     const val GMS_PLAY_SERVICE_AUTH = "20.2.0"
@@ -41,7 +41,7 @@ object Versions {
     const val JUNIT = "4.13.2"
     const val MOCKITO = "4.2.0"
     const val ANDROID_JUNIT = "1.1.2"
-    const val ESPRESSO_CORE = "3.3.0"
+    const val ESPRESSO_CORE = "3.5.1"
 
     const val NAV = "2.3.5"
 

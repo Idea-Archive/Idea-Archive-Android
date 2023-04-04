@@ -1,9 +1,6 @@
 package com.team_ia.di
 
-import com.team_ia.data.remote.api.AuthAPI
-import com.team_ia.data.remote.api.EmailAPI
-import com.team_ia.data.remote.api.MemberAPI
-import com.team_ia.data.remote.api.PostAPI
+import com.team_ia.data.remote.api.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -59,4 +56,8 @@ object NetworkModule {
     @Provides
     fun provideEmailAPI(retrofit: Retrofit): EmailAPI =
         retrofit.create(EmailAPI::class.java)
+
+    @Provides
+    fun provideAdminAPI(retrofit: Retrofit): AdminAPI =
+        retrofit.create(AdminAPI::class.java)
 }

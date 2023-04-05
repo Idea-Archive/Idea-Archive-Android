@@ -68,4 +68,8 @@ object NetworkModule {
     @Provides
     fun provideApplicationAPI(retrofit: Retrofit): ApplicationAPI =
         retrofit.create(ApplicationAPI::class.java)
+
+    @Provides
+    fun provideSocialAPI(retrofit: Retrofit): SocialAPI =
+        retrofit.create(SocialAPI::class.java)
 }

@@ -45,4 +45,9 @@ abstract class RepositoryModule {
     abstract fun provideApplicationRepository(
         applicationRepositoryImpl: ApplicationRepositoryImpl
     ): ApplicationRepository
+
+    @Binds
+    abstract fun provideSocialRepository(
+        socialRepositoryImpl: SocialRepositoryImpl
+    ): SocialRepository
 }

@@ -34,4 +34,9 @@ abstract class RemoteDataSourceModule {
     abstract fun provideAdminDataSource(
         adminDataSourceImpl: AdminDataSourceImpl
     ): AdminDataSource
+
+    @Binds
+    abstract fun provideImgDataSource(
+        imgDataSourceImpl: ImgDataSourceImpl
+    ): ImgDataSource
 }

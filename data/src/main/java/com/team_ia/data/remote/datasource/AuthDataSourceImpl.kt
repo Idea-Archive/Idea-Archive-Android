@@ -5,5 +5,5 @@ import javax.inject.Inject
 
 class AuthDataSourceImpl @Inject constructor(
     private val authApi: AuthAPI
-) : AuthDatasource {
+) : AuthDataSource {
 }

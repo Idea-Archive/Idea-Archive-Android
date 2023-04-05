@@ -1,4 +1,4 @@
 package com.team_ia.data.remote.datasource
 
-interface AuthDatasource {
+interface AuthDataSource {
 }

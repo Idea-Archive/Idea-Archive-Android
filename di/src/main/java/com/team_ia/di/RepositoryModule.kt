@@ -40,4 +40,9 @@ abstract class RepositoryModule {
     abstract fun provideImgRepository(
         imgRepositoryImpl: ImgRepositoryImpl
     ): ImgRepository
+
+    @Binds
+    abstract fun provideApplicationRepository(
+        applicationRepositoryImpl: ApplicationRepositoryImpl
+    ): ApplicationRepository
 }

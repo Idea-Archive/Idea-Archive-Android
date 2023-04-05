@@ -13,7 +13,7 @@ abstract class RemoteDataSourceModule {
     @Binds
     abstract fun provideAuthDataSource(
         authDataSourceImpl: AuthDataSourceImpl
-    ): AuthDatasource
+    ): AuthDataSource
 
     @Binds
     abstract fun providePostDataSource(
@@ -39,4 +39,9 @@ abstract class RemoteDataSourceModule {
     abstract fun provideImgDataSource(
         imgDataSourceImpl: ImgDataSourceImpl
     ): ImgDataSource
+
+    @Binds
+    abstract fun provideApplicationDataSource(
+        applicationDataSourceImpl: ApplicationDataSourceImpl
+    ): ApplicationDataSource
 }

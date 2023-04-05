@@ -64,4 +64,8 @@ object NetworkModule {
     @Provides
     fun provideImgAPI(retrofit: Retrofit): ImgAPI =
         retrofit.create(ImgAPI::class.java)
+
+    @Provides
+    fun provideApplicationAPI(retrofit: Retrofit): ApplicationAPI =
+        retrofit.create(ApplicationAPI::class.java)
 }

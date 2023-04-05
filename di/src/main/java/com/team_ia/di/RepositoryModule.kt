@@ -35,4 +35,9 @@ abstract class RepositoryModule {
     abstract fun provideAdminRepository(
         adminRepositoryImpl: AdminRepositoryImpl
     ): AdminRepository
+
+    @Binds
+    abstract fun provideImgRepository(
+        imgRepositoryImpl: ImgRepositoryImpl
+    ): ImgRepository
 }

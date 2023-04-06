@@ -44,4 +44,9 @@ abstract class RemoteDataSourceModule {
     abstract fun provideApplicationDataSource(
         applicationDataSourceImpl: ApplicationDataSourceImpl
     ): ApplicationDataSource
+
+    @Binds
+    abstract fun provideSocialDataSource(
+        socialDataSourceImpl: SocialDataSourceImpl
+    ): SocialDataSource
 }

@@ -1,6 +1,7 @@
-package com.team_ia.data.remote.datasource
+package com.team_ia.data.remote.datasource.admin
 
 import com.team_ia.data.remote.api.AdminAPI
+import com.team_ia.data.remote.datasource.admin.AdminDataSource
 import javax.inject.Inject
 
 class AdminDataSourceImpl @Inject constructor(

@@ -1,4 +1,4 @@
-package com.team_ia.data.remote.datasource
+package com.team_ia.data.remote.datasource.social
 
 import com.team_ia.data.remote.api.SocialAPI
 import javax.inject.Inject

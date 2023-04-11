@@ -1,4 +1,4 @@
-package com.team_ia.data.remote.datasource
+package com.team_ia.data.remote.datasource.email
 
 import com.team_ia.data.remote.api.EmailAPI
 import javax.inject.Inject

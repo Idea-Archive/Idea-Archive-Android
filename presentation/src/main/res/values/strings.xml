@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Idea-Archive-Android</string>
+    <string name="typing_email">이메일을 입력해주세요</string>
+    <string name="typing_password">비밀번호를 입력해주세요</string>
+    <string name="forgot_password">비밀번호를 잊으셨나요?</string>
+    <string name="find_password">비밀번호 찾기</string>
+    <string name="login_logo">LOGIN</string>
+    <string name="first_time_in_IA">IA가 처음이신가요?</string>
+    <string name="sign_up">회원가입 ></string>
+</resources>

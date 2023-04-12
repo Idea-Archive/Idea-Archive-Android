@@ -8,12 +8,12 @@ data class MemberResponse(
     val email: String,
     @SerializedName("password")
     val password: String,
-    @SerializedName("name")
-    val name: String
+    @SerializedName("profileImg")
+    val profileImg: String
 )
 
 fun MemberResponse.toEntity() = MemberEntity(
     email = email,
     password = password,
-    name = name
+    profileImg = profileImg
 )

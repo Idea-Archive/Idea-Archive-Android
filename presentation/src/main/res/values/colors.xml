@@ -7,6 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <color name="primary">#69CB9C</color>
+    <color name="blue">##007AFF</color>
+    <color name="input_gray">#F1F1F5</color>
+    <color name="input_information_gray">#999999</color>
+    <color name="primary">#FF42CC89</color>
+    <color name="sign_up_black">#191919</color>
+    <color name="find_password_blue">#35B2CD</color>
+    <color name="first_time_in_ia">#767676</color>
 </resources>

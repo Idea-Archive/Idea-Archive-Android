@@ -9,7 +9,7 @@ class MemberDataSourceImpl @Inject constructor(
     private val memberAPI: MemberAPI
 ) : MemberDataSource {
 
-    override suspend fun profileInfo(memberRequest: MemberRequest): MemberResponse {
-        return memberAPI.profileInfo(memberRequest)
+    override suspend fun profileInfo(): MemberResponse {
+        return memberAPI.profileInfo()
     }
 }

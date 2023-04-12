@@ -8,7 +8,5 @@ import retrofit2.http.GET
 interface MemberAPI {
 
     @GET("/member")
-    suspend fun profileInfo(
-        @Body memberRequest: MemberRequest
-    ): MemberResponse
+    suspend fun profileInfo(): MemberResponse
 }

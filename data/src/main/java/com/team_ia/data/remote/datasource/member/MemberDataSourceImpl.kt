@@ -10,6 +10,8 @@ class MemberDataSourceImpl @Inject constructor(
 ) : MemberDataSource {
 
     override suspend fun profileInfo(): MemberResponse {
-        return memberAPI.profileInfo()
+        return IAApiHandler<MemberResponse>()
+            .httpRequest { memberAPI.profileInfo() }
+            .sendRequest()
     }
 }

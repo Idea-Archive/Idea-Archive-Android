@@ -6,5 +6,5 @@
     <string name="find_password">비밀번호 찾기</string>
     <string name="login_logo">LOGIN</string>
     <string name="first_time_in_IA">IA가 처음이신가요?</string>
-    <string name="sign_up">회원가입 ></string>
+    <string name="sign_up">회원가입</string>
 </resources>

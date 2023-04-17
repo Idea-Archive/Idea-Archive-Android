@@ -22,4 +22,10 @@ class MemberDataSourceImpl @Inject constructor(
             .sendRequest()
     }
 
+    override suspend fun withdrawalMember(email: String, password: String) {
+        return IAApiHandler<Unit>()
+            .httpRequest { memberAPI.withdrawalMember(email = email, password = password) }
+            .sendRequest()
+    }
+
 }

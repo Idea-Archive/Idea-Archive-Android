@@ -17,4 +17,8 @@ class MemberRepositoryImpl @Inject constructor(
 
     override suspend fun changePassword(param: PasswordParam) =
         memberDataSource.changePassword(param.toRequest())
+
+    override suspend fun withdrawalMember(email: String, password: String) {
+        memberDataSource.withdrawalMember(email = email, password = password)
+    }
 }

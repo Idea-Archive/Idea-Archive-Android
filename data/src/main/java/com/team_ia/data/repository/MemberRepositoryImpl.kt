@@ -4,6 +4,7 @@ import com.team_ia.data.remote.datasource.member.MemberDataSource
 import com.team_ia.data.remote.request.member.toRequest
 import com.team_ia.data.remote.response.member.toEntity
 import com.team_ia.domain.entity.MemberEntity
+import com.team_ia.domain.param.FindPasswordParam
 import com.team_ia.domain.param.PasswordParam
 import com.team_ia.domain.repository.MemberRepository
 import javax.inject.Inject
@@ -20,5 +21,9 @@ class MemberRepositoryImpl @Inject constructor(
 
     override suspend fun withdrawalMember(email: String, password: String) {
         memberDataSource.withdrawalMember(email = email, password = password)
+    }
+
+    override suspend fun findPassword(param: FindPasswordParam) {
+        memberDataSource.findPassword(param.toRequest())
     }
 }

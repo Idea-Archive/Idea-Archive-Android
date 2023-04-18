@@ -1,6 +1,7 @@
 package com.team_ia.data.remote.api
 
 import com.team_ia.data.remote.request.member.ChangePasswordRequest
+import com.team_ia.data.remote.request.member.FindPasswordRequest
 import com.team_ia.data.remote.request.member.MemberRequest
 import com.team_ia.data.remote.response.member.MemberResponse
 import retrofit2.Response
@@ -24,5 +25,10 @@ interface MemberAPI {
     suspend fun withdrawalMember(
         @Query("email") email: String,
         @Query("password") password: String
+    ): Response<Unit>
+
+    @PATCH("/member/findpw")
+    suspend fun findPassword(
+        @Body findPasswordRequest: FindPasswordRequest
     ): Response<Unit>
 }

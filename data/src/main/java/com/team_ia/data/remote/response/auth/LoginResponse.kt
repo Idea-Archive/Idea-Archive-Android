@@ -11,9 +11,10 @@ data class LoginResponse(
     @SerializedName("expiredAt")
     val expiredAt: String
 )
-
-fun LoginEntity.toEntity() = LoginResponse(
+fun LoginResponse.toEntity() = LoginEntity(
     accessToken = accessToken,
     refreshToken = refreshToken,
     expiredAt = expiredAt
 )
+
+

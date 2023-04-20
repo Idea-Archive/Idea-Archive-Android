@@ -1,6 +1,7 @@
 package com.team_ia.idea_archive_android.ui.base
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -21,4 +22,12 @@ abstract class BaseActivity<B: ViewDataBinding>(
     }
 
     abstract fun createView()
+
+    protected fun shortToast(msg: String){
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    protected fun longToast(msg: String){
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+    }
 }

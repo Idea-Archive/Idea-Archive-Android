@@ -2,6 +2,7 @@ package com.team_ia.data.remote.datasource.member
 
 import com.team_ia.data.remote.api.MemberAPI
 import com.team_ia.data.remote.request.member.ChangePasswordRequest
+import com.team_ia.data.remote.request.member.FindPasswordRequest
 import com.team_ia.data.remote.response.member.MemberResponse
 import com.team_ia.data.utils.IAApiHandler
 import javax.inject.Inject
@@ -25,6 +26,12 @@ class MemberDataSourceImpl @Inject constructor(
     override suspend fun withdrawalMember(email: String, password: String) {
         return IAApiHandler<Unit>()
             .httpRequest { memberAPI.withdrawalMember(email = email, password = password) }
+            .sendRequest()
+    }
+
+    override suspend fun findPassword(findPasswordRequest: FindPasswordRequest) {
+        return IAApiHandler<Unit>()
+            .httpRequest { memberAPI.findPassword(findPasswordRequest) }
             .sendRequest()
     }
 

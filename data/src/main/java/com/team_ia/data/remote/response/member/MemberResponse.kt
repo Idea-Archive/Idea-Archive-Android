@@ -1,6 +1,7 @@
 package com.team_ia.data.remote.response.member
 
 import com.google.gson.annotations.SerializedName
+import com.team_ia.data.remote.model.PostModel
 import com.team_ia.domain.entity.MemberEntity
 
 data class MemberResponse(
@@ -9,7 +10,11 @@ data class MemberResponse(
     @SerializedName("password")
     val password: String,
     @SerializedName("profileImg")
-    val profileImg: String
+    val profileImg: String,
+    @SerializedName("myHeartList")
+    val myHeartList: List<PostModel>,
+    @SerializedName("myPost")
+    val myPost: List<PostModel>
 )
 
 fun MemberResponse.toEntity() = MemberEntity(

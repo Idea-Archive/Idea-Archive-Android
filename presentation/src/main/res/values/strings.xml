@@ -8,4 +8,10 @@
     <string name="first_time_in_IA">IA가 처음이신가요?</string>
     <string name="sign_up">회원가입</string>
     <string name="login_btn">로그인</string>
+    <string name="sign_up_logo">SIGN UP</string>
+    <string name="input_name">이름을 입력해주세요</string>
+    <string name="input_password_again">비밀번호를 한 번 더 입력해 주세요</string>
+    <string name="check">확인</string>
+    <string name="already_user_question">회원이신가요?</string>
+    <string name="already_user_login">로그인 ></string>
 </resources>

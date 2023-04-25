@@ -12,5 +12,5 @@ data class LoginRequest(
 
 fun LoginParam.toRequest() = LoginRequest(
     email = email,
-    password = password,
+    password = password
 )

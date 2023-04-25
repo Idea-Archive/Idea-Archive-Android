@@ -4,6 +4,7 @@ import com.team_ia.data.remote.datasource.member.MemberDataSource
 import com.team_ia.data.remote.request.member.toRequest
 import com.team_ia.data.remote.response.member.toEntity
 import com.team_ia.domain.entity.MemberEntity
+import com.team_ia.domain.param.ChangeNickNameParam
 import com.team_ia.domain.param.FindPasswordParam
 import com.team_ia.domain.param.PasswordParam
 import com.team_ia.domain.repository.MemberRepository
@@ -25,5 +26,9 @@ class MemberRepositoryImpl @Inject constructor(
 
     override suspend fun findPassword(param: FindPasswordParam) {
         memberDataSource.findPassword(param.toRequest())
+    }
+
+    override suspend fun changeNickName(param: ChangeNickNameParam) {
+        memberDataSource.changeNickName(param.toRequest())
     }
 }

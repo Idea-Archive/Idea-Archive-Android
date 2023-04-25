@@ -1,5 +1,6 @@
 package com.team_ia.data.remote.api
 
+import com.team_ia.data.remote.request.member.ChangeNickNameRequest
 import com.team_ia.data.remote.request.member.ChangePasswordRequest
 import com.team_ia.data.remote.request.member.FindPasswordRequest
 import com.team_ia.data.remote.request.member.MemberRequest
@@ -30,5 +31,10 @@ interface MemberAPI {
     @PATCH("/member/findpw")
     suspend fun findPassword(
         @Body findPasswordRequest: FindPasswordRequest
+    ): Response<Unit>
+
+    @PATCH("/member/name")
+    suspend fun changeNickName(
+        @Body changeNickNameRequest: ChangeNickNameRequest
     ): Response<Unit>
 }

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_ibtn_back_button_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.075" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_ibtn_back_button_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.102" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_ibtn_back_button_s"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.017" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_ibtn_back_button_e"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.043" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_sign_up_logo_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.196" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_sign_up_logo_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.274" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_sign_up_logo_s"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.31" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_sign_up_logo_e"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.688" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_name_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.36" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_name_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.43" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_information_s"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.094" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_information_e"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.906" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_email_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.449" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_email_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_password_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.536" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_password_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.607" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_password_again_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.623" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_password_again_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.695" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_check_btn_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.761" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_check_btn_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.834" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_already_user_text_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_already_user_text_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.876" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_already_user_text_s"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.306" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_already_user_text_e"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_already_user_login_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.878" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_already_user_login_s"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.51" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_already_user_login_e"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.63" />
+
+    <TextView
+        android:id="@+id/sign_up_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="@string/sign_up_logo"
+        android:textColor="@color/primary"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@+id/g_sign_up_logo_b"
+        app:layout_constraintEnd_toEndOf="@+id/g_sign_up_logo_e"
+        app:layout_constraintStart_toStartOf="@+id/g_sign_up_logo_s"
+        app:layout_constraintTop_toTopOf="@+id/g_sign_up_logo_t" />
+
+    <EditText
+        android:id="@+id/et_input_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/pretendard_regular"
+        android:hint="@string/input_name"
+        android:paddingStart="16dp"
+        android:textColorHint="@color/input_information_gray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
+        app:layout_constraintStart_toStartOf="@id/g_input_information_s"
+       app:layout_constraintBottom_toBottomOf="@id/g_input_name_b"
+        app:layout_constraintTop_toTopOf="@id/g_input_name_t" />
+
+    <EditText
+        android:id="@+id/et_input_email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/pretendard_regular"
+        android:hint="@string/typing_email"
+        android:paddingStart="16dp"
+        android:textColorHint="@color/input_information_gray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
+        app:layout_constraintTop_toTopOf="@id/g_input_email_t"
+        app:layout_constraintStart_toStartOf="@id/g_input_information_s"
+        app:layout_constraintBottom_toBottomOf="@id/g_input_email_b"
+         />
+
+    <EditText
+        android:id="@+id/et_input_passowrd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/pretendard_regular"
+        android:hint="@string/typing_password"
+        android:paddingStart="16dp"
+        android:textColorHint="@color/input_information_gray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_input_email" />
+
+    <EditText
+        android:id="@+id/et_input_password_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_edittext"
+        android:fontFamily="@font/pretendard_regular"
+        android:hint="@string/input_password_again"
+        android:paddingStart="16dp"
+        android:textColorHint="@color/input_information_gray"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_input_passowrd" />
+
+    <Button
+        android:id="@+id/btn_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/btn_login"
+        android:fontFamily="@font/pretendard_semibold"
+        android:text="@string/check"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_input_password_again" />
+
+    <TextView
+        android:id="@+id/tv_user_already"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="126dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/pretendard_regular"
+        android:text="@string/already_user_question"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_check" />
+
+    <TextView
+        android:id="@+id/tv_already_user_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/pretendard_semibold"
+        android:text="@string/already_user_login"
+        android:textColor="@color/sign_up_black"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/tv_user_already"
+        app:layout_constraintTop_toBottomOf="@id/btn_check" />
+
+    <ImageButton
+        android:id="@+id/ibtn_back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/ibtn_back_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

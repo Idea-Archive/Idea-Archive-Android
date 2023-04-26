@@ -261,6 +261,7 @@
         android:background="@drawable/bg_edittext"
         android:fontFamily="@font/pretendard_regular"
         android:hint="@string/input_password_again"
+        android:inputType="textPassword"
         android:paddingStart="16dp"
         android:textColorHint="@color/input_information_gray"
         android:textSize="14sp"

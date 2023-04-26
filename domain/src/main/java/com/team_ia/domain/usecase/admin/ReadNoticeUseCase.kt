@@ -6,7 +6,7 @@ import javax.inject.Inject
 class ReadNoticeUseCase @Inject constructor(
     private val adminRepository: AdminRepository
 ) {
-    suspend operator fun invoke() = kotlin.runCatching{
+    suspend operator fun invoke() = kotlin.runCatching {
         adminRepository.readNotice()
     }
 }

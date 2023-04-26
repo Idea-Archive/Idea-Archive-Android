@@ -14,4 +14,6 @@
     <string name="check">확인</string>
     <string name="already_user_question">회원이신가요?</string>
     <string name="already_user_login">로그인 ></string>
+    <string name="input_auth_code">인증번호를 입력해주세요</string>
+    <string name="we_send_auth_code">입력하신 메일로 인증번호를 보냈어요!</string>
 </resources>

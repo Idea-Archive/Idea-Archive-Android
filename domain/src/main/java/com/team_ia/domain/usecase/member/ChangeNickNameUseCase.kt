@@ -7,7 +7,7 @@ import javax.inject.Inject
 class ChangeNickNameUseCase @Inject constructor(
     private val memberRepository: MemberRepository
 ) {
-    suspend operator fun invoke(changeNickNameParam: ChangeNickNameParam){
+    suspend operator fun invoke(changeNickNameParam: ChangeNickNameParam) = kotlin.runCatching {
         memberRepository.changeNickName(changeNickNameParam)
     }
 }

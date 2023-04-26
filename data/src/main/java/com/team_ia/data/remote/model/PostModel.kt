@@ -1,6 +1,7 @@
 package com.team_ia.data.remote.model
 
 import com.google.gson.annotations.SerializedName
+import com.team_ia.domain.model.PostModel as DomainPostModel
 
 data class PostModel(
     @SerializedName("postId")
@@ -27,13 +28,13 @@ data class PostModel(
         val name: String
     )
 
-    fun Member.toEntity() = PostModel.Member(
+    fun Member.toEntity() = DomainPostModel.Member(
         memberId = memberId,
         name = name
     )
 }
 
-fun PostModel.toEntity() = PostModel(
+fun PostModel.toEntity() = DomainPostModel(
     postId = postId,
     title = title,
     content = content,

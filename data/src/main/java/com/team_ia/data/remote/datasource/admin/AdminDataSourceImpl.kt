@@ -22,4 +22,10 @@ class AdminDataSourceImpl @Inject constructor(
             .httpRequest { adminAPI.readNotice() }
             .sendRequest()
     }
+
+    override suspend fun deleteNotice(noticeId: Long) {
+        return IAApiHandler<Unit>()
+            .httpRequest { adminAPI.deleteNotice(noticeId) }
+            .sendRequest()
+    }
 }

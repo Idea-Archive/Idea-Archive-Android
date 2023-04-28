@@ -2,6 +2,7 @@ package com.team_ia.data.remote.datasource.admin
 
 import com.team_ia.data.remote.api.AdminAPI
 import com.team_ia.data.remote.datasource.admin.AdminDataSource
+import com.team_ia.data.remote.request.admin.EditNoticeRequest
 import com.team_ia.data.remote.request.admin.PostNoticeRequest
 import com.team_ia.data.remote.response.admin.ReadNoticeResponse
 import com.team_ia.data.utils.IAApiHandler
@@ -26,6 +27,12 @@ class AdminDataSourceImpl @Inject constructor(
     override suspend fun deleteNotice(noticeId: Long) {
         return IAApiHandler<Unit>()
             .httpRequest { adminAPI.deleteNotice(noticeId) }
+            .sendRequest()
+    }
+
+    override suspend fun editNotice(noticeId: Long, editNoticeRequest: EditNoticeRequest) {
+        return IAApiHandler<Unit>()
+            .httpRequest { adminAPI.editNotice(noticeId, editNoticeRequest) }
             .sendRequest()
     }
 }

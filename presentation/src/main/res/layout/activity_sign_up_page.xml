@@ -215,6 +215,7 @@
         android:fontFamily="@font/pretendard_regular"
         android:hint="@string/input_name"
         android:paddingStart="16dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
@@ -230,6 +231,7 @@
         android:fontFamily="@font/pretendard_regular"
         android:hint="@string/typing_email"
         android:paddingStart="16dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
@@ -247,6 +249,7 @@
         android:fontFamily="@font/pretendard_regular"
         android:hint="@string/typing_password"
         android:paddingStart="16dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -262,11 +265,13 @@
         android:fontFamily="@font/pretendard_regular"
         android:hint="@string/input_password_again"
         android:paddingStart="16dp"
+        android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_input_passowrd" />
+        app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
+        app:layout_constraintStart_toStartOf="@id/g_input_information_s"
+        app:layout_constraintBottom_toBottomOf="@id/g_input_password_again_b"
+        app:layout_constraintTop_toTopOf="@id/g_input_password_again_t" />
 
     <Button
         android:id="@+id/btn_check"

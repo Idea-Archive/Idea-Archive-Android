@@ -18,4 +18,6 @@ class AdminRepositoryImpl @Inject constructor(
     override suspend fun readNotice(): ReadNoticeEntity =
         adminDataSource.readNotice().toEntity()
 
+    override suspend fun deleteNotice(noticeId: Long) =
+        adminDataSource.deleteNotice(noticeId)
 }

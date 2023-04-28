@@ -6,4 +6,5 @@ import com.team_ia.domain.param.PostNoticeParam
 interface AdminRepository {
     suspend fun postNotice(param: PostNoticeParam)
     suspend fun readNotice(): ReadNoticeEntity
+    suspend fun deleteNotice(noticeId: Long)
 }

@@ -1,5 +1,6 @@
 package com.team_ia.data.remote.api
 
+import com.team_ia.data.remote.model.NoticeModel
 import com.team_ia.data.remote.request.admin.EditNoticeRequest
 import com.team_ia.data.remote.request.admin.PostNoticeRequest
 import com.team_ia.data.remote.response.admin.ReadNoticeResponse
@@ -26,4 +27,9 @@ interface AdminAPI {
         @Path("noticeId") noticeId: Long,
         @Body editNoticeRequest: EditNoticeRequest
     ): Response<Unit>
+
+    @GET("admin/notice/{noticeId}")
+    suspend fun detailNotice(
+        @Path("noticeId") noticeId: Long,
+    ): NoticeModel
 }

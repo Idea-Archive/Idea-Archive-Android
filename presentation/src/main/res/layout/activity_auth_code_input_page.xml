@@ -169,6 +169,7 @@
         android:id="@+id/g_check_btn_e"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.906"/>
+
     <ImageButton
         android:id="@+id/ibtn_back_button"
         android:layout_width="0dp"

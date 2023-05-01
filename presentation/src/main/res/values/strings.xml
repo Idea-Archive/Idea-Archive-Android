@@ -16,4 +16,7 @@
     <string name="already_user_login">로그인 ></string>
     <string name="input_auth_code">인증번호를 입력해주세요</string>
     <string name="we_send_auth_code">입력하신 메일로 인증번호를 보냈어요!</string>
+    <string name="go_back_to_login_page">로그인으로 돌아가기</string>
+    <string name="authentication_success">인증성공!</string>
+    <string name="success_to_email_authentication">이메일 인증에 성공하였습니다.</string>
 </resources>

@@ -288,7 +288,7 @@
         app:layout_constraintTop_toTopOf="@id/g_input_email_t" />
 
     <EditText
-        android:id="@+id/et_passowrd"
+        android:id="@+id/et_password"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/bg_edittext"
@@ -351,9 +351,7 @@
         app:layout_constraintBottom_toBottomOf="@id/g_social_login_logo_b"
         app:layout_constraintEnd_toEndOf="@id/g_kakao_social_login_e"
         app:layout_constraintStart_toStartOf="@id/g_kakao_social_login_s"
-        app:layout_constraintTop_toTopOf="@+id/g_social_login_logo_t"
-
-        />
+        app:layout_constraintTop_toTopOf="@+id/g_social_login_logo_t" />
 
     <ImageButton
         android:id="@+id/ibtn_github_lg"
@@ -397,4 +395,5 @@
         app:layout_constraintEnd_toEndOf="@+id/g_ibtn_back_button_e"
         app:layout_constraintStart_toStartOf="@id/g_ibtn_back_button_s"
         app:layout_constraintTop_toTopOf="@id/g_ibtn_back_button_t" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

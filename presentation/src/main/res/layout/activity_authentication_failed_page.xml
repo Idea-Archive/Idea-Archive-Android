@@ -103,20 +103,18 @@
         app:layout_constraintGuide_percent="0.553" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_try_again_text_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:id="@+id/g_try_again_text_s"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4"
-        />
+        app:layout_constraintGuide_percent="0.4" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_try_again_text_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:id="@+id/g_try_again_text_e"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.599"
-        />
+        app:layout_constraintGuide_percent="0.599" />
 
     <ImageView
         android:id="@+id/iv_authentication_failed_icon"
@@ -136,11 +134,10 @@
         android:text="@string/authentication_failed"
         android:textColor="@color/black"
         android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/g_authentication_failed_text_b"
         app:layout_constraintEnd_toEndOf="@id/g_authentication_failed_text_e"
         app:layout_constraintStart_toStartOf="@id/g_authentication_failed_text_s"
-        app:layout_constraintTop_toTopOf="@id/g_authentication_failed_text_t"
-        app:layout_constraintBottom_toBottomOf="@id/g_authentication_failed_text_b"
-        />
+        app:layout_constraintTop_toTopOf="@id/g_authentication_failed_text_t" />
 
     <TextView
         android:id="@+id/tv_try_again"
@@ -149,12 +146,10 @@
         android:fontFamily="@font/pretendard_regular"
         android:text="@string/try_again"
         android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@id/g_try_again_text_b"
         app:layout_constraintEnd_toEndOf="@id/g_try_again_text_e"
         app:layout_constraintStart_toStartOf="@id/g_try_again_text_s"
-        app:layout_constraintTop_toTopOf="@+id/g_try_again_text_t"
-        app:layout_constraintBottom_toBottomOf="@id/g_try_again_text_b"
-        />
-
+        app:layout_constraintTop_toTopOf="@+id/g_try_again_text_t" />
 
     <Button
         android:id="@+id/btn_go_back_to_login_page"
@@ -169,4 +164,5 @@
         app:layout_constraintEnd_toEndOf="@id/g_go_back_to_login_page_btn_e"
         app:layout_constraintStart_toStartOf="@id/g_go_back_to_login_page_btn_s"
         app:layout_constraintTop_toTopOf="@id/g_go_back_to_login_page_btn_t" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

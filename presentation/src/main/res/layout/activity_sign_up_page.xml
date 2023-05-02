@@ -218,9 +218,9 @@
         android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/g_input_name_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
         app:layout_constraintStart_toStartOf="@id/g_input_information_s"
-       app:layout_constraintBottom_toBottomOf="@id/g_input_name_b"
         app:layout_constraintTop_toTopOf="@id/g_input_name_t" />
 
     <EditText
@@ -234,14 +234,13 @@
         android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
         android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
-        app:layout_constraintTop_toTopOf="@id/g_input_email_t"
-        app:layout_constraintStart_toStartOf="@id/g_input_information_s"
         app:layout_constraintBottom_toBottomOf="@id/g_input_email_b"
-         />
+        app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
+        app:layout_constraintStart_toStartOf="@id/g_input_information_s"
+        app:layout_constraintTop_toTopOf="@id/g_input_email_t" />
 
     <EditText
-        android:id="@+id/et_input_passowrd"
+        android:id="@+id/et_input_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -268,9 +267,9 @@
         android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/g_input_password_again_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
         app:layout_constraintStart_toStartOf="@id/g_input_information_s"
-        app:layout_constraintBottom_toBottomOf="@id/g_input_password_again_b"
         app:layout_constraintTop_toTopOf="@id/g_input_password_again_t" />
 
     <Button
@@ -287,6 +286,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_input_password_again" />
 
+<!--    종인이가 해야될 일-->
     <TextView
         android:id="@+id/tv_user_already"
         android:layout_width="wrap_content"

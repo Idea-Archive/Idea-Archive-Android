@@ -7,4 +7,7 @@ import javax.inject.Inject
 class ApplicationRepositoryImpl @Inject constructor(
     private val applicationDataSource: ApplicationDataSource
 ) : ApplicationRepository {
+
+    override suspend fun applicationPost(postId: Long) =
+        applicationDataSource.applicationPost(postId)
 }

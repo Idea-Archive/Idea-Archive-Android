@@ -21,4 +21,10 @@ class ImgDataSourceImpl @Inject constructor(
             .httpRequest { imgAPI.changeProfilePicture(changeProfilePictureRequest) }
             .sendRequest()
     }
+
+    override suspend fun deleteProfilePicture() {
+        return IAApiHandler<Unit>()
+            .httpRequest { imgAPI.deleteProfilePicture() }
+            .sendRequest()
+    }
 }

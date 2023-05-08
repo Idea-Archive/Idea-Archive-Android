@@ -16,4 +16,7 @@ class ImgRepositoryImpl @Inject constructor(
 
     override suspend fun changeProfilePicture(changeProfilePictureParam: ChangeProfilePictureParam) =
         imgDataSource.changeProfilePicture(changeProfilePictureParam.toRequest())
+
+    override suspend fun deleteProfilePicture() =
+        imgDataSource.deleteProfilePicture()
 }

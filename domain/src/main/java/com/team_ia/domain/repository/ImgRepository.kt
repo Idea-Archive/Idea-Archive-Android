@@ -6,4 +6,5 @@ import com.team_ia.domain.param.PostProfilePictureParam
 interface ImgRepository {
     suspend fun postProfilePicture(postProfilePictureParam: PostProfilePictureParam)
     suspend fun changeProfilePicture(changeProfilePictureParam: ChangeProfilePictureParam)
+    suspend fun deleteProfilePicture()
 }

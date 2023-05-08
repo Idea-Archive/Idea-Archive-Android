@@ -210,7 +210,6 @@
         android:background="@drawable/bg_input_auth_code_edit_text"
         android:cursorVisible="false"
         android:digits="1"
-        android:fontFamily="@font/pretendard_semibold"
         android:inputType="number"
         android:textColor="@color/first_time_in_ia"
         android:textSize="32sp"

@@ -140,35 +140,32 @@
         app:layout_constraintGuide_percent="0.855" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
         android:id="@+id/g_check_btn_t"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.86"
-        />
-
-    <androidx.constraintlayout.widget.Guideline
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.86" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_check_btn_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.932"
-        />
+        app:layout_constraintGuide_percent="0.932" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
         android:id="@+id/g_check_btn_s"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.094"
-        />
-
-    <androidx.constraintlayout.widget.Guideline
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:id="@+id/g_check_btn_e"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.906"/>
+        app:layout_constraintGuide_percent="0.094" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_check_btn_e"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.906" />
 
     <ImageButton
         android:id="@+id/ibtn_back_button"
@@ -210,14 +207,12 @@
         android:id="@+id/et_input_auth_code_1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:digits="1"
-        android:nextFocusDown="@id/et_input_auth_code_2"
-        android:inputType="number"
-        android:cursorVisible="false"
-        android:textSize="32sp"
-        android:textColor="@color/first_time_in_ia"
-        android:fontFamily="@font/pretendard_semibold"
         android:background="@drawable/bg_input_auth_code_edit_text"
+        android:cursorVisible="false"
+        android:digits="1"
+        android:inputType="number"
+        android:textColor="@color/first_time_in_ia"
+        android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="@id/g_input_auth_code_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_auth_code_1_e"
         app:layout_constraintStart_toStartOf="@id/g_text_s"
@@ -227,54 +222,49 @@
         android:id="@+id/et_input_auth_code_2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:digits="1"
-        android:inputType="number"
-        android:nextFocusDown="@id/et_input_auth_code_3"
+        android:background="@drawable/bg_input_auth_code_edit_text"
         android:cursorVisible="false"
+        android:digits="1"
+        android:fontFamily="@font/pretendard_semibold"
+        android:inputType="number"
         android:textColor="@color/first_time_in_ia"
         android:textSize="32sp"
-        android:fontFamily="@font/pretendard_semibold"
-        android:background="@drawable/bg_input_auth_code_edit_text"
-        app:layout_constraintStart_toStartOf="@id/g_input_auth_code_2_s"
-        app:layout_constraintTop_toTopOf="@id/g_input_auth_code_t"
         app:layout_constraintBottom_toBottomOf="@id/g_input_auth_code_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_auth_code_2_e"
-        />
+        app:layout_constraintStart_toStartOf="@id/g_input_auth_code_2_s"
+        app:layout_constraintTop_toTopOf="@id/g_input_auth_code_t" />
 
     <EditText
         android:id="@+id/et_input_auth_code_3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:digits="1"
-        android:inputType="number"
-        android:nextFocusDown="@id/et_input_auth_code_4"
+        android:background="@drawable/bg_input_auth_code_edit_text"
         android:cursorVisible="false"
+        android:digits="1"
+        android:fontFamily="@font/pretendard_semibold"
+        android:inputType="number"
         android:textColor="@color/first_time_in_ia"
         android:textSize="32sp"
-        android:fontFamily="@font/pretendard_semibold"
-        android:background="@drawable/bg_input_auth_code_edit_text"
-        app:layout_constraintStart_toStartOf="@id/g_input_auth_code_3_s"
-        app:layout_constraintTop_toTopOf="@id/g_input_auth_code_t"
         app:layout_constraintBottom_toBottomOf="@id/g_input_auth_code_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_auth_code_3_e"
-        />
+        app:layout_constraintStart_toStartOf="@id/g_input_auth_code_3_s"
+        app:layout_constraintTop_toTopOf="@id/g_input_auth_code_t" />
 
     <EditText
         android:id="@+id/et_input_auth_code_4"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:digits="1"
-        android:inputType="number"
+        android:background="@drawable/bg_input_auth_code_edit_text"
         android:cursorVisible="false"
+        android:digits="1"
+        android:fontFamily="@font/pretendard_semibold"
+        android:inputType="number"
         android:textColor="@color/first_time_in_ia"
         android:textSize="32sp"
-        android:fontFamily="@font/pretendard_semibold"
-        android:background="@drawable/bg_input_auth_code_edit_text"
-        app:layout_constraintStart_toStartOf="@id/g_input_auth_code_4_s"
-        app:layout_constraintTop_toTopOf="@id/g_input_auth_code_t"
         app:layout_constraintBottom_toBottomOf="@id/g_input_auth_code_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_auth_code_4_e"
-        />
+        app:layout_constraintStart_toStartOf="@id/g_input_auth_code_4_s"
+        app:layout_constraintTop_toTopOf="@id/g_input_auth_code_t" />
 
     <Button
         android:id="@+id/btn_check"
@@ -288,8 +278,7 @@
         app:layout_constraintBottom_toBottomOf="@id/g_check_btn_b"
         app:layout_constraintEnd_toEndOf="@id/g_check_btn_e"
         app:layout_constraintStart_toStartOf="@id/g_check_btn_s"
-        app:layout_constraintTop_toTopOf="@id/g_check_btn_t"
-        />
+        app:layout_constraintTop_toTopOf="@id/g_check_btn_t" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

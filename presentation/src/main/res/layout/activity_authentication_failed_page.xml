@@ -9,28 +9,28 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.316" />
+        app:layout_constraintGuide_percent="0.2891" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_authentication_failed_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.432" />
+        app:layout_constraintGuide_percent="0.3886" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_authentication_failed_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.422" />
+        app:layout_constraintGuide_percent="0.3872" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_authentication_failed_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.579" />
+        app:layout_constraintGuide_percent="0.6129" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_authentication_failed_text_t"

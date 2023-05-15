@@ -27,7 +27,7 @@
     <string name="my_page">마이페이지</string>
     <string name="default_name">채종인</string>
     <string name="logout">로그아웃</string>
-    <string name="edit_profile">프로필수정</string>
+    <string name="edit_profile">정보수정</string>
     <string name="liked_post">좋아한 글</string>
     <string name="my_post">작성한 글</string>
 </resources>

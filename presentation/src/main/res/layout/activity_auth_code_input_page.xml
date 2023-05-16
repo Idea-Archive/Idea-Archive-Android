@@ -80,14 +80,14 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.352" />
+        app:layout_constraintGuide_percent="0.3045" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_auth_code_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.456" />
+        app:layout_constraintGuide_percent="0.3945" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_auth_code_1_e"

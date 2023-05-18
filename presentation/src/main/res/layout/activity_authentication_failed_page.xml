@@ -9,14 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2891" />
+        app:layout_constraintGuide_percent="0.2844" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_authentication_failed_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.3886" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_authentication_failed_s"

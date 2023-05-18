@@ -166,56 +166,56 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.817" />
+        app:layout_constraintGuide_percent="0.8886" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_social_login_logo_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.868" />
+        app:layout_constraintGuide_percent="0.9313" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_google_social_login_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.287" />
+        app:layout_constraintGuide_percent="0.2897" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_google_social_login_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.376" />
+        app:layout_constraintGuide_percent="0.3821" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_github_social_login_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.457" />
+        app:layout_constraintGuide_percent="0.4538" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_github_social_login_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.547" />
+        app:layout_constraintGuide_percent="0.5462" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_kakao_social_login_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.624" />
+        app:layout_constraintGuide_percent="0.6179" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_kakao_social_login_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.712" />
+        app:layout_constraintGuide_percent="0.7103" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_find_password_t"
@@ -322,7 +322,7 @@
 
     <ImageButton
         android:id="@+id/ibtn_google_lg"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/lg_google"
         app:layout_constraintBottom_toBottomOf="@id/g_social_login_logo_b"
@@ -334,7 +334,7 @@
 
     <ImageButton
         android:id="@+id/ibtn_kakao_lg"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/lg_kakaotalk"
         app:layout_constraintBottom_toBottomOf="@id/g_social_login_logo_b"
@@ -344,7 +344,7 @@
 
     <ImageButton
         android:id="@+id/ibtn_github_lg"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/lg_github"
         app:layout_constraintBottom_toBottomOf="@id/g_social_login_logo_b"

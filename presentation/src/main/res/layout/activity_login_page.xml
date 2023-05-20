@@ -89,12 +89,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.4597" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_login_logo_t"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1694" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_login_log_b"
@@ -252,11 +246,10 @@
         android:fontFamily="@font/pretendard_bold"
         android:text="@string/login_logo"
         android:textColor="@color/primary"
-        android:textSize="29sp"
+        android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/g_login_log_b"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/g_login_logo_t" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/et_email"

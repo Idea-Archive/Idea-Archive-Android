@@ -39,237 +39,217 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.684" />
+        app:layout_constraintGuide_percent="0.7256" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_vertical_line_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.689" />
+        app:layout_constraintGuide_percent="0.7282" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_vertical_line_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.503" />
+        app:layout_constraintGuide_percent="0.4378" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_vertical_line_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        app:layout_constraintGuide_percent="0.927" />
+        app:layout_constraintGuide_percent="0.4538" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_sign_up_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.56" />
+        app:layout_constraintGuide_percent="0.5897" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_sign_up_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.667" />
+        app:layout_constraintGuide_percent="0.7051" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_sign_up_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.4336" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_sign_up_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.525" />
+        app:layout_constraintGuide_percent="0.4597" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_login_logo_t"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.196" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_login_log_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.272" />
+        app:layout_constraintGuide_percent="0.2121" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_login_log_s"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.352" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_login_logo_e"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.643" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_information_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
+        app:layout_constraintGuide_percent="0.0718" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_information_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93" />
+        app:layout_constraintGuide_percent="0.9282" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_input_email_b"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.403" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_email_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.332" />
+        app:layout_constraintGuide_percent="0.2879" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_input_email_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3495" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_password_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.42" />
+        app:layout_constraintGuide_percent="0.3637" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_password_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.49" />
+        app:layout_constraintGuide_percent="0.4254" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_login_button_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.556" />
+        app:layout_constraintGuide_percent="0.5017" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_login_button_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.627" />
+        app:layout_constraintGuide_percent="0.5628" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_social_login_logo_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.817" />
+        app:layout_constraintGuide_percent="0.8886" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_social_login_logo_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.868" />
+        app:layout_constraintGuide_percent="0.9313" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_google_social_login_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.287" />
+        app:layout_constraintGuide_percent="0.2897" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_google_social_login_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.376" />
+        app:layout_constraintGuide_percent="0.3821" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_github_social_login_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.457" />
+        app:layout_constraintGuide_percent="0.4538" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_github_social_login_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.547" />
+        app:layout_constraintGuide_percent="0.5462" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_kakao_social_login_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.624" />
+        app:layout_constraintGuide_percent="0.6179" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_kakao_social_login_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.712" />
+        app:layout_constraintGuide_percent="0.7103" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_find_password_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.4348" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_find_password_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.525" />
+        app:layout_constraintGuide_percent="0.4585" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_find_password_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.707" />
+        app:layout_constraintGuide_percent="0.7462" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_find_password_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.87" />
+        app:layout_constraintGuide_percent="0.9282" />
 
     <TextView
         android:id="@+id/tv_login_logo"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:fontFamily="@font/pretendard_bold"
         android:text="@string/login_logo"
         android:textColor="@color/primary"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/g_login_log_b"
-        app:layout_constraintEnd_toEndOf="@id/g_login_logo_e"
-        app:layout_constraintStart_toStartOf="@id/g_login_log_s"
-        app:layout_constraintTop_toTopOf="@id/g_login_logo_t" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/et_email"
@@ -281,7 +261,7 @@
         android:paddingStart="16dp"
         android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
-        android:textSize="14dp"
+        android:textSize="12dp"
         app:layout_constraintBottom_toBottomOf="@id/g_input_email_b"
         app:layout_constraintEnd_toEndOf="@+id/g_input_information_e"
         app:layout_constraintStart_toStartOf="@+id/g_input_information_s"
@@ -297,7 +277,7 @@
         android:paddingStart="16dp"
         android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/g_input_password_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
         app:layout_constraintStart_toStartOf="@id/g_input_information_s"
@@ -305,14 +285,14 @@
 
 
     <Button
-        android:id="@+id/bt_login"
+        android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/btn_login"
         android:fontFamily="@font/pretendard_semibold"
         android:text="@string/login_btn"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/g_login_button_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
         app:layout_constraintStart_toStartOf="@id/g_input_information_s"
@@ -335,17 +315,19 @@
 
     <ImageButton
         android:id="@+id/ibtn_google_lg"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/lg_google"
         app:layout_constraintBottom_toBottomOf="@id/g_social_login_logo_b"
         app:layout_constraintEnd_toEndOf="@+id/g_google_social_login_e"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/g_google_social_login_s"
-        app:layout_constraintTop_toTopOf="@+id/g_social_login_logo_t" />
+        app:layout_constraintTop_toTopOf="@+id/g_social_login_logo_t"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
         android:id="@+id/ibtn_kakao_lg"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/lg_kakaotalk"
         app:layout_constraintBottom_toBottomOf="@id/g_social_login_logo_b"
@@ -355,7 +337,7 @@
 
     <ImageButton
         android:id="@+id/ibtn_github_lg"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/lg_github"
         app:layout_constraintBottom_toBottomOf="@id/g_social_login_logo_b"

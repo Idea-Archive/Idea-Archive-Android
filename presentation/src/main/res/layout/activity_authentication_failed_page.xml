@@ -9,56 +9,56 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.316" />
+        app:layout_constraintGuide_percent="0.2844" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_authentication_failed_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.432" />
+        app:layout_constraintGuide_percent="0.3886" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_authentication_failed_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.422" />
+        app:layout_constraintGuide_percent="0.3872" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_authentication_failed_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.579" />
+        app:layout_constraintGuide_percent="0.6128" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_authentication_failed_text_t"
+        android:id="@+id/g_tv_authentication_failed_text_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.475" />
+        app:layout_constraintGuide_percent="0.4265" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_authentication_failed_text_b"
+        android:id="@+id/g_tv_authentication_failed_text_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.52" />
+        app:layout_constraintGuide_percent="0.4609" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_authentication_failed_text_s"
+        android:id="@+id/g_tv_authentication_failed_text_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.427" />
+        app:layout_constraintGuide_percent="0.3949" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_authentication_failed_text_e"
+        android:id="@+id/g_tv_authentication_failed_text_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.574" />
+        app:layout_constraintGuide_percent="0.60" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_go_back_to_login_page_btn_s"
@@ -107,23 +107,23 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.3872" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_try_again_text_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.599" />
+        app:layout_constraintGuide_percent="0.6436" />
 
     <ImageView
         android:id="@+id/iv_authentication_failed_icon"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@drawable/lg_authentication_failed_icon"
         app:layout_constraintBottom_toBottomOf="@id/g_authentication_failed_b"
-        app:layout_constraintEnd_toEndOf="@id/g_authentication_failed_e"
-        app:layout_constraintStart_toStartOf="@id/g_authentication_failed_s"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/g_authentication_failed_t" />
 
     <TextView
@@ -131,13 +131,14 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fontFamily="@font/pretendard_bold"
+        android:paddingStart="7dp"
         android:text="@string/authentication_failed"
         android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@id/g_authentication_failed_text_b"
-        app:layout_constraintEnd_toEndOf="@id/g_authentication_failed_text_e"
-        app:layout_constraintStart_toStartOf="@id/g_authentication_failed_text_s"
-        app:layout_constraintTop_toTopOf="@id/g_authentication_failed_text_t" />
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="@id/g_tv_authentication_failed_text_b"
+        app:layout_constraintEnd_toEndOf="@id/g_tv_authentication_failed_text_e"
+        app:layout_constraintStart_toStartOf="@id/g_tv_authentication_failed_text_s"
+        app:layout_constraintTop_toTopOf="@id/g_tv_authentication_failed_text_t" />
 
     <TextView
         android:id="@+id/tv_try_again"
@@ -145,7 +146,7 @@
         android:layout_height="0dp"
         android:fontFamily="@font/pretendard_regular"
         android:text="@string/try_again"
-        android:textSize="15sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@id/g_try_again_text_b"
         app:layout_constraintEnd_toEndOf="@id/g_try_again_text_e"
         app:layout_constraintStart_toStartOf="@id/g_try_again_text_s"

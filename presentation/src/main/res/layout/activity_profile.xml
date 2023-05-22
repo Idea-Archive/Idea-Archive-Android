@@ -53,6 +53,13 @@
             android:layout_height="0.5dp"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.3448" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_view_pager_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3969" />
+
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_ibtn_back_button_b"
@@ -302,6 +309,34 @@
             app:layout_constraintBottom_toBottomOf="@id/g_v_vertical_b"
             app:layout_constraintStart_toStartOf="@id/g_v_vertical_s"
             app:layout_constraintEnd_toEndOf="@id/g_v_vertical_e" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_profile"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:tabTextColor="@drawable/selector_nav_color_text"
+            app:tabTextAppearance="@style/tabTextStyle"
+            app:tabPaddingEnd="-1dp"
+            app:tabPaddingStart="-1dp"
+            app:tabIndicatorColor="@drawable/selector_nav_color"
+            app:tabBackground="@drawable/selector_nav_bg"
+            app:tabIndicatorHeight="0.5dp"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            app:layout_constraintTop_toTopOf="@id/g_nav_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_nav_b"
+            app:layout_constraintStart_toStartOf="@id/g_nav_s"
+            app:layout_constraintEnd_toEndOf="@id/g_nav_e" >
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="@id/g_view_pager_t"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/g_nav_s"
+            app:layout_constraintEnd_toEndOf="@id/g_nav_e" />
 
 
 

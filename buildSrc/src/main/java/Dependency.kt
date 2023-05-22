@@ -43,6 +43,8 @@ object Dependency {
         const val LEGACY_SUPPORT = "androidx.legacy:legacy-support-v4:${Versions.LEGACY}"
 
         const val PREFERENCE_KTX = "androidx.preference:preference-ktx:${Versions.PREFERENCE_KTX}"
+
+        const val VIEWPAGER_2 = "androidx.viewpager2:viewpager2:${Versions.VIEWPAGER_2}"
     }
 
     object Google {

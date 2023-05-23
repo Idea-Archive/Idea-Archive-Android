@@ -37,6 +37,9 @@ jobs:
           restore-keys: |
             ${{runner.os}}-gradle-
 
+      - name: Create LOCAL_PROPERTIES
+        run: echo '${{ secrets.LOCAL_PROPERTIES }}' > ./local.properties
+
       - name: Run ktlint
         run: ./gradlew ktlintCheck
 
@@ -45,9 +48,6 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
-
-      - name: Create LOCAL_PROPERTIES
-        run: echo '${{ secrets.LOCAL_PROPERTIES }}' > ./local.properties
       
       - name: IA Android CI Discord Notification
         uses: sarisia/actions-status-discord@v1

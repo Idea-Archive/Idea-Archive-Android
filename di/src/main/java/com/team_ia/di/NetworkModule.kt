@@ -1,6 +1,7 @@
 package com.team_ia.di
 
 import com.team_ia.data.remote.api.*
+import com.team_ia.di.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,7 +31,7 @@ object NetworkModule {
         gsonConverterFactory: GsonConverterFactory,
     ): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl(BuildConfig.BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(gsonConverterFactory)
             .build()

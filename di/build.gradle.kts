@@ -16,6 +16,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        buildConfigField("String", "BASE_URL", getApiKey("BASE_URL"))
     }
 
     buildTypes {
@@ -60,4 +61,8 @@ dependencies {
 
     androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
     androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
+}
+
+fun getApiKey(propertyKey: String): String {
+    return com.android.build.gradle.internal.cxx.configure.gradleLocalProperties(rootDir).getProperty(propertyKey)
 }

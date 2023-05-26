@@ -1,6 +1,7 @@
 package com.team_ia.di
 
 import android.util.Log
+import com.team_ia.data.interceptor.AuthorizationInterceptor
 import com.team_ia.data.remote.api.*
 import dagger.Module
 import dagger.Provides
@@ -23,12 +24,14 @@ object NetworkModule {
 
     @Provides
     fun provideOkhttpClient(
-        httpLoggingInterceptor: HttpLoggingInterceptor
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+        authorizationInterceptor: AuthorizationInterceptor
     ): OkHttpClient{
         return OkHttpClient.Builder()
             .connectTimeout(30, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
+            .addInterceptor(authorizationInterceptor)
             .addInterceptor(httpLoggingInterceptor)
             .build()
     }

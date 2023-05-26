@@ -6,6 +6,8 @@ import com.team_ia.data.remote.response.auth.LoginResponse
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
+import retrofit2.http.Header
+import retrofit2.http.PATCH
 import retrofit2.http.POST
 
 interface AuthAPI {
@@ -21,4 +23,9 @@ interface AuthAPI {
 
     @DELETE
     suspend fun logout(): Response<Unit>
+
+    @PATCH
+    suspend fun refreshToken(
+        @Header("refreshToken") refreshToken: String
+    ): LoginResponse
 }

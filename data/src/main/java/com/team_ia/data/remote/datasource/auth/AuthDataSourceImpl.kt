@@ -27,4 +27,10 @@ class AuthDataSourceImpl @Inject constructor(
             .httpRequest { authAPI.logout() }
             .sendRequest()
     }
+
+    override suspend fun refreshToken(refreshToken: String): LoginResponse {
+        return IAApiHandler<LoginResponse>()
+            .httpRequest { authAPI.refreshToken(refreshToken) }
+            .sendRequest()
+    }
 }

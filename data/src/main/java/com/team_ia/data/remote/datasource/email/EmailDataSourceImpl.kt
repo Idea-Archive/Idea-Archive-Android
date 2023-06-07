@@ -13,4 +13,10 @@ class EmailDataSourceImpl @Inject constructor(
             .httpRequest { emailAPI.sendVerificationCode(sendVerificationCodeRequest) }
             .sendRequest()
     }
+
+    override suspend fun checkVerificationCode(email: String, authKey: Int) {
+        return IAApiHandler<Unit>()
+            .httpRequest { emailAPI.checkVerificationCode(email, authKey) }
+            .sendRequest()
+    }
 }

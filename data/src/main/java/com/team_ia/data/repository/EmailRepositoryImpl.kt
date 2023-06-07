@@ -11,4 +11,7 @@ class EmailRepositoryImpl @Inject constructor(
 ) : EmailRepository {
     override suspend fun sendVerificationCode(param: SendVerificationCodeParam) =
         emailDataSource.sendVerificationCode(param.toRequest())
+
+    override suspend fun checkVerificationCode(email: String, authKey: Int) =
+        emailDataSource.checkVerificationCode(email, authKey)
 }

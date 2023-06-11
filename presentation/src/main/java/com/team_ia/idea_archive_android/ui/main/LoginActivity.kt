@@ -1,12 +1,17 @@
 package com.team_ia.idea_archive_android.ui.main
 
+import android.app.Activity
+import android.content.Intent
+import androidx.activity.result.contract.ActivityResultContracts
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.Scopes
+import com.google.android.gms.common.api.Scope
+import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
-import javax.inject.Scope
 
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
 
@@ -16,11 +21,39 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
     private lateinit var mSignInClient: GoogleSignInClient
     override fun createView() {
+
+        val googleClientId = BuildConfig.GOOGLE_CLIENT_ID
+
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestScopes(Scope(Scopes.DRIVE_APPFOLDER))
             .requestIdToken(googleClientId)
             .requestServerAuthCode(googleClientId)
             .requestEmail()
             .build()
+
+        val loginlauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        )
+        {result ->
+            if (result.resultCode == Activity.RESULT_OK){
+                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                handleSignInResult(task)
+            }
+        }
+
+        val mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+
+        binding.ibtnGoogleLg.setOnClickListener { view ->
+            when(view.id){
+                R.id.ibtn_google_lg -> loginwithGoogle()
+            }
+        }
+
+        private fun loginWithGoogle() {
+            val signInIntent: Intent = mGoogleSignInClient.signInIntent
+            loginlauncher.launch(signInIntent)
+        }
+
+        private fun
     }
 }

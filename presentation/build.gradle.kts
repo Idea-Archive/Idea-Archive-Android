@@ -50,6 +50,8 @@ dependencies {
     implementation(Dependency.AndroidX.LIFECYCLE_RUNTIME)
     implementation(Dependency.AndroidX.RECYCLER_VIEW)
 
+    implementation(Dependency.Google.GMS_PLAY_SERVICE_AUTH)
+
     implementation(Dependency.AndroidX.ROOM_KTX)
     kapt(Dependency.AndroidX.ROOM_COMPILER)
 

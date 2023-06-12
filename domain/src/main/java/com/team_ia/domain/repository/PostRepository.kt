@@ -6,4 +6,5 @@ import com.team_ia.domain.param.WritePostParam
 interface PostRepository {
     suspend fun writePost(param: WritePostParam)
     suspend fun getPost(): List<PostModel>
+    suspend fun getDetailPost(postId: Long): PostModel
 }

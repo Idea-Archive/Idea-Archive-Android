@@ -17,4 +17,6 @@ class PostRepositoryImpl @Inject constructor(
     override suspend fun getPost(): List<PostModel> =
         postDataSource.getPost().map { it.toEntity() }
 
+    override suspend fun getDetailPost(postId: Long): PostModel =
+        postDataSource.getDetailPost(postId).toEntity()
 }

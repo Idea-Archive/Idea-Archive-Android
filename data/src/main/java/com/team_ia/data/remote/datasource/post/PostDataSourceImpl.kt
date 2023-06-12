@@ -20,4 +20,10 @@ class PostDataSourceImpl @Inject constructor(
             .httpRequest { postApi.getPost() }
             .sendRequest()
     }
+
+    override suspend fun getDetailPost(postId: Long): PostModel {
+        return IAApiHandler<PostModel>()
+            .httpRequest { postApi.getDetailPost(postId) }
+            .sendRequest()
+    }
 }

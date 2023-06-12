@@ -14,4 +14,9 @@ interface PostAPI {
 
     @GET("/post")
     suspend fun getPost(): List<PostModel>
+
+    @GET("/post/{postId}")
+    suspend fun getDetailPost(
+        @Path("postId") postId: Long
+    ): PostModel
 }

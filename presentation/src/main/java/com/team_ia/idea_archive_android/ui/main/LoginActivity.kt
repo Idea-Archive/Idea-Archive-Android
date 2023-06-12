@@ -61,16 +61,11 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             try {
                 val authCode = completedTask.getResult(ApiException::class.java)?.serverAuthCode
 
-                mainScope{
-                    authCode?.run{
-                        var accessToken = "userToken"
-                        loginViewModel.fetchGoogleAuthInfo(this).let {reult ->
-                            when (result) {
-                                is Result.Success<LoginGoogleResponse> -> {
+                mainScope {
+                    authCode?.run {
 
-                                }
-                            }
-                        }
+                    }
+
                     }
                 }
             }

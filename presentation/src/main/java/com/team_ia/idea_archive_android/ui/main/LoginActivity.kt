@@ -4,14 +4,17 @@ import android.app.Activity
 import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.Scopes
+import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Scope
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
+import java.util.concurrent.FutureTask
 
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
 
@@ -45,15 +48,32 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
         binding.ibtnGoogleLg.setOnClickListener { view ->
             when(view.id){
-                R.id.ibtn_google_lg -> loginwithGoogle()
+                R.id.ibtn_google_lg -> loginWithGoogle()
             }
         }
 
-        private fun loginWithGoogle() {
+        fun loginWithGoogle() {
             val signInIntent: Intent = mGoogleSignInClient.signInIntent
             loginlauncher.launch(signInIntent)
         }
 
-        private fun
+        private fun handleSignInResult(completedTask: FutureTask<GoogleSignInAccount>){
+            try {
+                val authCode = completedTask.getResult(ApiException::class.java)?.serverAuthCode
+
+                mainScope{
+                    authCode?.run{
+                        var accessToken = "userToken"
+                        loginViewModel.fetchGoogleAuthInfo(this).let {reult ->
+                            when (result) {
+                                is Result.Success<LoginGoogleResponse> -> {
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

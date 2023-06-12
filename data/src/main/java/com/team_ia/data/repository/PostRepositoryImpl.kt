@@ -22,4 +22,7 @@ class PostRepositoryImpl @Inject constructor(
 
     override suspend fun editPost(postId: Long, param: WritePostParam) =
         postDataSource.editPost(postId, param.toRequest())
+
+    override suspend fun deletePost(postId: Long) =
+        postDataSource.deletePost(postId)
 }

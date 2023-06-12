@@ -8,4 +8,5 @@ interface PostRepository {
     suspend fun getPost(): List<PostModel>
     suspend fun getDetailPost(postId: Long): PostModel
     suspend fun editPost(postId: Long, param: WritePostParam)
+    suspend fun deletePost(postId: Long)
 }

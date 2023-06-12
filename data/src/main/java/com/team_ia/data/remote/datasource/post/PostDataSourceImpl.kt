@@ -32,4 +32,10 @@ class PostDataSourceImpl @Inject constructor(
             .httpRequest { postApi.editPost(postId, editPostRequest) }
             .sendRequest()
     }
+
+    override suspend fun deletePost(postId: Long) {
+        return IAApiHandler<Unit>()
+            .httpRequest { postApi.deletePost(postId) }
+            .sendRequest()
+    }
 }

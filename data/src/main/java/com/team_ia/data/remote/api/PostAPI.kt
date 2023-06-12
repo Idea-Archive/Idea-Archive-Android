@@ -25,4 +25,9 @@ interface PostAPI {
         @Path("postId") postId: Long,
         @Body editPostRequest: WritePostRequest
     )
+
+    @DELETE("/post/{postId}")
+    suspend fun deletePost(
+        @Path("postId") postId: Long
+    )
 }

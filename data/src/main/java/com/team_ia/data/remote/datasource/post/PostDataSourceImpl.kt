@@ -26,4 +26,10 @@ class PostDataSourceImpl @Inject constructor(
             .httpRequest { postApi.getDetailPost(postId) }
             .sendRequest()
     }
+
+    override suspend fun editPost(postId: Long, editPostRequest: WritePostRequest) {
+        return IAApiHandler<Unit>()
+            .httpRequest { postApi.editPost(postId, editPostRequest) }
+            .sendRequest()
+    }
 }

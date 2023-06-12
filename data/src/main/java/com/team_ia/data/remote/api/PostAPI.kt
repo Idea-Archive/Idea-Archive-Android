@@ -19,4 +19,10 @@ interface PostAPI {
     suspend fun getDetailPost(
         @Path("postId") postId: Long
     ): PostModel
+
+    @PATCH("/post/{postId}")
+    suspend fun editPost(
+        @Path("postId") postId: Long,
+        @Body editPostRequest: WritePostRequest
+    )
 }

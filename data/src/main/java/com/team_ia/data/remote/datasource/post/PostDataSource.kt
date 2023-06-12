@@ -7,4 +7,5 @@ interface PostDataSource {
     suspend fun writePost(writePostRequest: WritePostRequest)
     suspend fun getPost(): List<PostModel>
     suspend fun getDetailPost(postId: Long): PostModel
+    suspend fun editPost(postId: Long, editPostRequest: WritePostRequest)
 }

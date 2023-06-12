@@ -19,4 +19,7 @@ class PostRepositoryImpl @Inject constructor(
 
     override suspend fun getDetailPost(postId: Long): PostModel =
         postDataSource.getDetailPost(postId).toEntity()
+
+    override suspend fun editPost(postId: Long, param: WritePostParam) =
+        postDataSource.editPost(postId, param.toRequest())
 }

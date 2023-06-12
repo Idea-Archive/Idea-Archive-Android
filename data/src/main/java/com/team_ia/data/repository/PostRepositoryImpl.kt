@@ -4,6 +4,7 @@ import com.team_ia.data.remote.datasource.post.PostDataSource
 import com.team_ia.data.remote.model.toEntity
 import com.team_ia.data.remote.request.post.toRequest
 import com.team_ia.domain.model.PostModel
+import com.team_ia.domain.param.SearchPostParam
 import com.team_ia.domain.param.WritePostParam
 import com.team_ia.domain.repository.PostRepository
 import javax.inject.Inject
@@ -25,4 +26,7 @@ class PostRepositoryImpl @Inject constructor(
 
     override suspend fun deletePost(postId: Long) =
         postDataSource.deletePost(postId)
+
+    override suspend fun searchPost(keyword: String, param: SearchPostParam): List<PostModel> =
+        postDataSource.searchPost(keyword, param.toRequest()).map { it.toEntity() }
 }

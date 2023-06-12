@@ -2,6 +2,7 @@ package com.team_ia.data.remote.datasource.post
 
 import com.team_ia.data.remote.api.PostAPI
 import com.team_ia.data.remote.model.PostModel
+import com.team_ia.data.remote.request.post.SearchPostRequest
 import com.team_ia.data.remote.request.post.WritePostRequest
 import com.team_ia.data.utils.IAApiHandler
 import javax.inject.Inject
@@ -36,6 +37,13 @@ class PostDataSourceImpl @Inject constructor(
     override suspend fun deletePost(postId: Long) {
         return IAApiHandler<Unit>()
             .httpRequest { postApi.deletePost(postId) }
+            .sendRequest()
+    }
+
+    override suspend fun searchPost(keyword: String, searchPostRequest: SearchPostRequest
+    ): List<PostModel> {
+        return IAApiHandler<List<PostModel>>()
+            .httpRequest { postApi.searchPost(keyword, searchPostRequest) }
             .sendRequest()
     }
 }

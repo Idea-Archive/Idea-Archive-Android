@@ -1,6 +1,7 @@
 package com.team_ia.data.remote.api
 
 import com.team_ia.data.remote.model.PostModel
+import com.team_ia.data.remote.request.post.SearchPostRequest
 import com.team_ia.data.remote.request.post.WritePostRequest
 import retrofit2.Response
 import retrofit2.http.*
@@ -30,4 +31,10 @@ interface PostAPI {
     suspend fun deletePost(
         @Path("postId") postId: Long
     )
+
+    @POST("/post/search")
+    suspend fun searchPost(
+        @Query("keyword") keyword: String,
+        @Body searchPostRequest: SearchPostRequest
+    ): List<PostModel>
 }

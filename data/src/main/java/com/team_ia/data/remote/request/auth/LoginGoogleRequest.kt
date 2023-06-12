@@ -1,6 +1,7 @@
 package com.team_ia.data.remote.request.auth
 
 import com.google.gson.annotations.SerializedName
+import com.team_ia.domain.param.GoogleLoginParam
 
 data class LoginGoogleRequest(
     @SerializedName("grantType")
@@ -19,3 +20,12 @@ data class LoginGoogleRequest(
     private val code: String
 
 )
+
+fun GoogleLoginParam.toRequest() = LoginGoogleRequest(
+    grantType = grantType,
+    clientId = clientId,
+    clientSecret = clientSecret,
+    redirectUri = redirectUri,
+    code = code
+)
+

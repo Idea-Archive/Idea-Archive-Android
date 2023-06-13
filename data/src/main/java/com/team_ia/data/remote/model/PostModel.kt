@@ -2,6 +2,7 @@ package com.team_ia.data.remote.model
 
 import com.google.gson.annotations.SerializedName
 import com.team_ia.domain.model.PostModel as DomainPostModel
+import com.team_ia.domain.model.PostModel.Member as DomainMember
 
 data class PostModel(
     @SerializedName("postId")
@@ -17,7 +18,7 @@ data class PostModel(
     @SerializedName("commentCount")
     val commentCount: Int,
     @SerializedName("member")
-    val member: List<Member>,
+    val member: Member,
     @SerializedName("createData")
     val createData: String
 ) {
@@ -41,6 +42,6 @@ fun PostModel.toEntity() = DomainPostModel(
     category = category,
     heartCount = heartCount,
     commentCount = commentCount,
-    member = member.map { it.toEntity() },
+    member = DomainMember(memberId = member.memberId, name = member.name),
     createData = createData
 )

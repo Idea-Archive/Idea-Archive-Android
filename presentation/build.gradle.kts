@@ -6,7 +6,6 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("kotlin-android")
     id("kotlin-kapt")
-    id("kotlin-android-extensions")
 }
 
 android {
@@ -41,6 +40,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 }
 dependencies {

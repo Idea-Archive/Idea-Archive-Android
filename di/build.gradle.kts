@@ -7,7 +7,6 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("kotlin-android")
     id("kotlin-kapt")
-    id("kotlin-android-extensions")
 }
 
 android {
@@ -32,6 +31,11 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = Versions.JAVA_VERSION
         targetCompatibility = Versions.JAVA_VERSION

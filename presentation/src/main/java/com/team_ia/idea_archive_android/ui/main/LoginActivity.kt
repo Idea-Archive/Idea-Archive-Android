@@ -2,6 +2,7 @@ package com.team_ia.idea_archive_android.ui.main
 
 import android.app.Activity
 import android.content.Intent
+import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -10,11 +11,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.Scopes
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.Scope
+import com.google.android.gms.tasks.Task
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
-import java.util.concurrent.FutureTask
 
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
 
@@ -23,6 +24,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     }
 
     private lateinit var mSignInClient: GoogleSignInClient
+    private lateinit var loginLauncher: ActivityResultLauncher<Intent>
     override fun createView() {
 
         val googleClientId = BuildConfig.GOOGLE_CLIENT_ID
@@ -34,41 +36,38 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             .requestEmail()
             .build()
 
-        val loginlauncher = registerForActivityResult(
+        loginLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         )
-        {result ->
-            if (result.resultCode == Activity.RESULT_OK){
+        { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
                 val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
                 handleSignInResult(task)
             }
         }
 
-        val mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+        mSignInClient = GoogleSignIn.getClient(this, gso)
 
         binding.ibtnGoogleLg.setOnClickListener { view ->
-            when(view.id){
+            when (view.id) {
                 R.id.ibtn_google_lg -> loginWithGoogle()
             }
         }
 
-        fun loginWithGoogle() {
-            val signInIntent: Intent = mGoogleSignInClient.signInIntent
-            loginlauncher.launch(signInIntent)
-        }
+    }
 
-        private fun handleSignInResult(completedTask: FutureTask<GoogleSignInAccount>){
-            try {
-                val authCode = completedTask.getResult(ApiException::class.java)?.serverAuthCode
+    fun loginWithGoogle() {
+        val signInIntent: Intent = mSignInClient.signInIntent
+        loginLauncher.launch(signInIntent)
+    }
 
-                mainScope {
-                    authCode?.run {
 
-                    }
-
-                    }
-                }
-            }
+    fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
+        kotlin.runCatching {
+            completedTask.getResult(ApiException::class.java)?.serverAuthCode
+        }.onSuccess {
+            println("authCode $it")
         }
     }
+
 }

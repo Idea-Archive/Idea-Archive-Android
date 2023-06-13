@@ -2,7 +2,6 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("kotlin-kapt")
-    id("kotlin-android-extensions")
 }
 
 android {
@@ -26,6 +25,11 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = Versions.JAVA_VERSION
         targetCompatibility = Versions.JAVA_VERSION

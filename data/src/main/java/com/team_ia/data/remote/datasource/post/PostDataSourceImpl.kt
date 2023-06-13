@@ -4,6 +4,7 @@ import com.team_ia.data.remote.api.PostAPI
 import com.team_ia.data.remote.model.PostModel
 import com.team_ia.data.remote.request.post.SearchPostRequest
 import com.team_ia.data.remote.request.post.WritePostRequest
+import com.team_ia.data.remote.response.post.GetDetailPostResponse
 import com.team_ia.data.utils.IAApiHandler
 import javax.inject.Inject
 
@@ -22,8 +23,8 @@ class PostDataSourceImpl @Inject constructor(
             .sendRequest()
     }
 
-    override suspend fun getDetailPost(postId: Long): PostModel {
-        return IAApiHandler<PostModel>()
+    override suspend fun getDetailPost(postId: Long): GetDetailPostResponse {
+        return IAApiHandler<GetDetailPostResponse>()
             .httpRequest { postApi.getDetailPost(postId) }
             .sendRequest()
     }

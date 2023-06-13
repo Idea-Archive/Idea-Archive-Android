@@ -3,6 +3,8 @@ package com.team_ia.data.repository
 import com.team_ia.data.remote.datasource.post.PostDataSource
 import com.team_ia.data.remote.model.toEntity
 import com.team_ia.data.remote.request.post.toRequest
+import com.team_ia.data.remote.response.post.toEntity
+import com.team_ia.domain.entity.GetDetailPostEntity
 import com.team_ia.domain.model.PostModel
 import com.team_ia.domain.param.SearchPostParam
 import com.team_ia.domain.param.WritePostParam
@@ -18,7 +20,7 @@ class PostRepositoryImpl @Inject constructor(
     override suspend fun getPost(): List<PostModel> =
         postDataSource.getPost().map { it.toEntity() }
 
-    override suspend fun getDetailPost(postId: Long): PostModel =
+    override suspend fun getDetailPost(postId: Long): GetDetailPostEntity =
         postDataSource.getDetailPost(postId).toEntity()
 
     override suspend fun editPost(postId: Long, param: WritePostParam) =

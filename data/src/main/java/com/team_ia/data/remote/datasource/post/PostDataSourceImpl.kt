@@ -47,4 +47,10 @@ class PostDataSourceImpl @Inject constructor(
             .httpRequest { postApi.searchPost(keyword, searchPostRequest) }
             .sendRequest()
     }
+
+    override suspend fun getPopularPost(): List<PostModel> {
+        return IAApiHandler<List<PostModel>>()
+            .httpRequest { postApi.getPopularPost() }
+            .sendRequest()
+    }
 }

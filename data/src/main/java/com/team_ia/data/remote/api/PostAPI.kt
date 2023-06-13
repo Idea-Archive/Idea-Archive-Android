@@ -38,4 +38,7 @@ interface PostAPI {
         @Query("keyword") keyword: String,
         @Body searchPostRequest: SearchPostRequest
     ): List<PostModel>
+
+    @GET("/post/popular")
+    suspend fun getPopularPost(): List<PostModel>
 }

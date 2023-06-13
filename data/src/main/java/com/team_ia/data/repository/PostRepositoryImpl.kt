@@ -31,4 +31,7 @@ class PostRepositoryImpl @Inject constructor(
 
     override suspend fun searchPost(keyword: String, param: SearchPostParam): List<PostModel> =
         postDataSource.searchPost(keyword, param.toRequest()).map { it.toEntity() }
+
+    override suspend fun getPopularPost(): List<PostModel> =
+        postDataSource.getPopularPost().map { it.toEntity() }
 }

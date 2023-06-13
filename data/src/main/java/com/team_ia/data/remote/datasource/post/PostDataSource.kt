@@ -12,4 +12,5 @@ interface PostDataSource {
     suspend fun editPost(postId: Long, editPostRequest: WritePostRequest)
     suspend fun deletePost(postId: Long)
     suspend fun searchPost(keyword: String, searchPostRequest: SearchPostRequest): List<PostModel>
+    suspend fun getPopularPost(): List<PostModel>
 }

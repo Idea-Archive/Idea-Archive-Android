@@ -12,4 +12,5 @@ interface PostRepository {
     suspend fun editPost(postId: Long, param: WritePostParam)
     suspend fun deletePost(postId: Long)
     suspend fun searchPost(keyword: String, param: SearchPostParam): List<PostModel>
+    suspend fun getPopularPost(): List<PostModel>
 }

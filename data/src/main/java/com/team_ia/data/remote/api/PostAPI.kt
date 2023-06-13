@@ -3,6 +3,7 @@ package com.team_ia.data.remote.api
 import com.team_ia.data.remote.model.PostModel
 import com.team_ia.data.remote.request.post.SearchPostRequest
 import com.team_ia.data.remote.request.post.WritePostRequest
+import com.team_ia.data.remote.response.post.GetDetailPostResponse
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -19,7 +20,7 @@ interface PostAPI {
     @GET("/post/{postId}")
     suspend fun getDetailPost(
         @Path("postId") postId: Long
-    ): PostModel
+    ): GetDetailPostResponse
 
     @PATCH("/post/{postId}")
     suspend fun editPost(

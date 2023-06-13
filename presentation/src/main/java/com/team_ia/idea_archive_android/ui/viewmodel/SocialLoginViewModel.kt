@@ -13,9 +13,4 @@ class SocialLoginViewModel @Inject constructor(
     private val socialRepository: SocialRepository
 ) : ViewModel(){
 
-    suspend fun fetchGoogleAuthInfo(authCode: String) =
-        withContext(viewModelScope.coroutineContext) {
-            socialRepository.fetchGoogleAuthInfo(authCode = authCode)
-        }
-
 }

@@ -5,7 +5,7 @@ import com.team_ia.domain.entity.SocialLoginEntity
 data class SocialLoginResponse(
     val accessToken: String,
     val refreshToken: String,
-    val expiredAt: Int
+    val expiredAt: String
 )
 
 fun SocialLoginResponse.toEntity() = SocialLoginEntity(

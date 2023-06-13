@@ -1,5 +1,5 @@
 package com.team_ia.domain.param
 
-data class GoogleLoginParam(
+data class SocialLoginParam(
     val code: String
 )

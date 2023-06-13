@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class GoogleLoginViewModel @Inject constructor(
+class SocialLoginViewModel @Inject constructor(
     private val socialRepository: SocialRepository
 ) : ViewModel(){
 

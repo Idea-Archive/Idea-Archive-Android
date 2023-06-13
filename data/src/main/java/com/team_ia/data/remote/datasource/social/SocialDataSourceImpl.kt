@@ -10,6 +10,20 @@ class SocialDataSourceImpl @Inject constructor(
     private val socialAPI: SocialAPI
 ) : SocialDataSource {
     override suspend fun socialLogin(socialLoginRequest: SocialLoginRequest): SocialLoginResponse {
-        return IAApiHandler
+        return IAApiHandler<SocialLoginResponse>()
+            .httpRequest { socialAPI.googleLogin(socialLoginRequest = socialLoginRequest) }
+            .sendRequest()
+    }
+
+    override suspend fun logout() {
+        return IAApiHandler<Unit>()
+            .httpRequest { socialAPI.logout() }
+            .sendRequest()
+    }
+
+    override suspend fun refreshToken(refreshToken: String): SocialLoginResponse {
+        return IAApiHandler<SocialLoginResponse>()
+            .httpRequest { socialAPI.refreshToken(refreshToken) }
+            .sendRequest()
     }
 }

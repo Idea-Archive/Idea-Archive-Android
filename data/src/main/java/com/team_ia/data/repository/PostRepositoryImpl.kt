@@ -6,6 +6,7 @@ import com.team_ia.data.remote.request.post.toRequest
 import com.team_ia.data.remote.response.post.toEntity
 import com.team_ia.domain.entity.GetDetailPostEntity
 import com.team_ia.domain.model.PostModel
+import com.team_ia.domain.param.PostCommentParam
 import com.team_ia.domain.param.SearchPostParam
 import com.team_ia.domain.param.WritePostParam
 import com.team_ia.domain.repository.PostRepository
@@ -40,4 +41,7 @@ class PostRepositoryImpl @Inject constructor(
 
     override suspend fun postHeart(postId: Long) =
         postDataSource.postHeart(postId)
+
+    override suspend fun postComment(postId: Long, param: PostCommentParam) =
+        postDataSource.postComment(postId, param.toRequest())
 }

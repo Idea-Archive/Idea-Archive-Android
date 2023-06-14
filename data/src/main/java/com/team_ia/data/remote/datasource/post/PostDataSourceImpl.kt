@@ -2,6 +2,7 @@ package com.team_ia.data.remote.datasource.post
 
 import com.team_ia.data.remote.api.PostAPI
 import com.team_ia.data.remote.model.PostModel
+import com.team_ia.data.remote.request.post.PostCommentRequest
 import com.team_ia.data.remote.request.post.SearchPostRequest
 import com.team_ia.data.remote.request.post.WritePostRequest
 import com.team_ia.data.remote.response.post.GetDetailPostResponse
@@ -63,6 +64,12 @@ class PostDataSourceImpl @Inject constructor(
     override suspend fun postHeart(postId: Long) {
         return IAApiHandler<Unit>()
             .httpRequest { postApi.postHeart(postId) }
+            .sendRequest()
+    }
+
+    override suspend fun postComment(postId: Long, postCommentRequest: PostCommentRequest) {
+        return IAApiHandler<Unit>()
+            .httpRequest { postApi.postComment(postId, postCommentRequest) }
             .sendRequest()
     }
 }

@@ -1,6 +1,7 @@
 package com.team_ia.data.remote.api
 
 import com.team_ia.data.remote.model.PostModel
+import com.team_ia.data.remote.request.post.PostCommentRequest
 import com.team_ia.data.remote.request.post.SearchPostRequest
 import com.team_ia.data.remote.request.post.WritePostRequest
 import com.team_ia.data.remote.response.post.GetDetailPostResponse
@@ -50,5 +51,11 @@ interface PostAPI {
     @POST("/post/{postId}/heart")
     suspend fun postHeart(
         @Path("postId") postId: Long
+    ): Response<Unit>
+
+    @POST("/post/comment/{postId}")
+    suspend fun postComment(
+        @Path("postId") postId: Long,
+        @Body postCommentRequest: PostCommentRequest
     ): Response<Unit>
 }

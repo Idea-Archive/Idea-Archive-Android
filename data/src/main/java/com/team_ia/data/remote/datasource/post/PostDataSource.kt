@@ -17,4 +17,5 @@ interface PostDataSource {
     suspend fun getCategoryPost(getCategoryPostRequest: SearchPostRequest): List<PostModel>
     suspend fun postHeart(postId: Long)
     suspend fun postComment(postId: Long, postCommentRequest: PostCommentRequest)
+    suspend fun editComment(commentId: Long, editCommentRequest: PostCommentRequest)
 }

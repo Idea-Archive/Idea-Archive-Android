@@ -17,4 +17,5 @@ interface PostRepository {
     suspend fun getCategoryPost(param: SearchPostParam): List<PostModel>
     suspend fun postHeart(postId: Long)
     suspend fun postComment(postId: Long, param: PostCommentParam)
+    suspend fun editComment(commentId: Long, param: PostCommentParam)
 }

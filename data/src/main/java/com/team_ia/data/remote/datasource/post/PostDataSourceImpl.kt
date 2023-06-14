@@ -72,4 +72,10 @@ class PostDataSourceImpl @Inject constructor(
             .httpRequest { postApi.postComment(postId, postCommentRequest) }
             .sendRequest()
     }
+
+    override suspend fun editComment(commentId: Long, editCommentRequest: PostCommentRequest) {
+        return IAApiHandler<Unit>()
+            .httpRequest { postApi.editComment(commentId, editCommentRequest) }
+            .sendRequest()
+    }
 }

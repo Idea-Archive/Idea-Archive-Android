@@ -58,4 +58,10 @@ interface PostAPI {
         @Path("postId") postId: Long,
         @Body postCommentRequest: PostCommentRequest
     ): Response<Unit>
+
+    @PATCH("/post/comment/{commentId}")
+    suspend fun editComment(
+        @Path("commentId") commentId: Long,
+        @Body editCommentRequest: PostCommentRequest
+    ): Response<Unit>
 }

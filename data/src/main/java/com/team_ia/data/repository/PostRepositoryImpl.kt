@@ -44,4 +44,7 @@ class PostRepositoryImpl @Inject constructor(
 
     override suspend fun postComment(postId: Long, param: PostCommentParam) =
         postDataSource.postComment(postId, param.toRequest())
+
+    override suspend fun editComment(commentId: Long, param: PostCommentParam) =
+        postDataSource.editComment(commentId, param.toRequest())
 }

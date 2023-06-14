@@ -25,49 +25,32 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
     private lateinit var mSignInClient: GoogleSignInClient
     private lateinit var loginLauncher: ActivityResultLauncher<Intent>
+
     override fun createView() {
 
         val googleClientId = BuildConfig.GOOGLE_CLIENT_ID
-
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestScopes(Scope(Scopes.DRIVE_APPFOLDER))
-            .requestIdToken(googleClientId)
             .requestServerAuthCode(googleClientId)
             .requestEmail()
             .build()
+        val client = GoogleSignIn.getClient(this, gso)
 
         loginLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         )
         { result ->
+            println("resultCode $result")
             if (result.resultCode == Activity.RESULT_OK) {
                 val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-                handleSignInResult(task)
             }
         }
 
         mSignInClient = GoogleSignIn.getClient(this, gso)
 
         binding.ibtnGoogleLg.setOnClickListener { view ->
-            when (view.id) {
-                R.id.ibtn_google_lg -> loginWithGoogle()
-            }
+            loginLauncher.launch(client.signInIntent)
         }
 
-    }
-
-    fun loginWithGoogle() {
-        val signInIntent: Intent = mSignInClient.signInIntent
-        loginLauncher.launch(signInIntent)
-    }
-
-
-    fun handleSignInResult(completedTask: Task<GoogleSignInAccount>) {
-        kotlin.runCatching {
-            completedTask.getResult(ApiException::class.java)?.serverAuthCode
-        }.onSuccess {
-            println("authCode $it")
-        }
     }
 
 }

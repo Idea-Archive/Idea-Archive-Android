@@ -59,4 +59,10 @@ class PostDataSourceImpl @Inject constructor(
             .httpRequest { postApi.getCategoryPost(getCategoryPostRequest) }
             .sendRequest()
     }
+
+    override suspend fun postHeart(postId: Long) {
+        return IAApiHandler<Unit>()
+            .httpRequest { postApi.postHeart(postId) }
+            .sendRequest()
+    }
 }

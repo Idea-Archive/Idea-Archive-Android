@@ -37,4 +37,7 @@ class PostRepositoryImpl @Inject constructor(
 
     override suspend fun getCategoryPost(param: SearchPostParam): List<PostModel> =
         postDataSource.getCategoryPost(param.toRequest()).map { it.toEntity() }
+
+    override suspend fun postHeart(postId: Long) =
+        postDataSource.postHeart(postId)
 }

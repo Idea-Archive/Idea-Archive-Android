@@ -26,12 +26,12 @@ interface PostAPI {
     suspend fun editPost(
         @Path("postId") postId: Long,
         @Body editPostRequest: WritePostRequest
-    )
+    ): Response<Unit>
 
     @DELETE("/post/{postId}")
     suspend fun deletePost(
         @Path("postId") postId: Long
-    )
+    ): Response<Unit>
 
     @POST("/post/search")
     suspend fun searchPost(
@@ -46,4 +46,9 @@ interface PostAPI {
     suspend fun getCategoryPost(
         @Body getCategoryPostRequest: SearchPostRequest
     ): List<PostModel>
+
+    @POST("/post/{postId}/heart")
+    suspend fun postHeart(
+        @Path("postId") postId: Long
+    ): Response<Unit>
 }

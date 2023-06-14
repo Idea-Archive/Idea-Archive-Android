@@ -53,4 +53,10 @@ class PostDataSourceImpl @Inject constructor(
             .httpRequest { postApi.getPopularPost() }
             .sendRequest()
     }
+
+    override suspend fun getCategoryPost(getCategoryPostRequest: SearchPostRequest): List<PostModel> {
+        return IAApiHandler<List<PostModel>>()
+            .httpRequest { postApi.getCategoryPost(getCategoryPostRequest) }
+            .sendRequest()
+    }
 }

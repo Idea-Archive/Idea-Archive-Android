@@ -41,4 +41,9 @@ interface PostAPI {
 
     @GET("/post/popular")
     suspend fun getPopularPost(): List<PostModel>
+
+    @POST("/post/category")
+    suspend fun getCategoryPost(
+        @Body getCategoryPostRequest: SearchPostRequest
+    ): List<PostModel>
 }

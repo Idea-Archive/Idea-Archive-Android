@@ -64,4 +64,9 @@ interface PostAPI {
         @Path("commentId") commentId: Long,
         @Body editCommentRequest: PostCommentRequest
     ): Response<Unit>
+
+    @DELETE("/post/comment/{commentId}")
+    suspend fun deleteComment(
+        @Path("commentId") commentId: Long
+    ): Response<Unit>
 }

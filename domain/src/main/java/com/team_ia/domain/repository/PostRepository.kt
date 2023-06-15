@@ -18,4 +18,5 @@ interface PostRepository {
     suspend fun postHeart(postId: Long)
     suspend fun postComment(postId: Long, param: PostCommentParam)
     suspend fun editComment(commentId: Long, param: PostCommentParam)
+    suspend fun deleteComment(commentId: Long)
 }

@@ -47,4 +47,7 @@ class PostRepositoryImpl @Inject constructor(
 
     override suspend fun editComment(commentId: Long, param: PostCommentParam) =
         postDataSource.editComment(commentId, param.toRequest())
+
+    override suspend fun deleteComment(commentId: Long) =
+        postDataSource.deleteComment(commentId)
 }

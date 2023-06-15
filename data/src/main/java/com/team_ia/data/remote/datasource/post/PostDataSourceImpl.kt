@@ -78,4 +78,10 @@ class PostDataSourceImpl @Inject constructor(
             .httpRequest { postApi.editComment(commentId, editCommentRequest) }
             .sendRequest()
     }
+
+    override suspend fun deleteComment(commentId: Long) {
+        return IAApiHandler<Unit>()
+            .httpRequest { postApi.deleteComment(commentId) }
+            .sendRequest()
+    }
 }

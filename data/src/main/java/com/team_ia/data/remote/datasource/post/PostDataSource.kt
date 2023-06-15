@@ -18,4 +18,5 @@ interface PostDataSource {
     suspend fun postHeart(postId: Long)
     suspend fun postComment(postId: Long, postCommentRequest: PostCommentRequest)
     suspend fun editComment(commentId: Long, editCommentRequest: PostCommentRequest)
+    suspend fun deleteComment(commentId: Long)
 }

@@ -5,13 +5,8 @@ import android.content.Intent
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.common.Scopes
-import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.common.api.Scope
-import com.google.android.gms.tasks.Task
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
@@ -37,11 +32,11 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
         loginLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
-        )
-        { result ->
-            println("resultCode $result")
+        ) { result ->
+            println("인가코드 ${result}")
             if (result.resultCode == Activity.RESULT_OK) {
                 val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                println("인가코드 ${task.result?.serverAuthCode}")
             }
         }
 

@@ -1,16 +1,16 @@
 package com.team_ia.data.remote.api
 
+import SocialLoginResponse
 import com.team_ia.data.remote.request.auth.SocialLoginRequest
 import com.team_ia.data.remote.response.auth.LoginResponse
-import com.team_ia.data.remote.response.social.SocialLoginResponse
 import retrofit2.Response
 import retrofit2.http.*
 
 interface SocialAPI {
 
-    @POST("/google/login")
+    @GET("/google/login")
     suspend fun googleLogin(
-        @Body socialLoginRequest: SocialLoginRequest
+       @Query("authorizationCode")socialLoginRequest: SocialLoginRequest
     ): SocialLoginResponse
 
     @DELETE

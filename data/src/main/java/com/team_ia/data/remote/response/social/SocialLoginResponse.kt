@@ -1,4 +1,3 @@
-package com.team_ia.data.remote.response.social
 
 import com.team_ia.domain.entity.SocialLoginEntity
 

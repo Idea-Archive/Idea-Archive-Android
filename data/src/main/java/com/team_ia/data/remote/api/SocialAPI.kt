@@ -11,7 +11,7 @@ interface SocialAPI {
     @GET("/google/login")
     suspend fun googleLogin(
        @Query("authorizationCode")socialLoginRequest: SocialLoginRequest
-    ): SocialLoginResponse
+    ): LoginResponse
 
     @DELETE
     suspend fun logout(): Response<Unit>
@@ -19,5 +19,5 @@ interface SocialAPI {
     @PATCH
     suspend fun refreshToken(
         @Header("refreshToken") refreshToken: String
-    ): SocialLoginResponse
+    ): LoginResponse
 }

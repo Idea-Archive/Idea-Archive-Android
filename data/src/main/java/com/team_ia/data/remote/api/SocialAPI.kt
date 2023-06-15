@@ -1,6 +1,5 @@
 package com.team_ia.data.remote.api
 
-import SocialLoginResponse
 import com.team_ia.data.remote.request.auth.SocialLoginRequest
 import com.team_ia.data.remote.response.auth.LoginResponse
 import retrofit2.Response

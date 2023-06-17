@@ -4,6 +4,7 @@ import com.team_ia.data.remote.request.member.ChangeNickNameRequest
 import com.team_ia.data.remote.request.member.ChangePasswordRequest
 import com.team_ia.data.remote.request.member.FindPasswordRequest
 import com.team_ia.data.remote.request.member.MemberRequest
+import com.team_ia.data.remote.response.member.GetNoticeResponse
 import com.team_ia.data.remote.response.member.MemberResponse
 import retrofit2.Response
 import retrofit2.http.Body
@@ -37,4 +38,7 @@ interface MemberAPI {
     suspend fun changeNickName(
         @Body changeNickNameRequest: ChangeNickNameRequest
     ): Response<Unit>
+
+    @GET("/member/notice")
+    suspend fun getNotice(): GetNoticeResponse
 }

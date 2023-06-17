@@ -4,6 +4,7 @@ import com.team_ia.data.remote.api.MemberAPI
 import com.team_ia.data.remote.request.member.ChangeNickNameRequest
 import com.team_ia.data.remote.request.member.ChangePasswordRequest
 import com.team_ia.data.remote.request.member.FindPasswordRequest
+import com.team_ia.data.remote.response.member.GetNoticeResponse
 import com.team_ia.data.remote.response.member.MemberResponse
 import com.team_ia.data.utils.IAApiHandler
 import javax.inject.Inject
@@ -39,6 +40,12 @@ class MemberDataSourceImpl @Inject constructor(
     override suspend fun changeNickName(changeNickNameRequest: ChangeNickNameRequest) {
         return IAApiHandler<Unit>()
             .httpRequest { memberAPI.changeNickName(changeNickNameRequest) }
+            .sendRequest()
+    }
+
+    override suspend fun getNotice(): GetNoticeResponse {
+        return IAApiHandler<GetNoticeResponse>()
+            .httpRequest { memberAPI.getNotice() }
             .sendRequest()
     }
 }

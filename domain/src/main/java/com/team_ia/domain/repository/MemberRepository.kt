@@ -1,5 +1,6 @@
 package com.team_ia.domain.repository
 
+import com.team_ia.domain.entity.GetNoticeEntity
 import com.team_ia.domain.entity.MemberEntity
 import com.team_ia.domain.param.ChangeNickNameParam
 import com.team_ia.domain.param.FindPasswordParam
@@ -11,4 +12,5 @@ interface MemberRepository {
     suspend fun withdrawalMember(email: String, password: String)
     suspend fun findPassword(param: FindPasswordParam)
     suspend fun changeNickName(param: ChangeNickNameParam)
+    suspend fun getNotice(): GetNoticeEntity
 }

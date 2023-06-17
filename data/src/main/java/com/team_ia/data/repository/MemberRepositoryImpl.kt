@@ -3,6 +3,7 @@ package com.team_ia.data.repository
 import com.team_ia.data.remote.datasource.member.MemberDataSource
 import com.team_ia.data.remote.request.member.toRequest
 import com.team_ia.data.remote.response.member.toEntity
+import com.team_ia.domain.entity.GetNoticeEntity
 import com.team_ia.domain.entity.MemberEntity
 import com.team_ia.domain.param.ChangeNickNameParam
 import com.team_ia.domain.param.FindPasswordParam
@@ -20,15 +21,15 @@ class MemberRepositoryImpl @Inject constructor(
     override suspend fun changePassword(param: PasswordParam) =
         memberDataSource.changePassword(param.toRequest())
 
-    override suspend fun withdrawalMember(email: String, password: String) {
+    override suspend fun withdrawalMember(email: String, password: String) =
         memberDataSource.withdrawalMember(email = email, password = password)
-    }
 
-    override suspend fun findPassword(param: FindPasswordParam) {
+    override suspend fun findPassword(param: FindPasswordParam) =
         memberDataSource.findPassword(param.toRequest())
-    }
 
-    override suspend fun changeNickName(param: ChangeNickNameParam) {
+    override suspend fun changeNickName(param: ChangeNickNameParam) =
         memberDataSource.changeNickName(param.toRequest())
-    }
+
+    override suspend fun getNotice(): GetNoticeEntity =
+        memberDataSource.getNotice().toEntity()
 }

@@ -3,6 +3,7 @@ package com.team_ia.data.remote.datasource.member
 import com.team_ia.data.remote.request.member.ChangeNickNameRequest
 import com.team_ia.data.remote.request.member.ChangePasswordRequest
 import com.team_ia.data.remote.request.member.FindPasswordRequest
+import com.team_ia.data.remote.response.member.GetDetailNoticeResponse
 import com.team_ia.data.remote.response.member.GetNoticeResponse
 import com.team_ia.data.remote.response.member.MemberResponse
 
@@ -13,4 +14,5 @@ interface MemberDataSource {
     suspend fun findPassword(findPasswordRequest: FindPasswordRequest)
     suspend fun changeNickName(changeNickNameRequest: ChangeNickNameRequest)
     suspend fun getNotice(): GetNoticeResponse
+    suspend fun getDetailNotice(noticeId: Long): GetDetailNoticeResponse
 }

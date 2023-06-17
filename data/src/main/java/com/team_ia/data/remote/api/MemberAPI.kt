@@ -4,6 +4,7 @@ import com.team_ia.data.remote.request.member.ChangeNickNameRequest
 import com.team_ia.data.remote.request.member.ChangePasswordRequest
 import com.team_ia.data.remote.request.member.FindPasswordRequest
 import com.team_ia.data.remote.request.member.MemberRequest
+import com.team_ia.data.remote.response.member.GetDetailNoticeResponse
 import com.team_ia.data.remote.response.member.GetNoticeResponse
 import com.team_ia.data.remote.response.member.MemberResponse
 import retrofit2.Response
@@ -11,6 +12,7 @@ import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.PATCH
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MemberAPI {
@@ -41,4 +43,9 @@ interface MemberAPI {
 
     @GET("/member/notice")
     suspend fun getNotice(): GetNoticeResponse
+
+    @GET("/member/notice/{noticeId}")
+    suspend fun getDetailNotice(
+        @Path("noticeId") noticeId: Long
+    ): GetDetailNoticeResponse
 }

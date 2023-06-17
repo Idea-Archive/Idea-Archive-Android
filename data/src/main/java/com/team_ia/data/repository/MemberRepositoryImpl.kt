@@ -3,6 +3,7 @@ package com.team_ia.data.repository
 import com.team_ia.data.remote.datasource.member.MemberDataSource
 import com.team_ia.data.remote.request.member.toRequest
 import com.team_ia.data.remote.response.member.toEntity
+import com.team_ia.domain.entity.GetDetailNoticeEntity
 import com.team_ia.domain.entity.GetNoticeEntity
 import com.team_ia.domain.entity.MemberEntity
 import com.team_ia.domain.param.ChangeNickNameParam
@@ -32,4 +33,7 @@ class MemberRepositoryImpl @Inject constructor(
 
     override suspend fun getNotice(): GetNoticeEntity =
         memberDataSource.getNotice().toEntity()
+
+    override suspend fun getDetailNotice(noticeId: Long): GetDetailNoticeEntity =
+        memberDataSource.getDetailNotice(noticeId).toEntity()
 }

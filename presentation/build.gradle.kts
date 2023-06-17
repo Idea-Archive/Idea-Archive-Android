@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("dagger.hilt.android.plugin")
@@ -16,6 +19,7 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "GOOGLE_CLIENT_ID", getApiKey("GOOGLE_CLIENT_ID"))
     }
 
     buildTypes {
@@ -36,6 +40,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
 }
 dependencies {
@@ -49,6 +54,8 @@ dependencies {
     implementation(Dependency.AndroidX.LIFECYCLE_VIEWMODEL_KTX)
     implementation(Dependency.AndroidX.LIFECYCLE_RUNTIME)
     implementation(Dependency.AndroidX.RECYCLER_VIEW)
+
+    implementation(Dependency.Google.GMS_PLAY_SERVICE_AUTH)
 
     implementation(Dependency.AndroidX.ROOM_KTX)
     kapt(Dependency.AndroidX.ROOM_COMPILER)
@@ -85,4 +92,11 @@ dependencies {
     implementation(Dependency.Libraries.SHIMMER)
 
     implementation(Dependency.Lottie.LOTTIE)
+}
+
+fun getApiKey(propertyKey: String): String {
+    val propFile = rootProject.file("./local.properties")
+    val properties = Properties()
+    properties.load(FileInputStream(propFile))
+    return properties.getProperty(propertyKey)
 }

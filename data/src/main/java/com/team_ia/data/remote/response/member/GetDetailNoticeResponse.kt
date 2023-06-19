@@ -10,12 +10,12 @@ data class GetDetailNoticeResponse(
     val title: String,
     @SerializedName("content")
     val content: String,
-    @SerializedName("createData")
-    val createData: String
+    @SerializedName("createDate")
+    val createDate: String
 )
  fun GetDetailNoticeResponse.toEntity() = GetDetailNoticeEntity(
      noticeId = noticeId,
      title = title,
      content = content,
-     createData = createData
+     createDate = createDate
  )

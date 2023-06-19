@@ -19,8 +19,8 @@ data class PostModel(
     val commentCount: Int,
     @SerializedName("member")
     val member: Member,
-    @SerializedName("createData")
-    val createData: String
+    @SerializedName("createDate")
+    val createDate: String
 ) {
     data class Member(
         @SerializedName("memberId")
@@ -43,5 +43,5 @@ fun PostModel.toEntity() = DomainPostModel(
     heartCount = heartCount,
     commentCount = commentCount,
     member = DomainMember(memberId = member.memberId, name = member.name),
-    createData = createData
+    createDate = createDate
 )

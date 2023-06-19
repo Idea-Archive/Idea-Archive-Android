@@ -8,7 +8,7 @@ data class PostModel(
     val heartCount: Int,
     val commentCount: Int,
     val member: Member,
-    val createData: String
+    val createDate: String
 ) {
     data class Member(
         val memberId: Long,

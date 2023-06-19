@@ -4,5 +4,5 @@ data class GetDetailNoticeEntity(
     val noticeId: Long,
     val title: String,
     val content: String,
-    val createData: String
+    val createDate: String
 )

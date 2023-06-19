@@ -13,7 +13,7 @@ data class GetDetailPostEntity(
     val commentCount: Int,
     val applicantCount: Int,
     val views: Int,
-    val createData: String
+    val createDate: String
 ){
     data class Member(
         val memberId: Long,
@@ -23,14 +23,14 @@ data class GetDetailPostEntity(
     data class Comment(
         val commentId: Long,
         val content: String,
-        val createData: String,
+        val createDate: String,
         val member: Member
     )
 
     fun Comment.toEntity() = GetDetailPostEntity.Comment(
         commentId = commentId,
         content = content,
-        createData = createData,
+        createDate = createDate,
         member = member
     )
 }

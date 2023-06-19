@@ -15,15 +15,15 @@ data class GetNoticeResponse(
         val title: String,
         @SerializedName("content")
         val content: String,
-        @SerializedName("createData")
-        val createData: String
+        @SerializedName("createDate")
+        val createDate: String
     )
 
     fun Notice.toEntity() = DomainNotice(
         noticeId = noticeId,
         title = title,
         content = content,
-        createData = createData
+        createDate = createDate
     )
 }
 

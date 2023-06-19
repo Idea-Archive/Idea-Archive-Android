@@ -26,8 +26,8 @@ data class GetDetailPostResponse(
     val applicantCount: Int,
     @SerializedName("views")
     val views: Int,
-    @SerializedName("createData")
-    val createData: String
+    @SerializedName("createDate")
+    val createDate: String
 ) {
     data class Member(
         @SerializedName("memberId")
@@ -46,8 +46,8 @@ data class GetDetailPostResponse(
         val commentId: Long,
         @SerializedName("content")
         val content: String,
-        @SerializedName("createData")
-        val createData: String,
+        @SerializedName("createDate")
+        val createDate: String,
         @SerializedName("member")
         val member: Member
     )
@@ -55,7 +55,7 @@ data class GetDetailPostResponse(
     fun Comment.toEntity() = GetDetailPostEntity.Comment(
         commentId = commentId,
         content = content,
-        createData = createData,
+        createDate = createDate,
         member = EntityMember(memberId = member.memberId, name = member.name)
     )
 }
@@ -71,5 +71,5 @@ fun GetDetailPostResponse.toEntity() = GetDetailPostEntity(
     commentCount = commentCount,
     applicantCount = applicantCount,
     views = views,
-    createData = createData
+    createDate = createDate
 )

@@ -1,6 +1,7 @@
 package com.team_ia.data.remote.datasource.member
 
 import com.team_ia.data.remote.api.MemberAPI
+import com.team_ia.data.remote.model.PostModel
 import com.team_ia.data.remote.request.member.ChangeNickNameRequest
 import com.team_ia.data.remote.request.member.ChangePasswordRequest
 import com.team_ia.data.remote.request.member.FindPasswordRequest
@@ -54,6 +55,18 @@ class MemberDataSourceImpl @Inject constructor(
     override suspend fun getDetailNotice(noticeId: Long): GetDetailNoticeResponse {
         return IAApiHandler<GetDetailNoticeResponse>()
             .httpRequest { memberAPI.getDetailNotice(noticeId) }
+            .sendRequest()
+    }
+
+    override suspend fun getMyPost(): List<PostModel> {
+        return IAApiHandler<List<PostModel>>()
+            .httpRequest { memberAPI.getMyPost() }
+            .sendRequest()
+    }
+
+    override suspend fun getMyHeartList(): List<PostModel> {
+        return IAApiHandler<List<PostModel>>()
+            .httpRequest { memberAPI.getMyHeartList() }
             .sendRequest()
     }
 }

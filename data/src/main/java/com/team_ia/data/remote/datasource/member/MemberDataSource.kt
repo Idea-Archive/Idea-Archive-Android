@@ -1,5 +1,6 @@
 package com.team_ia.data.remote.datasource.member
 
+import com.team_ia.data.remote.model.PostModel
 import com.team_ia.data.remote.request.member.ChangeNickNameRequest
 import com.team_ia.data.remote.request.member.ChangePasswordRequest
 import com.team_ia.data.remote.request.member.FindPasswordRequest
@@ -16,4 +17,6 @@ interface MemberDataSource {
     suspend fun changeNickName(changeNickNameRequest: ChangeNickNameRequest)
     suspend fun getNotice(): GetNoticeResponse
     suspend fun getDetailNotice(noticeId: Long): GetDetailNoticeResponse
+    suspend fun getMyPost(): List<PostModel>
+    suspend fun getMyHeartList(): List<PostModel>
 }

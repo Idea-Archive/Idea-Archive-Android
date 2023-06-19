@@ -1,5 +1,6 @@
 package com.team_ia.data.remote.api
 
+import com.team_ia.data.remote.model.PostModel
 import com.team_ia.data.remote.request.member.*
 import com.team_ia.data.remote.response.member.GetDetailNoticeResponse
 import com.team_ia.data.remote.response.member.GetNoticeResponse
@@ -44,4 +45,10 @@ interface MemberAPI {
     suspend fun getDetailNotice(
         @Path("noticeId") noticeId: Long
     ): GetDetailNoticeResponse
+
+    @GET("/member/my-post")
+    suspend fun getMyPost(): List<PostModel>
+
+    @GET("/member/my-heartList")
+    suspend fun getMyHeartList(): List<PostModel>
 }

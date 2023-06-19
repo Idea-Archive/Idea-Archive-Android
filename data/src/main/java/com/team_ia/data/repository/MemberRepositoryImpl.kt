@@ -1,11 +1,13 @@
 package com.team_ia.data.repository
 
 import com.team_ia.data.remote.datasource.member.MemberDataSource
+import com.team_ia.data.remote.model.toEntity
 import com.team_ia.data.remote.request.member.toRequest
 import com.team_ia.data.remote.response.member.toEntity
 import com.team_ia.domain.entity.GetDetailNoticeEntity
 import com.team_ia.domain.entity.GetNoticeEntity
 import com.team_ia.domain.entity.MemberEntity
+import com.team_ia.domain.model.PostModel
 import com.team_ia.domain.param.ChangeNickNameParam
 import com.team_ia.domain.param.FindPasswordParam
 import com.team_ia.domain.param.PasswordParam
@@ -37,4 +39,10 @@ class MemberRepositoryImpl @Inject constructor(
 
     override suspend fun getDetailNotice(noticeId: Long): GetDetailNoticeEntity =
         memberDataSource.getDetailNotice(noticeId).toEntity()
+
+    override suspend fun getMyPost(): List<PostModel> =
+        memberDataSource.getMyPost().map { it.toEntity() }
+
+    override suspend fun getMyHeartList(): List<PostModel> =
+        memberDataSource.getMyHeartList().map { it.toEntity() }
 }

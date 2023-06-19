@@ -1,9 +1,6 @@
 package com.team_ia.data.remote.api
 
-import com.team_ia.data.remote.request.member.ChangeNickNameRequest
-import com.team_ia.data.remote.request.member.ChangePasswordRequest
-import com.team_ia.data.remote.request.member.FindPasswordRequest
-import com.team_ia.data.remote.request.member.MemberRequest
+import com.team_ia.data.remote.request.member.*
 import com.team_ia.data.remote.response.member.GetDetailNoticeResponse
 import com.team_ia.data.remote.response.member.GetNoticeResponse
 import com.team_ia.data.remote.response.member.MemberResponse
@@ -27,8 +24,7 @@ interface MemberAPI {
 
     @DELETE
     suspend fun withdrawalMember(
-        @Query("email") email: String,
-        @Query("password") password: String
+        @Body withdrawalMemberRequest: WithdrawalMemberRequest
     ): Response<Unit>
 
     @PATCH("/member/findpw")

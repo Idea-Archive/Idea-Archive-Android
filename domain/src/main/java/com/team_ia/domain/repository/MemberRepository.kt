@@ -6,11 +6,12 @@ import com.team_ia.domain.entity.MemberEntity
 import com.team_ia.domain.param.ChangeNickNameParam
 import com.team_ia.domain.param.FindPasswordParam
 import com.team_ia.domain.param.PasswordParam
+import com.team_ia.domain.param.WithdrawalMemberParam
 
 interface MemberRepository {
     suspend fun profileInfo(): MemberEntity
     suspend fun changePassword(param: PasswordParam)
-    suspend fun withdrawalMember(email: String, password: String)
+    suspend fun withdrawalMember(param: WithdrawalMemberParam)
     suspend fun findPassword(param: FindPasswordParam)
     suspend fun changeNickName(param: ChangeNickNameParam)
     suspend fun getNotice(): GetNoticeEntity

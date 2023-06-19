@@ -9,6 +9,7 @@ import com.team_ia.domain.entity.MemberEntity
 import com.team_ia.domain.param.ChangeNickNameParam
 import com.team_ia.domain.param.FindPasswordParam
 import com.team_ia.domain.param.PasswordParam
+import com.team_ia.domain.param.WithdrawalMemberParam
 import com.team_ia.domain.repository.MemberRepository
 import javax.inject.Inject
 
@@ -22,8 +23,8 @@ class MemberRepositoryImpl @Inject constructor(
     override suspend fun changePassword(param: PasswordParam) =
         memberDataSource.changePassword(param.toRequest())
 
-    override suspend fun withdrawalMember(email: String, password: String) =
-        memberDataSource.withdrawalMember(email = email, password = password)
+    override suspend fun withdrawalMember(param: WithdrawalMemberParam) =
+        memberDataSource.withdrawalMember(param.toRequest())
 
     override suspend fun findPassword(param: FindPasswordParam) =
         memberDataSource.findPassword(param.toRequest())

@@ -4,6 +4,7 @@ import com.team_ia.data.remote.api.MemberAPI
 import com.team_ia.data.remote.request.member.ChangeNickNameRequest
 import com.team_ia.data.remote.request.member.ChangePasswordRequest
 import com.team_ia.data.remote.request.member.FindPasswordRequest
+import com.team_ia.data.remote.request.member.WithdrawalMemberRequest
 import com.team_ia.data.remote.response.member.GetDetailNoticeResponse
 import com.team_ia.data.remote.response.member.GetNoticeResponse
 import com.team_ia.data.remote.response.member.MemberResponse
@@ -26,9 +27,9 @@ class MemberDataSourceImpl @Inject constructor(
             .sendRequest()
     }
 
-    override suspend fun withdrawalMember(email: String, password: String) {
+    override suspend fun withdrawalMember(withdrawalMemberRequest: WithdrawalMemberRequest) {
         return IAApiHandler<Unit>()
-            .httpRequest { memberAPI.withdrawalMember(email = email, password = password) }
+            .httpRequest { memberAPI.withdrawalMember(withdrawalMemberRequest) }
             .sendRequest()
     }
 

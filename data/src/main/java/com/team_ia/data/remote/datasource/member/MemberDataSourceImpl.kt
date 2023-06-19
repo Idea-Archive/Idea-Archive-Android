@@ -16,9 +16,9 @@ class MemberDataSourceImpl @Inject constructor(
     private val memberAPI: MemberAPI
 ) : MemberDataSource {
 
-    override suspend fun profileInfo(): MemberResponse {
+    override suspend fun getProfileInfo(): MemberResponse {
         return IAApiHandler<MemberResponse>()
-            .httpRequest { memberAPI.profileInfo() }
+            .httpRequest { memberAPI.getProfileInfo() }
             .sendRequest()
     }
 

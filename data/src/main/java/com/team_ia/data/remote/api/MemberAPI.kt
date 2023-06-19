@@ -16,7 +16,7 @@ import retrofit2.http.Query
 interface MemberAPI {
 
     @GET("/member")
-    suspend fun profileInfo(): MemberResponse
+    suspend fun getProfileInfo(): MemberResponse
 
     @PATCH("/member")
     suspend fun changePassword(

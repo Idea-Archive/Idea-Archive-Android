@@ -19,8 +19,8 @@ class MemberRepositoryImpl @Inject constructor(
     private val memberDataSource: MemberDataSource
 ) : MemberRepository {
 
-    override suspend fun profileInfo(): MemberEntity =
-        memberDataSource.profileInfo().toEntity()
+    override suspend fun getProfileInfo(): MemberEntity =
+        memberDataSource.getProfileInfo().toEntity()
 
     override suspend fun changePassword(param: PasswordParam) =
         memberDataSource.changePassword(param.toRequest())

@@ -10,7 +10,7 @@ import com.team_ia.domain.param.PasswordParam
 import com.team_ia.domain.param.WithdrawalMemberParam
 
 interface MemberRepository {
-    suspend fun profileInfo(): MemberEntity
+    suspend fun getProfileInfo(): MemberEntity
     suspend fun changePassword(param: PasswordParam)
     suspend fun withdrawalMember(param: WithdrawalMemberParam)
     suspend fun findPassword(param: FindPasswordParam)

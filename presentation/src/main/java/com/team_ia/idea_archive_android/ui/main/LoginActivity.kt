@@ -8,7 +8,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.team_ia.domain.repository.SocialRepository
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
@@ -20,7 +19,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         private val RC_SIGN_IN: Int = 9001
     }
 
-    private lateinit var mSignInClient: GoogleSignInClient
+    private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var loginLauncher: ActivityResultLauncher<Intent>
 
 
@@ -45,7 +44,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             }
         }
 
-        mSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
+        googleSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
 
         binding.ibtnGoogleLg.setOnClickListener { view ->
             loginLauncher.launch(client.signInIntent)
@@ -57,6 +56,8 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             .appendPath("authorize")
             .appendQueryParameter("client_id", githubClientId)
             .build()
+
+        val githubSignInClient = Intent(Intent.ACTION_VIEW, githubSocialLogin)
 
         binding.ibtnGithubLg.setOnClickListener { view ->
             loginLauncher.launch(client.signInIntent)

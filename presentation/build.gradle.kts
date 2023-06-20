@@ -20,6 +20,7 @@ android {
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField("String", "GOOGLE_CLIENT_ID", getApiKey("GOOGLE_CLIENT_ID"))
+        buildConfigField("String","GITHUB_CLIENT_ID", getApiKey("GITHUB_CLIENT_ID"))
     }
 
     buildTypes {

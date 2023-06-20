@@ -58,6 +58,10 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             .appendQueryParameter("client_id", githubClientId)
             .build()
 
+        binding.ibtnGithubLg.setOnClickListener { view ->
+            loginLauncher.launch(client.signInIntent)
+        }
+
     }
 
 

@@ -52,15 +52,13 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
         val githubSocialLogin = Uri.Builder().scheme("https").authority("github.com")
             .appendPath("login")
-            .appendPath("Oauth")
-            .appendPath("authorize")
             .appendQueryParameter("client_id", githubClientId)
             .build()
 
         val githubSignInClient = Intent(Intent.ACTION_VIEW, githubSocialLogin)
 
         binding.ibtnGithubLg.setOnClickListener { view ->
-            loginLauncher.launch(client.signInIntent)
+            startActivity(githubSignInClient)
         }
 
     }

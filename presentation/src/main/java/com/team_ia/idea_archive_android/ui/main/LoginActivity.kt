@@ -37,11 +37,13 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         loginLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
-            println("인가코드 ${result}")
             if (result.resultCode == Activity.RESULT_OK) {
                 val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-                println("인가코드 ${task.result?.serverAuthCode}")
             }
+        }
+
+        val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+
         }
 
         googleSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
@@ -50,24 +52,21 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             loginLauncher.launch(client.signInIntent)
         }
 
-        val githubSocialLogin = Uri.Builder().scheme("https").authority("github.com")
-            .appendPath("login")
-            .appendPath("oauth")
-            .appendPath("authorize")
-            .appendQueryParameter("client_id", githubClientId)
-            .build()
-
-        val githubSignInClient = Intent(Intent.ACTION_VIEW, githubSocialLogin)
+        val githubSignInClient = Intent(
+            Intent.ACTION_VIEW, Uri.parse(
+                "https://github.com/login/oauth/authorize?client_id=$githubClientId"
+            )
+        )
 
 
         binding.ibtnGithubLg.setOnClickListener { view ->
-            startActivity(githubSignInClient)
+            launcher.launch(githubSignInClient)
         }
 
     }
-    override fun onNewIntent(intent: Intent?) {
-        super.onNewIntent(intent)
-        intent?.data?.getQueryParameter("code")
-    }
 
+    override fun onResume() {
+        super.onResume()
+        println("code ${intent?.data?.getQueryParameter("code")}")
+    }
 }

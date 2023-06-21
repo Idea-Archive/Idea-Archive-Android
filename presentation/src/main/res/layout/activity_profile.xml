@@ -16,31 +16,26 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.0652" />
+            app:layout_constraintGuide_percent="0.0427" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tv_top_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.0687" />
+            app:layout_constraintGuide_begin="35dp" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_iv_profile_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1410" />
+            app:layout_constraintGuide_percent="0.1185" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tv_name_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2547" />
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_move_to_t"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2855" />
+            app:layout_constraintGuide_percent="0.2370" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_v_vertical_t"
             android:layout_width="match_parent"
@@ -52,13 +47,19 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.3448" />
+            app:layout_constraintGuide_percent="0.3175" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_view_pager_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.3969" />
+            app:layout_constraintGuide_percent="0.3744" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_detail_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2393" />
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -66,31 +67,25 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.0983" />
+            app:layout_constraintGuide_percent="0.0758" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tv_top_b"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.0948" />
+            app:layout_constraintGuide_end="723dp" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_iv_profile_b"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2358" />
+            app:layout_constraintGuide_percent="0.2180" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tv_name_b"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2808" />
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_move_to_b"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.3116" />
+            app:layout_constraintGuide_percent="0.2630" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_v_vertical_b"
             android:layout_width="match_parent"
@@ -102,20 +97,26 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.3780" />
+            app:layout_constraintGuide_percent="0.3555" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_detail_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2607" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_ibtn_back_button_s"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.0179" />
+            app:layout_constraintGuide_percent="0.0308" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tv_back_s"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.0692" />
+            app:layout_constraintGuide_percent="0.1128" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tv_my_s"
             android:layout_width="match_parent"
@@ -127,62 +128,50 @@
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.3974" />
+            app:layout_constraintGuide_percent="0.3923" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tv_name_s"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.4205" />
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_logout_s"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.3590" />
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_v_vertical_s"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.4872" />
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_edit_profile_s"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5077" />
+            app:layout_constraintGuide_percent="0.4231" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_nav_s"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.0718" />
+            app:layout_constraintGuide_percent="0.0513" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_detail_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5769" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_ibtn_back_button_e"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.0590" />
+            app:layout_constraintGuide_percent="0.1026" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tb_back_e"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.2179" />
+            app:layout_constraintGuide_percent="0.2570" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tv_my_e"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.6000" />
+            app:layout_constraintGuide_percent="0.5769" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_iv_profile_e"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.6026" />
+            app:layout_constraintGuide_percent="0.6077" />
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_tv_name_e"
             android:layout_width="match_parent"
@@ -190,36 +179,27 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.5796" />
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_logout_e"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.4667" />
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_v_vertical_e"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.4875" />
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_edit_profile_e"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.6282" />
-        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_nav_e"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9282" />
+            app:layout_constraintGuide_percent="0.9487" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_detail_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6231" />
 
 
         <ImageButton
             android:id="@+id/ibtn_back_button"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@drawable/ibtn_back_button"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:src="@drawable/ibtn_back_button"
+            android:background="@drawable/bg_bottom_nav"
             app:layout_constraintTop_toTopOf="@id/g_ibtn_back_button_t"
             app:layout_constraintBottom_toBottomOf="@id/g_ibtn_back_button_b"
             app:layout_constraintStart_toStartOf="@id/g_ibtn_back_button_s"
@@ -231,7 +211,7 @@
             android:layout_height="0dp"
             android:fontFamily="@font/pretendard_regular"
             android:text="@string/back"
-            android:textColor="@color/blue"
+            android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintTop_toTopOf="@id/g_tv_top_t"
             app:layout_constraintBottom_toBottomOf="@id/g_tv_top_b"
@@ -245,6 +225,7 @@
             android:text="@string/my_page"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:gravity="center"
             app:layout_constraintTop_toTopOf="@id/g_tv_top_t"
             app:layout_constraintBottom_toBottomOf="@id/g_tv_top_b"
             app:layout_constraintStart_toStartOf="@id/g_tv_my_s"
@@ -256,39 +237,14 @@
             android:fontFamily="@font/pretendard_bold"
             android:text="@string/default_name"
             android:textColor="@color/black"
-            android:textSize="17sp"
+            android:textSize="16sp"
             android:letterSpacing="0.25"
             android:includeFontPadding="false"
             app:layout_constraintTop_toTopOf="@id/g_tv_name_t"
             app:layout_constraintBottom_toBottomOf="@id/g_tv_name_b"
             app:layout_constraintStart_toStartOf="@id/g_tv_name_s"
             app:layout_constraintEnd_toEndOf="@id/g_tv_name_e" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:text="@string/logout"
-            android:textColor="@color/input_information_gray"
-            android:textSize="11sp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            app:layout_constraintTop_toTopOf="@id/g_tv_move_to_t"
-            app:layout_constraintBottom_toBottomOf="@id/g_tv_move_to_b"
-            app:layout_constraintStart_toStartOf="@id/g_tv_logout_s"
-            app:layout_constraintEnd_toEndOf="@id/g_tv_logout_e" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:fontFamily="@font/pretendard_regular"
-            android:text="@string/edit_profile"
-            android:textColor="@color/input_information_gray"
-            android:textSize="11sp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            app:layout_constraintTop_toTopOf="@id/g_tv_move_to_t"
-            app:layout_constraintBottom_toBottomOf="@id/g_tv_move_to_b"
-            app:layout_constraintStart_toStartOf="@id/g_tv_edit_profile_s"
-            app:layout_constraintEnd_toEndOf="@id/g_tv_edit_profile_e" />
+
 
         <ImageView
             android:id="@+id/iv_profile"
@@ -300,15 +256,19 @@
             app:layout_constraintStart_toStartOf="@id/g_iv_profile_s"
             app:layout_constraintEnd_toEndOf="@id/g_iv_profile_e" />
 
-        <View
-            android:id="@+id/v_vertical"
+        <ImageButton
+            android:id="@+id/btn_detail"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@drawable/v_vertical_line"
-            app:layout_constraintTop_toTopOf="@id/g_v_vertical_t"
-            app:layout_constraintBottom_toBottomOf="@id/g_v_vertical_b"
-            app:layout_constraintStart_toStartOf="@id/g_v_vertical_s"
-            app:layout_constraintEnd_toEndOf="@id/g_v_vertical_e" />
+            android:src="@drawable/bg_go_to"
+            android:background="@drawable/bg_bottom_nav"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            app:layout_constraintTop_toTopOf="@id/g_btn_detail_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_detail_b"
+            app:layout_constraintStart_toStartOf="@id/g_btn_detail_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_detail_e" />
+
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_profile"

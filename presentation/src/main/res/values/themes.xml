@@ -16,6 +16,6 @@
     </style>
     <style name="tabTextStyle" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">13sp</item>
-        <item name="fontFamily">@font/pretendard_regular</item>
+        <item name="fontFamily">@font/pretendard_medium</item>
     </style>
 </resources>

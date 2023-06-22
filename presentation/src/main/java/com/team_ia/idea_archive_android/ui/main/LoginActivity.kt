@@ -60,7 +60,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
 
         binding.ibtnGithubLg.setOnClickListener { view ->
-            launcher.launch(githubSignInClient)
+            startActivity(githubSignInClient)
         }
 
     }

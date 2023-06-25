@@ -32,6 +32,8 @@ object Versions {
     const val FIREBASE_BOM = "30.0.1"
     const val LIVEDATA = "2.4.1"
 
+    const val KAKAO_SDK = "2.10.0"
+
     const val MOSHI = "1.13.0"
 
     const val RETROFIT = "2.7.1"

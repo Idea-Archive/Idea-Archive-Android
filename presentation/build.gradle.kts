@@ -57,6 +57,8 @@ dependencies {
 
     implementation(Dependency.Google.GMS_PLAY_SERVICE_AUTH)
 
+    implementation(Dependency.Kakao.KAKAO_SDK)
+
     implementation(Dependency.AndroidX.ROOM_KTX)
     kapt(Dependency.AndroidX.ROOM_COMPILER)
 

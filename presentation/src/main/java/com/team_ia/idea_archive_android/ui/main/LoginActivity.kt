@@ -1,13 +1,17 @@
 package com.team_ia.idea_archive_android.ui.main
 
 import android.app.Activity
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.kakao.sdk.common.KakaoSdk
+import com.kakao.sdk.common.util.Utility
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
@@ -25,8 +29,11 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
     override fun createView() {
 
+        val kakaoNativeAppKey = BuildConfig.KAKAO_NATIVE_APP_KEY
         val googleClientId = BuildConfig.GOOGLE_CLIENT_ID
         val githubClientId = BuildConfig.GITHUB_CLIENT_ID
+
+        KakaoSdk.init(this, kakaoNativeAppKey)
 
         val googleSocialLogin = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestServerAuthCode(googleClientId)
@@ -58,6 +65,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             )
         )
 
+        Log.d(TAG, "keyhash : ${Utility.getKeyHash(this)}")
 
         binding.ibtnGithubLg.setOnClickListener { view ->
             startActivity(githubSignInClient)

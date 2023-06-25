@@ -2,6 +2,7 @@ package com.team_ia.idea_archive_android.ui.main
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -18,34 +19,54 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         private val RC_SIGN_IN: Int = 9001
     }
 
-    private lateinit var mSignInClient: GoogleSignInClient
+    private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var loginLauncher: ActivityResultLauncher<Intent>
+
 
     override fun createView() {
 
         val googleClientId = BuildConfig.GOOGLE_CLIENT_ID
-        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        val githubClientId = BuildConfig.GITHUB_CLIENT_ID
+
+        val googleSocialLogin = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestServerAuthCode(googleClientId)
             .requestEmail()
             .build()
-        val client = GoogleSignIn.getClient(this, gso)
+        val client = GoogleSignIn.getClient(this, googleSocialLogin)
 
         loginLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
-            println("인가코드 ${result}")
             if (result.resultCode == Activity.RESULT_OK) {
                 val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-                println("인가코드 ${task.result?.serverAuthCode}")
             }
         }
 
-        mSignInClient = GoogleSignIn.getClient(this, gso)
+        val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+
+        }
+
+        googleSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
 
         binding.ibtnGoogleLg.setOnClickListener { view ->
             loginLauncher.launch(client.signInIntent)
         }
 
+        val githubSignInClient = Intent(
+            Intent.ACTION_VIEW, Uri.parse(
+                "https://github.com/login/oauth/authorize?client_id=$githubClientId"
+            )
+        )
+
+
+        binding.ibtnGithubLg.setOnClickListener { view ->
+            startActivity(githubSignInClient)
+        }
+
     }
 
+    override fun onResume() {
+        super.onResume()
+        println("code ${intent?.data?.getQueryParameter("code")}")
+    }
 }

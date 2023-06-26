@@ -7,8 +7,8 @@ data class PostModel(
     val category: List<String>,
     val heartCount: Int,
     val commentCount: Int,
-    val member: List<Member>,
-    val createData: String
+    val member: Member,
+    val createDate: String
 ) {
     data class Member(
         val memberId: Long,

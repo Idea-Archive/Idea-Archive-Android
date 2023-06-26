@@ -11,20 +11,20 @@ import retrofit2.http.PATCH
 import retrofit2.http.POST
 
 interface AuthAPI {
-    @POST("/login")
+    @POST("/auth/login")
     suspend fun login(
         @Body loginRequest: LoginRequest
     ): LoginResponse
 
-    @POST("/signup")
+    @POST("/auth/signup")
     suspend fun signup(
         @Body signupRequest: SignupRequest
     ): Response<Unit>
 
-    @DELETE
+    @DELETE("/auth")
     suspend fun logout(): Response<Unit>
 
-    @PATCH
+    @PATCH("/auth")
     suspend fun refreshToken(
         @Header("refreshToken") refreshToken: String
     ): LoginResponse

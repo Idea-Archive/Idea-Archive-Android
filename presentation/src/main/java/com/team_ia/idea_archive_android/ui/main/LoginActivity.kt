@@ -10,8 +10,11 @@ import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.KakaoSdk
-import com.kakao.sdk.common.util.Utility
+import com.kakao.sdk.common.model.ClientError
+import com.kakao.sdk.common.model.ClientErrorCause
+import com.kakao.sdk.user.UserApiClient
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
@@ -26,7 +29,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     private lateinit var googleSignInClient: GoogleSignInClient
     private lateinit var loginLauncher: ActivityResultLauncher<Intent>
 
-
     override fun createView() {
 
         val kakaoNativeAppKey = BuildConfig.KAKAO_NATIVE_APP_KEY
@@ -39,6 +41,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             .requestServerAuthCode(googleClientId)
             .requestEmail()
             .build()
+
         val client = GoogleSignIn.getClient(this, googleSocialLogin)
 
         loginLauncher = registerForActivityResult(
@@ -65,10 +68,43 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             )
         )
 
-        Log.d(TAG, "keyhash : ${Utility.getKeyHash(this)}")
 
         binding.ibtnGithubLg.setOnClickListener { view ->
             startActivity(githubSignInClient)
+        }
+
+        binding.ibtnKakaoLg.setOnClickListener { view ->
+            if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
+                UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
+                    if (error != null) {
+                        Log.e(TAG, "로그인 실패 $error")
+                        if (error is ClientError && error.reason == ClientErrorCause.Cancelled) {
+                            return@loginWithKakaoTalk
+                        } else {
+                            UserApiClient.instance.loginWithKakaoAccount(
+                                this,
+                                callback = { token, error ->
+                                    if (error != null) {
+                                        Log.e(TAG, "로그인 실패 $error")
+                                    } else if (token != null) {
+                                        Log.e(TAG, "로그인 성공 ${token.accessToken}")
+                                    }
+                                })
+                        }
+                    } else if (token != null) {
+                        Log.e(TAG, "로그인 성공 ${token.accessToken}")
+                    }
+                }
+            } else {
+                UserApiClient.instance.loginWithKakaoTalk(this, callback = { token, error ->
+                    if (error != null) {
+                        Log.e(TAG, "로그인 실패 $error")
+                    } else if (token != null) {
+                        Log.e(TAG, "로그인 성공 ${token.accessToken}")
+                    }
+                })
+            }
+
         }
 
     }

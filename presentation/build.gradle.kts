@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.cli.common.arguments.DefaultValues.ApiVersions.defaultValue
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -19,9 +20,9 @@ android {
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "GOOGLE_CLIENT_ID", getApiKey("GOOGLE_CLIENT_ID"))
-        buildConfigField("String","GITHUB_CLIENT_ID", getApiKey("GITHUB_CLIENT_ID"))
-        buildConfigField("String", "KAKAO_NATIVE_APP_KEY", getApiKey("KAKAO_NATIVE_APP_KEY"))
+        buildConfigField("String", "GOOGLE_CLIENT_ID", getApiKey("GOOGLE_CLIENT_ID", ""))
+        buildConfigField("String","GITHUB_CLIENT_ID", getApiKey("GITHUB_CLIENT_ID", ""))
+        buildConfigField("String", "KAKAO_NATIVE_APP_KEY", getApiKey("KAKAO_NATIVE_APP_KEY", ""))
     }
 
     buildTypes {
@@ -98,9 +99,9 @@ dependencies {
     implementation(Dependency.Lottie.LOTTIE)
 }
 
-fun getApiKey(propertyKey: String?): String {
+fun getApiKey(propertyKey: String, defalutValue: String): String {
     val propFile = rootProject.file("./local.properties")
     val properties = Properties()
     properties.load(FileInputStream(propFile))
-    return properties.getProperty(propertyKey)
+    return properties.getProperty(propertyKey, defaultValue)
 }

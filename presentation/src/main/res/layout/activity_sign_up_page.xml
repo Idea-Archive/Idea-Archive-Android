@@ -34,102 +34,81 @@
         app:layout_constraintGuide_percent="0.043" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_sign_up_logo_t"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.196" />
-
-    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_sign_up_logo_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.274" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_sign_up_logo_s"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.31" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_sign_up_logo_e"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.688" />
+        app:layout_constraintGuide_percent="0.2121" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_name_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.36" />
+        app:layout_constraintGuide_percent="0.2879" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_name_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.43" />
+        app:layout_constraintGuide_percent="0.3495" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_information_s"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.094" />
+        app:layout_constraintGuide_percent="0.0718" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_information_e"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.906" />
+        app:layout_constraintGuide_percent="0.9282" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_email_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.449" />
+        app:layout_constraintGuide_percent="0.3637" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_email_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.52" />
+        app:layout_constraintGuide_percent="0.4254" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_password_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.536" />
+        app:layout_constraintGuide_percent="0.4396" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_password_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.607" />
+        app:layout_constraintGuide_percent="0.5012" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_password_again_t"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.623" />
+        app:layout_constraintGuide_percent="0.5154" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_input_password_again_b"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.695" />
+        app:layout_constraintGuide_percent="0.5770" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/g_check_btn_t"
@@ -196,16 +175,15 @@
 
     <TextView
         android:id="@+id/sign_up_logo"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:fontFamily="@font/pretendard_bold"
         android:text="@string/sign_up_logo"
         android:textColor="@color/primary"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="@+id/g_sign_up_logo_b"
-        app:layout_constraintEnd_toEndOf="@+id/g_sign_up_logo_e"
-        app:layout_constraintStart_toStartOf="@+id/g_sign_up_logo_s"
-        app:layout_constraintTop_toTopOf="@+id/g_sign_up_logo_t" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/et_input_name"
@@ -217,7 +195,7 @@
         android:paddingStart="16dp"
         android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/g_input_name_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
         app:layout_constraintStart_toStartOf="@id/g_input_information_s"
@@ -233,7 +211,7 @@
         android:paddingStart="16dp"
         android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/g_input_email_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
         app:layout_constraintStart_toStartOf="@id/g_input_information_s"
@@ -241,32 +219,32 @@
 
     <EditText
         android:id="@+id/et_input_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/bg_edittext"
         android:fontFamily="@font/pretendard_regular"
         android:hint="@string/typing_password"
         android:paddingStart="16dp"
         android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_input_email" />
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
+        app:layout_constraintStart_toStartOf="@id/g_input_information_s"
+        app:layout_constraintBottom_toBottomOf="@id/g_input_password_b"
+        app:layout_constraintTop_toTopOf="@id/g_input_password_t"
+        />
 
     <EditText
         android:id="@+id/et_input_password_again"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/bg_edittext"
         android:fontFamily="@font/pretendard_regular"
         android:hint="@string/input_password_again"
         android:paddingStart="16dp"
         android:textColor="@color/black"
         android:textColorHint="@color/input_information_gray"
-        android:textSize="14sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/g_input_password_again_b"
         app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
         app:layout_constraintStart_toStartOf="@id/g_input_information_s"

@@ -27,8 +27,7 @@ object Versions {
 
     const val HILT = "2.45"
     const val MATERIAL = "1.3.0"
-    const val GMS_PLAY_SERVICE_BASE = "18.0.1"
-    const val GMS_PLAY_SERVICE_AUTH = "20.2.0"
+    const val GMS_PLAY_SERVICE_AUTH = "19.0.0"
     const val FIREBASE = "21.0.3"
     const val GMS_GOOGLE_SERVICE = "4.3.10"
     const val FIREBASE_BOM = "30.0.1"
@@ -37,7 +36,7 @@ object Versions {
     const val MOSHI = "1.13.0"
 
     const val RETROFIT = "2.7.1"
-    const val OKHTTP = "3.14.9"
+    const val OKHTTP = "4.9.3"
 
     const val JUNIT = "4.13.2"
     const val MOCKITO = "4.2.0"

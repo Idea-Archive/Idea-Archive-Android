@@ -13,8 +13,11 @@ class SocialRepositoryImpl @Inject constructor(
     private val socialDataSource: SocialDataSource,
     private val localAuthDataSource: LocalAuthDataSource
 ) : SocialRepository {
-    override suspend fun socialLogin(param: SocialLoginParam): LoginEntity =
-        socialDataSource.socialLogin(param.toRequest()).toEntity()
+    override suspend fun googleLogin(param: SocialLoginParam): LoginEntity =
+        socialDataSource.googleLogin(param.toRequest()).toEntity()
+
+    override suspend fun kakaoLogin(param: SocialLoginParam): LoginEntity =
+        socialDataSource.kakaoLogin(param.toRequest()).toEntity()
 
     override suspend fun logout() {
         socialDataSource.logout()

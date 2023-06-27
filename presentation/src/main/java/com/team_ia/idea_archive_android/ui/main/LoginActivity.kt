@@ -76,18 +76,12 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
                 UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
                     if (error != null) {
-                        Log.e(TAG, "로그인 실패 $error")
                         if (error is ClientError && error.reason == ClientErrorCause.Cancelled) {
                             return@loginWithKakaoTalk
                         } else {
                             UserApiClient.instance.loginWithKakaoAccount(
                                 this,
                                 callback = { token, error ->
-                                    if (error != null) {
-                                        Log.e(TAG, "로그인 실패 $error")
-                                    } else if (token != null) {
-                                        Log.e(TAG, "로그인 성공 ${token.accessToken}")
-                                    }
                                 })
                         }
                     } else if (token != null) {
@@ -96,11 +90,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
                 }
             } else {
                 UserApiClient.instance.loginWithKakaoTalk(this, callback = { token, error ->
-                    if (error != null) {
-                        Log.e(TAG, "로그인 실패 $error")
-                    } else if (token != null) {
-                        Log.e(TAG, "로그인 성공 ${token.accessToken}")
-                    }
                 })
             }
 

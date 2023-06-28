@@ -71,6 +71,35 @@
             app:layout_constraintGuide_percent="0.8571" />
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_heart_count_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9000" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_heart_count_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9543" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:id="@+id/g_tv_heart_count_t"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8000"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:id="@+id/g_tv_heart_count_b"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8571"
+            />
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_iv_profile_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
@@ -267,5 +296,18 @@
             app:layout_constraintEnd_toEndOf="@id/g_tv_comment_e"
             app:layout_constraintStart_toStartOf="@id/g_tv_comment_s"
             app:layout_constraintTop_toTopOf="@id/g_tv_comment_t" />
+
+        <TextView
+            android:id="@+id/tv_heart_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:textColor="@color/input_information_gray"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/g_tv_heart_count_s"
+            app:layout_constraintTop_toTopOf="@id/g_tv_heart_count_t"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_heart_count_e"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_heart_count_b"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -42,6 +42,35 @@
             app:layout_constraintGuide_percent="0.8854" />
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_comment_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7657" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_comment_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8200" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_comment_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8000" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_comment_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8571" />
+
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_iv_profile_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
@@ -226,5 +255,17 @@
             app:layout_constraintEnd_toEndOf="@+id/g_v_heart_e"
             app:layout_constraintStart_toStartOf="@id/g_v_heart_s"
             app:layout_constraintTop_toTopOf="@+id/g_v_heart_t" />
+
+        <TextView
+            android:id="@+id/tv_comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:textColor="@color/input_information_gray"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_comment_b"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_comment_e"
+            app:layout_constraintStart_toStartOf="@id/g_tv_comment_s"
+            app:layout_constraintTop_toTopOf="@id/g_tv_comment_t" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -34,7 +34,7 @@ import com.team_ia.idea_archive_android.utils.extension.setOnTextChanged
 import com.team_ia.idea_archive_android.utils.keyBoardHide
 
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
-    private val loginViemodel by viewModels<LoginViewModel>()
+    private val loginViewModel by viewModels<LoginViewModel>()
 
     companion object {
         private val RC_SIGN_IN: Int = 9001
@@ -44,13 +44,12 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     private lateinit var loginLauncher: ActivityResultLauncher<Intent>
 
     override fun createView() {
-        binding.login = this
         initView()
         repeatOnStart {
-            loginViemodel.eventFlow.collect {event -> handleEvent(event as Event.Success)}
+            loginViewModel.eventFlow.collect { event -> handleEvent(event as Event.Success)}
         }
         repeatOnStart {
-            loginViemodel.eventFlow.collect {event -> errorHandleEvent(event as Event.NotFound)}
+            loginViewModel.eventFlow.collect { event -> errorHandleEvent(event as Event.NotFound)}
         }
 
         val kakaoNativeAppKey = BuildConfig.KAKAO_NATIVE_APP_KEY
@@ -172,7 +171,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
               keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
           }
           binding.btnLogin -> {
-              loginViemodel.login(binding.etEmail.text.toString(), binding.etPassword.text.toString())
+              loginViewModel.login(binding.etEmail.text.toString(), binding.etPassword.text.toString())
           }
           binding.tvFindPassword -> {
               startActivity(Intent(this,FindPasswordActivity::class.java))

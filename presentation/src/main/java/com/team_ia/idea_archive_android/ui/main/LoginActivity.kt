@@ -38,6 +38,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     private lateinit var loginLauncher: ActivityResultLauncher<Intent>
 
     override fun createView() {
+        binding.login = this
         initView()
         repeatOnStart {
             loginViewModel.eventFlow.collect { event -> handleEvent(event as Event.Success) }
@@ -113,14 +114,19 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             }
 
         }
-
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5ada079304c35450e37e61717d7cde595b55475c
     override fun onResume() {
         super.onResume()
         println("code ${intent?.data?.getQueryParameter("code")}")
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5ada079304c35450e37e61717d7cde595b55475c
     private fun handleEvent(event: Event.Success) = when (event) {
         is Event.Success -> {
             shortToast("로그인 성공")
@@ -131,7 +137,10 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5ada079304c35450e37e61717d7cde595b55475c
     private fun errorHandleEvent(event: Event.NotFound) = when (event) {
         is Event.NotFound -> {
             binding.etPassword.text = null
@@ -140,8 +149,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             longToast("로그인 도중 문제가 발생하였습니다.")
         }
     }
-
-
     private fun initView() = binding.apply {
         etEmail.run {
             setOnTextChanged { p0, _, _, _ ->
@@ -155,6 +162,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
+<<<<<<< HEAD
     fun onClick(view: View) {
         when (view) {
             binding.ibtnBackButton -> {
@@ -178,4 +186,28 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
         }
     }
+=======
+  private fun onClick(view: View){
+      when(view){
+          binding.ibtnBackButton -> {
+              finish()
+          }
+          binding.loginLayout -> {
+              keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
+          }
+          binding.btnLogin -> {
+              loginViewModel.login(binding.etEmail.text.toString(), binding.etPassword.text.toString())
+          }
+          binding.tvFindPassword -> {
+              startActivity(Intent(this,FindPasswordActivity::class.java))
+          }
+          binding.tvSignUp -> {
+              startActivity(Intent(this, SignUpActivity::class.java))
+          }
+
+      }
+  }
+
+
+>>>>>>> 5ada079304c35450e37e61717d7cde595b55475c
 }

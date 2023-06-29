@@ -30,7 +30,7 @@ import com.team_ia.idea_archive_android.utils.extension.setOnTextChanged
 import com.team_ia.idea_archive_android.utils.keyBoardHide
 
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
-    private val loginViemodel by viewModels<LoginViewModel>()
+    private val loginViewModel by viewModels<LoginViewModel>()
 
     companion object {
         private val RC_SIGN_IN: Int = 9001
@@ -43,10 +43,10 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         binding.login = this
         initView()
         repeatOnStart {
-            loginViemodel.eventFlow.collect { event -> handleEvent(event as Event.Success) }
+            loginViewModel.eventFlow.collect { event -> handleEvent(event as Event.Success) }
         }
         repeatOnStart {
-            loginViemodel.eventFlow.collect { event -> errorHandleEvent(event as Event.NotFound) }
+            loginViewModel.eventFlow.collect { event -> errorHandleEvent(event as Event.NotFound)}
         }
 
         val kakaoNativeAppKey = BuildConfig.KAKAO_NATIVE_APP_KEY
@@ -151,27 +151,27 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             }
         }
     }
-    private fun onClick(view: View) {
-        when (view) {
-            binding.ibtnBackButton -> {
-                finish()
-            }
-            binding.loginLayout -> {
-                keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
-            }
-            binding.btnLogin -> {
-                loginViemodel.login(
-                    binding.etEmail.text.toString(),
-                    binding.etPassword.text.toString()
-                )
-            }
-            binding.tvFindPassword -> {
-                startActivity(Intent(this, FindPasswordActivity::class.java))
-            }
-            binding.tvSignUp -> {
-                startActivity(Intent(this, SignUpActivity::class.java))
-            }
 
-        }
-    }
+  private fun onClick(view: View){
+      when(view){
+          binding.ibtnBackButton -> {
+              finish()
+          }
+          binding.loginLayout -> {
+              keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
+          }
+          binding.btnLogin -> {
+              loginViewModel.login(binding.etEmail.text.toString(), binding.etPassword.text.toString())
+          }
+          binding.tvFindPassword -> {
+              startActivity(Intent(this,FindPasswordActivity::class.java))
+          }
+          binding.tvSignUp -> {
+              startActivity(Intent(this, SignUpActivity::class.java))
+          }
+
+      }
+  }
+
+
 }

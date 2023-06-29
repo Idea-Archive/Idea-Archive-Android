@@ -1,15 +1,11 @@
 package com.team_ia.idea_archive_android.ui.main
 
-<<<<<<< HEAD
 import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
 import android.util.Log
-=======
-import android.content.Intent
 import android.view.View
->>>>>>> 199dbf334fdb58114ea93eb8b572d229137474fb
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -20,8 +16,6 @@ import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
-import com.team_ia.domain.repository.SocialRepository
-import com.team_ia.domain.usecase.social.KakaoLoginUseCase
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
@@ -46,10 +40,10 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     override fun createView() {
         initView()
         repeatOnStart {
-            loginViewModel.eventFlow.collect { event -> handleEvent(event as Event.Success)}
+            loginViewModel.eventFlow.collect { event -> handleEvent(event as Event.Success) }
         }
         repeatOnStart {
-            loginViewModel.eventFlow.collect { event -> errorHandleEvent(event as Event.NotFound)}
+            loginViewModel.eventFlow.collect { event -> errorHandleEvent(event as Event.NotFound) }
         }
 
         val kakaoNativeAppKey = BuildConfig.KAKAO_NATIVE_APP_KEY
@@ -68,78 +62,77 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         loginLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
-<<<<<<< HEAD
             if (result.resultCode == Activity.RESULT_OK) {
-=======
-            println("인가코드 ${result}")
-            if (result.resultCode == RESULT_OK) {
->>>>>>> 199dbf334fdb58114ea93eb8b572d229137474fb
-                val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-            }
-        }
-
-        val launcher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-
-        }
-
-        googleSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
-
-        binding.ibtnGoogleLg.setOnClickListener { view ->
-            loginLauncher.launch(client.signInIntent)
-        }
-
-        val githubSignInClient = Intent(
-            Intent.ACTION_VIEW, Uri.parse(
-                "https://github.com/login/oauth/authorize?client_id=$githubClientId"
-            )
-        )
-
-
-        binding.ibtnGithubLg.setOnClickListener { view ->
-            startActivity(githubSignInClient)
-        }
-
-        binding.ibtnKakaoLg.setOnClickListener { view ->
-            if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
-                UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
-                    if (error != null) {
-                        if (error is ClientError && error.reason == ClientErrorCause.Cancelled) {
-                            return@loginWithKakaoTalk
-                        } else {
-                            UserApiClient.instance.loginWithKakaoAccount(
-                                this,
-                                callback = { token, error ->
-                                })
-                        }
-                    } else if (token != null) {
-                        Log.e(TAG, "로그인 성공 ${token.accessToken}")
-                    }
+                println("인가코드 ${result}")
+                if (result.resultCode == RESULT_OK) {
+                    val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
                 }
-            } else {
-                UserApiClient.instance.loginWithKakaoTalk(this, callback = { token, error -> })
             }
+
+            val launcher =
+                registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+
+                }
+
+            googleSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
+
+            binding.ibtnGoogleLg.setOnClickListener { view ->
+                loginLauncher.launch(client.signInIntent)
+            }
+
+            val githubSignInClient = Intent(
+                Intent.ACTION_VIEW, Uri.parse(
+                    "https://github.com/login/oauth/authorize?client_id=$githubClientId"
+                )
+            )
+
+
+            binding.ibtnGithubLg.setOnClickListener { view ->
+                startActivity(githubSignInClient)
+            }
+
+            binding.ibtnKakaoLg.setOnClickListener { view ->
+                if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
+                    UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
+                        if (error != null) {
+                            if (error is ClientError && error.reason == ClientErrorCause.Cancelled) {
+                                return@loginWithKakaoTalk
+                            } else {
+                                UserApiClient.instance.loginWithKakaoAccount(
+                                    this,
+                                    callback = { token, error ->
+                                    })
+                            }
+                        } else if (token != null) {
+                            Log.e(TAG, "로그인 성공 ${token.accessToken}")
+                        }
+                    }
+                } else {
+                    UserApiClient.instance.loginWithKakaoTalk(this, callback = { token, error -> })
+                }
+            }
+
         }
 
     }
 
-<<<<<<< HEAD
     override fun onResume() {
         super.onResume()
         println("code ${intent?.data?.getQueryParameter("code")}")
     }
-=======
-    private fun handleEvent(event: Event.Success) = when(event){
+
+    private fun handleEvent(event: Event.Success) = when (event) {
         is Event.Success -> {
             shortToast("로그인 성공")
             setResult(1)
             finish()
         }
-        else ->{
+        else -> {
 
         }
     }
 
-    private fun errorHandleEvent(event: Event.NotFound) = when(event){
+    private fun errorHandleEvent(event: Event.NotFound) = when (event) {
         is Event.NotFound -> {
             binding.etPassword.text = null
         }
@@ -155,33 +148,34 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
                 btnLogin.changeAtivatedWithEnabled(!p0.isNullOrBlank() && !binding.etPassword.text.isNullOrBlank())
             }
         }
-        etPassword.run{
+        etPassword.run {
             setOnTextChanged { p0, _, _, _ ->
                 btnLogin.changeAtivatedWithEnabled(!p0.isNullOrBlank() && !binding.etEmail.text.isNullOrBlank())
             }
         }
     }
 
-  fun onClick(view: View){
-      when(view){
-          binding.ibtnBackButton -> {
-              finish()
-          }
-          binding.loginLayout -> {
-              keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
-          }
-          binding.btnLogin -> {
-              loginViewModel.login(binding.etEmail.text.toString(), binding.etPassword.text.toString())
-          }
-          binding.tvFindPassword -> {
-              startActivity(Intent(this,FindPasswordActivity::class.java))
-          }
-          binding.tvSignUp -> {
-              startActivity(Intent(this, SignUpActivity::class.java))
-          }
+    fun onClick(view: View) {
+        when (view) {
+            binding.ibtnBackButton -> {
+                finish()
+            }
+            binding.loginLayout -> {
+                keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
+            }
+            binding.btnLogin -> {
+                loginViewModel.login(
+                    binding.etEmail.text.toString(),
+                    binding.etPassword.text.toString()
+                )
+            }
+            binding.tvFindPassword -> {
+                startActivity(Intent(this, FindPasswordActivity::class.java))
+            }
+            binding.tvSignUp -> {
+                startActivity(Intent(this, SignUpActivity::class.java))
+            }
 
-      }
-  }
-
->>>>>>> 199dbf334fdb58114ea93eb8b572d229137474fb
+        }
+    }
 }

@@ -115,18 +115,11 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
         }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ada079304c35450e37e61717d7cde595b55475c
     override fun onResume() {
         super.onResume()
         println("code ${intent?.data?.getQueryParameter("code")}")
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 5ada079304c35450e37e61717d7cde595b55475c
     private fun handleEvent(event: Event.Success) = when (event) {
         is Event.Success -> {
             shortToast("로그인 성공")
@@ -137,10 +130,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
         }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> 5ada079304c35450e37e61717d7cde595b55475c
     private fun errorHandleEvent(event: Event.NotFound) = when (event) {
         is Event.NotFound -> {
             binding.etPassword.text = null
@@ -162,32 +152,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
-<<<<<<< HEAD
-    fun onClick(view: View) {
-        when (view) {
-            binding.ibtnBackButton -> {
-                finish()
-            }
-            binding.loginLayout -> {
-                keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
-            }
-            binding.btnLogin -> {
-                loginViewModel.login(
-                    binding.etEmail.text.toString(),
-                    binding.etPassword.text.toString()
-                )
-            }
-            binding.tvFindPassword -> {
-                startActivity(Intent(this, FindPasswordActivity::class.java))
-            }
-            binding.tvSignUp -> {
-                startActivity(Intent(this, SignUpActivity::class.java))
-            }
-
-        }
-    }
-=======
-  private fun onClick(view: View){
+    fun onClick(view: View){
       when(view){
           binding.ibtnBackButton -> {
               finish()
@@ -207,7 +172,4 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
       }
   }
-
-
->>>>>>> 5ada079304c35450e37e61717d7cde595b55475c
 }

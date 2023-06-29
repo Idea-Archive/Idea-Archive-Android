@@ -20,6 +20,7 @@ import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
+import com.team_ia.idea_archive_android.ui.viewmodel.KakaoSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.LoginViewModel
 import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnabled
@@ -29,7 +30,7 @@ import com.team_ia.idea_archive_android.utils.keyBoardHide
 
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
     private val loginViewModel by viewModels<LoginViewModel>()
-
+    private val kakaoLoginViewModel by viewModels<KakaoSocialLoginViewModel>()
     companion object {
         private val RC_SIGN_IN: Int = 9001
     }

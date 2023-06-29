@@ -19,7 +19,6 @@
             android:textColor="@color/input_information_gray"
             android:textSize="8sp"
             android:fontFamily="@font/pretendard_medium"
-            android:text="@{post.category}"
             android:paddingVertical="4dp"
             android:paddingHorizontal="6dp"
             app:layout_constraintTop_toTopOf="parent"

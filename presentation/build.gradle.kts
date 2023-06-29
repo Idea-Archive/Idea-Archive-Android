@@ -89,6 +89,7 @@ dependencies {
     implementation(Dependency.Rx.RX_ANDROID)
 
     implementation(Dependency.ImageLoad.GLIDE)
+    implementation(Dependency.ImageLoad.COIL)
 
     implementation(Dependency.Libraries.SHIMMER)
 

@@ -101,6 +101,7 @@ object Dependency {
 
     object ImageLoad {
         const val GLIDE = "com.github.skydoves:landscapist-glide:${Versions.GLIDE_VERSION}"
+        const val COIL = "io.coil-kt:coil:${Versions.COIL_VERSION}"
     }
 
     object Lottie {

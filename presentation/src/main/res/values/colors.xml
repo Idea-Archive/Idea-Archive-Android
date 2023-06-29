@@ -15,4 +15,5 @@
     <color name="find_password_blue">#35B2CD</color>
     <color name="first_time_in_ia">#767676</color>
     <color name="selector_unchecked">#EAEAEA</color>
+    <color name="my_page_background">#FFF2F2F2</color>
 </resources>

@@ -9,7 +9,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/my_page_background">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_ibtn_back_button_t"
@@ -248,9 +249,8 @@
 
         <ImageView
             android:id="@+id/iv_profile"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/bg_default_profile"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
             app:layout_constraintTop_toTopOf="@id/g_iv_profile_t"
             app:layout_constraintBottom_toBottomOf="@id/g_iv_profile_b"
             app:layout_constraintStart_toStartOf="@id/g_iv_profile_s"

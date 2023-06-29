@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="login"
+            type="com.team_ia.idea_archive_android.ui.main.LoginActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -14,6 +14,8 @@ import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
+import com.team_ia.domain.repository.SocialRepository
+import com.team_ia.domain.usecase.social.KakaoLoginUseCase
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
@@ -89,10 +91,8 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
                     }
                 }
             } else {
-                UserApiClient.instance.loginWithKakaoTalk(this, callback = { token, error ->
-                })
+                UserApiClient.instance.loginWithKakaoTalk(this, callback = { token, error -> })
             }
-
         }
 
     }

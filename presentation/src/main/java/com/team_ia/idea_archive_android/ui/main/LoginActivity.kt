@@ -98,7 +98,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
-  private fun onClick(view: View){
+  fun onClick(view: View){
       when(view){
           binding.ibtnBackButton -> {
               finish()

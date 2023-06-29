@@ -23,6 +23,10 @@
     <string name="try_again">다시 시도해주세요.</string>
     <string name="if_you_forgot_password">비밀번호를 분실하셨다면,\n변경할 수 있어요!</string>
     <string name="you_can_change">변경할 수 있어요!</string>
+    <string name="input_new_password">새 비밀번호를 입력해 주세요!</string>
+    <string name="password_rule">특수문자 포함 8~16자로 작성해주세요</string>
+    <string name="hint_input_new_password">새 비밀번호를 입력해 주세요</string>
+    <string name="input_again">한 번 더 입력해 주세요</string>
     <string name="back">뒤로가기</string>
     <string name="my_page">MY</string>
     <string name="default_name">채종인</string>

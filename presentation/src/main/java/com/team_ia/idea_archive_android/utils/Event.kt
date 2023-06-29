@@ -55,9 +55,5 @@ sealed class Event (
      * 예상치 못한 에러
      */
     object UnKnown: Event()
+}
 
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 3b7eb7c22ba2b0444bf0e8629c3a67e679f38f43

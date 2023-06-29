@@ -117,7 +117,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
-<<<<<<< HEAD
     override fun onResume() {
         super.onResume()
         println("code ${intent?.data?.getQueryParameter("code")}")
@@ -174,9 +173,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
       }
   }
-=======
     override fun observeEvent() {
     }
-
->>>>>>> 3b7eb7c22ba2b0444bf0e8629c3a67e679f38f43
 }

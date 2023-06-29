@@ -64,8 +64,4 @@ suspend fun Throwable.errorHandling(
 
 private fun errorLog(tag: String, msg: String?) {
     Log.d("ErrorHandling_$tag", msg ?: "unknown")
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3b7eb7c22ba2b0444bf0e8629c3a67e679f38f43

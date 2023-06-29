@@ -26,6 +26,7 @@ object Versions {
     const val LEGACY = "1.0.0"
     const val RECYCLERVIEW = "1.1.0"
     const val PREFERENCE_KTX = "1.2.0"
+    const val VIEWPAGER_2 = "1.0.0"
 
     const val HILT = "2.45"
     const val MATERIAL = "1.3.0"

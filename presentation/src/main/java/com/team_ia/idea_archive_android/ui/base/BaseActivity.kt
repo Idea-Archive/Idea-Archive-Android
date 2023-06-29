@@ -23,6 +23,8 @@ abstract class BaseActivity<B: ViewDataBinding>(
 
     abstract fun createView()
 
+    abstract fun observeEvent()
+
     protected fun shortToast(msg: String){
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
     }

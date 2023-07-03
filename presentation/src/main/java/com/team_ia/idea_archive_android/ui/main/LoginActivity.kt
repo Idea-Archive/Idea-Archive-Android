@@ -94,26 +94,8 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             }
 
             binding.ibtnKakaoLg.setOnClickListener { view ->
-                if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
-                    UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
-                        if (error != null) {
-                            if (error is ClientError && error.reason == ClientErrorCause.Cancelled) {
-                                return@loginWithKakaoTalk
-                            } else {
-                                UserApiClient.instance.loginWithKakaoAccount(
-                                    this,
-                                    callback = { token, error ->
-                                    })
-                            }
-                        } else if (token != null) {
-                            Log.e(TAG, "로그인 성공 ${token.accessToken}")
-                        }
-                    }
-                } else {
-                    UserApiClient.instance.loginWithKakaoTalk(this, callback = { token, error -> })
-                }
-            }
 
+            }
         }
     }
 
@@ -128,7 +110,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             finish()
         }
         else -> {
-
         }
     }
 

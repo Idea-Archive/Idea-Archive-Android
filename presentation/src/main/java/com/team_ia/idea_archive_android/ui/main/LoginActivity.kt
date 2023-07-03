@@ -94,7 +94,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             }
 
             binding.ibtnKakaoLg.setOnClickListener { view ->
-
+                kakaoLoginViewModel.kakaoLogin()
             }
         }
     }

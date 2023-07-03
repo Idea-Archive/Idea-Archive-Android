@@ -11,7 +11,7 @@ data class MemberResponse(
     @SerializedName("name")
     val name: String,
     @SerializedName("profileImg")
-    val profileImg: String
+    val profileImg: String?
 )
 
 fun MemberResponse.toEntity() = MemberEntity(

@@ -48,4 +48,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
     }
 
+    override fun observeEvent() {
+    }
+
 }

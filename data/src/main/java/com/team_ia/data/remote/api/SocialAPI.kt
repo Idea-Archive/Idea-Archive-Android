@@ -12,6 +12,11 @@ interface SocialAPI {
        @Query("authorizationCode")socialLoginRequest: SocialLoginRequest
     ): LoginResponse
 
+    @GET("/kakao/login")
+    suspend fun kakaoLogin(
+        @Query("authorizationCode")socialLoginRequest: SocialLoginRequest
+    ): LoginResponse
+
     @DELETE
     suspend fun logout(): Response<Unit>
 

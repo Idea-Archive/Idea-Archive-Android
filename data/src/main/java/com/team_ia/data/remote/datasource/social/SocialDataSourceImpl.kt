@@ -9,9 +9,15 @@ import javax.inject.Inject
 class SocialDataSourceImpl @Inject constructor(
     private val socialAPI: SocialAPI
 ) : SocialDataSource {
-    override suspend fun socialLogin(socialLoginRequest: SocialLoginRequest): LoginResponse {
+    override suspend fun googleLogin(socialLoginRequest: SocialLoginRequest): LoginResponse {
         return IAApiHandler<LoginResponse>()
             .httpRequest { socialAPI.googleLogin(socialLoginRequest) }
+            .sendRequest()
+    }
+
+    override suspend fun kakaoLogin(socialLoginRequest: SocialLoginRequest): LoginResponse{
+        return IAApiHandler<LoginResponse>()
+            .httpRequest { socialAPI.kakaoLogin(socialLoginRequest) }
             .sendRequest()
     }
 

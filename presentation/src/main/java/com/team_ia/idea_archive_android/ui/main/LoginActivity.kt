@@ -9,6 +9,7 @@ import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -20,6 +21,7 @@ import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
+import com.team_ia.idea_archive_android.ui.viewmodel.GoogleSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.KakaoSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.LoginViewModel
 import com.team_ia.idea_archive_android.utils.Event
@@ -27,10 +29,12 @@ import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnable
 import com.team_ia.idea_archive_android.utils.extension.repeatOnStart
 import com.team_ia.idea_archive_android.utils.extension.setOnTextChanged
 import com.team_ia.idea_archive_android.utils.keyBoardHide
+import kotlinx.coroutines.flow.collect
 
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
     private val loginViewModel by viewModels<LoginViewModel>()
     private val kakaoLoginViewModel by viewModels<KakaoSocialLoginViewModel>()
+    private val googleLoginViewModel by viewModels<GoogleSocialLoginViewModel>()
     companion object {
         private val RC_SIGN_IN: Int = 9001
     }
@@ -43,43 +47,20 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         initView()
         repeatOnStart {
             loginViewModel.eventFlow.collect { event -> handleEvent(event as Event.Success) }
+            googleLoginViewModel.eventFlow.collect { event -> handleEvent(event as Event.Success)}
         }
         repeatOnStart {
             loginViewModel.eventFlow.collect { event -> errorHandleEvent(event as Event.NotFound) }
+            googleLoginViewModel.eventFlow.collect { event -> errorHandleEvent(event as Event.NotFound)}
         }
 
         val kakaoNativeAppKey = BuildConfig.KAKAO_NATIVE_APP_KEY
-        val googleClientId = BuildConfig.GOOGLE_CLIENT_ID
         val githubClientId = BuildConfig.GITHUB_CLIENT_ID
 
         KakaoSdk.init(this, kakaoNativeAppKey)
 
-        val googleSocialLogin = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestServerAuthCode(googleClientId)
-            .requestEmail()
-            .build()
-
-        val client = GoogleSignIn.getClient(this, googleSocialLogin)
-
-        loginLauncher = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
-        ) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                println("인가코드 ${result}")
-                if (result.resultCode == RESULT_OK) {
-                    val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-                }
-            }
-
-            val launcher =
-                registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-
-                }
-
-            googleSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
-
             binding.ibtnGoogleLg.setOnClickListener { view ->
-                loginLauncher.launch(client.signInIntent)
+                googleLogin()
             }
 
             val githubSignInClient = Intent(
@@ -96,7 +77,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             binding.ibtnKakaoLg.setOnClickListener { view ->
                 kakaoLoginViewModel.kakaoLogin()
             }
-        }
+
     }
 
     override fun onResume() {
@@ -154,6 +135,41 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
       }
   }
-    override fun observeEvent() {
+    fun googleLogin() {
+        val googleClientId = BuildConfig.GOOGLE_CLIENT_ID
+
+        val googleSocialLogin = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestServerAuthCode(googleClientId)
+            .requestEmail()
+            .build()
+
+        val client = GoogleSignIn.getClient(this, googleSocialLogin)
+
+        loginLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                println("인가코드 ${result}")
+                if (result.resultCode == AppCompatActivity.RESULT_OK) {
+                    val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                    task.result?.serverAuthCode?.let { googleLoginViewModel.checkAuthorizationCode(it) }
+                }
+            }
+
+            googleSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
+        }
     }
+
+    fun observeGoogleLogin(){
+        googleLoginViewModel.loginInfo.observe(this) {
+            if (it) {
+
+            }
+        }
+    }
+    override fun observeEvent() {
+        observeGoogleLogin()
+    }
+
 }
+

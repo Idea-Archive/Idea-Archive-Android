@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".IAApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -16,7 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".ui.main.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +30,7 @@
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data android:host="oauth"
-                    android:scheme="736c8c9c3716a1d7c8ebfb9d3f8ba5b2"/>
+                    android:scheme="kakao736c8c9c3716a1d7c8ebfb9d3f8ba5b2"/>
             </intent-filter>
 
             <intent-filter>
@@ -45,7 +46,9 @@
         </activity>
         <activity
             android:name=".ui.profile.ProfileActivity"
-            android:exported="false"/>
+            android:exported="false" />
+        <activity android:name=".ui.main.MainActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

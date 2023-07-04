@@ -27,7 +27,9 @@ import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnable
 import com.team_ia.idea_archive_android.utils.extension.repeatOnStart
 import com.team_ia.idea_archive_android.utils.extension.setOnTextChanged
 import com.team_ia.idea_archive_android.utils.keyBoardHide
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
     private val loginViewModel by viewModels<LoginViewModel>()
     private val kakaoLoginViewModel by viewModels<KakaoSocialLoginViewModel>()
@@ -82,19 +84,39 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
                 loginLauncher.launch(client.signInIntent)
             }
 
-            val githubSignInClient = Intent(
-                Intent.ACTION_VIEW, Uri.parse(
-                    "https://github.com/login/oauth/authorize?client_id=$githubClientId"
-                )
+        }
+        val githubSignInClient = Intent(
+            Intent.ACTION_VIEW, Uri.parse(
+                "https://github.com/login/oauth/authorize?client_id=$githubClientId"
             )
+        )
+        binding.ibtnGithubLg.setOnClickListener {
+            startActivity(githubSignInClient)
+        }
+        binding.ibtnKakaoLg.setOnClickListener {
+            //kakaoLogin()
+            shortToast("헌재 불가능한 기능입니다.")
+        }
 
+    }
 
-            binding.ibtnGithubLg.setOnClickListener { view ->
-                startActivity(githubSignInClient)
-            }
+//    fun kakaoLogin() {
+//        binding.ibtnKakaoLg.setOnClickListener {
+//            kakaoLoginViewModel.checkKakaoLogin()
+//            kakaoLoginViewModel.kakaoInfo.observe(this) {
+//                if (!it) {
+//                    longToast("카카오톡이 감지되지 않습니다. 카카오톡을 설치 해주세요.")
+//                } else {
+//                    kakaoLoginViewModel.kakaoLogin()
+//                }
+//            }
+//        }
+//    }
 
-            binding.ibtnKakaoLg.setOnClickListener { view ->
-                kakaoLoginViewModel.kakaoLogin()
+    private fun observeKakaoLogin() {
+        kakaoLoginViewModel.loginInfo.observe(this) {
+            if (it) {
+                startActivity(Intent(this, MainActivity::class.java))
             }
         }
     }
@@ -134,6 +156,28 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
+    private fun kakaoLogin() {
+        if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
+            UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
+                if (error != null) {
+                    if (error is ClientError && error.reason == ClientErrorCause.Cancelled)
+                        return@loginWithKakaoTalk
+                } else {
+                    UserApiClient.instance.loginWithKakaoAccount(this, callback = { token, error ->
+                        kakaoLoginViewModel.login(token?.accessToken)
+                    })
+                }
+                Log.e("TAG", token?.accessToken ?: "null")
+                kakaoLoginViewModel.login(token?.accessToken)
+            }
+        } else {
+            UserApiClient.instance.loginWithKakaoAccount(this, callback = { token, error ->
+                Log.e("TAG", token?.accessToken ?: "null")
+                kakaoLoginViewModel.login(token?.accessToken)
+            })
+        }
+    }
+
     fun onClick(view: View){
       when(view){
           binding.ibtnBackButton -> {
@@ -155,5 +199,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
       }
   }
     override fun observeEvent() {
+        observeKakaoLogin()
     }
 }

@@ -27,6 +27,7 @@ class KakaoSocialLoginViewModel @Inject constructor(
             if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
                 UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
                     if (error != null) {
+
                         if (error is ClientError && error.reason == ClientErrorCause.Cancelled) {
                             return@loginWithKakaoTalk
                         } else {

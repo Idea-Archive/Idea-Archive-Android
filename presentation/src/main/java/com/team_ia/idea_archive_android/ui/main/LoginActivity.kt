@@ -162,8 +162,10 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
     fun observeGoogleLogin(){
         googleLoginViewModel.loginInfo.observe(this) {
-            if (it) {
-
+            if (it == true) {
+               // startActivity() 메인페이지 퍼블리싱하고 인텐트 시키기
+            }else{
+              // startActivity() 로그인 실패 페이지 퍼블리싱하고 인텐트 시키기
             }
         }
     }

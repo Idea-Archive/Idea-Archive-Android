@@ -9,4 +9,5 @@ class GetApplicantUseCase @Inject constructor(
     suspend operator fun invoke(postId: Long) = kotlin.runCatching {
         applicationRepository.getApplicant(postId)
     }
+
 }

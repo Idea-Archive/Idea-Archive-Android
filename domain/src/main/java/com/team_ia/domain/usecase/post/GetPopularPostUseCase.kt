@@ -9,4 +9,5 @@ class GetPopularPostUseCase @Inject constructor(
     suspend operator fun invoke() = kotlin.runCatching {
         postRepository.getPopularPost()
     }
+
 }

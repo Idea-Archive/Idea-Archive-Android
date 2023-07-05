@@ -25,4 +25,5 @@ class LikedFragment : BaseFragment<FragmentLikedBinding>(R.layout.fragment_liked
         binding.rvLiked.addItemDecoration(ItemDecorator(8))
         binding.rvLiked.adapter = adapter
     }
+
 }

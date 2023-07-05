@@ -69,4 +69,5 @@ class MemberDataSourceImpl @Inject constructor(
             .httpRequest { memberAPI.getMyHeartList() }
             .sendRequest()
     }
+
 }

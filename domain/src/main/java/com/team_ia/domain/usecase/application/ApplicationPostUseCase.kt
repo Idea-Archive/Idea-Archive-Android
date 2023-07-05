@@ -9,4 +9,5 @@ class ApplicationPostUseCase @Inject constructor(
     suspend operator fun invoke(postId: Long) = kotlin.runCatching {
         applicationRepository.applicationPost(postId)
     }
+
 }

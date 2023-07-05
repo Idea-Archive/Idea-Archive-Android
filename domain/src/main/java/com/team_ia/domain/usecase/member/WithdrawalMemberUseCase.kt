@@ -10,4 +10,5 @@ class WithdrawalMemberUseCase @Inject constructor(
     suspend operator fun invoke(withdrawalMemberParam: WithdrawalMemberParam) = kotlin.runCatching {
         memberRepository.withdrawalMember(withdrawalMemberParam)
     }
+
 }

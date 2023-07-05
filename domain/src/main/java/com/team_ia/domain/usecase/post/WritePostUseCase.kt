@@ -10,4 +10,5 @@ class WritePostUseCase @Inject constructor(
     suspend operator fun invoke(writePostParam: WritePostParam) = kotlin.runCatching {
         postRepository.writePost(writePostParam)
     }
+
 }

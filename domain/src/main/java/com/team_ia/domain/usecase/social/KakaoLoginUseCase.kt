@@ -10,4 +10,5 @@ class KakaoLoginUseCase @Inject constructor(
     suspend operator fun invoke(socialLoginParam: SocialLoginParam) = kotlin.runCatching {
         socialRepository.kakaoLogin(socialLoginParam)
     }
+
 }

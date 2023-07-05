@@ -1,39 +1,30 @@
 package com.team_ia.idea_archive_android.ui.main
 
 import android.app.Activity
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.net.Uri
-import android.util.Log
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.kakao.sdk.common.KakaoSdk
-import com.kakao.sdk.common.model.ClientError
-import com.kakao.sdk.common.model.ClientErrorCause
-import com.kakao.sdk.user.UserApiClient
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.GoogleSocialLoginViewModel
-import com.team_ia.idea_archive_android.ui.viewmodel.KakaoSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.LoginViewModel
 import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnabled
 import com.team_ia.idea_archive_android.utils.extension.repeatOnStart
 import com.team_ia.idea_archive_android.utils.extension.setOnTextChanged
 import com.team_ia.idea_archive_android.utils.keyBoardHide
-import kotlinx.coroutines.flow.collect
 
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
     private val loginViewModel by viewModels<LoginViewModel>()
-    private val kakaoLoginViewModel by viewModels<KakaoSocialLoginViewModel>()
     private val googleLoginViewModel by viewModels<GoogleSocialLoginViewModel>()
 
     companion object {
@@ -76,7 +67,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
 
         binding.ibtnKakaoLg.setOnClickListener { view ->
-            kakaoLoginViewModel.kakaoLogin()
+
         }
 
     }
@@ -152,7 +143,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         ) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 println("인가코드 ${result}")
-                if (result.resultCode == AppCompatActivity.RESULT_OK) {
+                if (result.resultCode == RESULT_OK) {
                     val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
                     task.result?.serverAuthCode?.let {
                         googleLoginViewModel.checkAuthorizationCode(

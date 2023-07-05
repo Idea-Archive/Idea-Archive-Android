@@ -18,7 +18,9 @@ import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnable
 import com.team_ia.idea_archive_android.utils.extension.repeatOnStart
 import com.team_ia.idea_archive_android.utils.extension.setOnTextChanged
 import com.team_ia.idea_archive_android.utils.keyBoardHide
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
     private val loginViewModel by viewModels<LoginViewModel>()
 
@@ -30,12 +32,13 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     private lateinit var loginLauncher: ActivityResultLauncher<Intent>
 
     override fun createView() {
+        binding.login = this
         initView()
         repeatOnStart {
-            loginViewModel.eventFlow.collect { event -> handleEvent(event as Event.Success)}
+            loginViewModel.eventFlow.collect { event -> handleEvent(event)}
         }
         repeatOnStart {
-            loginViewModel.eventFlow.collect { event -> errorHandleEvent(event as Event.NotFound)}
+            loginViewModel.eventFlow.collect { event -> handleEvent(event)}
         }
 
         val googleClientId = BuildConfig.GOOGLE_CLIENT_ID
@@ -63,23 +66,17 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
     }
 
-    private fun handleEvent(event: Event.Success) = when(event){
+    private fun handleEvent(event: Event) = when(event){
         is Event.Success -> {
             shortToast("로그인 성공")
             setResult(1)
             finish()
         }
-        else ->{
-
-        }
-    }
-
-    private fun errorHandleEvent(event: Event.NotFound) = when(event){
         is Event.NotFound -> {
             binding.etPassword.text = null
         }
-        else -> {
-            longToast("로그인 도중 문제가 발생하였습니다.")
+        else ->{
+            longToast("로그인 도중에 문제가 발생하였습니다.")
         }
     }
 

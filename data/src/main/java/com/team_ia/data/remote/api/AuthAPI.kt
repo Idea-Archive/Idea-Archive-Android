@@ -11,7 +11,7 @@ import retrofit2.http.PATCH
 import retrofit2.http.POST
 
 interface AuthAPI {
-    @POST("/login")
+    @POST("auth/login")
     suspend fun login(
         @Body loginRequest: LoginRequest
     ): LoginResponse

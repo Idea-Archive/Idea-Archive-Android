@@ -43,4 +43,5 @@ class GoogleSocialLoginViewModel @Inject constructor(
     private fun event(event: Event) = viewModelScope.launch {
         _eventFlow.emit(event)
     }
+
 }

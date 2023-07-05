@@ -24,8 +24,6 @@ class GoogleSocialLoginViewModel @Inject constructor(
     private val _eventFlow = MutableEventFlow<Event>()
     val eventFlow = _eventFlow.asEvetFlow()
 
-    private val _loginInfo = MutableLiveData<Boolean>()
-    val loginInfo: LiveData<Boolean> = _loginInfo
 
     fun checkAuthorizationCode(authorizationCode: String) = viewModelScope.launch {
         googleLoginUseCase(
@@ -33,7 +31,6 @@ class GoogleSocialLoginViewModel @Inject constructor(
         ).onSuccess {
             saveTokenUseCase(it.accessToken, it.refreshToken, it.expiredAt)
             event(Event.Success)
-            _loginInfo.value = true
         }.onFailure {
             event(it.errorHandling(notFoundAction = {
                 saveTokenUseCase()

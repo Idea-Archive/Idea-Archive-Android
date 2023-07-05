@@ -35,6 +35,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     private val loginViewModel by viewModels<LoginViewModel>()
     private val kakaoLoginViewModel by viewModels<KakaoSocialLoginViewModel>()
     private val googleLoginViewModel by viewModels<GoogleSocialLoginViewModel>()
+
     companion object {
         private val RC_SIGN_IN: Int = 9001
     }
@@ -46,12 +47,12 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         binding.login = this
         initView()
         repeatOnStart {
-            loginViewModel.eventFlow.collect { event -> handleEvent(event as Event.Success) }
-            googleLoginViewModel.eventFlow.collect { event -> handleEvent(event as Event.Success)}
+            loginViewModel.eventFlow.collect { event -> handleEvent(Event.Success) }
+            googleLoginViewModel.eventFlow.collect { event -> handleEvent(Event.Success) }
         }
         repeatOnStart {
-            loginViewModel.eventFlow.collect { event -> errorHandleEvent(event as Event.NotFound) }
-            googleLoginViewModel.eventFlow.collect { event -> errorHandleEvent(event as Event.NotFound)}
+            loginViewModel.eventFlow.collect { event -> handleEvent(Event.NotFound) }
+            googleLoginViewModel.eventFlow.collect { event -> handleEvent(Event.NotFound) }
         }
 
         val kakaoNativeAppKey = BuildConfig.KAKAO_NATIVE_APP_KEY
@@ -59,24 +60,24 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
         KakaoSdk.init(this, kakaoNativeAppKey)
 
-            binding.ibtnGoogleLg.setOnClickListener { view ->
-                googleLogin()
-            }
+        binding.ibtnGoogleLg.setOnClickListener { view ->
+            googleLogin()
+        }
 
-            val githubSignInClient = Intent(
-                Intent.ACTION_VIEW, Uri.parse(
-                    "https://github.com/login/oauth/authorize?client_id=$githubClientId"
-                )
+        val githubSignInClient = Intent(
+            Intent.ACTION_VIEW, Uri.parse(
+                "https://github.com/login/oauth/authorize?client_id=$githubClientId"
             )
+        )
 
 
-            binding.ibtnGithubLg.setOnClickListener { view ->
-                startActivity(githubSignInClient)
-            }
+        binding.ibtnGithubLg.setOnClickListener { view ->
+            startActivity(githubSignInClient)
+        }
 
-            binding.ibtnKakaoLg.setOnClickListener { view ->
-                kakaoLoginViewModel.kakaoLogin()
-            }
+        binding.ibtnKakaoLg.setOnClickListener { view ->
+            kakaoLoginViewModel.kakaoLogin()
+        }
 
     }
 
@@ -84,24 +85,23 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         super.onResume()
         println("code ${intent?.data?.getQueryParameter("code")}")
     }
-    private fun handleEvent(event: Event.Success) = when (event) {
-        is Event.Success -> {
-            shortToast("로그인 성공")
-            setResult(1)
-            finish()
-        }
-        else -> {
+
+    private fun handleEvent(event: Event) {
+        when (event) {
+            is Event.Success -> {
+                shortToast("로그인 성공")
+                setResult(1)
+                finish()
+            }
+            is Event.NotFound -> {
+                binding.etPassword.text = null
+                longToast("로그인 도중 문제가 발생하였습니다.")
+            }
+
+            else -> {}
         }
     }
 
-    private fun errorHandleEvent(event: Event.NotFound) = when (event) {
-        is Event.NotFound -> {
-            binding.etPassword.text = null
-        }
-        else -> {
-            longToast("로그인 도중 문제가 발생하였습니다.")
-        }
-    }
     private fun initView() = binding.apply {
         etEmail.run {
             setOnTextChanged { p0, _, _, _ ->
@@ -115,26 +115,30 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
-    fun onClick(view: View){
-      when(view){
-          binding.ibtnBackButton -> {
-              finish()
-          }
-          binding.loginLayout -> {
-              keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
-          }
-          binding.btnLogin -> {
-              loginViewModel.login(binding.etEmail.text.toString(), binding.etPassword.text.toString())
-          }
-          binding.tvFindPassword -> {
-              startActivity(Intent(this,FindPasswordActivity::class.java))
-          }
-          binding.tvSignUp -> {
-              startActivity(Intent(this, SignUpActivity::class.java))
-          }
+    fun onClick(view: View) {
+        when (view) {
+            binding.ibtnBackButton -> {
+                finish()
+            }
+            binding.loginLayout -> {
+                keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
+            }
+            binding.btnLogin -> {
+                loginViewModel.login(
+                    binding.etEmail.text.toString(),
+                    binding.etPassword.text.toString()
+                )
+            }
+            binding.tvFindPassword -> {
+                startActivity(Intent(this, FindPasswordActivity::class.java))
+            }
+            binding.tvSignUp -> {
+                startActivity(Intent(this, SignUpActivity::class.java))
+            }
 
-      }
-  }
+        }
+    }
+
     fun googleLogin() {
         val googleClientId = BuildConfig.GOOGLE_CLIENT_ID
 
@@ -152,7 +156,11 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
                 println("인가코드 ${result}")
                 if (result.resultCode == AppCompatActivity.RESULT_OK) {
                     val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-                    task.result?.serverAuthCode?.let { googleLoginViewModel.checkAuthorizationCode(it) }
+                    task.result?.serverAuthCode?.let {
+                        googleLoginViewModel.checkAuthorizationCode(
+                            it
+                        )
+                    }
                 }
             }
 
@@ -160,17 +168,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
-    fun observeGoogleLogin(){
-        googleLoginViewModel.loginInfo.observe(this) {
-            if (it == true) {
-               // startActivity() 메인페이지 퍼블리싱하고 인텐트 시키기
-            }else{
-              // startActivity() 로그인 실패 페이지 퍼블리싱하고 인텐트 시키기
-            }
-        }
-    }
     override fun observeEvent() {
-        observeGoogleLogin()
     }
 
 }

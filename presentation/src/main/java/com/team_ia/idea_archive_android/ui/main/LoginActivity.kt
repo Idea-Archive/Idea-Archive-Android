@@ -147,8 +147,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             .requestEmail()
             .build()
 
-        val client = GoogleSignIn.getClient(this, googleSocialLogin)
-
         loginLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
         ) { result ->

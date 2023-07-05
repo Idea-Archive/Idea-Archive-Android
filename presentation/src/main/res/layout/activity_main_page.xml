@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -7,9 +8,52 @@
         android:id="@+id/tv_entire_post"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/entire"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="@font/pretendard_bold"
-        android:textSize="19sp"
+        android:text="@string/entire"
         android:textColor="@color/gray"
-        />
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_idea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="61dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="@string/idea"
+        android:textColor="@color/gray"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="135dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="@string/feedback"
+        android:textColor="@color/gray"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_job_opening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="193dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="@string/job_opening"
+        android:textColor="@color/gray"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

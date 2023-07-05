@@ -36,4 +36,7 @@
     <string name="my_post">작성한 글</string>
     <string name="divide"> ∙ </string>
     <string name="entire">전체</string>
+    <string name="idea">아이디어</string>
+    <string name="feedback">피드백</string>
+    <string name="job_opening">구인</string>
 </resources>

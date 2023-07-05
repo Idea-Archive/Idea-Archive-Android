@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <layer-list>
+            <item android:gravity="bottom">
+                <shape android:shape="rectangle">
+                    <size android:width="161dp" android:height="1dp"/>
+                    <solid android:color="@color/primary"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    <item>
+        <layer-list>
+            <item android:gravity="bottom">
+                <shape android:shape="rectangle">
+                    <size android:width="161dp" android:height="1dp"/>
+                    <solid android:color="@color/selector_unchecked"/>
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+</selector>

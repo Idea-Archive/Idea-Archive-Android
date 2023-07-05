@@ -23,7 +23,7 @@ class AuthRepositoryImpl @Inject constructor(
     override suspend fun logout() =
         authDatasource.logout()
 
-    override suspend fun saveToken(accessToken: String, refreshToken: String, expiredAt: String) =
+    override suspend fun saveToken(accessToken: String?, refreshToken: String?, expiredAt: String?) =
         localAuthDataSource.saveToken(accessToken, refreshToken, expiredAt)
 
 

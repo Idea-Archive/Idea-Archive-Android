@@ -43,6 +43,8 @@ object Dependency {
         const val LEGACY_SUPPORT = "androidx.legacy:legacy-support-v4:${Versions.LEGACY}"
 
         const val PREFERENCE_KTX = "androidx.preference:preference-ktx:${Versions.PREFERENCE_KTX}"
+
+        const val VIEWPAGER_2 = "androidx.viewpager2:viewpager2:${Versions.VIEWPAGER_2}"
     }
 
     object Google {
@@ -99,6 +101,7 @@ object Dependency {
 
     object ImageLoad {
         const val GLIDE = "com.github.skydoves:landscapist-glide:${Versions.GLIDE_VERSION}"
+        const val COIL = "io.coil-kt:coil:${Versions.COIL_VERSION}"
     }
 
     object Lottie {

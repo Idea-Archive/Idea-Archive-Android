@@ -196,7 +196,7 @@
         android:layout_height="0dp"
         android:fontFamily="@font/pretendard_regular"
         android:text="@string/we_send_auth_code"
-        android:textColor="@color/input_information_gray"
+        android:textColor="@color/gray"
         android:textSize="11.5sp"
         app:layout_constraintBottom_toBottomOf="@id/g_we_send_auth_code_b"
         app:layout_constraintEnd_toEndOf="@id/g_we_send_auth_code_e"

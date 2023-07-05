@@ -35,4 +35,5 @@
     <string name="liked_post">좋아한 글</string>
     <string name="my_post">작성한 글</string>
     <string name="divide"> ∙ </string>
+    <string name="entire">전체</string>
 </resources>

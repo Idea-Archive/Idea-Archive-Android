@@ -160,7 +160,7 @@
         android:layout_height="0dp"
         android:fontFamily="@font/pretendard_regular"
         android:text="@string/success_to_email_authentication"
-        android:textColor="@color/input_information_gray"
+        android:textColor="@color/gray"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="@id/g_success_to_authentication_b"
         app:layout_constraintEnd_toEndOf="@id/g_success_to_authentication_e"

@@ -3,4 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/tv_entire_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/entire"
+        android:fontFamily="@font/pretendard_bold"
+        android:textSize="19sp"
+        android:textColor="@color/gray"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

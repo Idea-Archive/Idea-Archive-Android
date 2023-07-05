@@ -34,4 +34,5 @@ fun String.formatTimeDifference(): String {
 
     val diffYears = (diffDays / 365).toInt()
     return "${diffYears}년 전"
+
 }

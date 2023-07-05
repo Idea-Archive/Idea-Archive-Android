@@ -61,6 +61,14 @@ object Dependency {
         const val LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIVEDATA}"
     }
 
+    object Kakao{
+        const val KAKAO_SDK = "com.kakao.sdk:v2-user:${Versions.KAKAO_SDK}"
+    }
+    object GiuhubLogin {
+        const val GITHUB_API = "com.github.scribejava:scribejava-apis:${Versions.GITHUB_API}"
+        const val GITHUB_CORE = "com.github.scribejava:scribejava-core:${Versions.GITHUB_CORE}"
+    }
+
     object Libraries {
         const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
         const val RETROFIT_CONVERTER_GSON =

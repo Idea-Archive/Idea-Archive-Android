@@ -40,4 +40,5 @@ abstract class BaseFragment<B: ViewDataBinding>(
     protected fun longToast(msg: String){
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
     }
+
 }

@@ -10,4 +10,5 @@ class SearchPostUseCase @Inject constructor(
     suspend operator fun invoke(keyword: String, searchPostParam: SearchPostParam) = kotlin.runCatching {
         postRepository.searchPost(keyword, searchPostParam)
     }
+
 }

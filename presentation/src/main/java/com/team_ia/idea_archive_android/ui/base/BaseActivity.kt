@@ -19,6 +19,7 @@ abstract class BaseActivity<B: ViewDataBinding>(
         binding.lifecycleOwner = this
 
         createView()
+        observeEvent()
     }
 
     abstract fun createView()
@@ -32,4 +33,5 @@ abstract class BaseActivity<B: ViewDataBinding>(
     protected fun longToast(msg: String){
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
+
 }

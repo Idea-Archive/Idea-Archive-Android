@@ -9,4 +9,5 @@ class PostHeartUseCase @Inject constructor(
     suspend operator fun invoke(postId: Long) = kotlin.runCatching {
         postRepository.postHeart(postId)
     }
+
 }

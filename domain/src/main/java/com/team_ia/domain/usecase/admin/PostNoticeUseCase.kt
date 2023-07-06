@@ -10,4 +10,5 @@ class PostNoticeUseCase @Inject constructor(
     suspend operator fun invoke(postNoticeParam: PostNoticeParam) = kotlin.runCatching {
         adminRepository.postNotice(postNoticeParam)
     }
+
 }

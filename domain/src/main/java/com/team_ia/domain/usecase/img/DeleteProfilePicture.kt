@@ -9,4 +9,5 @@ class DeleteProfilePicture @Inject constructor(
     suspend operator fun invoke() = kotlin.runCatching {
         imgRepository.deleteProfilePicture()
     }
+
 }

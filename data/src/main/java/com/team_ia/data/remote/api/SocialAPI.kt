@@ -9,7 +9,12 @@ interface SocialAPI {
 
     @GET("/google/login")
     suspend fun googleLogin(
-       @Query("authorizationCode")socialLoginRequest: SocialLoginRequest
+       @Query("code")socialLoginRequest: SocialLoginRequest
+    ): LoginResponse
+
+    @GET("/kakao/login")
+    suspend fun kakaoLogin(
+        @Query("authorizationCode")socialLoginRequest: SocialLoginRequest
     ): LoginResponse
 
     @DELETE

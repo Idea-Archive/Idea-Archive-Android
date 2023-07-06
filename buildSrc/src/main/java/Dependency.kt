@@ -43,6 +43,8 @@ object Dependency {
         const val LEGACY_SUPPORT = "androidx.legacy:legacy-support-v4:${Versions.LEGACY}"
 
         const val PREFERENCE_KTX = "androidx.preference:preference-ktx:${Versions.PREFERENCE_KTX}"
+
+        const val VIEWPAGER_2 = "androidx.viewpager2:viewpager2:${Versions.VIEWPAGER_2}"
     }
 
     object Google {
@@ -57,6 +59,14 @@ object Dependency {
         const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
         const val FIREBASE = "com.google.firebase:firebase-auth-ktx:${Versions.FIREBASE}"
         const val LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIVEDATA}"
+    }
+
+    object Kakao{
+        const val KAKAO_SDK = "com.kakao.sdk:v2-user:${Versions.KAKAO_SDK}"
+    }
+    object GiuhubLogin {
+        const val GITHUB_API = "com.github.scribejava:scribejava-apis:${Versions.GITHUB_API}"
+        const val GITHUB_CORE = "com.github.scribejava:scribejava-core:${Versions.GITHUB_CORE}"
     }
 
     object Libraries {
@@ -99,6 +109,7 @@ object Dependency {
 
     object ImageLoad {
         const val GLIDE = "com.github.skydoves:landscapist-glide:${Versions.GLIDE_VERSION}"
+        const val COIL = "io.coil-kt:coil:${Versions.COIL_VERSION}"
     }
 
     object Lottie {

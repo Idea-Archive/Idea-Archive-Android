@@ -9,4 +9,5 @@ class DetailNoticeUseCase @Inject constructor(
     suspend operator fun invoke(noticeId: Long) = kotlin.runCatching {
         adminRepository.detailNotice(noticeId)
     }
+
 }

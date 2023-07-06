@@ -38,6 +38,7 @@ private class EventFlowImpl<T>(
     override suspend fun emit(value: T) {
         flow.emit(EventFlowSlot(value))
     }
+
 }
 
 private class EventFlowSlot<T> (val value: T){

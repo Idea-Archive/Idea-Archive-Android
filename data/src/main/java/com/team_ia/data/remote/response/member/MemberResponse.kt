@@ -8,20 +8,14 @@ import com.team_ia.domain.entity.MemberEntity
 data class MemberResponse(
     @SerializedName("email")
     val email: String,
-    @SerializedName("password")
-    val password: String,
+    @SerializedName("name")
+    val name: String,
     @SerializedName("profileImg")
-    val profileImg: String,
-    @SerializedName("myHeartList")
-    val myHeartList: List<PostModel>,
-    @SerializedName("myPost")
-    val myPost: List<PostModel>
+    val profileImg: String?
 )
 
 fun MemberResponse.toEntity() = MemberEntity(
     email = email,
-    password = password,
-    profileImg = profileImg,
-    myHeartList = myHeartList.map { it.toEntity() },
-    myPost = myPost.map { it.toEntity() }
+    name = name,
+    profileImg = profileImg
 )

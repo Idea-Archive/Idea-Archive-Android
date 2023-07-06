@@ -15,4 +15,5 @@ class ApplicationRepositoryImpl @Inject constructor(
 
     override suspend fun getApplicant(postId: Long): GetApplicantEntity =
         applicationDataSource.getApplicant(postId).toEntity()
+
 }

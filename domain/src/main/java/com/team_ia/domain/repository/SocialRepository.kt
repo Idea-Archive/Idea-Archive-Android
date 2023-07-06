@@ -5,7 +5,10 @@ import com.team_ia.domain.param.SocialLoginParam
 
 interface SocialRepository {
 
-    suspend fun socialLogin(socialLoginParam: SocialLoginParam):LoginEntity
+    suspend fun googleLogin(socialLoginParam: SocialLoginParam):LoginEntity
+
+    suspend fun kakaoLogin(socialLoginParam: SocialLoginParam): LoginEntity
+
     suspend fun logout()
     suspend fun saveToken(
         accessToken: String,

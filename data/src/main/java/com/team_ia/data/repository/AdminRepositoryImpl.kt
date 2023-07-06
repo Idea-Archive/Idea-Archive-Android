@@ -29,4 +29,5 @@ class AdminRepositoryImpl @Inject constructor(
 
     override suspend fun detailNotice(noticeId: Long): NoticeModel =
         adminDataSource.detailNotice(noticeId).toEntity()
+
 }

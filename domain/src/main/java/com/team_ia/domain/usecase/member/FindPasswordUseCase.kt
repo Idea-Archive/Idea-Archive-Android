@@ -10,4 +10,5 @@ class FindPasswordUseCase @Inject constructor(
     suspend operator fun invoke(findPasswordParam: FindPasswordParam) = kotlin.runCatching {
         memberRepository.findPassword(findPasswordParam)
     }
+
 }

@@ -22,7 +22,9 @@ import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnable
 import com.team_ia.idea_archive_android.utils.extension.repeatOnStart
 import com.team_ia.idea_archive_android.utils.extension.setOnTextChanged
 import com.team_ia.idea_archive_android.utils.keyBoardHide
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
     private val loginViewModel by viewModels<LoginViewModel>()
     private val googleLoginViewModel by viewModels<GoogleSocialLoginViewModel>()
@@ -35,13 +37,28 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     private lateinit var loginLauncher: ActivityResultLauncher<Intent>
 
     override fun createView() {
-        binding.login = this
+        loginLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                println("인가코드 ${result}")
+                if (result.resultCode == RESULT_OK) {
+                    val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
+                    task.result?.serverAuthCode?.let {
+                        googleLoginViewModel.checkAuthorizationCode(
+                            it
+                        )
+                    }
+                }
+            }
+        }
+
+            binding.login = this
+
         initView()
         repeatOnStart {
             loginViewModel.eventFlow.collect { event -> handleEvent(Event.Success) }
             googleLoginViewModel.eventFlow.collect { event -> handleEvent(Event.Success) }
-        }
-        repeatOnStart {
             loginViewModel.eventFlow.collect { event -> handleEvent(Event.NotFound) }
             googleLoginViewModel.eventFlow.collect { event -> handleEvent(Event.NotFound) }
         }
@@ -138,23 +155,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             .requestEmail()
             .build()
 
-        loginLauncher = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult()
-        ) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                println("인가코드 ${result}")
-                if (result.resultCode == RESULT_OK) {
-                    val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-                    task.result?.serverAuthCode?.let {
-                        googleLoginViewModel.checkAuthorizationCode(
-                            it
-                        )
-                    }
-                }
-            }
-
-            googleSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
-        }
+        googleSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
     }
 
     override fun observeEvent() {

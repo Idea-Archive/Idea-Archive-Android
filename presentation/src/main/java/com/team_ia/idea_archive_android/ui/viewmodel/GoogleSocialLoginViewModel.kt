@@ -24,7 +24,6 @@ class GoogleSocialLoginViewModel @Inject constructor(
     private val _eventFlow = MutableEventFlow<Event>()
     val eventFlow = _eventFlow.asEvetFlow()
 
-
     fun checkAuthorizationCode(authorizationCode: String) = viewModelScope.launch {
         googleLoginUseCase(
             socialLoginParam = SocialLoginParam(authorizationCode)

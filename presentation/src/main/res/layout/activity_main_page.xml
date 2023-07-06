@@ -45,6 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <TextView
         android:id="@+id/tv_idea"
         android:layout_width="0dp"
@@ -55,9 +56,9 @@
         android:text="@string/idea"
         android:textColor="@color/gray"
         android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="@id/g_btn_tab_bar_b"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/g_btn_tab_bar_t"
-        app:layout_constraintBottom_toBottomOf="@id/g_btn_tab_bar_b"/>
+        app:layout_constraintTop_toTopOf="@id/g_btn_tab_bar_t" />
 
     <TextView
         android:id="@+id/tv_feedback"

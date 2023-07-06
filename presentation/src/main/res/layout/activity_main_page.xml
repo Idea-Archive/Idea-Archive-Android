@@ -4,6 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_btn_search_s"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7641" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_btn_search_e"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8256" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_btn_tab_bar_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0521" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_btn_tab_bar_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0806" />
+
     <TextView
         android:id="@+id/tv_entire_post"
         android:layout_width="wrap_content"
@@ -55,5 +83,15 @@
         android:textSize="19sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_search_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/ic_search_button"
+        app:layout_constraintBottom_toBottomOf="@id/g_btn_tab_bar_b"
+        app:layout_constraintEnd_toEndOf="@id/g_btn_search_e"
+        app:layout_constraintStart_toStartOf="@id/g_btn_search_s"
+        app:layout_constraintTop_toTopOf="@id/g_btn_tab_bar_t" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

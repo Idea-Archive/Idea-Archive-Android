@@ -10,4 +10,5 @@ class SendVerificationCodeUseCase @Inject constructor(
     suspend operator fun invoke(sendVerificationCodeParam: SendVerificationCodeParam) = kotlin.runCatching {
         emailRepository.sendVerificationCode(sendVerificationCodeParam)
     }
+
 }

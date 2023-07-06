@@ -9,4 +9,5 @@ class LogoutUseCase @Inject constructor(
     suspend operator fun invoke() = kotlin.runCatching {
         authRepository.logout()
     }
+
 }

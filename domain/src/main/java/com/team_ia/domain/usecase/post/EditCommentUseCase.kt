@@ -10,4 +10,5 @@ class EditCommentUseCase @Inject constructor(
     suspend operator fun invoke(commentId: Long, editCommentParam: PostCommentParam) = kotlin.runCatching {
         postRepository.editComment(commentId, editCommentParam)
     }
+
 }

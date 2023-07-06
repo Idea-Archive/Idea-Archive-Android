@@ -9,4 +9,5 @@ class GetNoticeUseCase @Inject constructor(
     suspend operator fun invoke() = kotlin.runCatching {
         memberRepository.getNotice()
     }
+
 }

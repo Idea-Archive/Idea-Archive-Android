@@ -15,4 +15,5 @@ class SocialSaveTokenUseCase @Inject constructor(
         kotlin.runCatching {
             socialRepository.saveToken(accessToken, refreshToken, expiredAt)
         }
+
 }

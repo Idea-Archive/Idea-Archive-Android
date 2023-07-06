@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="login"
+            type="com.team_ia.idea_archive_android.ui.main.LoginActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/login_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:onClick="@{login::onClick}">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_ibtn_back_button_t"
@@ -299,6 +303,7 @@
             android:text="@string/login_btn"
             android:textColor="@color/white"
             android:textSize="16sp"
+            android:onClick="@{login::onClick}"
             app:layout_constraintBottom_toBottomOf="@id/g_login_button_b"
             app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
             app:layout_constraintStart_toStartOf="@id/g_input_information_s"
@@ -313,6 +318,7 @@
             android:text="@string/find_password"
             android:textColor="@color/gray"
             android:textSize="12sp"
+            android:onClick="@{login::onClick}"
             app:layout_constraintBottom_toBottomOf="@id/g_find_password_b"
             app:layout_constraintEnd_toEndOf="@id/g_find_password_e"
             app:layout_constraintStart_toStartOf="@id/g_find_password_s"
@@ -359,6 +365,7 @@
             android:text="@string/sign_up"
             android:textColor="@color/gray"
             android:textSize="12sp"
+            android:onClick="@{login::onClick}"
             app:layout_constraintBottom_toBottomOf="@+id/g_sign_up_b"
             app:layout_constraintEnd_toEndOf="@id/g_sign_up_e"
             app:layout_constraintStart_toStartOf="@+id/g_sign_up_s"
@@ -379,6 +386,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/ibtn_back_button"
+            android:onClick="@{login::onClick}"
             app:layout_constraintBottom_toBottomOf="@id/g_ibtn_back_button_b"
             app:layout_constraintEnd_toEndOf="@+id/g_ibtn_back_button_e"
             app:layout_constraintStart_toStartOf="@id/g_ibtn_back_button_s"

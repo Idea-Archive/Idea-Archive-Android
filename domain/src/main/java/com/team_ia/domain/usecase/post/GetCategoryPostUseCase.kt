@@ -10,4 +10,5 @@ class GetCategoryPostUseCase @Inject constructor(
     suspend operator fun invoke(getCategoryPostParam: SearchPostParam) = kotlin.runCatching {
         postRepository.getCategoryPost(getCategoryPostParam)
     }
+
 }

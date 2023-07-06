@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:background="@drawable/bg_category_view"
-            android:textColor="@color/input_information_gray"
+            android:textColor="@color/gray"
             android:textSize="8sp"
             android:fontFamily="@font/pretendard_medium"
             android:paddingVertical="4dp"

@@ -2,6 +2,7 @@ package com.team_ia.idea_archive_android.ui.profile
 
 import android.content.Intent
 import android.util.Log
+import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.viewpager2.widget.ViewPager2
@@ -21,6 +22,7 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(R.layout.activity_p
     private val myViewPagerAdapter by lazy { MyViewPagerAdapter(this) }
     private val myViewModel by viewModels<MyViewModel>()
     override fun createView() {
+        binding.goTo = this
         initViewPager()
         myViewModel.getProfile()
         backButtonPressed()
@@ -144,6 +146,11 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(R.layout.activity_p
                 finish()
             }
         }
+        this.onBackPressedDispatcher.addCallback(callback)
+    }
+
+    fun onClickPageButton(view: View) {
+        startActivity(Intent(this, EditProfileActivity::class.java))
     }
 
 }

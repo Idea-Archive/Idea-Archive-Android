@@ -19,6 +19,7 @@ abstract class BaseActivity<B: ViewDataBinding>(
         binding.lifecycleOwner = this
 
         createView()
+        observeEvent()
     }
 
     abstract fun createView()

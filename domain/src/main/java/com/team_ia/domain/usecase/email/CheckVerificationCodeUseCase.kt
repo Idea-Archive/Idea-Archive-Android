@@ -9,4 +9,5 @@ class CheckVerificationCodeUseCase @Inject constructor(
     suspend operator fun invoke(email: String, authKey: Int) = kotlin.runCatching {
         emailRepository.checkVerificationCode(email = email, authKey = authKey)
     }
+
 }

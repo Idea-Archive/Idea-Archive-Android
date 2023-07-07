@@ -9,4 +9,5 @@ class DeleteCommentUseCase @Inject constructor(
     suspend operator fun invoke(commentId: Long) = kotlin.runCatching {
         postRepository.deleteComment(commentId)
     }
+
 }

@@ -10,4 +10,5 @@ class SignupUseCase @Inject constructor(
     suspend operator fun invoke(signupParam: SignupParam) = kotlin.runCatching {
         authRepository.signup(signupParam)
     }
+
 }

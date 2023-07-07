@@ -10,4 +10,5 @@ class ChangeProfilePictureUseCase @Inject constructor(
     suspend operator fun invoke(changeProfilePictureParam: ChangeProfilePictureParam) = kotlin.runCatching {
         imgRepository.changeProfilePicture(changeProfilePictureParam)
     }
+
 }

@@ -10,4 +10,5 @@ class EditNoticeUseCase @Inject constructor(
     suspend operator fun invoke(noticeId: Long, editNoticeParam: EditNoticeParam) = kotlin.runCatching {
         adminRepository.editNotice(noticeId, editNoticeParam)
     }
+
 }

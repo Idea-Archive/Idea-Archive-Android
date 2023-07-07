@@ -9,4 +9,5 @@ class DeleteNoticeUseCase @Inject constructor(
     suspend operator fun invoke(noticeId: Long) = kotlin.runCatching {
         adminRepository.deleteNotice(noticeId)
     }
+
 }

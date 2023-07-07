@@ -14,4 +14,5 @@ class SaveTokenUseCase @Inject constructor(
         kotlin.runCatching {
             authRepository.saveToken(accessToken, refreshToken, expiredAt)
         }
+
 }

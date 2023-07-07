@@ -19,4 +19,5 @@ class ImgRepositoryImpl @Inject constructor(
 
     override suspend fun deleteProfilePicture() =
         imgDataSource.deleteProfilePicture()
+
 }

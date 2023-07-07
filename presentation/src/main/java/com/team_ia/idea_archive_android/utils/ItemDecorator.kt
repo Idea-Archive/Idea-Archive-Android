@@ -18,4 +18,5 @@ class ItemDecorator(private val divHeight: Int) : RecyclerView.ItemDecoration() 
             outRect.top = divHeight
         }
     }
+
 }

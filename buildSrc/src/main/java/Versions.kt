@@ -7,6 +7,9 @@ object Versions {
     val JAVA_VERSION = JavaVersion.VERSION_1_8
     const val KOTLINX_COROUTINES = "1.6.0"
 
+    const val GITHUB_API = "8.1.0"
+    const val GITHUB_CORE = "8.1.0"
+
     const val BUILD_GRADLE = "4.2.1"
     const val COMPILE_SDK_VERSION = 33
     const val BUILD_TOOLS_VERSION = "32.0.0"
@@ -32,6 +35,8 @@ object Versions {
     const val GMS_GOOGLE_SERVICE = "4.3.10"
     const val FIREBASE_BOM = "30.0.1"
     const val LIVEDATA = "2.4.1"
+
+    const val KAKAO_SDK = "2.10.0"
 
     const val MOSHI = "1.13.0"
 

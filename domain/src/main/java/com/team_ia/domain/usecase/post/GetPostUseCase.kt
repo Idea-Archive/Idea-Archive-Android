@@ -9,4 +9,5 @@ class GetPostUseCase @Inject constructor(
     suspend operator fun invoke() = kotlin.runCatching {
         postRepository.getPost()
     }
+
 }

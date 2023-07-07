@@ -9,4 +9,5 @@ class ReadNoticeUseCase @Inject constructor(
     suspend operator fun invoke() = kotlin.runCatching {
         adminRepository.readNotice()
     }
+
 }

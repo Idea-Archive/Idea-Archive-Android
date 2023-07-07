@@ -41,4 +41,5 @@ class AdminDataSourceImpl @Inject constructor(
             .httpRequest { adminAPI.detailNotice(noticeId) }
             .sendRequest()
     }
+
 }

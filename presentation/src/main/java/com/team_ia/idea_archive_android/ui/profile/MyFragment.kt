@@ -25,4 +25,5 @@ class MyFragment : BaseFragment<FragmentMyBinding>(R.layout.fragment_my) {
         binding.rvMyPost.addItemDecoration(ItemDecorator(8))
         binding.rvMyPost.adapter = adapter
     }
+
 }

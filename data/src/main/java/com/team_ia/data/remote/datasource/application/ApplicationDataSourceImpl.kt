@@ -20,4 +20,5 @@ class ApplicationDataSourceImpl @Inject constructor(
             .httpRequest { applicationAPI.getApplicant(postId) }
             .sendRequest()
     }
+
 }

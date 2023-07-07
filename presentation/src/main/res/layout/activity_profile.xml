@@ -4,6 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <variable
+            name="goTo"
+            type="com.team_ia.idea_archive_android.ui.profile.ProfileActivity" />
 
     </data>
 
@@ -264,6 +267,7 @@
             android:background="@drawable/bg_bottom_nav"
             android:minHeight="0dp"
             android:minWidth="0dp"
+            android:onClick="@{goTo::onClickPageButton}"
             app:layout_constraintTop_toTopOf="@id/g_btn_detail_t"
             app:layout_constraintBottom_toBottomOf="@id/g_btn_detail_b"
             app:layout_constraintStart_toStartOf="@id/g_btn_detail_s"

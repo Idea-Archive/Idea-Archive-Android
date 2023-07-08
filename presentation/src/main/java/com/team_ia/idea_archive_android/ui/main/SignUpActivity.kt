@@ -1,7 +1,6 @@
 package com.team_ia.idea_archive_android.ui.main
 
-
-import android.util.Log
+import androidx.activity.viewModels
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivitySignUpPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
@@ -14,5 +13,6 @@ class SignUpActivity : BaseActivity<ActivitySignUpPageBinding>(R.layout.activity
 
     override fun observeEvent() {
     }
+
 
 }

@@ -15,6 +15,8 @@ import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
+import com.team_ia.idea_archive_android.ui.main.FindPasswordActivity
+import com.team_ia.idea_archive_android.ui.main.SignUpActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.GoogleSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.LoginViewModel
 import com.team_ia.idea_archive_android.utils.Event
@@ -51,9 +53,11 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
                     }
                 }
             }
+
         }
 
-            binding.login = this
+        //binding.login = this
+
 
         initView()
         repeatOnStart {
@@ -87,6 +91,29 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
         }
 
+    }
+
+    fun onClick(view: View) {
+        when (view) {
+            binding.ibtnBackButton -> {
+                finish()
+            }
+            binding.loginLayout -> {
+                keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
+            }
+            binding.btnLogin -> {
+                loginViewModel.login(
+                    binding.etEmail.text.toString(),
+                    binding.etPassword.text.toString()
+                )
+            }
+            binding.tvFindPassword -> {
+                startActivity(Intent(this, FindPasswordActivity::class.java))
+            }
+            binding.tvSignUp -> {
+                startActivity(Intent(this, SignUpActivity::class.java))
+            }
+        }
     }
 
     override fun onResume() {
@@ -123,29 +150,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
-    fun onClick(view: View) {
-        when (view) {
-            binding.ibtnBackButton -> {
-                finish()
-            }
-            binding.loginLayout -> {
-                keyBoardHide(this, listOf(binding.etEmail, binding.etPassword))
-            }
-            binding.btnLogin -> {
-                loginViewModel.login(
-                    binding.etEmail.text.toString(),
-                    binding.etPassword.text.toString()
-                )
-            }
-            binding.tvFindPassword -> {
-                startActivity(Intent(this, FindPasswordActivity::class.java))
-            }
-            binding.tvSignUp -> {
-                startActivity(Intent(this, SignUpActivity::class.java))
-            }
-
-        }
-    }
 
     fun googleLogin() {
         val googleClientId = BuildConfig.GOOGLE_CLIENT_ID

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -165,11 +166,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@drawable/ic_main_page_menu_bar"
-            app:layout_constraintStart_toStartOf="@id/g_btn_main_page_menu_bar_s"
-            app:layout_constraintEnd_toEndOf="@id/g_btn_main_page_menu_bar_e"
-            app:layout_constraintTop_toTopOf="@id/g_tab_bar_t"
             app:layout_constraintBottom_toBottomOf="@id/g_tab_bar_b"
-            />
+            app:layout_constraintEnd_toEndOf="@id/g_btn_main_page_menu_bar_e"
+            app:layout_constraintStart_toStartOf="@id/g_btn_main_page_menu_bar_s"
+            app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
 
         <Button
             android:id="@+id/btn_main_page_search_button"
@@ -181,5 +181,43 @@
             app:layout_constraintStart_toStartOf="@id/g_btn_search_s"
             app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g_rv_major_filter_t"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.1043" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g_rv_major_filter_b"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.1422" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/g_rv_major_filter_s"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.0410" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_major_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="@id/g_rv_major_filter_b"
+                app:layout_constraintStart_toStartOf="@id/g_rv_major_filter_s"
+                app:layout_constraintTop_toTopOf="@id/g_rv_major_filter_t"
+                tools:listitem="@layout/item_major_filter"
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

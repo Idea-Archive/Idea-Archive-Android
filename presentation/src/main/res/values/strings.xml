@@ -39,4 +39,7 @@
     <string name="idea">아이디어</string>
     <string name="feedback">피드백</string>
     <string name="job_opening">구인</string>
+    <string name="front_end">FrontEnd</string>
+    <string name="back_end">BackEnd</string>
+    <string name="android">Android</string>
 </resources>

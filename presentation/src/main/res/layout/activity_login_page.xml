@@ -6,7 +6,7 @@
     <data>
         <variable
             name="login"
-            type="com.team_ia.idea_archive_android.ui.main.LoginActivity" />
+            type="com.team_ia.idea_archive_android.ui.login.LoginActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

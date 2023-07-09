@@ -9,4 +9,5 @@ class GetProfileInfoUseCase @Inject constructor(
     suspend operator fun invoke() = kotlin.runCatching {
         memberRepository.getProfileInfo()
     }
+
 }

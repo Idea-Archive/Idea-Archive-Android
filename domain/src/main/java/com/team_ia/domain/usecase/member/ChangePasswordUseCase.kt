@@ -10,4 +10,5 @@ class ChangePasswordUseCase @Inject constructor(
     suspend operator fun invoke(passwordParam: PasswordParam) = kotlin.runCatching {
         memberRepository.changePassword(passwordParam)
     }
+
 }

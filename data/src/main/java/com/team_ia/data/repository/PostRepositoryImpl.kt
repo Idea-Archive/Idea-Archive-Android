@@ -50,4 +50,5 @@ class PostRepositoryImpl @Inject constructor(
 
     override suspend fun deleteComment(commentId: Long) =
         postDataSource.deleteComment(commentId)
+
 }

@@ -10,4 +10,5 @@ class SocialLogoutUseCase @Inject constructor(
     suspend operator fun invoke() = kotlin.runCatching {
         socialRepository.logout()
     }
+
 }

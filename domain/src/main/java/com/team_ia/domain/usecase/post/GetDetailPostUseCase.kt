@@ -9,4 +9,5 @@ class GetDetailPostUseCase @Inject constructor(
     suspend operator fun invoke(postId: Long) = kotlin.runCatching {
         postRepository.getDetailPost(postId)
     }
+
 }

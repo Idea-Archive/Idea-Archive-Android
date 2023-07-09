@@ -68,4 +68,5 @@ class PostListAdapter(private val itemList: List<PostModel>?) : ListAdapter<Post
             }
         }
     }
+
 }

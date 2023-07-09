@@ -10,4 +10,5 @@ class PostProfilePictureUseCase @Inject constructor(
     suspend operator fun invoke(postProfilePictureParam: PostProfilePictureParam) = kotlin.runCatching {
         imgRepository.postProfilePicture(postProfilePictureParam)
     }
+
 }

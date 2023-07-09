@@ -182,7 +182,7 @@
             app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <androidx.constraintlayout.widget.Guideline
@@ -215,9 +215,8 @@
                 app:layout_constraintBottom_toBottomOf="@id/g_rv_major_filter_b"
                 app:layout_constraintStart_toStartOf="@id/g_rv_major_filter_s"
                 app:layout_constraintTop_toTopOf="@id/g_rv_major_filter_t"
-                tools:listitem="@layout/item_major_filter"
+                tools:listitem="@layout/item_major_filter" />
 
-                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

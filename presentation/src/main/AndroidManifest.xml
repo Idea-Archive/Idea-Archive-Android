@@ -21,6 +21,11 @@
         <activity
             android:name=".ui.main.LoginActivity"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:exported="false"/>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,9 +51,20 @@
                     android:scheme="test" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.profile.ProfileActivity"
-            android:exported="false"/>
+        <activity android:name=".ui.profile.EditProfileInfoActivity"
+            android:exported="false" />
+        <activity android:name=".ui.profile.EditPasswordActivity"
+            android:exported="false" />
+
+        <service android:name="com.google.android.gms.metadata.ModuleDependencies"
+            android:enabled="false"
+            android:exported="false"
+            tools:ignore="MissingClass">
+            <intent-filter>
+                <action android:name="com.google.android.gms.metadata.MODULE_DEPENDENCIES" />
+            </intent-filter>
+            <meta-data android:name="photopicker_activity:0:required" android:value="" />
+        </service>
     </application>
 
 </manifest>

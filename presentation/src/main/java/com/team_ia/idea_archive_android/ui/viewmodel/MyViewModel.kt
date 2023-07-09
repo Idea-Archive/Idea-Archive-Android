@@ -86,7 +86,7 @@ class MyViewModel @Inject constructor(
             withdrawalMemberUseCase(
                 WithdrawalMemberParam(
                     email = _profileData.value!!.email,
-                    password = ""
+                    password = password
                 )
             ).onSuccess {
                 _withdrawalInfo.value = Event.Success

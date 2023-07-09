@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.team_ia.domain.param.FindPasswordParam
 import com.team_ia.domain.usecase.auth.SaveTokenUseCase
-import com.team_ia.domain.usecase.member.ChangePasswordUseCase
 import com.team_ia.domain.usecase.member.FindPasswordUseCase
 import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.utils.errorHandling

@@ -53,7 +53,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             }
         }
 
-            binding.login = this
+        binding.login = this
 
         initView()
         repeatOnStart {
@@ -139,9 +139,11 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             }
             binding.tvFindPassword -> {
                 startActivity(Intent(this, FindPasswordActivity::class.java))
+                finish()
             }
             binding.tvSignUp -> {
                 startActivity(Intent(this, SignUpActivity::class.java))
+                finish()
             }
 
         }

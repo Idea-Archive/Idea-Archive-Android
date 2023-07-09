@@ -1,4 +1,4 @@
-package com.team_ia.idea_archive_android.ui.login
+package com.team_ia.idea_archive_android.ui.main
 
 import android.app.Activity
 import android.content.Intent
@@ -18,9 +18,6 @@ import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
-import com.team_ia.idea_archive_android.ui.main.FindPasswordActivity
-import com.team_ia.idea_archive_android.ui.main.MainActivity
-import com.team_ia.idea_archive_android.ui.main.SignUpActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.GoogleSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.KakaoSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.LoginViewModel
@@ -36,6 +33,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     private val loginViewModel by viewModels<LoginViewModel>()
     private val googleLoginViewModel by viewModels<GoogleSocialLoginViewModel>()
     private val kakaoLoginViewModel by viewModels<KakaoSocialLoginViewModel>()
+
 
     companion object {
         private val RC_SIGN_IN: Int = 9001
@@ -58,17 +56,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
                     }
                 }
             }
-
-            val launcher =
-                registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-
-                }
-
-
-            binding.ibtnGoogleLg.setOnClickListener { view ->
-                googleLogin()
-            }
-
         }
 
         val githubClientId = BuildConfig.GITHUB_CLIENT_ID
@@ -86,19 +73,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
 
     }
-
-//    fun kakaoLogin() {
-//        binding.ibtnKakaoLg.setOnClickListener {
-//            kakaoLoginViewModel.checkKakaoLogin()
-//            kakaoLoginViewModel.kakaoInfo.observe(this) {
-//                if (!it) {
-//                    longToast("카카오톡이 감지되지 않습니다. 카카오톡을 설치 해주세요.")
-//                } else {
-//                    kakaoLoginViewModel.kakaoLogin()
-//                }
-//            }
-//        }
-//    }
 
     private fun observeKakaoLogin() {
         kakaoLoginViewModel.loginInfo.observe(this) {
@@ -197,7 +171,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             })
         }
     }
-
 
     fun onClick(view: View) {
         when (view) {

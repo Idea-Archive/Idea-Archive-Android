@@ -85,6 +85,7 @@ class AuthCodeInputActivity: BaseActivity<ActivityAuthCodeInputPageBinding>(R.la
                 else -> {}
             }
         }
+
     }
 
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tv_entire_post"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/pretendard_bold"
+        android:text="@string/entire"
+        android:textColor="@color/gray"
+        android:textSize="17sp"
+        android:title="asdsada" />
+</menu>

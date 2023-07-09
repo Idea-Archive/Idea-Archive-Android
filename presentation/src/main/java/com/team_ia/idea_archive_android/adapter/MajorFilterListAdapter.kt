@@ -7,8 +7,8 @@ import com.team_ia.idea_archive_android.databinding.ItemMajorFilterBinding
 
 class MajorFilterListAdapter(private val majorFilterList: List<String>?) : RecyclerView.Adapter<MajorFilterListAdapter.MajorFilterViewHolder>() {
     class MajorFilterViewHolder(val binding: ItemMajorFilterBinding) : RecyclerView.ViewHolder(binding.root){
-        fun bind(data: String, position: Int){
-            binding.btnMajorFilter.text = data.get(position).toString()
+        fun bind(data: List<String>?, position: Int){
+            binding.btnMajorFilter.text = data?.get(position).toString()
         }
     }
 
@@ -22,6 +22,7 @@ class MajorFilterListAdapter(private val majorFilterList: List<String>?) : Recyc
     }
 
     override fun onBindViewHolder(holder: MajorFilterViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        holder.bind(majorFilterList, position)
     }
+
 }

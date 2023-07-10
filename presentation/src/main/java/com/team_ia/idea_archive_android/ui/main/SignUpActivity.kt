@@ -1,13 +1,16 @@
 package com.team_ia.idea_archive_android.ui.main
 
 import android.content.Intent
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivitySignUpPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.SignupViewModel
+import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnabled
+import com.team_ia.idea_archive_android.utils.extension.repeatOnStart
 import com.team_ia.idea_archive_android.utils.extension.setOnTextChanged
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,24 +20,22 @@ class SignUpActivity : BaseActivity<ActivitySignUpPageBinding>(R.layout.activity
     override fun createView() {
         binding.signup = this
         initView()
-
     }
 
     fun initView() = binding.apply {
         etInputEmail.run {
             setOnTextChanged { p0, _, _, _ ->
-                btnCheck.changeAtivatedWithEnabled(p0.isNullOrBlank()
-                        && etInputPassword.text.toString() == etInputPasswordAgain.text.toString())
+                btnCheck.changeAtivatedWithEnabled(p0.isNullOrBlank() && etInputPassword.text.isNullOrBlank())
             }
         }
     }
-
     fun onClick(view: View){
         when(view){
             binding.btnCheck -> {
-                if (binding.etInputEmail.text.isNullOrBlank() && binding.etInputName.text.isNullOrBlank()
-                    && binding.etInputPassword.text.isNullOrBlank() && binding.etInputPasswordAgain.text.isNullOrBlank())
-                {
+                if (binding.etInputEmail.text.isNullOrBlank()
+                    && binding.etInputName.text.isNullOrBlank()
+                    && binding.etInputPassword.text.isNullOrBlank()
+                    && binding.etInputPasswordAgain.text.isNullOrBlank()) {
                     if ( binding.etInputPassword.text == binding.etInputPasswordAgain.text) {
                         signupViewModel.registerIdData(
                             binding.etInputEmail.text.toString(),
@@ -42,8 +43,6 @@ class SignUpActivity : BaseActivity<ActivitySignUpPageBinding>(R.layout.activity
                             binding.etInputName.text.toString()
                         )
                         signupViewModel.authCodeIssuance(binding.etInputEmail.text.toString())
-                        startActivity(Intent(this, AuthCodeInputActivity::class.java))
-                        finish()
                     }
                     else{
                         shortToast("비밀번호가 서로 일치 하지 않습니다.")
@@ -62,5 +61,23 @@ class SignUpActivity : BaseActivity<ActivitySignUpPageBinding>(R.layout.activity
     }
 
     override fun observeEvent() {
+        observeSignUp()
+    }
+    private fun observeSignUp(){
+        signupViewModel.signupInfo.observe(this){
+            when (it){
+                Event.Success -> {
+                    Log.d("success","")
+                    startActivity(Intent(this, AuthCodeInputActivity::class.java))
+                    finish()
+                }
+                Event.BadRequest ->{
+                    shortToast("제대로 된 이메일을 입력해주세요")
+                }
+                else -> {
+                    shortToast("이메일 인증번호 발급 횟수를 초과 했어요.")
+                }
+            }
+        }
     }
 }

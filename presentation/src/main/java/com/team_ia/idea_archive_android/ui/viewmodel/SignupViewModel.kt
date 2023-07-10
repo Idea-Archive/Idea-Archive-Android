@@ -25,8 +25,8 @@ class SignupViewModel @Inject constructor(
     private val checkVerificationCodeUseCase: CheckVerificationCodeUseCase,
     private val saveTokenUseCase: SaveTokenUseCase
 ): ViewModel() {
-    private val _eventFlow = MutableEventFlow<Event>()
-    val eventFlow = _eventFlow.asEvetFlow()
+    private val _signupInfo = MutableLiveData<Event>()
+    val signupInfo : LiveData<Event> get() = _signupInfo
 
     fun signup (email: String, password: String, name: String) = viewModelScope.launch{
         signupUseCase(
@@ -34,12 +34,10 @@ class SignupViewModel @Inject constructor(
                 email, password, name
             )
         ).onSuccess {
-            event(Event.Success)
+            _signupInfo.value = Event.Success
         }.onFailure {
-            event(it.errorHandling(notFoundAction = {
-                saveTokenUseCase()
-            }
-            ))
+            _signupInfo.value =
+                it.errorHandling(badRequestAction = {saveTokenUseCase()})
         }
     }
 
@@ -49,12 +47,9 @@ class SignupViewModel @Inject constructor(
                 email
             )
         ).onSuccess {
-            event(Event.Success)
+            _signupInfo.value = Event.Success
         }.onFailure {
-            event(it.errorHandling (badRequestAction = {
-                saveTokenUseCase()
-            }
-            ))
+            it.errorHandling(badRequestAction = {saveTokenUseCase()})
         }
     }
 
@@ -62,18 +57,12 @@ class SignupViewModel @Inject constructor(
         checkVerificationCodeUseCase(
             email, authKey
         ).onSuccess {
-            event(Event.Success)
+            _signupInfo.value = Event.Success
         }.onFailure {
-            event(it.errorHandling (badRequestAction = {
-                saveTokenUseCase()
-            }
-            ))
+            it.errorHandling(badRequestAction = {saveTokenUseCase()})
         }
     }
 
-    private fun event(event: Event) = viewModelScope.launch {
-        _eventFlow.emit(event)
-    }
 
     private val _emailData = MutableLiveData<String>()
     val emailData: LiveData<String> get() = _emailData
@@ -82,7 +71,7 @@ class SignupViewModel @Inject constructor(
     private val _passwordData = MutableLiveData<String>()
     val passwordData: LiveData<String> get() = _passwordData
 
-    fun registerIdData(email: String, password: String, name: String){
+    fun registerIdData(email: String, password: String, name: String) = viewModelScope.launch{
         _emailData.value = email
         _passwordData.value = password
         _nameData.value = name

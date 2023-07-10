@@ -66,7 +66,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         val kakaoNativeAppKey = BuildConfig.KAKAO_NATIVE_APP_KEY
         val githubClientId = BuildConfig.GITHUB_CLIENT_ID
 
-        KakaoSdk.init(this, kakaoNativeAppKey)
+        //KakaoSdk.init(this, kakaoNativeAppKey)
 
         binding.ibtnGoogleLg.setOnClickListener { view ->
             googleLogin()
@@ -143,7 +143,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             }
             binding.tvSignUp -> {
                 startActivity(Intent(this, SignUpActivity::class.java))
-                finish()
             }
 
         }

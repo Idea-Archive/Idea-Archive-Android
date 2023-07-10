@@ -8,8 +8,11 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SignUpActivity : BaseActivity<ActivitySignUpPageBinding>(R.layout.activity_sign_up_page) {
     override fun createView() {
+        binding.signup = this
     }
 
     override fun observeEvent() {
+
     }
+
 }

@@ -1,5 +1,6 @@
 package com.team_ia.idea_archive_android.ui.main
 
+
 import android.content.Intent
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityAuthenticationSuccessPageBinding

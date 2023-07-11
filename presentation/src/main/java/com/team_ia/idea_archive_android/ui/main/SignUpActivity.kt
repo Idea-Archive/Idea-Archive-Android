@@ -10,7 +10,6 @@ import com.team_ia.idea_archive_android.ui.base.BaseActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.SignupViewModel
 import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnabled
-import com.team_ia.idea_archive_android.utils.extension.repeatOnStart
 import com.team_ia.idea_archive_android.utils.extension.setOnTextChanged
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -22,37 +21,30 @@ class SignUpActivity : BaseActivity<ActivitySignUpPageBinding>(R.layout.activity
         initView()
     }
 
-    fun initView() = binding.apply {
+    private fun initView() = binding.apply {
         etInputEmail.run {
-            setOnTextChanged { p0, _, _, _ ->
-                btnCheck.changeAtivatedWithEnabled(p0.isNullOrBlank() && etInputPassword.text.isNullOrBlank())
+            setOnTextChanged { _, _, _, _ ->
+                /*btnCheck.changeAtivatedWithEnabled(!etInputEmail.text.isNullOrBlank()
+                        &&!etInputName.text.isNullOrBlank()
+                        && !etInputPassword.text.isNullOrBlank()
+                        && !etInputPasswordAgain.text.isNullOrBlank())*/
             }
         }
     }
-    fun onClick(view: View){
-        when(view){
+
+    fun onClick(view: View) {
+        when (view) {
             binding.btnCheck -> {
-                if (binding.etInputEmail.text.isNullOrBlank()
-                    && binding.etInputName.text.isNullOrBlank()
-                    && binding.etInputPassword.text.isNullOrBlank()
-                    && binding.etInputPasswordAgain.text.isNullOrBlank()) {
-                    if ( binding.etInputPassword.text == binding.etInputPasswordAgain.text) {
-                        signupViewModel.registerIdData(
-                            binding.etInputEmail.text.toString(),
-                            binding.etInputPassword.text.toString(),
-                            binding.etInputName.text.toString()
-                        )
-                        signupViewModel.authCodeIssuance(binding.etInputEmail.text.toString())
-                    }
-                    else{
-                        shortToast("비밀번호가 서로 일치 하지 않습니다.")
-                    }
-                }else{
-                    shortToast("비어있는 칸이 없이 채워주세요.")
+                val email = binding.etInputEmail.text.toString()
+                if (binding.etInputPassword.text.toString() == binding.etInputPasswordAgain.text.toString()) {
+                    signupViewModel.authCodeIssuance(email)
+                } else {
+                    shortToast("비밀번호가 일치하지 않습니다.")
                 }
             }
             binding.tvAlreadyUserLogin -> {
                 startActivity(Intent(this, LoginActivity::class.java))
+                finish()
             }
             binding.ibtnBackButton -> {
                 finish()
@@ -63,15 +55,17 @@ class SignUpActivity : BaseActivity<ActivitySignUpPageBinding>(R.layout.activity
     override fun observeEvent() {
         observeSignUp()
     }
-    private fun observeSignUp(){
-        signupViewModel.signupInfo.observe(this){
-            when (it){
+
+    private fun observeSignUp() {
+        signupViewModel.signupInfo.observe(this) {
+            when (it) {
                 Event.Success -> {
-                    Log.d("success","")
+                    Log.d("success", "")
+                    registerDataSetting()
                     startActivity(Intent(this, AuthCodeInputActivity::class.java))
                     finish()
                 }
-                Event.BadRequest ->{
+                Event.BadRequest -> {
                     shortToast("제대로 된 이메일을 입력해주세요")
                 }
                 else -> {
@@ -79,5 +73,17 @@ class SignUpActivity : BaseActivity<ActivitySignUpPageBinding>(R.layout.activity
                 }
             }
         }
+    }
+
+    private fun registerDataSetting(){
+        val email = binding.etInputEmail.text.toString()
+        val password = binding.etInputPassword.text.toString()
+        val name = binding.etInputName.text.toString()
+
+        signupViewModel.registerIdData(
+            email = email,
+            password = password,
+            name = name
+        )
     }
 }

@@ -21,11 +21,6 @@
         <activity
             android:name=".ui.main.LoginActivity"
             android:exported="true">
-
-        </activity>
-        <activity
-            android:name=".ui.profile.ProfileActivity"
-            android:exported="false"/>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,9 +46,16 @@
                     android:scheme="test" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:exported="false"/>
+        <activity android:name=".ui.profile.EditProfileActivity"
+            android:exported="false" />
         <activity android:name=".ui.profile.EditProfileInfoActivity"
             android:exported="false" />
         <activity android:name=".ui.profile.EditPasswordActivity"
+            android:exported="false" />
+        <activity android:name=".ui.profile.WithdrawalActivity"
             android:exported="false" />
 
         <service android:name="com.google.android.gms.metadata.ModuleDependencies"

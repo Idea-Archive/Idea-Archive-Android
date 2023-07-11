@@ -166,17 +166,6 @@
             android:fontFamily="@font/pretendard_regular"
             app:layout_constraintTop_toTopOf="@id/g_tv_name_t"
             app:layout_constraintStart_toStartOf="@id/et_name" />
-        <TextView
-            android:id="@+id/tv_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:textSize="14sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/pretendard_regular"
-            android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@id/et_name"
-            app:layout_constraintStart_toStartOf="@id/et_name" />
 
         <EditText
             android:id="@+id/et_name"
@@ -191,21 +180,6 @@
             android:textSize="16sp"
             android:fontFamily="@font/pretendard_regular"
             app:layout_constraintTop_toBottomOf="@id/tv_name"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-        <EditText
-            android:id="@+id/et_email"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_edittext"
-            android:paddingStart="16dp"
-            android:paddingVertical="15dp"
-            android:hint="@{profile.email}"
-            android:textColor="@color/black"
-            android:textColorHint="@color/first_time_in_ia"
-            android:textSize="16sp"
-            android:fontFamily="@font/pretendard_regular"
-            app:layout_constraintTop_toBottomOf="@id/tv_email"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

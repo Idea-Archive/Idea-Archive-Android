@@ -8,10 +8,8 @@ import com.team_ia.idea_archive_android.databinding.ActivityAuthCodeInputPageBin
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.SignupViewModel
 import com.team_ia.idea_archive_android.utils.Event
-import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnabled
 import com.team_ia.idea_archive_android.utils.extension.setOnTextChanged
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.math.sign
 
 @AndroidEntryPoint
 class AuthCodeInputActivity: BaseActivity<ActivityAuthCodeInputPageBinding>(R.layout.activity_auth_code_input_page) {
@@ -23,10 +21,6 @@ class AuthCodeInputActivity: BaseActivity<ActivityAuthCodeInputPageBinding>(R.la
     fun initView() = binding.apply {
         etInputAuthCode1.run {
             setOnTextChanged { p0, _, _, _ ->
-                btnCheck.changeAtivatedWithEnabled(p0.isNullOrBlank()
-                        && etInputAuthCode2.text.isNullOrBlank()
-                        && etInputAuthCode3.text.isNullOrBlank()
-                        && etInputAuthCode4.text.isNullOrBlank())
 
             }
         }
@@ -35,16 +29,11 @@ class AuthCodeInputActivity: BaseActivity<ActivityAuthCodeInputPageBinding>(R.la
     fun onClick(view: View){
         when(view){
             binding.btnCheck -> {
-                val email = signupViewModel.emailData.value!!
-                val authKey = binding.etInputAuthCode1.text.toString() +
-                        binding.etInputAuthCode2.text.toString() +
-                        binding.etInputAuthCode3.text.toString() +
-                        binding.etInputAuthCode4.text.toString()
-                if (binding.etInputAuthCode1.text.isNullOrBlank()
-                    && binding.etInputAuthCode2.text.isNullOrBlank()
-                    && binding.etInputAuthCode3.text.isNullOrBlank()
-                    && binding.etInputAuthCode4.text.isNullOrBlank()){
-                    signupViewModel.authCodeCheck(email = email, authKey = authKey.toInt())
+                val email = signupViewModel.emailData.value
+                val authKey = binding.etInputAuthCode1.text.toString() + binding.etInputAuthCode2.text.toString() +
+                        binding.etInputAuthCode3.text.toString() + binding.etInputAuthCode4.text.toString()
+                if (authKey.isBlank()){
+                    signupViewModel.authCodeCheck(email = email!!, authKey = authKey.toInt())
                 }
             }
         }
@@ -55,14 +44,15 @@ class AuthCodeInputActivity: BaseActivity<ActivityAuthCodeInputPageBinding>(R.la
     }
 
     private fun observeSignUp(){
-        val email = signupViewModel.emailData.value!!
-        val password = signupViewModel.passwordData.value!!
-        val name = signupViewModel.nameData.value!!
+        val email = signupViewModel.emailData.value
+        val password = signupViewModel.passwordData.value
+        val name = signupViewModel.nameData.value
         signupViewModel.signupInfo.observe(this){
+            val successInfo = signupViewModel.successInfo.value
             when (it){
                 Event.Success -> {
-                    signupViewModel.signup(email, password, name)
-                    when (it){
+                    signupViewModel.signup(email!!, password!!, name!!)
+                    when (successInfo){
                         Event.Success -> {
                             startActivity(Intent(this, AuthenticationSuccessActivity::class.java))
                             finish()

@@ -29,6 +29,8 @@ class SignupViewModel @Inject constructor(
     val signupInfo : LiveData<Event> get() = _signupInfo
     private val _authCodeInfo = MutableLiveData<Event>()
     val authCodeInfo : LiveData<Event> get() = _authCodeInfo
+    private val _successInfo = MutableLiveData<Event>()
+    val successInfo : LiveData<Event> get() = _successInfo
 
     fun signup (email: String, password: String, name: String) = viewModelScope.launch{
         signupUseCase(

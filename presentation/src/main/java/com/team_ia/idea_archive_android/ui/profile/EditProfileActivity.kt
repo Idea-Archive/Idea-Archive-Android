@@ -29,7 +29,7 @@ class EditProfileActivity : BaseActivity<ActivityEditProfileBinding>(R.layout.ac
             startActivity(Intent(this, EditProfileInfoActivity::class.java).putExtra("profile", profile))
         }
         binding.btnEditPassword.setOnClickListener {
-            startActivity(Intent(this, EditPasswordActivity::class.java))
+            startActivity(Intent(this, EditPasswordActivity::class.java).putExtra("profile", profile))
         }
         binding.btnWithdrawal.setOnClickListener {
             startActivity(Intent(this, WithdrawalActivity::class.java))

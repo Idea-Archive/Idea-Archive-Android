@@ -67,15 +67,19 @@ class MyViewModel @Inject constructor(
                     _postData.value = it
                     _getPostInfo.value = Event.Success
                 }.onFailure {
-                    _getPostInfo.value =
-                        it.errorHandling(notFoundAction = { saveTokenUseCase() })
+                    when (it.errorHandling()) {
+                        Event.NotFound -> _getPostInfo.value = Event.NotFound
+                        else -> _getPostInfo.value = it.errorHandling(unauthorizedAction = { saveTokenUseCase() })
+                    }
                 }
                 1 -> getMyPostUseCase().onSuccess {
                     _postData.value = it
                     _getPostInfo.value = Event.Success
                 }.onFailure {
-                    _getPostInfo.value =
-                        it.errorHandling(notFoundAction = { saveTokenUseCase() })
+                    when (it.errorHandling()) {
+                        Event.NotFound -> _getPostInfo.value = Event.NotFound
+                        else -> _getPostInfo.value = it.errorHandling(unauthorizedAction = { saveTokenUseCase() })
+                    }
                 }
             }
         }

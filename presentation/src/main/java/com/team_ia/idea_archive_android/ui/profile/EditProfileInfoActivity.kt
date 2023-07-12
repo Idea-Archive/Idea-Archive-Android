@@ -9,6 +9,7 @@ import androidx.activity.viewModels
 import androidx.core.net.toFile
 import coil.load
 import coil.transform.CircleCropTransformation
+import com.team_ia.domain.entity.MemberEntity
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityEditProfileInfoBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
@@ -33,17 +34,18 @@ class EditProfileInfoActivity : BaseActivity<ActivityEditProfileInfoBinding>(R.l
             }
         }
     }
+    private var profile: MemberEntity? = null
 
     override fun createView() {
-        binding.ivProfile.load(myViewModel.profileData.value?.profileImg ?: R.drawable.bg_default_profile) {
+        profile = intent.getSerializableExtra("profile") as MemberEntity
+        binding.ivProfile.load(profile?.profileImg ?: R.drawable.bg_default_profile) {
             crossfade(true)
             placeholder(R.drawable.bg_default_profile)
             transformations(CircleCropTransformation())
             binding.btnChangeProfilePicture.bringToFront()
         }
-        binding.profile = myViewModel.profileData.value
+        binding.profile = profile
         binding.btnChangeProfilePicture.setOnClickListener {
-
             pickImage(pickMedia)
         }
         onClick()

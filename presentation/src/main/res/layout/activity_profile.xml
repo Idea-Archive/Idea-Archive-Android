@@ -204,6 +204,7 @@
             android:minHeight="0dp"
             android:src="@drawable/ibtn_back_button"
             android:background="@drawable/bg_bottom_nav"
+            android:onClick="@{goTo::onClickPageButton}"
             app:layout_constraintTop_toTopOf="@id/g_ibtn_back_button_t"
             app:layout_constraintBottom_toBottomOf="@id/g_ibtn_back_button_b"
             app:layout_constraintStart_toStartOf="@id/g_ibtn_back_button_s"

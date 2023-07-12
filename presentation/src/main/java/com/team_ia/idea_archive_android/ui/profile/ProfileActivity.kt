@@ -1,13 +1,13 @@
 package com.team_ia.idea_archive_android.ui.profile
 
 import android.content.Intent
-import android.util.Log
 import android.view.View
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.viewpager2.widget.ViewPager2
 import coil.load
 import com.google.android.material.tabs.TabLayoutMediator
+import com.team_ia.domain.entity.MemberEntity
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.adapter.viewpager.MyViewPagerAdapter
 import com.team_ia.idea_archive_android.databinding.ActivityProfileBinding
@@ -21,6 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ProfileActivity : BaseActivity<ActivityProfileBinding>(R.layout.activity_profile) {
     private val myViewPagerAdapter by lazy { MyViewPagerAdapter(this) }
     private val myViewModel by viewModels<MyViewModel>()
+    private var profile: MemberEntity? = null
     override fun createView() {
         binding.goTo = this
         initViewPager()
@@ -28,13 +29,9 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(R.layout.activity_p
         backButtonPressed()
     }
 
-    override fun onResume() {
-        super.onResume()
-        myViewModel.getProfile()
-    }
+
 
     override fun observeEvent() {
-        myProfile()
         observeProfileInfo()
         observeEditProfile()
         observePostInfo()
@@ -66,19 +63,18 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(R.layout.activity_p
     }
 
     private fun myProfile() {
-        myViewModel.profileData.observe(this) {
+            profile = myViewModel.profileData.value
             binding.apply {
-                tvName.text = it.name
-                ivProfile.load(it.profileImg ?: R.drawable.bg_default_profile)
+                tvName.text = myViewModel.profileData.value?.name
+                ivProfile.load(myViewModel.profileData.value?.profileImg ?: R.drawable.bg_default_profile)
             }
-        }
     }
 
     private fun observeProfileInfo() {
         myViewModel.getProfileInfo.observe(this) {
             when (it) {
                 Event.Success -> {
-                    Log.d("Success", it.toString())
+                    myProfile()
                 }
                 Event.Unauthorized -> {
                     longToast("토큰이 만료되었습니다, 로그아웃 이후 다시 로그인해주세요.").let {
@@ -123,7 +119,6 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(R.layout.activity_p
         myViewModel.getPostInfo.observe(this) {
             when (it) {
                 Event.Success -> {
-                    Log.d("Success", it.toString())
                 }
                 Event.Unauthorized -> {
                     longToast("토큰이 만료되었습니다, 로그아웃 이후 다시 로그인해주세요.").let {
@@ -131,9 +126,9 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(R.layout.activity_p
                     }
                 }
                 Event.NotFound -> {
-                    shortToast("알 수 없는 오류가 발생했습니다.")
+                    shortToast("글이 없습니다")
                 }
-                else -> {
+               else -> {
                     shortToast("기타 오류 발생.")
                 }
             }
@@ -150,7 +145,12 @@ class ProfileActivity : BaseActivity<ActivityProfileBinding>(R.layout.activity_p
     }
 
     fun onClickPageButton(view: View) {
-        startActivity(Intent(this, EditProfileActivity::class.java))
+        when (view) {
+            binding.btnDetail, binding.tvName ->
+                startActivity(Intent(this, EditProfileActivity::class.java).putExtra("profile", profile))
+            binding.ibtnBackButton ->
+                finish()
+        }
     }
 
 }

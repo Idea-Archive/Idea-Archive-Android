@@ -2,20 +2,19 @@ package com.team_ia.idea_archive_android.ui.profile
 
 import android.content.Intent
 import android.view.View
-import androidx.activity.viewModels
+import com.team_ia.domain.entity.MemberEntity
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityEditProfileBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
-import com.team_ia.idea_archive_android.ui.main.LoginActivity
-import com.team_ia.idea_archive_android.ui.viewmodel.MyViewModel
-import com.team_ia.idea_archive_android.utils.Event
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class EditProfileActivity : BaseActivity<ActivityEditProfileBinding>(R.layout.activity_edit_profile) {
+    private var profile: MemberEntity? = null
 
     override fun createView() {
         onClick()
+        profile = intent.getSerializableExtra("profile") as MemberEntity
     }
 
     override fun observeEvent() {
@@ -27,7 +26,7 @@ class EditProfileActivity : BaseActivity<ActivityEditProfileBinding>(R.layout.ac
 
     private fun onClick() {
         binding.btnEditProfile.setOnClickListener {
-            startActivity(Intent(this, EditProfileInfoActivity::class.java))
+            startActivity(Intent(this, EditProfileInfoActivity::class.java).putExtra("profile", profile))
         }
         binding.btnEditPassword.setOnClickListener {
             startActivity(Intent(this, EditPasswordActivity::class.java))

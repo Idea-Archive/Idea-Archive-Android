@@ -1,9 +1,8 @@
 package com.team_ia.idea_archive_android.ui.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import com.team_ia.idea_archive_android.R
-import com.team_ia.idea_archive_android.adapter.MajorFilterListAdapter
 import com.team_ia.idea_archive_android.databinding.ActivityMainPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
 
@@ -13,6 +12,10 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
 
+        val entirePost = findViewById<TextView>(R.id.tv_entire)
+        entirePost.setOnClickListener {
+            val entirePostFragment = MainEntireFragment()
+        }
     }
 
     override fun createView() {

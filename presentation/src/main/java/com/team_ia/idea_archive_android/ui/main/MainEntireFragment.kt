@@ -16,6 +16,7 @@ class MainEntireFragment : BaseFragment<FragmentMainEntireBinding>(R.layout.frag
 
     override fun createView() {
         initRecyclerView()
+        binding
     }
 
     override fun observeEvent() {

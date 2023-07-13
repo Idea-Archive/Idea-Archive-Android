@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="goBack"
+            type="com.team_ia.idea_archive_android.ui.profile.EditProfileActivity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/ibtn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/ibtn_back_button"
+            android:onClick="@{goBack::onClickPageButton}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/my_linear"
+            app:layout_constraintStart_toStartOf="parent" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="@string/back"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/pretendard_regular"
+            android:onClick="@{goBack::onClickPageButton}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/my_linear"
+            app:layout_constraintStart_toEndOf="@id/ibtn_back" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/my_page"
+            android:textColor="@color/black"
+            android:fontFamily="@font/pretendard_medium"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/my_linear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/my_linear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/my_page_background"
+            android:layout_marginTop="48dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12sp"
+                android:background="@drawable/bg_edit_profile_button" />
+            <Button
+                android:id="@+id/btn_edit_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.1dp"
+                android:background="@drawable/bg_edit_password" />
+            <Button
+                android:id="@+id/btn_withdrawal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0.1dp"
+                android:background="@drawable/bg_withdrawal" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

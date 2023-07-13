@@ -1,7 +1,7 @@
 package com.team_ia.domain.param
 
-import android.media.Image
+import okhttp3.MultipartBody
 
 data class ChangeProfilePictureParam(
-    val multipartFiles: Image
+    val multipartFiles: MultipartBody.Part
 )

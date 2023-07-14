@@ -290,7 +290,6 @@
             android:text="@string/check"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:onClick="@{authCodeInput::onClick}"
             app:layout_constraintBottom_toBottomOf="@id/g_check_btn_b"
             app:layout_constraintEnd_toEndOf="@id/g_check_btn_e"
             app:layout_constraintStart_toStartOf="@id/g_check_btn_s"

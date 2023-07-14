@@ -13,6 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SignUpFragment : BaseFragment<FragmentSignUpPageBinding>(R.layout.fragment_sign_up_page) {
+
     private val signupViewModel by activityViewModels<SignupViewModel>()
     override fun createView() {
         binding.signupfragment = SignUpFragment()

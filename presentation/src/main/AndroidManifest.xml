@@ -49,9 +49,11 @@
         <activity
             android:name=".ui.profile.ProfileActivity"
             android:exported="false"/>
-        <activity android:name=".ui.main.SignUpActivity"
+        <activity android:name=".ui.main.SignUpFragment"
             android:exported="false"/>
-        <activity android:name=".ui.main.AuthCodeInputActivity"
+        <activity android:name=".ui.main.AuthCodeInputFragment"
+            android:exported="false"/>
+        <activity android:name=".ui.main.SignUpActivity"
             android:exported="false"/>
     </application>
 

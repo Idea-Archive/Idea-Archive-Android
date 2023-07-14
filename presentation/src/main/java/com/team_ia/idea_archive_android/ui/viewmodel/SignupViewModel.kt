@@ -27,9 +27,6 @@ class SignupViewModel @Inject constructor(
 ): ViewModel() {
     private val _signupInfo = MutableLiveData<Event>()
     val signupInfo : LiveData<Event> get() = _signupInfo
-    private val _successInfo = MutableLiveData<Event>()
-    val successInfo : LiveData<Event> get() = _successInfo
-
     fun signup (email: String, password: String, name: String) = viewModelScope.launch{
         signupUseCase(
             SignupParam(
@@ -37,7 +34,6 @@ class SignupViewModel @Inject constructor(
             )
         ).onSuccess {
             _signupInfo.value = Event.Success
-            _successInfo.value = Event.Success
 
         }.onFailure {
             _signupInfo.value =
@@ -74,6 +70,10 @@ class SignupViewModel @Inject constructor(
     val nameData: LiveData<String> get() = _nameData
     private val _passwordData = MutableLiveData<String>()
     val passwordData: LiveData<String> get() = _passwordData
+
+    fun emailSaveData(email : String){
+        _emailData.value = email
+    }
 
     fun registerIdData(email: String, password: String, name: String) = viewModelScope.launch{
         _emailData.value = email

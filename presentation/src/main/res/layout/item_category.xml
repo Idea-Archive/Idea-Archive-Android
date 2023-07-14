@@ -16,15 +16,15 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:background="@drawable/bg_category_view"
+            android:fontFamily="@font/pretendard_medium"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="4dp"
             android:textColor="@color/gray"
             android:textSize="8sp"
-            android:fontFamily="@font/pretendard_medium"
-            android:paddingVertical="4dp"
-            android:paddingHorizontal="6dp"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

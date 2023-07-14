@@ -9,14 +9,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/my_page_background">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_rv_major_filter_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1043" />
+            app:layout_constraintGuide_begin="76dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_rv_major_filter_b"
@@ -34,8 +35,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_major_filter"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="@id/g_rv_major_filter_b"
@@ -46,5 +47,40 @@
 
         </androidx.recyclerview.widget.RecyclerView>
 
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_rv_post_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0513" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_rv_post_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9487" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_rv_post_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1825" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_entire_post"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="@id/g_rv_post_e"
+            app:layout_constraintStart_toStartOf="@id/g_rv_post_s"
+            app:layout_constraintTop_toTopOf="@id/g_rv_post_t"
+            tools:listitem="@layout/item_post">
+
+        </androidx.recyclerview.widget.RecyclerView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-    </layout>
+</layout>

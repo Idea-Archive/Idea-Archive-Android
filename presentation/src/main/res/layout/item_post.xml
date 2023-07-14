@@ -10,7 +10,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:background="@drawable/bg_item_post">
+        android:background="@drawable/bg_item_post"
+        android:layout_marginTop="12dp">
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -85,20 +86,19 @@
             app:layout_constraintGuide_percent="0.9543" />
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_heart_count_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:id="@+id/g_tv_heart_count_t"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.8000"
-            />
+            app:layout_constraintGuide_percent="0.8000" />
 
         <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_heart_count_b"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:id="@+id/g_tv_heart_count_b"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.8571"
-            />
+            app:layout_constraintGuide_percent="0.8571" />
+
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_iv_profile_t"
             android:layout_width="match_parent"
@@ -304,10 +304,9 @@
             android:fontFamily="@font/pretendard_regular"
             android:textColor="@color/gray"
             android:textSize="10sp"
-            app:layout_constraintStart_toStartOf="@id/g_tv_heart_count_s"
-            app:layout_constraintTop_toTopOf="@id/g_tv_heart_count_t"
-            app:layout_constraintEnd_toEndOf="@id/g_tv_heart_count_e"
             app:layout_constraintBottom_toBottomOf="@id/g_tv_heart_count_b"
-            />
+            app:layout_constraintEnd_toEndOf="@id/g_tv_heart_count_e"
+            app:layout_constraintStart_toStartOf="@id/g_tv_heart_count_s"
+            app:layout_constraintTop_toTopOf="@id/g_tv_heart_count_t" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

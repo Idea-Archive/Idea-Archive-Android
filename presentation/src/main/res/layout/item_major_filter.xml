@@ -19,6 +19,7 @@
             android:paddingHorizontal="12dp"
             android:paddingVertical="6dp"
             android:textColor="@color/black"
+            android:textAllCaps="false"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -12,11 +12,24 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainEntireFragment : BaseFragment<FragmentMainEntireBinding>(R.layout.fragment_main_entire) {
 
     private lateinit var postListAdapter: PostListAdapter
-
     private lateinit var majorFilterListAdapter: MajorFilterListAdapter
-    val majorFilterList = listOf("FrontEnd", "BackEnd", "Android", "iOS", "Cloud", "GameDevelop", "MachineLearning", "Embedded","DevOps", "DBA", "WebPublisher", "Design")
 
-    fun initRecyclerView(){
+    val majorFilterList = listOf(
+        "FrontEnd",
+        "BackEnd",
+        "Android",
+        "iOS",
+        "Cloud",
+        "GameDevelop",
+        "MachineLearning",
+        "Embedded",
+        "DevOps",
+        "DBA",
+        "WebPublisher",
+        "Design"
+    )
+
+    fun initRecyclerView() {
         majorFilterListAdapter = MajorFilterListAdapter(majorFilterList)
         binding.rvMajorFilter.adapter = majorFilterListAdapter
         //binding.rvEntirePost.adapter = postListAdapter

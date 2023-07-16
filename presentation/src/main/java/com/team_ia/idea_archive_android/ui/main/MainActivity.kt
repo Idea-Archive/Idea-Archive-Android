@@ -16,9 +16,20 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
     val fragmentManager: FragmentManager = supportFragmentManager
 
     override fun createView() {
+
         binding.tvEntire.setOnClickListener {
             showEntirePostFragment()
         }
+
+        binding.tvJobOpening.setOnClickListener {
+            showJobOpeningPostFragment()
+        }
+    }
+
+    private fun showJobOpeningPostFragment() {
+        fragmentManager.beginTransaction()
+            .replace(R.id.fcv_main_job_opening_fragment_container, MainJobOpeningFragment())
+            .commit()
     }
 
     private fun showEntirePostFragment() {

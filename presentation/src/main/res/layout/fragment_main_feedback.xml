@@ -43,7 +43,7 @@
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_job_opening_post"
+            android:id="@+id/rv_feedback_post"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"

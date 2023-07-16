@@ -208,5 +208,14 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
             tools:layout="@layout/fragment_main_feedback" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_main_idea_fragment_container"
+            android:name="com.team_ia.idea_archive_android.ui.main.MainIdeaFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
+            tools:layout="@layout/fragment_main_idea" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

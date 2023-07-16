@@ -28,6 +28,10 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         binding.tvFeedback.setOnClickListener {
             showFeedbackPostFragment()
         }
+
+        binding.tvIdea.setOnClickListener {
+            showIdeaPostFragment()
+        }
     }
 
 
@@ -40,6 +44,12 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
     private fun showJobOpeningPostFragment() {
         fragmentManager.beginTransaction()
             .replace(R.id.fcv_main_job_opening_fragment_container, MainJobOpeningFragment())
+            .commit()
+    }
+
+    private fun showIdeaPostFragment() {
+        fragmentManager.beginTransaction()
+            .replace(R.id.fcv_main_idea_fragment_container, MainIdeaFragment())
             .commit()
     }
 

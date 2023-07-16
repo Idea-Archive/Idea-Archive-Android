@@ -1,8 +1,7 @@
 package com.team_ia.idea_archive_android.ui.main
 
 import android.util.Log
-import android.view.View
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.FragmentAuthCodeInputPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseFragment
@@ -14,17 +13,28 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class AuthCodeInputFragment :
     BaseFragment<FragmentAuthCodeInputPageBinding>(R.layout.fragment_auth_code_input_page) {
-    private val signupViewModel by viewModels<SignupViewModel>()
+    private val signupViewModel by activityViewModels<SignupViewModel>()
     override fun createView() {
         binding.authCodeInput = this
         onClick()
+        initView()
 
     }
 
     fun initView() = binding.apply {
         etInputAuthCode1.run {
-            setOnTextChanged { p0, _, _, _ ->
-
+            setOnTextChanged { _, _, _, _ ->
+                etInputAuthCode2.requestFocus()
+            }
+        }
+        etInputAuthCode2.run{
+            setOnTextChanged { _, _, _, _ ->
+                etInputAuthCode3.requestFocus()
+            }
+        }
+        etInputAuthCode3.run {
+            setOnTextChanged { _, _, _, _ ->
+                etInputAuthCode4.requestFocus()
             }
         }
     }

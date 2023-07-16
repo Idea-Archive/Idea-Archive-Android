@@ -1,7 +1,7 @@
 package com.team_ia.idea_archive_android.ui.main
 
 import android.util.Log
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.FragmentSignUpPageBinding
@@ -13,9 +13,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SignUpFragment : BaseFragment<FragmentSignUpPageBinding>(R.layout.fragment_sign_up_page) {
-    private val signupViewModel by viewModels<SignupViewModel>()
+    private val signupViewModel by activityViewModels<SignupViewModel>()
     override fun createView() {
-        Log.d("fragment 실행", "yes")
         binding.signupfragment = SignUpFragment()
         onClick()
     }

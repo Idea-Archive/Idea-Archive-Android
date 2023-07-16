@@ -10,8 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:background="@drawable/bg_item_post"
-        android:layout_marginTop="12dp">
+        android:background="@drawable/bg_item_post">
 
 
         <androidx.constraintlayout.widget.Guideline

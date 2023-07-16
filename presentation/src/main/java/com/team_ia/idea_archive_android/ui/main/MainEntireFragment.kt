@@ -32,6 +32,7 @@ class MainEntireFragment : BaseFragment<FragmentMainEntireBinding>(R.layout.frag
     fun initRecyclerView() {
         majorFilterListAdapter = MajorFilterListAdapter(majorFilterList)
         binding.rvMajorFilter.adapter = majorFilterListAdapter
+        binding.rvEntirePost.adapter = postListAdapter
         //binding.rvEntirePost.adapter = postListAdapter
     }
 

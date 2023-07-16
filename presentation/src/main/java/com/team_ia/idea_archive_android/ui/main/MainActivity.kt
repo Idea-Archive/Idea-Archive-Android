@@ -24,6 +24,17 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         binding.tvJobOpening.setOnClickListener {
             showJobOpeningPostFragment()
         }
+
+        binding.tvFeedback.setOnClickListener {
+            showFeedbackPostFragment()
+        }
+    }
+
+
+    private fun showFeedbackPostFragment() {
+        fragmentManager.beginTransaction()
+            .replace(R.id.fcv_main_feedback_fragment_container, MainFeedbackFragment())
+            .commit()
     }
 
     private fun showJobOpeningPostFragment() {

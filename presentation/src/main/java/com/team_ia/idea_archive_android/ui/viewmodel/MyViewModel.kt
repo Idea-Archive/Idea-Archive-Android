@@ -6,10 +6,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.team_ia.domain.entity.MemberEntity
 import com.team_ia.domain.model.PostModel
+import com.team_ia.domain.param.WithdrawalMemberParam
 import com.team_ia.domain.usecase.auth.SaveTokenUseCase
 import com.team_ia.domain.usecase.member.GetMyHeartListUseCase
 import com.team_ia.domain.usecase.member.GetMyPostUseCase
 import com.team_ia.domain.usecase.member.GetProfileInfoUseCase
+import com.team_ia.domain.usecase.member.WithdrawalMemberUseCase
 import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.utils.errorHandling
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -21,6 +23,7 @@ class MyViewModel @Inject constructor(
     private val getProfileInfoUseCase: GetProfileInfoUseCase,
     private val getMyHeartListUseCase: GetMyHeartListUseCase,
     private val getMyPostUseCase: GetMyPostUseCase,
+    private val withdrawalMemberUseCase: WithdrawalMemberUseCase,
     private val saveTokenUseCase: SaveTokenUseCase
 ) : ViewModel() {
 
@@ -38,6 +41,9 @@ class MyViewModel @Inject constructor(
 
     private var _getPostInfo = MutableLiveData<Event>()
     val getPostInfo: LiveData<Event> get() = _getPostInfo
+
+    private var _withdrawalInfo = MutableLiveData<Event>()
+    val withdrawalInfo: LiveData<Event> get() = _withdrawalInfo
 
     fun getProfile() {
         viewModelScope.launch {
@@ -61,18 +67,37 @@ class MyViewModel @Inject constructor(
                     _postData.value = it
                     _getPostInfo.value = Event.Success
                 }.onFailure {
-                    _getPostInfo.value =
-                        it.errorHandling(notFoundAction = { saveTokenUseCase() })
+                    when (it.errorHandling()) {
+                        Event.NotFound -> _getPostInfo.value = Event.NotFound
+                        else -> _getPostInfo.value = it.errorHandling(unauthorizedAction = { saveTokenUseCase() })
+                    }
                 }
                 1 -> getMyPostUseCase().onSuccess {
                     _postData.value = it
                     _getPostInfo.value = Event.Success
                 }.onFailure {
-                    _getPostInfo.value =
-                        it.errorHandling(notFoundAction = { saveTokenUseCase() })
+                    when (it.errorHandling()) {
+                        Event.NotFound -> _getPostInfo.value = Event.NotFound
+                        else -> _getPostInfo.value = it.errorHandling(unauthorizedAction = { saveTokenUseCase() })
+                    }
                 }
             }
         }
     }
 
+    fun withdrawal(password: String) {
+        viewModelScope.launch {
+            withdrawalMemberUseCase(
+                WithdrawalMemberParam(
+                    email = _profileData.value!!.email,
+                    password = password
+                )
+            ).onSuccess {
+                _withdrawalInfo.value = Event.Success
+                saveTokenUseCase()
+            }.onFailure {
+                _withdrawalInfo.value = it.errorHandling(unauthorizedAction = { saveTokenUseCase() })
+            }
+        }
+    }
 }

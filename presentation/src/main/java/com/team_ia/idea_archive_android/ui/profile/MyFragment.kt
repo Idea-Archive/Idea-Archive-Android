@@ -13,6 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MyFragment : BaseFragment<FragmentMyBinding>(R.layout.fragment_my) {
     private val viewModel by viewModels<MyViewModel>()
     private lateinit var adapter: PostListAdapter
+
     override fun createView() {
         initRecyclerView()
     }

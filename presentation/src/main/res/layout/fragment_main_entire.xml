@@ -12,12 +12,6 @@
         android:layout_height="match_parent"
         android:background="@color/my_page_background">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_rv_major_filter_t"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="76dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/g_rv_major_filter_b"
@@ -42,7 +36,7 @@
             app:layout_constraintBottom_toBottomOf="@id/g_rv_major_filter_b"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/g_rv_major_filter_s"
-            app:layout_constraintTop_toTopOf="@id/g_rv_major_filter_t"
+            app:layout_constraintTop_toTopOf="parent"
             tools:listitem="@layout/item_major_filter">
 
         </androidx.recyclerview.widget.RecyclerView>

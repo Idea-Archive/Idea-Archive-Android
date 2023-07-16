@@ -180,11 +180,15 @@
             app:layout_constraintEnd_toEndOf="@id/g_btn_search_e"
             app:layout_constraintStart_toStartOf="@id/g_btn_search_s"
             app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
-`
+
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fcv_main_entire_fragment_container"
+            android:name="com.team_ia.idea_archive_android.ui.main.MainEntireFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:name="com.team_ia.idea_archive_android.ui.main.MainEntireFragment"/>
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
+            tools:layout="@layout/fragment_main_entire" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

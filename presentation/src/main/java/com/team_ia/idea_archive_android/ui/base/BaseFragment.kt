@@ -26,6 +26,7 @@ abstract class BaseFragment<B: ViewDataBinding>(
         this.savedInstanceState = savedInstanceState
         mBinding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         createView()
+        observeEvent()
         return binding.root
     }
 

@@ -18,5 +18,5 @@ interface EmailAPI {
     suspend fun checkVerificationCode(
         @Query("email") email: String,
         @Query("authKey") authKey: Int
-    ): Response<Unit>
+    ): Response<Void>
 }

@@ -50,7 +50,9 @@
         </activity>
         <activity
             android:name=".ui.profile.ProfileActivity"
-            android:exported="false" />
+            android:exported="false"/>
+        <activity android:name=".ui.main.SignUpActivity"
+            android:exported="false"/>
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true" />
@@ -66,6 +68,10 @@
         <activity
             android:name=".ui.profile.WithdrawalActivity"
             android:exported="false" />
+        <activity android:name=".ui.main.AuthenticationSuccessActivity"
+            android:exported="false"/>
+        <activity android:name=".ui.main.AuthenticationFailedActivity"
+            android:exported="false"/>
 
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"

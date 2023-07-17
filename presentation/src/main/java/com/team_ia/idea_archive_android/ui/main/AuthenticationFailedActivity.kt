@@ -12,4 +12,5 @@ class AuthenticationFailedActivity: BaseActivity<ActivityAuthenticationFailedPag
 
     override fun observeEvent() {
     }
+
 }

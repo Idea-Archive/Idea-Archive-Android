@@ -12,5 +12,7 @@ class SignUpActivity : BaseActivity<ActivitySignUpPageBinding>(R.layout.activity
     override fun createView() {
     }
 
-    override fun observeEvent() {}
+    override fun observeEvent() {
+    }
+
 }

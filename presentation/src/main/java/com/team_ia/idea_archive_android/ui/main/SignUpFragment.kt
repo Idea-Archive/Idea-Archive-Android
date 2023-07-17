@@ -81,4 +81,5 @@ class SignUpFragment : BaseFragment<FragmentSignUpPageBinding>(R.layout.fragment
             name = name
         )
     }
+
 }

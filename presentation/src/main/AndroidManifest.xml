@@ -51,6 +51,8 @@
         <activity
             android:name=".ui.profile.ProfileActivity"
             android:exported="false"/>
+        <activity android:name=".ui.main.SignUpActivity"
+            android:exported="false"/>
         <activity
             android:name=".ui.profile.EditProfileActivity"
             android:exported="false" />
@@ -63,8 +65,7 @@
         <activity
             android:name=".ui.profile.WithdrawalActivity"
             android:exported="false" />
-        <activity android:name=".ui.main.AuthenticationSuccessActivity"/>
-        <activity android:name=".ui.main.SignUpActivity"
+        <activity android:name=".ui.main.AuthenticationSuccessActivity"
             android:exported="false"/>
 
         <activity android:name=".ui.main.AuthenticationFailedActivity"

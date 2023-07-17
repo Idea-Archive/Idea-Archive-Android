@@ -37,7 +37,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     private val googleLoginViewModel by viewModels<GoogleSocialLoginViewModel>()
     private val kakaoLoginViewModel by viewModels<KakaoSocialLoginViewModel>()
 
-
     companion object {
         private val RC_SIGN_IN: Int = 9001
     }
@@ -59,6 +58,17 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
                     }
                 }
             }
+
+            val launcher =
+                registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+
+                }
+
+
+            binding.ibtnGoogleLg.setOnClickListener { view ->
+                googleLogin()
+            }
+
         }
 
         val githubClientId = BuildConfig.GITHUB_CLIENT_ID
@@ -76,6 +86,19 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
 
     }
+
+//    fun kakaoLogin() {
+//        binding.ibtnKakaoLg.setOnClickListener {
+//            kakaoLoginViewModel.checkKakaoLogin()
+//            kakaoLoginViewModel.kakaoInfo.observe(this) {
+//                if (!it) {
+//                    longToast("카카오톡이 감지되지 않습니다. 카카오톡을 설치 해주세요.")
+//                } else {
+//                    kakaoLoginViewModel.kakaoLogin()
+//                }
+//            }
+//        }
+//    }
 
     private fun observeKakaoLogin() {
         kakaoLoginViewModel.loginInfo.observe(this) {

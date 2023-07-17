@@ -75,10 +75,6 @@ class SignupViewModel @Inject constructor(
     private val _passwordData = MutableLiveData<String>()
     val passwordData: LiveData<String> get() = _passwordData
 
-    fun emailSaveData(email : String){
-        _emailData.value = email
-    }
-
     fun registerIdData(email: String, password: String, name: String) = viewModelScope.launch{
         _emailData.value = email
         _passwordData.value = password

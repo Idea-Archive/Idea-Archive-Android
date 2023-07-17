@@ -51,8 +51,6 @@
         <activity
             android:name=".ui.profile.ProfileActivity"
             android:exported="false"/>
-        <activity android:name=".ui.main.SignUpFragment"
-            android:exported="false"/>
         <activity
             android:name=".ui.profile.EditProfileActivity"
             android:exported="false" />

@@ -34,5 +34,4 @@ abstract class BaseActivity<B: ViewDataBinding>(
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
     }
 
-
 }

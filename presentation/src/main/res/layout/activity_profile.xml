@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="goTo"
+            type="com.team_ia.idea_archive_android.ui.profile.ProfileActivity" />
 
     </data>
 
@@ -225,6 +228,7 @@
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:src="@drawable/ibtn_back_button"
+            android:onClick="@{goTo::onClickPageButton}"
             app:layout_constraintBottom_toBottomOf="@id/g_ibtn_back_button_b"
             app:layout_constraintEnd_toEndOf="@id/g_ibtn_back_button_e"
             app:layout_constraintStart_toStartOf="@id/g_ibtn_back_button_s"
@@ -290,6 +294,7 @@
             android:minWidth="0dp"
             android:minHeight="0dp"
             android:src="@drawable/bg_go_to"
+            android:onClick="@{goTo::onClickPageButton}"
             app:layout_constraintBottom_toBottomOf="@id/g_btn_detail_b"
             app:layout_constraintEnd_toEndOf="@id/g_btn_detail_e"
             app:layout_constraintStart_toStartOf="@id/g_btn_detail_s"

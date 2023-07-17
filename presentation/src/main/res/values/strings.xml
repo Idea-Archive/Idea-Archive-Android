@@ -31,10 +31,11 @@
     <string name="my_page">MY</string>
     <string name="default_name">채종인</string>
     <string name="logout">로그아웃</string>
-    <string name="edit_profile">정보수정</string>
+    <string name="edit_profile">프로필수정</string>
     <string name="liked_post">좋아한 글</string>
     <string name="my_post">작성한 글</string>
     <string name="divide"> ∙ </string>
+<<<<<<< HEAD
     <string name="entire">전체</string>
     <string name="idea">아이디어</string>
     <string name="feedback">피드백</string>
@@ -42,4 +43,17 @@
     <string name="front_end">FrontEnd</string>
     <string name="back_end">BackEnd</string>
     <string name="android">Android</string>
+=======
+    <string name="withdrawal">회원탈퇴</string>
+    <string name="ask_withdrawal">회원탈퇴 하시겠습니까?\n탈퇴시 저장된 기록이 사라집니다.</string>
+    <string name="do_withdrawal">탈퇴하기</string>
+    <string name="name">이름</string>
+    <string name="email">이메일</string>
+    <string name="password">비밀번호</string>
+    <string name="new_password">새 비밀번호</string>
+    <string name="input_password">기존 비밀번호를 입력해주세요</string>
+    <string name="input_new_password_">새로운 비밀번호를 입력해주세요</string>
+    <string name="need_password">회원탈퇴를 하려면\n비밀번호가 필요해요</string>
+    <string name="incorrect_password">비밀번호가 일치하지 않습니다.</string>
+>>>>>>> f5c4f5de46f9441ad4c0c0bb1e7e154942cfb379
 </resources>

@@ -3,6 +3,7 @@ package com.team_ia.idea_archive_android.ui.login
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
+import android.util.Log
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -11,13 +12,16 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.kakao.sdk.common.KakaoSdk
+import com.kakao.sdk.user.UserApiClient
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
 import com.team_ia.idea_archive_android.ui.main.FindPasswordActivity
+import com.team_ia.idea_archive_android.ui.main.MainActivity
 import com.team_ia.idea_archive_android.ui.main.SignUpActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.GoogleSocialLoginViewModel
+import com.team_ia.idea_archive_android.ui.viewmodel.KakaoSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.LoginViewModel
 import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnabled
@@ -30,6 +34,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_login_page) {
     private val loginViewModel by viewModels<LoginViewModel>()
     private val googleLoginViewModel by viewModels<GoogleSocialLoginViewModel>()
+    private val kakaoLoginViewModel by viewModels<KakaoSocialLoginViewModel>()
 
     companion object {
         private val RC_SIGN_IN: Int = 9001
@@ -54,6 +59,52 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
                 }
             }
 
+            val launcher =
+                registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+
+                }
+
+
+            binding.ibtnGoogleLg.setOnClickListener { view ->
+                googleLogin()
+            }
+
+        }
+
+        val githubClientId = BuildConfig.GITHUB_CLIENT_ID
+        val githubSignInClient = Intent(
+            Intent.ACTION_VIEW, Uri.parse(
+                "https://github.com/login/oauth/authorize?client_id=$githubClientId"
+            )
+        )
+        binding.ibtnGithubLg.setOnClickListener {
+            startActivity(githubSignInClient)
+        }
+        binding.ibtnKakaoLg.setOnClickListener {
+            //kakaoLogin()
+            shortToast("헌재 불가능한 기능입니다.")
+        }
+
+    }
+
+//    fun kakaoLogin() {
+//        binding.ibtnKakaoLg.setOnClickListener {
+//            kakaoLoginViewModel.checkKakaoLogin()
+//            kakaoLoginViewModel.kakaoInfo.observe(this) {
+//                if (!it) {
+//                    longToast("카카오톡이 감지되지 않습니다. 카카오톡을 설치 해주세요.")
+//                } else {
+//                    kakaoLoginViewModel.kakaoLogin()
+//                }
+//            }
+//        }
+//    }
+
+    private fun observeKakaoLogin() {
+        kakaoLoginViewModel.loginInfo.observe(this) {
+            if (it) {
+                startActivity(Intent(this, MainActivity::class.java))
+            }
         }
 
         //binding.login = this
@@ -150,6 +201,28 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
+//    private fun kakaoLogin() {
+//        if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
+//            UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
+//                if (error != null) {
+//                    if (error is ClientError && error.reason == ClientErrorCause.Cancelled)
+//                        return@loginWithKakaoTalk
+//                } else {
+//                    UserApiClient.instance.loginWithKakaoAccount(this, callback = { token, error ->
+//                        kakaoLoginViewModel.login(token?.accessToken)
+//                    })
+//                }
+//                Log.e("TAG", token?.accessToken ?: "null")
+//                kakaoLoginViewModel.login(token?.accessToken)
+//            }
+//        } else {
+//            UserApiClient.instance.loginWithKakaoAccount(this, callback = { token, error ->
+//                Log.e("TAG", token?.accessToken ?: "null")
+//                kakaoLoginViewModel.login(token?.accessToken)
+//            })
+//        }
+//    }
+
 
     fun googleLogin() {
         val googleClientId = BuildConfig.GOOGLE_CLIENT_ID
@@ -163,6 +236,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
     }
 
     override fun observeEvent() {
+        observeKakaoLogin()
     }
 
 }

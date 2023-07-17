@@ -11,8 +11,6 @@ import com.team_ia.domain.usecase.auth.SignupUseCase
 import com.team_ia.domain.usecase.email.CheckVerificationCodeUseCase
 import com.team_ia.domain.usecase.email.SendVerificationCodeUseCase
 import com.team_ia.idea_archive_android.utils.Event
-import com.team_ia.idea_archive_android.utils.MutableEventFlow
-import com.team_ia.idea_archive_android.utils.asEvetFlow
 import com.team_ia.idea_archive_android.utils.errorHandling
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -25,8 +23,12 @@ class SignupViewModel @Inject constructor(
     private val checkVerificationCodeUseCase: CheckVerificationCodeUseCase,
     private val saveTokenUseCase: SaveTokenUseCase
 ): ViewModel() {
+    private val _emailInfo = MutableLiveData<Event>()
+    val emailInfo : LiveData<Event> get() = _emailInfo
     private val _signupInfo = MutableLiveData<Event>()
     val signupInfo : LiveData<Event> get() = _signupInfo
+    private val _authCodeInfo = MutableLiveData<Event>()
+    val authCodeInfo : LiveData<Event> get() = _authCodeInfo
     fun signup (email: String, password: String, name: String) = viewModelScope.launch{
         signupUseCase(
             SignupParam(
@@ -47,7 +49,7 @@ class SignupViewModel @Inject constructor(
                 email
             )
         ).onSuccess {
-            _signupInfo.value = Event.Success
+            _emailInfo.value = Event.Success
         }.onFailure {
             it.errorHandling(badRequestAction = {saveTokenUseCase()})
         }
@@ -57,7 +59,7 @@ class SignupViewModel @Inject constructor(
         checkVerificationCodeUseCase(
             email, authKey
         ).onSuccess {
-            _signupInfo.value = Event.Success
+            _authCodeInfo.value = Event.Success
         }.onFailure {
             it.errorHandling(badRequestAction = {saveTokenUseCase()})
         }
@@ -70,10 +72,6 @@ class SignupViewModel @Inject constructor(
     val nameData: LiveData<String> get() = _nameData
     private val _passwordData = MutableLiveData<String>()
     val passwordData: LiveData<String> get() = _passwordData
-
-    fun emailSaveData(email : String){
-        _emailData.value = email
-    }
 
     fun registerIdData(email: String, password: String, name: String) = viewModelScope.launch{
         _emailData.value = email

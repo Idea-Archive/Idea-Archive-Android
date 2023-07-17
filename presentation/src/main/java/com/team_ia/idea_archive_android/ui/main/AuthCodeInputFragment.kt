@@ -2,6 +2,7 @@ package com.team_ia.idea_archive_android.ui.main
 
 import android.util.Log
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.findNavController
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.FragmentAuthCodeInputPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseFragment
@@ -27,7 +28,7 @@ class AuthCodeInputFragment :
                 etInputAuthCode2.requestFocus()
             }
         }
-        etInputAuthCode2.run{
+        etInputAuthCode2.run {
             setOnTextChanged { _, _, _, _ ->
                 etInputAuthCode3.requestFocus()
             }
@@ -52,6 +53,9 @@ class AuthCodeInputFragment :
                 Log.d("email :", "${email}")
             }
         }
+        binding.ibtnBackButton.setOnClickListener {
+            requireActivity().findNavController(R.id.sign_up_container).popBackStack()
+        }
     }
 
 
@@ -63,21 +67,39 @@ class AuthCodeInputFragment :
         val email = signupViewModel.emailData.value
         val password = signupViewModel.passwordData.value
         val name = signupViewModel.nameData.value
-        signupViewModel.signupInfo.observe(this) {
+        signupViewModel.authCodeInfo.observe(this) {
             when (it) {
                 Event.Success -> {
                     signupViewModel.signup(email!!, password!!, name!!)
-
+                    val emailInfo = signupViewModel.signupInfo.value
+                    when(emailInfo){
+                        Event.Success -> {
+                            requireActivity().findNavController(R.id.sign_up_container)
+                                .navigate(R.id.action_authCodeInputFragment_to_authenticationSuccessActivity)
+                        }
+                        Event.Unauthorized -> {
+                            longToast("인증되지 않은 이메일 입니다.")
+                        }
+                        Event.Conflict -> {
+                            longToast("이미 존재하는 이메일 입니다.")
+                        }
+                        else -> {}
+                    }
                 }
                 Event.BadRequest -> {
                     shortToast("인증번호가 일치하지 않습니다.")
+                    requireActivity().findNavController(R.id.sign_up_container)
+                        .navigate(R.id.action_authCodeInputFragment_to_authenticationFailedActivity)
                 }
                 Event.Unauthorized -> {
                     shortToast("인증 시간이 만료되었어요.")
+                    requireActivity().findNavController(R.id.sign_up_container)
+                        .navigate(R.id.action_authCodeInputFragment_to_authenticationFailedActivity)
                 }
                 else -> {}
             }
         }
     }
+
 
 }

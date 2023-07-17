@@ -46,7 +46,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpPageBinding>(R.layout.fragment
     }
 
     private fun observeSignUp() {
-        signupViewModel.signupInfo.observe(this) {
+        signupViewModel.emailInfo.observe(this) {
             when (it) {
                 Event.Success -> {
                     Log.d("success", "")

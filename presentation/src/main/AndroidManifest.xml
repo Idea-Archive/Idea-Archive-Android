@@ -68,6 +68,10 @@
         <activity
             android:name=".ui.profile.WithdrawalActivity"
             android:exported="false" />
+        <activity android:name=".ui.main.AuthenticationSuccessActivity"
+            android:exported="false"/>
+        <activity android:name=".ui.main.Hilt_AuthenticationFailedActivity"
+            android:exported="false"/>
 
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"

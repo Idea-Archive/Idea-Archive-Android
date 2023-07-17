@@ -71,20 +71,8 @@ class AuthCodeInputFragment :
             when (it) {
                 Event.Success -> {
                     signupViewModel.signup(email!!, password!!, name!!)
-                    val emailInfo = signupViewModel.signupInfo.value
-                    when(emailInfo){
-                        Event.Success -> {
-                            requireActivity().findNavController(R.id.sign_up_container)
-                                .navigate(R.id.action_authCodeInputFragment_to_authenticationSuccessActivity)
-                        }
-                        Event.Unauthorized -> {
-                            longToast("인증되지 않은 이메일 입니다.")
-                        }
-                        Event.Conflict -> {
-                            longToast("이미 존재하는 이메일 입니다.")
-                        }
-                        else -> {}
-                    }
+                    requireActivity().findNavController(R.id.sign_up_container)
+                        .navigate(R.id.action_authCodeInputFragment_to_authenticationSuccessActivity)
                 }
                 Event.BadRequest -> {
                     shortToast("인증번호가 일치하지 않습니다.")

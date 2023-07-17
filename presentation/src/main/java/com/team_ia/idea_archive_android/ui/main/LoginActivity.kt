@@ -12,6 +12,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.kakao.sdk.common.KakaoSdk
+import com.kakao.sdk.common.model.ClientError
+import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
 import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
@@ -174,27 +176,27 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
-//    private fun kakaoLogin() {
-//        if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
-//            UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
-//                if (error != null) {
-//                    if (error is ClientError && error.reason == ClientErrorCause.Cancelled)
-//                        return@loginWithKakaoTalk
-//                } else {
-//                    UserApiClient.instance.loginWithKakaoAccount(this, callback = { token, error ->
-//                        kakaoLoginViewModel.login(token?.accessToken)
-//                    })
-//                }
-//                Log.e("TAG", token?.accessToken ?: "null")
-//                kakaoLoginViewModel.login(token?.accessToken)
-//            }
-//        } else {
-//            UserApiClient.instance.loginWithKakaoAccount(this, callback = { token, error ->
-//                Log.e("TAG", token?.accessToken ?: "null")
-//                kakaoLoginViewModel.login(token?.accessToken)
-//            })
-//        }
-//    }
+    private fun kakaoLogin() {
+        if (UserApiClient.instance.isKakaoTalkLoginAvailable(this)) {
+            UserApiClient.instance.loginWithKakaoTalk(this) { token, error ->
+                if (error != null) {
+                    if (error is ClientError && error.reason == ClientErrorCause.Cancelled)
+                        return@loginWithKakaoTalk
+                } else {
+                    UserApiClient.instance.loginWithKakaoAccount(this, callback = { token, error ->
+                        kakaoLoginViewModel.login(token?.accessToken)
+                    })
+                }
+                Log.e("TAG", token?.accessToken ?: "null")
+                kakaoLoginViewModel.login(token?.accessToken)
+            }
+        } else {
+            UserApiClient.instance.loginWithKakaoAccount(this, callback = { token, error ->
+                Log.e("TAG", token?.accessToken ?: "null")
+                kakaoLoginViewModel.login(token?.accessToken)
+            })
+        }
+    }
 
 
     fun onClick(view: View) {

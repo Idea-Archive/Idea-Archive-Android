@@ -33,11 +33,7 @@
 
                 <data
                     android:host="oauth"
-<<<<<<< HEAD
                     android:scheme="736c8c9c3716a1d7c8ebfb9d3f8ba5b2" />
-=======
-                    android:scheme="kakao736c8c9c3716a1d7c8ebfb9d3f8ba5b2" />
->>>>>>> f5c4f5de46f9441ad4c0c0bb1e7e154942cfb379
             </intent-filter>
 
             <intent-filter>
@@ -51,14 +47,10 @@
                     android:scheme="test" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ui.profile.ProfileActivity"
             android:exported="false" />
-<<<<<<< HEAD
-=======
-        <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="true" />
         <activity
             android:name=".ui.profile.EditProfileActivity"
             android:exported="false" />
@@ -84,7 +76,6 @@
                 android:name="photopicker_activity:0:required"
                 android:value="" />
         </service>
->>>>>>> f5c4f5de46f9441ad4c0c0bb1e7e154942cfb379
     </application>
 
 </manifest>

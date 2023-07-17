@@ -39,9 +39,6 @@
     <string name="idea">아이디어</string>
     <string name="feedback">피드백</string>
     <string name="job_opening">구인</string>
-    <string name="front_end">FrontEnd</string>
-    <string name="back_end">BackEnd</string>
-    <string name="android">Android</string>
     <string name="withdrawal">회원탈퇴</string>
     <string name="ask_withdrawal">회원탈퇴 하시겠습니까?\n탈퇴시 저장된 기록이 사라집니다.</string>
     <string name="do_withdrawal">탈퇴하기</string>

@@ -70,7 +70,7 @@
             android:exported="false" />
         <activity android:name=".ui.main.AuthenticationSuccessActivity"
             android:exported="false"/>
-        <activity android:name=".ui.main.Hilt_AuthenticationFailedActivity"
+        <activity android:name=".ui.main.AuthenticationFailedActivity"
             android:exported="false"/>
 
         <service

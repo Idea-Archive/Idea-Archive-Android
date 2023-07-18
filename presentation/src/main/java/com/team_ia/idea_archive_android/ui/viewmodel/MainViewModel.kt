@@ -21,6 +21,7 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val getPostUseCase: GetPostUseCase,
     private val getPopularPostUseCase: GetPopularPostUseCase,
+
     private val getCategoryPostUseCase: GetCategoryPostUseCase,
     private val getDetailPostUseCase: GetDetailPostUseCase,
     private val postHeartUseCase: PostHeartUseCase
@@ -30,6 +31,7 @@ class MainViewModel @Inject constructor(
 
     private val _postData = MutableLiveData<List<PostModel>>()
     val postData: LiveData<List<PostModel>> get() = _postData
+
 
     private val _categoryPostData = MutableLiveData<List<PostModel>>()
     val categoryPostData: LiveData<List<PostModel>> get() = _categoryPostData
@@ -43,6 +45,7 @@ class MainViewModel @Inject constructor(
             event(Event.Success)
         }.onFailure {
             Log.e("글 가져오기", "실패 $it")
+
         }
     }
 

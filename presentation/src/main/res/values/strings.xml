@@ -50,4 +50,5 @@
     <string name="input_new_password_">새로운 비밀번호를 입력해주세요</string>
     <string name="need_password">회원탈퇴를 하려면\n비밀번호가 필요해요</string>
     <string name="incorrect_password">비밀번호가 일치하지 않습니다.</string>
+    <string name="new_write">새 글 쓰기</string>
 </resources>

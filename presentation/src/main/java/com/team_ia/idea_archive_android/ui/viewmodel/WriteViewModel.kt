@@ -16,7 +16,6 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class WriteViewModel @Inject constructor(
-
     private val writePostUseCase: WritePostUseCase,
     private val editPostUseCase: EditPostUseCase,
     private val deletePostUseCase: DeletePostUseCase

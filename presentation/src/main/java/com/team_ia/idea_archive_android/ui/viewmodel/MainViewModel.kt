@@ -21,7 +21,6 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val getPostUseCase: GetPostUseCase,
     private val getPopularPostUseCase: GetPopularPostUseCase,
-
     private val getCategoryPostUseCase: GetCategoryPostUseCase,
     private val getDetailPostUseCase: GetDetailPostUseCase,
     private val postHeartUseCase: PostHeartUseCase
@@ -31,7 +30,6 @@ class MainViewModel @Inject constructor(
 
     private val _postData = MutableLiveData<List<PostModel>>()
     val postData: LiveData<List<PostModel>> get() = _postData
-
 
     private val _categoryPostData = MutableLiveData<List<PostModel>>()
     val categoryPostData: LiveData<List<PostModel>> get() = _categoryPostData

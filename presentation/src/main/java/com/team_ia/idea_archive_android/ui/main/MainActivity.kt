@@ -1,6 +1,7 @@
 package com.team_ia.idea_archive_android.ui.main
 
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import com.team_ia.idea_archive_android.R
@@ -31,6 +32,10 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
 
         binding.tvIdea.setOnClickListener {
             showIdeaPostFragment()
+        }
+
+        binding.fbtnMainPageFloatingButton.setOnClickListener{ view ->
+
         }
     }
 

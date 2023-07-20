@@ -3,6 +3,7 @@ package com.team_ia.idea_archive_android.ui.main
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityMainPageBinding
@@ -19,19 +20,19 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
     override fun createView() {
 
         binding.tvEntire.setOnClickListener {
-            showEntirePostFragment()
+            changeFragment(MainEntireFragment())
         }
 
         binding.tvJobOpening.setOnClickListener {
-            showJobOpeningPostFragment()
+            changeFragment(MainJobOpeningFragment())
         }
 
         binding.tvFeedback.setOnClickListener {
-            showFeedbackPostFragment()
+            changeFragment(MainFeedbackFragment())
         }
 
         binding.tvIdea.setOnClickListener {
-            showIdeaPostFragment()
+            changeFragment(MainIdeaFragment())
         }
 
         binding.fbtnMainPageFloatingButton.setOnClickListener{ view ->
@@ -39,28 +40,10 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         }
     }
 
-
-    private fun showFeedbackPostFragment() {
+    private fun changeFragment(fragment: Fragment) {
         fragmentManager.beginTransaction()
-            .replace(R.id.fcv_main_feedback_fragment_container, MainFeedbackFragment())
+            .replace(R.id.fcv_main_feedback_fragment_container, fragment)
             .commit()
-    }
-
-    private fun showJobOpeningPostFragment() {
-        fragmentManager.beginTransaction()
-            .replace(R.id.fcv_main_job_opening_fragment_container, MainJobOpeningFragment())
-            .commit()
-    }
-
-    private fun showIdeaPostFragment() {
-        fragmentManager.beginTransaction()
-            .replace(R.id.fcv_main_idea_fragment_container, MainIdeaFragment())
-            .commit()
-    }
-
-    private fun showEntirePostFragment() {
-        fragmentManager.beginTransaction()
-            .replace(R.id.fcv_main_entire_fragment_container, MainEntireFragment()).commit()
     }
 
     override fun observeEvent() {

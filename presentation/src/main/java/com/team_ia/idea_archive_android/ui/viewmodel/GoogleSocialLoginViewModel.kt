@@ -1,7 +1,5 @@
 package com.team_ia.idea_archive_android.ui.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.team_ia.domain.param.SocialLoginParam

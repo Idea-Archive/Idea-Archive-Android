@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/my_page_background">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_job_opening_post_s"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4949" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_job_opening_post_e"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5795" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_feedback_post_s"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3462" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_feedback_post_e"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4744" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/tv_idea_post_s"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1564" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/tv_idea_post_e"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3256" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_entire_post_s"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0513" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_entire_post_e"
+            android:layout_width="wrap_content"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1359" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_search_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7641" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_search_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8256" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tab_bar_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0521" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tab_bar_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0806" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_main_page_menu_bar_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8872" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_main_page_menu_bar_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9487" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_fbtn_main_page_floating_button_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7744" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_fbtn_main_page_floating_button_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9282" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_fbtn_write_post_floating_button_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8000" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_fbtn_write_post_floating_button_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9026" />
+
+        <TextView
+            android:id="@+id/tv_entire"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="@string/entire"
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@id/g_tab_bar_b"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_entire_post_e"
+            app:layout_constraintStart_toStartOf="@id/g_tv_entire_post_s"
+            app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
+
+        <TextView
+            android:id="@+id/tv_idea"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="@string/idea"
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@id/g_tab_bar_b"
+            app:layout_constraintEnd_toEndOf="@id/tv_idea_post_e"
+            app:layout_constraintStart_toStartOf="@id/tv_idea_post_s"
+            app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
+
+        <TextView
+            android:id="@+id/tv_feedback"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="@string/feedback"
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@id/g_tab_bar_b"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_feedback_post_e"
+            app:layout_constraintStart_toStartOf="@id/g_tv_feedback_post_s"
+            app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
+
+        <TextView
+            android:id="@+id/tv_job_opening"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="@string/job_opening"
+            android:textColor="@color/gray"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="@id/g_tab_bar_b"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_job_opening_post_e"
+            app:layout_constraintStart_toStartOf="@id/g_tv_job_opening_post_s"
+            app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
+
+        <Button
+            android:id="@+id/btn_main_page_menu_bar_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_main_page_menu_bar"
+            app:layout_constraintBottom_toBottomOf="@id/g_tab_bar_b"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_main_page_menu_bar_e"
+            app:layout_constraintStart_toStartOf="@id/g_btn_main_page_menu_bar_s"
+            app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
+
+        <Button
+            android:id="@+id/btn_main_page_search_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/ic_search_button"
+            app:layout_constraintBottom_toBottomOf="@id/g_tab_bar_b"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_search_e"
+            app:layout_constraintStart_toStartOf="@id/g_btn_search_s"
+            app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbtn_main_page_floating_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="42dp"
+            android:background="@drawable/bg_floatingbutton"
+            android:backgroundTint="@color/primary"
+            android:src="@drawable/src_add"
+            app:borderWidth="0dp"
+            app:fabSize="auto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/g_fbtn_main_page_floating_button_e"
+            app:layout_constraintStart_toStartOf="@id/g_fbtn_main_page_floating_button_s"
+            app:rippleColor="@color/primary" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbtn_write_post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_write_post"
+            android:backgroundTint="@color/primary"
+            android:src="@drawable/src_write_post"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@id/fbtn_main_page_floating_button"
+            app:layout_constraintEnd_toEndOf="@id/g_fbtn_write_post_floating_button_e"
+            app:layout_constraintStart_toStartOf="@id/g_fbtn_write_post_floating_button_s" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_main_entire_fragment_container"
+            android:name="com.team_ia.idea_archive_android.ui.main.MainEntireFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
+            tools:layout="@layout/fragment_main_entire" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_main_job_opening_fragment_container"
+            android:name="com.team_ia.idea_archive_android.ui.main.MainJobOpeningFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
+            tools:layout="@layout/fragment_main_job_opening" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_main_feedback_fragment_container"
+            android:name="com.team_ia.idea_archive_android.ui.main.MainFeedbackFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
+            tools:layout="@layout/fragment_main_feedback" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fcv_main_idea_fragment_container"
+            android:name="com.team_ia.idea_archive_android.ui.main.MainIdeaFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
+            tools:layout="@layout/fragment_main_idea" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

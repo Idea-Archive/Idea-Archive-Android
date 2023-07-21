@@ -1,4 +1,4 @@
-package com.team_ia.idea_archive_android.ui.main
+package com.team_ia.idea_archive_android.ui.login
 
 import android.app.Activity
 import android.content.Intent
@@ -11,7 +11,6 @@ import androidx.activity.viewModels
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.kakao.sdk.common.KakaoSdk
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
@@ -19,6 +18,9 @@ import com.team_ia.idea_archive_android.BuildConfig
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
+import com.team_ia.idea_archive_android.ui.main.FindPasswordActivity
+import com.team_ia.idea_archive_android.ui.main.MainActivity
+import com.team_ia.idea_archive_android.ui.main.SignUpActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.GoogleSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.KakaoSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.LoginViewModel
@@ -47,7 +49,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
             ActivityResultContracts.StartActivityForResult()
         ) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
-                println("인가코드 ${result}")
                 if (result.resultCode == RESULT_OK) {
                     val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
                     task.result?.serverAuthCode?.let {
@@ -105,6 +106,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
                 startActivity(Intent(this, MainActivity::class.java))
             }
         }
+
 
         binding.login = this
 

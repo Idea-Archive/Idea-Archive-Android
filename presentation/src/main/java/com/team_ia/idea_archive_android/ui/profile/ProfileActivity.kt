@@ -12,7 +12,7 @@ import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.adapter.viewpager.MyViewPagerAdapter
 import com.team_ia.idea_archive_android.databinding.ActivityProfileBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
-import com.team_ia.idea_archive_android.ui.main.LoginActivity
+import com.team_ia.idea_archive_android.ui.login.LoginActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.MyViewModel
 import com.team_ia.idea_archive_android.utils.Event
 import dagger.hilt.android.AndroidEntryPoint

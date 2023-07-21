@@ -4,27 +4,26 @@
 
     <data>
 
-
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tv_category"
+        <Button
+            android:id="@+id/btn_major_filter"
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:background="@drawable/bg_category_view"
-            android:fontFamily="@font/pretendard_medium"
-            android:paddingHorizontal="6dp"
-            android:paddingVertical="4dp"
-            android:textColor="@color/gray"
-            android:textSize="8sp"
+            android:layout_height="32dp"
+            android:background="@drawable/bg_filter_btn"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            android:textColor="@color/black"
+            android:textAllCaps="false"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

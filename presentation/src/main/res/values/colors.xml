@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#007AFF</color>
     <color name="input_gray">#F1F1F5</color>
-    <color name="input_information_gray">#999999</color>
+    <color name="gray">#999999</color>
     <color name="primary">#FF42CC89</color>
     <color name="sign_up_black">#191919</color>
     <color name="find_password_blue">#35B2CD</color>

@@ -10,7 +10,6 @@ object Dependency {
     }
 
     object Kotlin {
-
         const val COROUTINES_CORE =
             "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.KOTLINX_COROUTINES}"
         const val COROUTINES_ANDROID =
@@ -61,9 +60,10 @@ object Dependency {
         const val LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIVEDATA}"
     }
 
-    object Kakao{
+    object Kakao {
         const val KAKAO_SDK = "com.kakao.sdk:v2-user:${Versions.KAKAO_SDK}"
     }
+
     object GiuhubLogin {
         const val GITHUB_API = "com.github.scribejava:scribejava-apis:${Versions.GITHUB_API}"
         const val GITHUB_CORE = "com.github.scribejava:scribejava-core:${Versions.GITHUB_CORE}"

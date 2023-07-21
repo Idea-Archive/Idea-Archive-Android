@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="login"
-            type="com.team_ia.idea_archive_android.ui.main.LoginActivity" />
+            type="com.team_ia.idea_archive_android.ui.login.LoginActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -270,7 +271,7 @@
             android:hint="@string/typing_email"
             android:paddingStart="16dp"
             android:textColor="@color/black"
-            android:textColorHint="@color/input_information_gray"
+            android:textColorHint="@color/gray"
             android:textSize="12dp"
             app:layout_constraintBottom_toBottomOf="@id/g_input_email_b"
             app:layout_constraintEnd_toEndOf="@+id/g_input_information_e"
@@ -284,11 +285,11 @@
             android:background="@drawable/bg_edittext"
             android:fontFamily="@font/pretendard_regular"
             android:hint="@string/typing_password"
+            android:inputType="textPassword"
             android:paddingStart="16dp"
             android:textColor="@color/black"
-            android:textColorHint="@color/input_information_gray"
+            android:textColorHint="@color/gray"
             android:textSize="12sp"
-            android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="@id/g_input_password_b"
             app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
             app:layout_constraintStart_toStartOf="@id/g_input_information_s"
@@ -301,10 +302,10 @@
             android:layout_height="0dp"
             android:background="@drawable/btn_login"
             android:fontFamily="@font/pretendard_semibold"
+            android:onClick="@{login::onClick}"
             android:text="@string/login_btn"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:onClick="@{login::onClick}"
             app:layout_constraintBottom_toBottomOf="@id/g_login_button_b"
             app:layout_constraintEnd_toEndOf="@id/g_input_information_e"
             app:layout_constraintStart_toStartOf="@id/g_input_information_s"
@@ -316,10 +317,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:fontFamily="@font/pretendard_regular"
-            android:text="@string/find_password"
-            android:textColor="@color/input_information_gray"
-            android:textSize="12sp"
             android:onClick="@{login::onClick}"
+            android:text="@string/find_password"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@id/g_find_password_b"
             app:layout_constraintEnd_toEndOf="@id/g_find_password_e"
             app:layout_constraintStart_toStartOf="@id/g_find_password_s"
@@ -362,10 +363,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:fontFamily="@font/pretendard_regular"
-            android:text="@string/sign_up"
-            android:textColor="@color/input_information_gray"
-            android:textSize="12sp"
             android:onClick="@{login::onClick}"
+            android:text="@string/sign_up"
+            android:textColor="@color/gray"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/g_sign_up_b"
             app:layout_constraintEnd_toEndOf="@id/g_sign_up_e"
             app:layout_constraintStart_toStartOf="@+id/g_sign_up_s"

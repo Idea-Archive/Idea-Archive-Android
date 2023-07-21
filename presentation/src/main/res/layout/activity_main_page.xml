@@ -225,22 +225,22 @@
             app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
 
         <TextView
+            android:id="@+id/tv_write_notice_bubble"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_write_notice_bubble"
+            android:layout_marginBottom="26dp"
             android:background="@drawable/bg_write_post_bubble"
             android:elevation="8dp"
-            android:text="공지글 작성"
             android:fontFamily="@font/pretendard_regular"
-            android:paddingTop="2dp"
             android:paddingStart="10dp"
-            android:textSize="14sp"
+            android:paddingTop="2dp"
+            android:text="공지글 작성"
             android:textColor="@color/white"
-            android:layout_marginBottom="26dp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toTopOf="@id/tv_write_post_bubble"
             app:layout_constraintEnd_toEndOf="@id/g_tv_write_post_bubble_e"
-            app:layout_constraintStart_toStartOf="@id/g_tv_write_post_bubble_s"
-            />
+            app:layout_constraintStart_toStartOf="@id/g_tv_write_post_bubble_s" />
+
         <TextView
             android:id="@+id/tv_write_post_bubble"
             android:layout_width="wrap_content"
@@ -277,10 +277,10 @@
             android:id="@+id/fbtn_write_notice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
             android:background="@drawable/bg_floatingbutton"
             android:backgroundTint="@color/primary"
             android:src="@drawable/ic_notice"
-            android:layout_marginBottom="12dp"
             app:borderWidth="0dp"
             app:fabSize="mini"
             app:layout_constraintBottom_toTopOf="@id/fbtn_write_post"

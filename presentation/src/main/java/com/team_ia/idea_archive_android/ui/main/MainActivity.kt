@@ -63,7 +63,7 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
     private fun closeFabMenu() {
         binding.fbtnMainPageFloatingButton.setImageResource(R.drawable.ic_add)
         binding.fbtnWritePost.animate().translationY(0f)
-
+        binding.fbtnWriteNotice.animate().translationY(0f)
         isFabOpen = false
     }
     override fun observeEvent() {

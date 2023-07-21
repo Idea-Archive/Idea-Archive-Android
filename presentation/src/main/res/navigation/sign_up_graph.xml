@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_sign_up"
+    app:startDestination="@id/signUpFragment">
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.team_ia.idea_archive_android.ui.main.SignUpFragment"
+        android:label="SignUpFragment"
+        tools:layout="@layout/fragment_sign_up_page">
+        <action
+            android:id="@+id/action_signUpFragment_to_authCodeInputFragment"
+            app:destination="@id/authCodeInputFragment"
+            app:popUpTo="@layout/fragment_sign_up_page"/>
+        <action
+            android:id="@+id/action_signUpFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/authCodeInputFragment"
+        android:name="com.team_ia.idea_archive_android.ui.main.AuthCodeInputFragment"
+        android:label="AuthCodeInputFragment"
+        tools:layout="@layout/fragment_auth_code_input_page">
+        <action
+            android:id="@+id/action_authCodeInputFragment_to_authenticationFailedActivity"
+            app:destination="@id/authenticationFailedActivity" />
+        <action
+            android:id="@+id/action_authCodeInputFragment_to_authenticationSuccessActivity"
+            app:destination="@id/authenticationSuccessActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/authenticationFailedActivity"
+        android:name="com.team_ia.idea_archive_android.ui.main.AuthenticationFailedActivity"
+        android:label="AuthenticationFailedActivity"
+        tools:layout="@layout/activity_authentication_failed_page"/>
+    <activity
+        android:id="@+id/authenticationSuccessActivity"
+        android:name="com.team_ia.idea_archive_android.ui.main.AuthenticationSuccessActivity"
+        android:label="AuthenticationSuccessActivity"
+        tools:layout="@layout/activity_authentication_success_page"/>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.team_ia.idea_archive_android.ui.main.LoginActivity"
+        android:label="LoginActivity"
+        tools:layout="@layout/activity_login_page"/>
+
+</navigation>

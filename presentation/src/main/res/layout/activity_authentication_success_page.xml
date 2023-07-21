@@ -1,169 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_iv_authentication_success_icon_s"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.393" />
+        android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_iv_authentication_success_icon_t"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.328" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_iv_authentication_success_icon_b"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.448" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_iv_authentication_success_icon_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.393" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_iv_authentication_success_icon_e"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.607" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_iv_authentication_success_icon_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.328" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_authentication_success_s"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.392" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_iv_authentication_success_icon_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.448" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_authentication_success_e"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.612" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_iv_authentication_success_icon_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.607" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_authentication_success_b"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.538" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_authentication_success_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.392" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_authentication_success_t"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.492" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_authentication_success_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.612" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_success_to_authentication_s"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.282" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_authentication_success_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.538" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_success_to_authentication_e"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.721" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_authentication_success_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.492" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_success_to_authentication_t"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.544" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_success_to_authentication_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.282" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_success_to_authentication_b"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.573" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_success_to_authentication_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.721" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_go_back_to_login_page_btn_s"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.094" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_success_to_authentication_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.544" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_go_back_to_login_page_btn_e"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.906" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_success_to_authentication_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.573" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_go_back_to_login_page_btn_t"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.86" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_go_back_to_login_page_btn_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.094" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g_go_back_to_login_page_btn_b"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.932" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_go_back_to_login_page_btn_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.906" />
 
-    <ImageView
-        android:id="@+id/iv_authentication_success_icon"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/lg_authentication_success_icon"
-        app:layout_constraintBottom_toBottomOf="@id/g_iv_authentication_success_icon_b"
-        app:layout_constraintEnd_toEndOf="@id/g_iv_authentication_success_icon_e"
-        app:layout_constraintStart_toStartOf="@id/g_iv_authentication_success_icon_s"
-        app:layout_constraintTop_toTopOf="@id/g_iv_authentication_success_icon_t" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_go_back_to_login_page_btn_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.86" />
 
-    <Button
-        android:id="@+id/btn_go_back_to_login_page"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/btn_login"
-        android:fontFamily="@font/pretendard_semibold"
-        android:text="@string/go_back_to_login_page"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@id/g_go_back_to_login_page_btn_b"
-        app:layout_constraintEnd_toEndOf="@id/g_go_back_to_login_page_btn_e"
-        app:layout_constraintStart_toStartOf="@id/g_go_back_to_login_page_btn_s"
-        app:layout_constraintTop_toTopOf="@id/g_go_back_to_login_page_btn_t" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_go_back_to_login_page_btn_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.932" />
 
-    <TextView
-        android:id="@+id/tv_authentication_success"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/pretendard_bold"
-        android:text="@string/authentication_success"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@id/g_authentication_success_b"
-        app:layout_constraintEnd_toEndOf="@id/g_authentication_success_e"
-        app:layout_constraintStart_toStartOf="@id/g_iv_authentication_success_icon_s"
-        app:layout_constraintTop_toTopOf="@id/g_authentication_success_t" />
+        <ImageView
+            android:id="@+id/iv_authentication_success_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/lg_authentication_success_icon"
+            app:layout_constraintBottom_toBottomOf="@id/g_iv_authentication_success_icon_b"
+            app:layout_constraintEnd_toEndOf="@id/g_iv_authentication_success_icon_e"
+            app:layout_constraintStart_toStartOf="@id/g_iv_authentication_success_icon_s"
+            app:layout_constraintTop_toTopOf="@id/g_iv_authentication_success_icon_t" />
 
-    <TextView
-        android:id="@+id/tv_success_to_email_authentication"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fontFamily="@font/pretendard_regular"
-        android:text="@string/success_to_email_authentication"
-        android:textColor="@color/gray"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/g_success_to_authentication_b"
-        app:layout_constraintEnd_toEndOf="@id/g_success_to_authentication_e"
-        app:layout_constraintStart_toStartOf="@id/g_success_to_authentication_s"
-        app:layout_constraintTop_toTopOf="@id/g_success_to_authentication_t" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_go_back_to_login_page"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/btn_login"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="@string/go_back_to_login_page"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/g_go_back_to_login_page_btn_b"
+            app:layout_constraintEnd_toEndOf="@id/g_go_back_to_login_page_btn_e"
+            app:layout_constraintStart_toStartOf="@id/g_go_back_to_login_page_btn_s"
+            app:layout_constraintTop_toTopOf="@id/g_go_back_to_login_page_btn_t" />
+
+        <TextView
+            android:id="@+id/tv_authentication_success"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="@string/authentication_success"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/g_authentication_success_b"
+            app:layout_constraintEnd_toEndOf="@id/g_authentication_success_e"
+            app:layout_constraintStart_toStartOf="@id/g_iv_authentication_success_icon_s"
+            app:layout_constraintTop_toTopOf="@id/g_authentication_success_t" />
+
+        <TextView
+            android:id="@+id/tv_success_to_email_authentication"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:text="@string/success_to_email_authentication"
+            android:textColor="@color/gray"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/g_success_to_authentication_b"
+            app:layout_constraintEnd_toEndOf="@id/g_success_to_authentication_e"
+            app:layout_constraintStart_toStartOf="@id/g_success_to_authentication_s"
+            app:layout_constraintTop_toTopOf="@id/g_success_to_authentication_t" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

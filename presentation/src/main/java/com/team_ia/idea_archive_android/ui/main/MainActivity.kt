@@ -1,6 +1,5 @@
 package com.team_ia.idea_archive_android.ui.main
 
-import android.view.animation.Animation
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.team_ia.idea_archive_android.R

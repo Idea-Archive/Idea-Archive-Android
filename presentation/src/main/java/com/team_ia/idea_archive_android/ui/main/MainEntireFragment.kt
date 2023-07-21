@@ -1,5 +1,6 @@
 package com.team_ia.idea_archive_android.ui.main
 
+import android.util.Log
 import androidx.fragment.app.activityViewModels
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.adapter.MajorFilterListAdapter
@@ -39,6 +40,7 @@ class MainEntireFragment : BaseFragment<FragmentMainEntireBinding>(R.layout.frag
     }
 
     override fun createView() {
+        Log.d("프레그먼트 실행","")
         initRecyclerView()
     }
 

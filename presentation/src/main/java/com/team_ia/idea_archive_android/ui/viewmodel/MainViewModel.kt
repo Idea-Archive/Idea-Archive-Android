@@ -42,7 +42,7 @@ class MainViewModel @Inject constructor(
             _postData.value = it
             event(Event.Success)
         }.onFailure {
-            Log.e("글 가져오기", "실패")
+            Log.e("글 가져오기", "실패 $it")
         }
     }
 

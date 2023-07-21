@@ -19,7 +19,7 @@ data class PostModel(
     val commentCount: Int,
     @SerializedName("member")
     val member: Member,
-    @SerializedName("createDate")
+    @SerializedName("createdDate")
     val createDate: String
 ) {
     data class Member(

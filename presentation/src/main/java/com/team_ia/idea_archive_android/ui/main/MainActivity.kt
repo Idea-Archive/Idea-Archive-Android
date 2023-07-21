@@ -34,7 +34,7 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         }
 
         binding.tvJobOpening.setOnClickListener {
-            categoryList = listOf("구인")
+            categoryList = listOf("구인구직")
             mainViewModel.getCategoryPost(categoryList)
             changeFragment(MainJobOpeningFragment())
         }

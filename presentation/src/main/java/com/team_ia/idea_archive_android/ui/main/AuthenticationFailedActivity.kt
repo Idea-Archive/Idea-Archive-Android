@@ -12,7 +12,6 @@ class AuthenticationFailedActivity: BaseActivity<ActivityAuthenticationFailedPag
     override fun createView() {
         binding.btnGoBackToLoginPage.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
-
             finish()
         }
     }

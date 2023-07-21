@@ -1,6 +1,5 @@
 package com.team_ia.idea_archive_android.ui.main
 
-import android.view.View
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.adapter.MajorFilterListAdapter
 import com.team_ia.idea_archive_android.adapter.PostListAdapter

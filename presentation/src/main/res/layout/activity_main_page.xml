@@ -138,6 +138,20 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.9026" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_write_post_bubble_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5590" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_write_post_bubble_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7897" />
+
         <TextView
             android:id="@+id/tv_entire"
             android:layout_width="0dp"
@@ -210,6 +224,40 @@
             app:layout_constraintStart_toStartOf="@id/g_btn_search_s"
             app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
 
+        <TextView
+            android:id="@+id/tv_write_notice_bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="26dp"
+            android:background="@drawable/bg_write_post_bubble"
+            android:elevation="8dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingStart="10dp"
+            android:paddingTop="2dp"
+            android:text="공지글 작성"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/tv_write_post_bubble"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_write_post_bubble_e"
+            app:layout_constraintStart_toStartOf="@id/g_tv_write_post_bubble_s" />
+
+        <TextView
+            android:id="@+id/tv_write_post_bubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="129dp"
+            android:background="@drawable/bg_write_post_bubble"
+            android:elevation="8dp"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingStart="10dp"
+            android:paddingTop="2dp"
+            android:text="일반글 작성"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_write_post_bubble_e"
+            app:layout_constraintStart_toStartOf="@id/g_tv_write_post_bubble_s" />
+
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fbtn_main_page_floating_button"
             android:layout_width="wrap_content"
@@ -217,13 +265,27 @@
             android:layout_marginBottom="42dp"
             android:background="@drawable/bg_floatingbutton"
             android:backgroundTint="@color/primary"
-            android:src="@drawable/src_add"
+            android:src="@drawable/ic_add"
             app:borderWidth="0dp"
-            app:fabSize="auto"
+            app:fabSize="normal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/g_fbtn_main_page_floating_button_e"
             app:layout_constraintStart_toStartOf="@id/g_fbtn_main_page_floating_button_s"
             app:rippleColor="@color/primary" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fbtn_write_notice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_floatingbutton"
+            android:backgroundTint="@color/primary"
+            android:src="@drawable/ic_notice"
+            app:borderWidth="0dp"
+            app:fabSize="mini"
+            app:layout_constraintBottom_toTopOf="@id/fbtn_write_post"
+            app:layout_constraintEnd_toEndOf="@id/g_fbtn_write_post_floating_button_e"
+            app:layout_constraintStart_toStartOf="@id/g_fbtn_write_post_floating_button_s" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fbtn_write_post"
@@ -240,7 +302,7 @@
             app:layout_constraintStart_toStartOf="@id/g_fbtn_write_post_floating_button_s" />
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_main_entire_fragment_container"
+            android:id="@+id/fcv_main_fragment_container"
             android:name="com.team_ia.idea_archive_android.ui.main.MainEntireFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -248,31 +310,5 @@
             app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
             tools:layout="@layout/fragment_main_entire" />
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_main_job_opening_fragment_container"
-            android:name="com.team_ia.idea_archive_android.ui.main.MainJobOpeningFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
-            tools:layout="@layout/fragment_main_job_opening" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_main_feedback_fragment_container"
-            android:name="com.team_ia.idea_archive_android.ui.main.MainFeedbackFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
-            tools:layout="@layout/fragment_main_feedback" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_main_idea_fragment_container"
-            android:name="com.team_ia.idea_archive_android.ui.main.MainIdeaFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
-            tools:layout="@layout/fragment_main_idea" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

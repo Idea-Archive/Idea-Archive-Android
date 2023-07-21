@@ -302,7 +302,7 @@
             app:layout_constraintStart_toStartOf="@id/g_fbtn_write_post_floating_button_s" />
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_main_entire_fragment_container"
+            android:id="@+id/fcv_main_fragment_container"
             android:name="com.team_ia.idea_archive_android.ui.main.MainEntireFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -310,31 +310,5 @@
             app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
             tools:layout="@layout/fragment_main_entire" />
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_main_job_opening_fragment_container"
-            android:name="com.team_ia.idea_archive_android.ui.main.MainJobOpeningFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
-            tools:layout="@layout/fragment_main_job_opening" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_main_feedback_fragment_container"
-            android:name="com.team_ia.idea_archive_android.ui.main.MainFeedbackFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
-            tools:layout="@layout/fragment_main_feedback" />
-
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fcv_main_idea_fragment_container"
-            android:name="com.team_ia.idea_archive_android.ui.main.MainIdeaFragment"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/g_tab_bar_b"
-            tools:layout="@layout/fragment_main_idea" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

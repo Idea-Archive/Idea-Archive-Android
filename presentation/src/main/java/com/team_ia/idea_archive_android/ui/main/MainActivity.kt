@@ -42,7 +42,7 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
 
     private fun changeFragment(fragment: Fragment) {
         fragmentManager.beginTransaction()
-            .replace(R.id.fcv_main_feedback_fragment_container, fragment)
+            .replace(R.id.fcv_main_fragment_container, fragment)
             .commit()
     }
 

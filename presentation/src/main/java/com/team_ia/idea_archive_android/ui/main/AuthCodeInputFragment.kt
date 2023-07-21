@@ -22,7 +22,7 @@ class AuthCodeInputFragment :
 
     }
 
-    fun initView() = binding.apply {
+    private fun initView() = binding.apply {
         etInputAuthCode1.run {
             setOnTextChanged { _, _, _, _ ->
                 etInputAuthCode2.requestFocus()

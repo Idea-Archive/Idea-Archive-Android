@@ -1,5 +1,7 @@
 package com.team_ia.idea_archive_android.ui.viewmodel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.team_ia.domain.param.LoginParam
@@ -18,27 +20,30 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private val loginUseCase: LoginUseCase,
     private val saveTokenUseCase: SaveTokenUseCase
-): ViewModel(){
-    private val _eventFlow = MutableEventFlow<Event>()
-    val eventFlow = _eventFlow.asEvetFlow()
-
-    fun login (email:String, password:String) = viewModelScope.launch{
+) : ViewModel() {
+    private val _loginEvent = MutableLiveData<Event>()
+    val loginEvent: LiveData<Event> get() = _loginEvent
+    fun login(email: String, password: String) = viewModelScope.launch {
         loginUseCase(
             LoginParam(
                 email, password
             )
         ).onSuccess {
             saveTokenUseCase(it.accessToken, it.refreshToken, it.expiredAt)
-            event(Event.Success)
+            _loginEvent.value = Event.Success
         }.onFailure {
-            event(it.errorHandling(notFoundAction = {
-                saveTokenUseCase()
-            }))
+            when(it.errorHandling()){
+                Event.BadRequest -> {
+                    _loginEvent.value = Event.BadRequest
+                    saveTokenUseCase()
+                }
+                Event.NotFound -> {
+                    _loginEvent.value = Event.NotFound
+                    saveTokenUseCase()
+                }
+                else -> {}
+            }
         }
-    }
-
-    private fun event(event: Event) = viewModelScope.launch{
-        _eventFlow.emit(event)
     }
 
 }

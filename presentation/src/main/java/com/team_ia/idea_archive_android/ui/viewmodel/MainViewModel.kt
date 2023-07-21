@@ -31,6 +31,9 @@ class MainViewModel @Inject constructor(
     private val _postData = MutableLiveData<List<PostModel>>()
     val postData: LiveData<List<PostModel>> get() = _postData
 
+    private val _categoryPostData = MutableLiveData<List<PostModel>>()
+    val categoryPostData: LiveData<List<PostModel>> get() = _categoryPostData
+
     private val _detailPostData = MutableLiveData<GetDetailPostEntity>()
     val detailPostData: LiveData<GetDetailPostEntity> get() = _detailPostData
 
@@ -58,7 +61,7 @@ class MainViewModel @Inject constructor(
                 category
             )
         ).onSuccess {
-            _postData.value = it
+            _categoryPostData.value = it
             event(Event.Success)
         }.onFailure {
             Log.e("카테고리별 글 가져오기", "실패")

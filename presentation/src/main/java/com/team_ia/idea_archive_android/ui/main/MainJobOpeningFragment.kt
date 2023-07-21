@@ -1,16 +1,18 @@
 package com.team_ia.idea_archive_android.ui.main
 
+import androidx.fragment.app.activityViewModels
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.adapter.MajorFilterListAdapter
 import com.team_ia.idea_archive_android.adapter.PostListAdapter
 import com.team_ia.idea_archive_android.databinding.FragmentMainJobOpeningBinding
 import com.team_ia.idea_archive_android.ui.base.BaseFragment
+import com.team_ia.idea_archive_android.ui.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainJobOpeningFragment :
     BaseFragment<FragmentMainJobOpeningBinding>(R.layout.fragment_main_job_opening) {
-
+    private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var postListAdapter: PostListAdapter
     private lateinit var majorFilterListAdapter: MajorFilterListAdapter
 
@@ -33,14 +35,14 @@ class MainJobOpeningFragment :
         initRecyclerView()
     }
 
-    fun initRecyclerView() {
+    private fun initRecyclerView() {
+        postListAdapter = PostListAdapter(viewModel.categoryPostData.value)
         majorFilterListAdapter = MajorFilterListAdapter(majorFilterList)
         binding.rvMajorFilter.adapter = majorFilterListAdapter
         binding.rvJobOpeningPost.adapter = postListAdapter
     }
 
     override fun observeEvent() {
-        TODO("Not yet implemented")
     }
 
 }

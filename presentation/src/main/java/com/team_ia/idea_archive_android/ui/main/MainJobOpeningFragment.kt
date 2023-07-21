@@ -16,6 +16,7 @@ class MainJobOpeningFragment :
     private lateinit var postListAdapter: PostListAdapter
     private lateinit var majorFilterListAdapter: MajorFilterListAdapter
 
+   private val category: List<String> = listOf("구인")
     val majorFilterList = listOf(
         "FrontEnd",
         "BackEnd",
@@ -32,6 +33,7 @@ class MainJobOpeningFragment :
     )
 
     override fun createView() {
+        viewModel.getCategoryPost(category)
         initRecyclerView()
     }
 

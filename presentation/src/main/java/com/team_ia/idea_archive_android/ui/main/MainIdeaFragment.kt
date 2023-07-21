@@ -13,7 +13,9 @@ class MainIdeaFragment : BaseFragment<FragmentMainIdeaBinding>(R.layout.fragment
     private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var postListAdapter: PostListAdapter
 
+    private val category: List<String> = listOf("아이디어")
     override fun createView() {
+        viewModel.getCategoryPost(category)
         initRecyclerView()
     }
 

@@ -2,6 +2,7 @@ package com.team_ia.idea_archive_android.ui.main
 
 import android.util.Log
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.adapter.MajorFilterListAdapter
 import com.team_ia.idea_archive_android.adapter.PostListAdapter
@@ -32,6 +33,7 @@ class MainEntireFragment : BaseFragment<FragmentMainEntireBinding>(R.layout.frag
     )
 
     private fun initRecyclerView() {
+        viewModel.getPost()
         postListAdapter = PostListAdapter(viewModel.postData.value)
         majorFilterListAdapter = MajorFilterListAdapter(majorFilterList)
         binding.rvMajorFilter.adapter = majorFilterListAdapter
@@ -40,7 +42,6 @@ class MainEntireFragment : BaseFragment<FragmentMainEntireBinding>(R.layout.frag
     }
 
     override fun createView() {
-        Log.d("프레그먼트 실행","")
         initRecyclerView()
     }
 

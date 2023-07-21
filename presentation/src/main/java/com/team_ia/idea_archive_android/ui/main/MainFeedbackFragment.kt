@@ -13,7 +13,10 @@ class MainFeedbackFragment : BaseFragment<FragmentMainFeedbackBinding>(R.layout.
     private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var postListAdapter: PostListAdapter
 
+    private val category: List<String> = listOf("피드백")
+
     override fun createView() {
+        viewModel.getCategoryPost(category)
         initRecyclerView()
     }
 

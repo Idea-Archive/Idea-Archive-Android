@@ -12,7 +12,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_main_page) {
-    private val mainViewModel by viewModels<MainViewModel>()
     private val fragmentManager: FragmentManager = supportFragmentManager
     private var isFabOpen = false
 
@@ -21,31 +20,24 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
     }
 
     private fun onClick(){
-        mainViewModel.getPost()
-        changeFragment(MainEntireFragment())
 
         binding.fbtnMainPageFloatingButton.setOnClickListener {
             toggleFab()
         }
 
         binding.tvEntire.setOnClickListener {
-            mainViewModel.getPost()
             changeFragment(MainEntireFragment())
         }
 
         binding.tvJobOpening.setOnClickListener {
-            categoryList = listOf("구인구직")
-            mainViewModel.getCategoryPost(categoryList)
             changeFragment(MainJobOpeningFragment())
         }
 
         binding.tvFeedback.setOnClickListener {
-            categoryList = listOf("피드백")
             changeFragment(MainFeedbackFragment())
         }
 
         binding.tvIdea.setOnClickListener {
-            categoryList = listOf("아이디어")
             changeFragment(MainIdeaFragment())
         }
 

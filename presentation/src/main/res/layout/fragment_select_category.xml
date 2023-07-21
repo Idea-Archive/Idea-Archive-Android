@@ -144,6 +144,21 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.4023"/>
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_ibtn_category_idea_button_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2299"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_ibtn_category_idea_button_s"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0615"/>
+
+
     <ImageButton
         android:id="@+id/ibtn_back_button"
         android:layout_width="28dp"

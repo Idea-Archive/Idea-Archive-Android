@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_notice"
+        android:title="공지" />
+
+    <item
+        android:id="@+id/item_view_my_post"
+        android:title="내가 쓴 글 보기" />
+
+    <item
+        android:id="@+id/item_view_like_post"
+        android:title="좋아한 글 보기" />
+
+    <item
+        android:id="@+id/item_logout"
+        android:title="로그아웃"/>
+</menu>

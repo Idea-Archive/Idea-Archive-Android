@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_iv_navi_header_profile_s"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0741" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_iv_navi_header_profile_e"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2519" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_iv_navi_header_profile_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0794" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_iv_navi_header_profile_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1363" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_tv_navi_header_name_s"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3111" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_tv_navi_header_name_e"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5185" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_tv_navi_header_name_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0877" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_tv_navi_header_name_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1114" />
+
+    <ImageView
+        android:id="@+id/iv_navi_header_profile_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/g_iv_navi_header_profile_b"
+        app:layout_constraintEnd_toEndOf="@id/g_iv_navi_header_profile_e"
+        app:layout_constraintStart_toStartOf="@id/g_iv_navi_header_profile_s"
+        app:layout_constraintTop_toTopOf="@id/g_iv_navi_header_profile_t" />
+
+    <TextView
+        android:id="@+id/tv_navi_header_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/pretendard_bold"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/g_tv_navi_header_name_b"
+        app:layout_constraintEnd_toEndOf="@id/g_tv_navi_header_name_e"
+        app:layout_constraintStart_toStartOf="@id/g_tv_navi_header_name_s"
+        app:layout_constraintTop_toTopOf="@id/g_tv_navi_header_name_t" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

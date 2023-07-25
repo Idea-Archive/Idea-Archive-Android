@@ -68,7 +68,9 @@
         <activity android:name=".ui.main.AuthenticationSuccessActivity"
             android:exported="false"/>
 
-        <activity android:name=".ui.main.AuthenticationFailedActivity"
+        <activity android:name=".ui.main.AuthenticationFailedActivity"/>
+
+
 
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"

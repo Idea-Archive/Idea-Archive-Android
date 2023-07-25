@@ -1,13 +1,14 @@
 package com.team_ia.idea_archive_android.ui.viewmodel
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.team_ia.domain.param.WritePostParam
 import com.team_ia.domain.usecase.post.DeletePostUseCase
 import com.team_ia.domain.usecase.post.EditPostUseCase
 import com.team_ia.domain.usecase.post.WritePostUseCase
-import com.team_ia.domain.utils.Result
 import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.utils.MutableEventFlow
 import com.team_ia.idea_archive_android.utils.asEvetFlow
@@ -22,6 +23,13 @@ class WriteViewModel @Inject constructor(
 ) : ViewModel() {
     private val _eventFlow = MutableEventFlow<Event>()
     val eventFlow = _eventFlow.asEvetFlow()
+
+    private val _categoryList = MutableLiveData<List<String>>()
+    val categoryList : LiveData<List<String>> get() = _categoryList
+
+    fun setCategoryList(category: List<String>){
+        _categoryList.value = category
+    }
 
     fun writePost(title: String, content: String, category: List<String>) = viewModelScope.launch {
         writePostUseCase(

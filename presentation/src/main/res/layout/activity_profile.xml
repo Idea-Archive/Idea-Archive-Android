@@ -178,7 +178,7 @@
             app:layout_constraintGuide_percent="0.1026" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tb_back_e"
+            android:id="@+id/g_tv_back_e"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
@@ -243,7 +243,7 @@
             android:textColor="@color/black"
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@id/g_tv_top_b"
-            app:layout_constraintEnd_toEndOf="@id/g_tb_back_e"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_back_e"
             app:layout_constraintStart_toStartOf="@id/g_tv_back_s"
             app:layout_constraintTop_toTopOf="@id/g_tv_top_t" />
 

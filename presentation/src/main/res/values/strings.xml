@@ -53,5 +53,9 @@
     <string name="new_write">새 글 쓰기</string>
     <string name="what_category">어떤 글을 쓰시나요?</string>
     <string name="select_category">카테고리를 골라주세요!</string>
-
+    <string name="what_major">원하시는 전공자가 있나요?</string>
+    <string name="tag_major">원하시는 전공만 골라 태그하실 수 있어요!</string>
+    <string name="write_title">  제목을 적어주세요.</string>
+    <string name="write_content">  당신의 아이디어를 들려주세요!</string>
+    <string name="number_of_characters">0/500  </string>
 </resources>

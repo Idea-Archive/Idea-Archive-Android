@@ -27,6 +27,8 @@ class SignupViewModel @Inject constructor(
 ): ViewModel() {
     private val _signupInfo = MutableLiveData<Event>()
     val signupInfo : LiveData<Event> get() = _signupInfo
+    private val _emailInfo = MutableLiveData<Event>()
+    val emailInfo : LiveData<Event> get() = _emailInfo
     private val _authCodeInfo = MutableLiveData<Event>()
     val authCodeInfo : LiveData<Event> get() = _authCodeInfo
     private val _successInfo = MutableLiveData<Event>()
@@ -51,7 +53,7 @@ class SignupViewModel @Inject constructor(
                 email
             )
         ).onSuccess {
-            _signupInfo.value = Event.Success
+            _emailInfo.value = Event.Success
         }.onFailure {
             it.errorHandling(badRequestAction = {saveTokenUseCase()})
         }
@@ -61,7 +63,7 @@ class SignupViewModel @Inject constructor(
         checkVerificationCodeUseCase(
             email, authKey
         ).onSuccess {
-            _signupInfo.value = Event.Success
+            _authCodeInfo.value = Event.Success
         }.onFailure {
             it.errorHandling(badRequestAction = {saveTokenUseCase()})
         }

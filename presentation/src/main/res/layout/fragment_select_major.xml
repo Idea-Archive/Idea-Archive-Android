@@ -81,7 +81,7 @@
             app:layout_constraintGuide_percent="0.5923" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_btn_write_button_t"
+            android:id="@+id/g_btn_next_button_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
@@ -109,103 +109,137 @@
             app:layout_constraintGuide_percent="0.072" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_what_category_t"
+            android:id="@+id/g_tv_looking_major_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1232" />
+            app:layout_constraintGuide_percent="0.12" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_what_category_s"
+            android:id="@+id/g_tv_looking_major_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.17" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_looking_major_s"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.0615" />
+            app:layout_constraintGuide_percent="0.08" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_what_category_e"
+            android:id="@+id/g_tv_looking_major_e"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.54" />
+            app:layout_constraintGuide_percent="0.7077" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_what_category_b"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1676" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_select_category_b"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.1969" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_tv_select_category_e"
+            android:id="@+id/g_tv_tag_major_e"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.4523" />
+            app:layout_constraintGuide_percent="0.5821" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_ibtn_category_idea_button_t"
+            android:id="@+id/g_tv_tag_major_b"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.2299" />
+            app:layout_constraintGuide_percent="0.2" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_ibtn_category_idea_button_s"
+            android:id="@+id/g_btn_major_first_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.22" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_major_first_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.37" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_front_e"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.0615" />
+            app:layout_constraintGuide_percent="0.33" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_ibtn_category_idea_button_e"
+            android:id="@+id/g_btn_web_s"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.9385" />
+            app:layout_constraintGuide_percent="0.3667"/>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_ibtn_category_idea_button_b"
+            android:id="@+id/g_btn_web_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_back_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.69" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_back_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_major_second_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.4194" />
+            app:layout_constraintGuide_percent="0.39" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_ibtn_category_feedback_button_t"
+            android:id="@+id/g_btn_major_second_b"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.4431" />
+            app:layout_constraintGuide_percent="0.539" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_ibtn_category_feedback_button_b"
+            android:id="@+id/g_btn_major_third_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.6327" />
+            app:layout_constraintGuide_percent="0.557" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_ibtn_jobopening_button_t"
+            android:id="@+id/g_btn_major_third_b"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.6564" />
+            app:layout_constraintGuide_percent="0.72" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/g_ibtn_jobopening_button_b"
+            android:id="@+id/g_btn_major_fourth_t"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.846" />
+            app:layout_constraintGuide_percent="0.74"/>
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_major_fourth_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9143"/>
 
         <ImageButton
             android:id="@+id/ibtn_back_button"
@@ -232,7 +266,6 @@
             app:layout_constraintEnd_toEndOf="@id/g_tv_back_e" />
 
         <TextView
-            android:id="@+id/tv_new_write"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:text="@string/new_write"
@@ -252,65 +285,154 @@
             android:background="@drawable/bg_next"
             app:layout_constraintStart_toStartOf="@id/g_btn_next_button_s"
             app:layout_constraintEnd_toEndOf="@id/g_btn_next_button_e"
-            app:layout_constraintTop_toTopOf="@id/g_btn_write_button_t"
+            app:layout_constraintTop_toTopOf="@id/g_btn_next_button_t"
             app:layout_constraintBottom_toBottomOf="@id/g_btn_next_button_b" />
 
         <TextView
-            android:id="@+id/tv_what_write"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="@string/what_category"
-            android:textSize="22sp"
+            android:text="@string/what_major"
+            android:textSize="23sp"
             android:fontFamily="@font/pretendard_bold"
-            android:textColor="@color/black"
             android:gravity="center_vertical"
-            app:layout_constraintStart_toStartOf="@id/g_tv_what_category_s"
-            app:layout_constraintEnd_toEndOf="@id/g_tv_what_category_e"
-            app:layout_constraintTop_toTopOf="@id/g_tv_what_category_t"
-            app:layout_constraintBottom_toBottomOf="@id/g_tv_what_category_b" />
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/g_tv_looking_major_s"
+            app:layout_constraintTop_toTopOf="@id/g_tv_looking_major_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_looking_major_b"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_looking_major_e" />
 
         <TextView
-            android:id="@+id/tv_select_category"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:text="@string/select_category"
-            android:textSize="14sp"
+            android:text="@string/tag_major"
+            android:textSize="12sp"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textColor="@color/gray"
             android:gravity="center_vertical"
-            app:layout_constraintStart_toStartOf="@id/g_tv_what_category_s"
-            app:layout_constraintEnd_toEndOf="@id/g_tv_select_category_e"
-            app:layout_constraintTop_toBottomOf="@id/g_tv_what_category_b"
-            app:layout_constraintBottom_toBottomOf="@id/g_tv_select_category_b" />
+            app:layout_constraintStart_toStartOf="@id/g_tv_looking_major_s"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_tag_major_e"
+            app:layout_constraintTop_toTopOf="@id/g_tv_looking_major_b"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_tag_major_b" />
 
         <Button
-            android:id="@+id/btn_idea_button"
+            android:id="@+id/btn_major_front"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@drawable/bg_idea_false_btn"
-            app:layout_constraintStart_toStartOf="@id/g_ibtn_category_idea_button_s"
-            app:layout_constraintTop_toTopOf="@id/g_ibtn_category_idea_button_t"
-            app:layout_constraintBottom_toBottomOf="@id/g_ibtn_category_idea_button_b"
-            app:layout_constraintEnd_toEndOf="@id/g_ibtn_category_idea_button_e" />
+            android:background="@drawable/bg_major_frontend_btn"
+            app:layout_constraintStart_toStartOf="@id/g_tv_looking_major_s"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_first_t"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_front_e"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_first_b"/>
 
         <Button
-            android:id="@+id/btn_feedback_button"
+            android:id="@+id/btn_major_web"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@drawable/bg_feedback_false_btn"
-            app:layout_constraintStart_toStartOf="@id/g_ibtn_category_idea_button_s"
-            app:layout_constraintEnd_toEndOf="@id/g_ibtn_category_idea_button_e"
-            app:layout_constraintTop_toTopOf="@id/g_ibtn_category_feedback_button_t"
-            app:layout_constraintBottom_toBottomOf="@id/g_ibtn_category_feedback_button_b" />
+            android:background="@drawable/bg_major_web_btn"
+            app:layout_constraintStart_toStartOf="@id/g_btn_web_s"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_first_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_first_b"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_web_e"/>
 
         <Button
-            android:id="@+id/btn_jobopening_button"
+            android:id="@+id/btn_major_back"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="@drawable/bg_jobopening_false_btn"
-            app:layout_constraintStart_toStartOf="@id/g_ibtn_category_idea_button_s"
-            app:layout_constraintEnd_toEndOf="@id/g_ibtn_category_idea_button_e"
-            app:layout_constraintTop_toTopOf="@id/g_ibtn_jobopening_button_t"
-            app:layout_constraintBottom_toBottomOf="@id/g_ibtn_jobopening_button_b" />
+            android:background="@drawable/bg_major_back_btn"
+            app:layout_constraintStart_toStartOf="@id/g_btn_back_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_back_e"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_first_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_first_b"/>
 
+        <Button
+            android:id="@+id/btn_major_android"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_major_android_btn"
+            app:layout_constraintStart_toStartOf="@id/g_tv_looking_major_s"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_second_t"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_front_e"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_second_b"/>
+
+        <Button
+            android:id="@+id/btn_major_ios"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_major_ios_btn"
+            app:layout_constraintStart_toStartOf="@id/g_btn_web_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_web_e"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_second_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_second_b"/>
+
+        <Button
+            android:id="@+id/btn_major_design"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_major_design_btn"
+            app:layout_constraintStart_toStartOf="@id/g_btn_back_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_back_e"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_second_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_second_b"/>
+
+       <Button
+           android:id="@+id/btn_major_devops"
+           android:layout_width="0dp"
+           android:layout_height="0dp"
+           android:background="@drawable/bg_major_devops_btn"
+           app:layout_constraintStart_toStartOf="@id/g_tv_looking_major_s"
+           app:layout_constraintEnd_toEndOf="@id/g_btn_front_e"
+           app:layout_constraintTop_toTopOf="@id/g_btn_major_third_t"
+           app:layout_constraintBottom_toBottomOf="@id/g_btn_major_third_b"/>
+
+        <Button
+            android:id="@+id/btn_major_ai"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_major_ai_btn"
+            app:layout_constraintStart_toStartOf="@id/g_btn_web_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_web_e"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_third_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_third_b"/>
+
+        <Button
+            android:id="@+id/btn_major_game"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_major_game_btn"
+            app:layout_constraintStart_toStartOf="@id/g_btn_back_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_back_e"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_third_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_third_b"/>
+
+        <Button
+            android:id="@+id/btn_major_dba"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_major_dba_btn"
+            app:layout_constraintStart_toStartOf="@id/g_tv_looking_major_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_front_e"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_fourth_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_fourth_b"/>
+
+        <Button
+            android:id="@+id/btn_major_embedded"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_major_embedded_btn"
+            app:layout_constraintStart_toStartOf="@id/g_btn_web_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_web_e"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_fourth_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_fourth_b"/>
+
+        <Button
+            android:id="@+id/btn_major_security"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_major_security_btn"
+            app:layout_constraintStart_toStartOf="@id/g_btn_back_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_back_e"
+            app:layout_constraintTop_toTopOf="@id/g_btn_major_fourth_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_major_fourth_b"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

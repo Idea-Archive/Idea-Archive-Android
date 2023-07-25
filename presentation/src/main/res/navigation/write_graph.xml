@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/write_graph"
+    app:startDestination="@id/selectCategoryFragment">
+
+    <fragment
+        android:id="@+id/selectCategoryFragment"
+        android:name="com.team_ia.idea_archive_android.ui.write.SelectCategoryFragment"
+        android:label="SelectCategoryFragment"
+        tools:layout="@layout/fragment_select_category">
+        <action
+            android:id="@+id/action_selectCategoryFragment_to_selectMajorFragment"
+            app:destination="@id/selectMajorFragment" />
+        <action
+            android:id="@+id/action_selectCategoryFragment_to_writeFragment"
+            app:destination="@id/writeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectMajorFragment"
+        android:name="com.team_ia.idea_archive_android.ui.write.SelectMajorFragment"
+        android:label="SelectMajorFragment"
+        tools:layout="@layout/fragment_select_major">
+        <action
+            android:id="@+id/action_selectMajorFragment_to_writeFragment"
+            app:destination="@id/writeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/writeFragment"
+        android:name="com.team_ia.idea_archive_android.ui.write.WriteFragment"
+        android:label="WriteFragment"
+        tools:layout="@layout/fragment_write_page"/>
+
+</navigation>

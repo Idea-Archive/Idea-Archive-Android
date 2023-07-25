@@ -61,6 +61,34 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.1114" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_tv_navi_header_email_s"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.3111" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_tv_navi_header_email_e"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7074" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_tv_navi_header_email_t"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1114" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/g_tv_navi_header_email_b"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1280" />
+
     <ImageView
         android:id="@+id/iv_navi_header_profile_image"
         android:layout_width="0dp"
@@ -82,5 +110,14 @@
         app:layout_constraintStart_toStartOf="@id/g_tv_navi_header_name_s"
         app:layout_constraintTop_toTopOf="@id/g_tv_navi_header_name_t" />
 
-
+    <TextView
+        android:id="@+id/tv_navi_header_email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/pretendard_regular"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/g_tv_navi_header_email_b"
+        app:layout_constraintEnd_toEndOf="@id/g_tv_navi_header_email_e"
+        app:layout_constraintStart_toStartOf="@id/g_tv_navi_header_email_s"
+        app:layout_constraintTop_toTopOf="@id/g_tv_navi_header_email_t" />
 </androidx.constraintlayout.widget.ConstraintLayout>

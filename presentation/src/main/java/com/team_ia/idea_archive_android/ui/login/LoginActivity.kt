@@ -24,6 +24,7 @@ import com.team_ia.idea_archive_android.ui.main.SignUpActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.GoogleSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.KakaoSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.LoginViewModel
+import com.team_ia.idea_archive_android.ui.write.WriteActivity
 import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.utils.extension.changeAtivatedWithEnabled
 import com.team_ia.idea_archive_android.utils.extension.repeatOnStart

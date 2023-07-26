@@ -13,21 +13,23 @@ import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.utils.MutableEventFlow
 import com.team_ia.idea_archive_android.utils.asEvetFlow
 import com.team_ia.idea_archive_android.utils.errorHandling
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class WriteViewModel @Inject constructor(
     private val writePostUseCase: WritePostUseCase,
     private val editPostUseCase: EditPostUseCase,
     private val deletePostUseCase: DeletePostUseCase
 ) : ViewModel() {
-    private val _eventFlow = MutableEventFlow<Event>()
-    val eventFlow = _eventFlow.asEvetFlow()
+    private val _event = MutableLiveData<Event>()
+    val event : LiveData<Event> get() = _event
 
     private val _categoryList = MutableLiveData<List<String>>()
     val categoryList : LiveData<List<String>> get() = _categoryList
 
-    fun setCategoryList(category: List<String>){
+    fun setCategoryList(category: List<String>) = viewModelScope.launch{
         _categoryList.value = category
     }
 
@@ -37,7 +39,7 @@ class WriteViewModel @Inject constructor(
                 title, content, category
             )
         ).onSuccess {
-            event(Event.Success)
+            _event.value = Event.Success
         }.onFailure {
             Log.e("writePost", "Fail")
         }
@@ -50,18 +52,14 @@ class WriteViewModel @Inject constructor(
                     title, content, category
                 )
             ).onSuccess {
-                event(Event.Success)
+                _event.value = Event.Success
             }.onFailure {
                 when (it.errorHandling()) {
                     Event.NotFound -> {
-                        event(it.errorHandling(notFoundAction = {
-                            Log.e("존재하지 않는 게시글", "404")
-                        }))
+                        Log.e("존재하지 않는 게시글", "404")
                     }
                     Event.Unauthorized -> {
-                        event(it.errorHandling(unauthorizedAction = {
-                            Log.e("인증되지 않는 유저", "401")
-                        }))
+                        Log.e("인증되지 않는 유저", "401")
                     }
                     else -> {}
                 }
@@ -72,27 +70,18 @@ class WriteViewModel @Inject constructor(
         deletePostUseCase(
             postId
         ).onSuccess {
-            event(Event.Success)
+            _event.value = Event.Success
         }.onFailure {
             when (it.errorHandling()) {
                 Event.NotFound -> {
-                    event(it.errorHandling(notFoundAction = {
                         Log.e("존재하지 않는 게시글", "404")
-                    }))
                 }
                 Event.Unauthorized -> {
-                    event(it.errorHandling(unauthorizedAction = {
                         Log.e("인증되지 않는 유저", "401")
-                    }))
                 }
                 else -> {}
             }
         }
-    }
-
-
-    private fun event(event: Event) = viewModelScope.launch {
-        _eventFlow.emit(event)
     }
 
 

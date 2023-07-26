@@ -32,6 +32,7 @@
         android:id="@+id/writeFragment"
         android:name="com.team_ia.idea_archive_android.ui.write.WriteFragment"
         android:label="WriteFragment"
-        tools:layout="@layout/fragment_write_page"/>
+        tools:layout="@layout/fragment_write_page">
+    </fragment>
 
 </navigation>

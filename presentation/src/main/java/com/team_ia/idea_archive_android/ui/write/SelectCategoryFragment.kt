@@ -24,7 +24,7 @@ class SelectCategoryFragment : BaseFragment<FragmentSelectCategoryBinding>(R.lay
     }
 
     private var categoryList = blank
-    private var selectedCategoryList: List<String> = listOf("")
+    private var selectedCategoryList: MutableList<String> = mutableListOf()
 
     private fun onClick() = binding.apply {
         btnIdeaButton.setOnClickListener {
@@ -49,9 +49,9 @@ class SelectCategoryFragment : BaseFragment<FragmentSelectCategoryBinding>(R.lay
             }
         }
         btnNextButton.setOnClickListener {
-            //writeViewModel.setCategoryList(category = selectedCategoryList)
             when (categoryList) {
                 idea, feedback -> {
+                    writeViewModel.setCategoryList(selectedCategoryList)
                     requireActivity().findNavController(R.id.write_container)
                         .navigate(R.id.action_selectCategoryFragment_to_writeFragment)
                 }
@@ -71,7 +71,8 @@ class SelectCategoryFragment : BaseFragment<FragmentSelectCategoryBinding>(R.lay
     private fun setIdeaBtn() = binding.apply {
         btnIdeaButton.setBackgroundResource(R.drawable.bg_idea_btn)
         categoryList = idea
-        selectedCategoryList = listOf("아이디어")
+        selectedCategoryList.add("아이디어")
+        selectedCategoryList.remove("피드백")
         btnFeedbackButton.setBackgroundResource(R.drawable.bg_feedback_false_btn)
         btnJobopeningButton.setBackgroundResource(R.drawable.bg_jobopening_false_btn)
     }
@@ -79,7 +80,8 @@ class SelectCategoryFragment : BaseFragment<FragmentSelectCategoryBinding>(R.lay
     private fun setFeedbackBtn() = binding.apply {
         btnFeedbackButton.setBackgroundResource(R.drawable.bg_feedback_btn)
         categoryList = feedback
-        selectedCategoryList = listOf("피드백")
+        selectedCategoryList.add("피드백")
+        selectedCategoryList.remove("아이디어")
         btnIdeaButton.setBackgroundResource(R.drawable.bg_idea_false_btn)
         btnJobopeningButton.setBackgroundResource(R.drawable.bg_jobopening_false_btn)
     }
@@ -87,7 +89,7 @@ class SelectCategoryFragment : BaseFragment<FragmentSelectCategoryBinding>(R.lay
     private fun setJobopeningBtn() = binding.apply {
         btnJobopeningButton.setBackgroundResource(R.drawable.bg_jobopening_btn)
         categoryList = jobopening
-        selectedCategoryList = listOf("구인")
+        selectedCategoryList.removeAll(selectedCategoryList)
         btnIdeaButton.setBackgroundResource(R.drawable.bg_idea_false_btn)
         btnFeedbackButton.setBackgroundResource(R.drawable.bg_feedback_false_btn)
     }

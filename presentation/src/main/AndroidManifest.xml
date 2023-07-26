@@ -47,7 +47,8 @@
                     android:scheme="test" />
             </intent-filter>
         </activity>
-
+        <activity android:name=".ui.login.LoginActivity"
+            android:exported="false"/>
         <activity
             android:name=".ui.profile.ProfileActivity"
             android:exported="false"/>
@@ -67,10 +68,10 @@
             android:exported="false" />
         <activity android:name=".ui.main.AuthenticationSuccessActivity"
             android:exported="false"/>
-
-        <activity android:name=".ui.main.AuthenticationFailedActivity"/>
-
-
+        <activity android:name=".ui.main.AuthenticationFailedActivity"
+            android:exported="false"/>
+        <activity android:name=".ui.write.WriteActivity"
+            android:exported="false"/>
 
         <service
             android:name="com.google.android.gms.metadata.ModuleDependencies"

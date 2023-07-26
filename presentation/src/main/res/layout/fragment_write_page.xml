@@ -185,6 +185,7 @@
         
 
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_inputbox"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:orientation="vertical"
@@ -194,32 +195,29 @@
             app:layout_constraintBottom_toBottomOf="@id/g_et_input_content_b">
 
             <EditText
+                android:id="@+id/et_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/write_title"
                 android:textColorHint="@color/gray"
                 android:background="@drawable/bg_title_edittext" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:background="@color/input_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColorHint="@color/gray">
-
                 <EditText
+                    android:id="@+id/et_content"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:background="@color/input_background"
                     android:hint="@string/write_content"
+                    android:maxLength="500"
                     android:textColorHint="@color/gray"/>
 
-            </com.google.android.material.textfield.TextInputLayout>
             <View
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:background="@color/input_background"/>
             <TextView
+                android:id="@+id/tv_number_of_char"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/number_of_characters"

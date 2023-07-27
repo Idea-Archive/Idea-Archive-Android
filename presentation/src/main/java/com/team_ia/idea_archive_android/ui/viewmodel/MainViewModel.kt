@@ -15,6 +15,7 @@ import com.team_ia.idea_archive_android.utils.asEvetFlow
 import com.team_ia.idea_archive_android.utils.errorHandling
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
@@ -27,6 +28,10 @@ class MainViewModel @Inject constructor(
 ) : ViewModel() {
     private val _eventFlow = MutableEventFlow<Event>()
     val eventFlow = _eventFlow.asEvetFlow()
+    private val _eventData = MutableLiveData<Event>()
+    val eventData: LiveData<Event> get() = _eventData
+    private val _categoryEventData = MutableLiveData<Event>()
+    val categoryEventData: LiveData<Event> get() = _categoryEventData
 
     private val _postData = MutableLiveData<List<PostModel>>()
     val postData: LiveData<List<PostModel>> get() = _postData
@@ -40,7 +45,7 @@ class MainViewModel @Inject constructor(
     fun getPost() = viewModelScope.launch {
         getPostUseCase().onSuccess {
             _postData.value = it
-            event(Event.Success)
+            _eventData.value = Event.Success
         }.onFailure {
             Log.e("글 가져오기", "실패 $it")
         }
@@ -62,7 +67,7 @@ class MainViewModel @Inject constructor(
             )
         ).onSuccess {
             _categoryPostData.value = it
-            event(Event.Success)
+            _categoryEventData.value = Event.Success
         }.onFailure {
             Log.e("카테고리별 글 가져오기", "실패")
         }

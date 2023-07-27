@@ -58,4 +58,13 @@
     <string name="write_title">  제목을 적어주세요.</string>
     <string name="write_content">  당신의 아이디어를 들려주세요!</string>
     <string name="number_of_characters">0/500  </string>
+    <string name="detail_post">상세 보기</string>
+    <string name="detail_category">#CATEGORY</string>
+    <string name="sample_text">예시</string>
+    <string name="example_name">이름</string>
+    <string name="sample_timer">1분 전</string>
+    <string name="sample_num">99+</string>
+    <string name="share">공유</string>
+    <string name="sample_num_of_comment">댓글 99+개</string>
+    <string name="write_comment">댓글 쓰기...</string>
 </resources>

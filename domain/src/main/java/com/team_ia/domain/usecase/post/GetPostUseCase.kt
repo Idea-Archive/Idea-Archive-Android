@@ -1,7 +1,6 @@
 package com.team_ia.domain.usecase.post
 
 import com.team_ia.domain.model.PostModel
-import com.team_ia.domain.param.WritePostParam
 import com.team_ia.domain.repository.PostRepository
 import javax.inject.Inject
 

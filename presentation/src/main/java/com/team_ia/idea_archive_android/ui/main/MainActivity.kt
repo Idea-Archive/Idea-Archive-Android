@@ -45,6 +45,8 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         binding.fbtnMainPageFloatingButton.setOnClickListener { view ->
 
         }
+
+        setUpViews()
     }
 
     private fun changeFragment(fragment: Fragment) {

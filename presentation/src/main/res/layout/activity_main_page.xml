@@ -15,7 +15,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/my_page_background">
+            android:background="@color/my_page_background"
+            android:fitsSystemWindows="true">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/g_tv_job_opening_post_s"
@@ -321,7 +322,9 @@
             android:id="@+id/nv_main_navigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            app:itemIconPadding="16dp"
             app:menu="@menu/menu_main_navi_drawer"
+            android:fitsSystemWindows="true"
             />
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

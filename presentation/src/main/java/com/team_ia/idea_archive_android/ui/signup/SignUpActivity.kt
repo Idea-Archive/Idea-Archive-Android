@@ -1,4 +1,4 @@
-package com.team_ia.idea_archive_android.ui.main
+package com.team_ia.idea_archive_android.ui.signup
 
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivitySignUpPageBinding

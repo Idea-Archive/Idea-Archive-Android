@@ -5,7 +5,7 @@
     <data>
         <variable
             name="authCodeInput"
-            type="com.team_ia.idea_archive_android.ui.main.AuthCodeInputFragment" />
+            type="com.team_ia.idea_archive_android.ui.signup.AuthCodeInputFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

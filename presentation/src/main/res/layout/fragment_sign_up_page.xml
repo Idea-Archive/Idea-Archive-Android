@@ -6,7 +6,7 @@
     <data>
         <variable
             name="signupfragment"
-            type="com.team_ia.idea_archive_android.ui.main.SignUpFragment" />
+            type="com.team_ia.idea_archive_android.ui.signup.SignUpFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

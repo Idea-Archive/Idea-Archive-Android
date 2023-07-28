@@ -1,4 +1,4 @@
-package com.team_ia.idea_archive_android.ui.main
+package com.team_ia.idea_archive_android.ui.signup
 
 import android.util.Log
 import androidx.fragment.app.activityViewModels
@@ -46,16 +46,16 @@ class SignUpFragment : BaseFragment<FragmentSignUpPageBinding>(R.layout.fragment
     }
 
     private fun observeSignUp() {
-        signupViewModel.emailInfo.observe(this) {
+        signupViewModel.signupInfo.observe(this) {
             when (it) {
                 Event.Success -> {
                     Log.d("success", "")
                     registerDataSetting()
                     val savedEmailData = signupViewModel.emailData.value
                     if (savedEmailData != null) {
-                        Log.e("This is not null",savedEmailData)
-                    }else{
-                        Log.e("this is null","")
+                        Log.e("This is not null", savedEmailData)
+                    } else {
+                        Log.e("this is null", "")
                     }
                     requireActivity().findNavController(R.id.sign_up_container)
                         .navigate(R.id.action_signUpFragment_to_authCodeInputFragment)

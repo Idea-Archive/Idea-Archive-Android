@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_back_button_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0227" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_back_button_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0308" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_back_button_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1026" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_back_button_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0758" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_back_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.030" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_back_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0987" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_back_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2564" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_back_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0675" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_new_write_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4077" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_new_write_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5923" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_write_button_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0194" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_write_button_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7854" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_write_button_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9379" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_write_button_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.072" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_et_input_title_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.109"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_et_new_write_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0513"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_et_new_write_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9487"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_et_input_content_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.59"/>
+
+        <ImageButton
+            android:id="@+id/ibtn_back_button"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/ibtn_back_button"
+            app:layout_constraintTop_toTopOf="@id/g_ibtn_back_button_t"
+            app:layout_constraintStart_toStartOf="@id/g_ibtn_back_button_s"
+            app:layout_constraintEnd_toEndOf="@id/g_ibtn_back_button_e"
+            app:layout_constraintBottom_toBottomOf="@id/g_ibtn_back_button_b" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/back"
+            android:gravity="center"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/g_tv_back_s"
+            app:layout_constraintTop_toTopOf="@id/g_tv_back_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_back_b"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_back_e" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/new_write"
+            android:gravity="center"
+            android:fontFamily="@font/pretendard_bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/g_tv_new_write_s"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_new_write_e"
+            app:layout_constraintTop_toTopOf="@id/g_tv_back_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_back_b" />
+
+        <Button
+            android:id="@+id/btn_next_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_write_btn"
+            app:layout_constraintStart_toStartOf="@id/g_btn_write_button_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_write_button_e"
+            app:layout_constraintTop_toTopOf="@id/g_btn_write_button_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_write_button_b" />
+        
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_inputbox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="@id/g_et_new_write_s"
+            app:layout_constraintEnd_toEndOf="@id/g_et_new_write_e"
+            app:layout_constraintTop_toTopOf="@id/g_et_input_title_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_et_input_content_b">
+
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/write_title"
+                android:textColorHint="@color/gray"
+                android:background="@drawable/bg_title_edittext" />
+
+                <EditText
+                    android:id="@+id/et_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/input_background"
+                    android:hint="@string/write_content"
+                    android:maxLength="500"
+                    android:textColorHint="@color/gray"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="@color/input_background"/>
+            <TextView
+                android:id="@+id/tv_number_of_char"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/number_of_characters"
+                android:background="@drawable/bg_content_textview"
+                android:gravity="right"
+                android:textColor="@color/gray"
+                android:fontFamily="@font/pretendard_medium" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

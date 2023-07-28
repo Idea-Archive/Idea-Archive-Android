@@ -20,7 +20,7 @@ import com.team_ia.idea_archive_android.databinding.ActivityLoginPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
 import com.team_ia.idea_archive_android.ui.main.FindPasswordActivity
 import com.team_ia.idea_archive_android.ui.main.MainActivity
-import com.team_ia.idea_archive_android.ui.main.SignUpActivity
+import com.team_ia.idea_archive_android.ui.signup.SignUpActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.GoogleSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.KakaoSocialLoginViewModel
 import com.team_ia.idea_archive_android.ui.viewmodel.LoginViewModel
@@ -112,9 +112,7 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
 
         initView()
         repeatOnStart {
-            loginViewModel.eventFlow.collect { event -> handleEvent(Event.Success) }
             googleLoginViewModel.eventFlow.collect { event -> handleEvent(Event.Success) }
-            loginViewModel.eventFlow.collect { event -> handleEvent(Event.NotFound) }
             googleLoginViewModel.eventFlow.collect { event -> handleEvent(Event.NotFound) }
         }
 
@@ -200,7 +198,6 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         }
     }
 
-
     fun onClick(view: View) {
         when (view) {
             binding.ibtnBackButton -> {
@@ -237,8 +234,29 @@ class LoginActivity : BaseActivity<ActivityLoginPageBinding>(R.layout.activity_l
         googleSignInClient = GoogleSignIn.getClient(this, googleSocialLogin)
     }
 
+    private fun observeLogin(){
+        loginViewModel.loginEvent.observe(this){
+            when(it){
+                Event.Success -> {
+                    startActivity(Intent(this,MainActivity::class.java))
+                    finish()
+                }
+                Event.BadRequest -> {
+                    shortToast("비밀번호가 일치하지 않습니다.")
+                }
+                Event.NotFound -> {
+                    shortToast("해당 이메일의 유저를 찾을 수 없습니다.")
+                }
+                else -> {
+                    shortToast("알 수 없는 오류가 발생하였습니다.")
+                }
+            }
+        }
+    }
+
     override fun observeEvent() {
         observeKakaoLogin()
+        observeLogin()
     }
 
 }

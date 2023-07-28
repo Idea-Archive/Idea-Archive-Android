@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_back_button_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0227" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_back_button_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0308" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_back_button_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1026" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_back_button_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0758" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_back_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.030" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_back_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0987" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_back_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2564" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_back_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0675" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_new_write_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4077" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_new_write_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5923" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_write_button_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.0194" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_next_button_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7854" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_next_button_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9379" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_btn_next_button_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.072" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_what_category_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1232" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_what_category_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0615" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_what_category_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.54" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_what_category_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1676" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_select_category_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1969" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_select_category_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4523" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_category_idea_button_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2299" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_category_idea_button_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0615" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_category_idea_button_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9385" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_category_idea_button_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4194" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_category_feedback_button_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4431" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_category_feedback_button_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6327" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_jobopening_button_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6564" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_jobopening_button_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.846" />
+
+
+        <ImageButton
+            android:id="@+id/ibtn_back_button"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@drawable/ibtn_back_button"
+            app:layout_constraintTop_toTopOf="@id/g_ibtn_back_button_t"
+            app:layout_constraintStart_toStartOf="@id/g_ibtn_back_button_s"
+            app:layout_constraintEnd_toEndOf="@id/g_ibtn_back_button_e"
+            app:layout_constraintBottom_toBottomOf="@id/g_ibtn_back_button_b" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/back"
+            android:gravity="center"
+            android:fontFamily="@font/pretendard_semibold"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/g_tv_back_s"
+            app:layout_constraintTop_toTopOf="@id/g_tv_back_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_back_b"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_back_e" />
+
+        <TextView
+            android:id="@+id/tv_new_write"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/new_write"
+            android:gravity="center"
+            android:fontFamily="@font/pretendard_bold"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/g_tv_new_write_s"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_new_write_e"
+            app:layout_constraintTop_toTopOf="@id/g_tv_back_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_back_b" />
+
+        <Button
+            android:id="@+id/btn_next_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_next"
+            app:layout_constraintStart_toStartOf="@id/g_btn_next_button_s"
+            app:layout_constraintEnd_toEndOf="@id/g_btn_next_button_e"
+            app:layout_constraintTop_toTopOf="@id/g_btn_write_button_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_btn_next_button_b" />
+
+        <TextView
+            android:id="@+id/tv_what_write"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/what_category"
+            android:textSize="22sp"
+            android:fontFamily="@font/pretendard_bold"
+            android:textColor="@color/black"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="@id/g_tv_what_category_s"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_what_category_e"
+            app:layout_constraintTop_toTopOf="@id/g_tv_what_category_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_what_category_b" />
+
+        <TextView
+            android:id="@+id/tv_select_category"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/select_category"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="@id/g_tv_what_category_s"
+            app:layout_constraintEnd_toEndOf="@id/g_tv_select_category_e"
+            app:layout_constraintTop_toBottomOf="@id/g_tv_what_category_b"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_select_category_b" />
+
+        <Button
+            android:id="@+id/btn_idea_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_idea_false_btn"
+            app:layout_constraintStart_toStartOf="@id/g_ibtn_category_idea_button_s"
+            app:layout_constraintTop_toTopOf="@id/g_ibtn_category_idea_button_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_ibtn_category_idea_button_b"
+            app:layout_constraintEnd_toEndOf="@id/g_ibtn_category_idea_button_e" />
+
+        <Button
+            android:id="@+id/btn_feedback_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_feedback_false_btn"
+            app:layout_constraintStart_toStartOf="@id/g_ibtn_category_idea_button_s"
+            app:layout_constraintEnd_toEndOf="@id/g_ibtn_category_idea_button_e"
+            app:layout_constraintTop_toTopOf="@id/g_ibtn_category_feedback_button_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_ibtn_category_feedback_button_b" />
+
+        <Button
+            android:id="@+id/btn_jobopening_button"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_jobopening_false_btn"
+            app:layout_constraintStart_toStartOf="@id/g_ibtn_category_idea_button_s"
+            app:layout_constraintEnd_toEndOf="@id/g_ibtn_category_idea_button_e"
+            app:layout_constraintTop_toTopOf="@id/g_ibtn_jobopening_button_t"
+            app:layout_constraintBottom_toBottomOf="@id/g_ibtn_jobopening_button_b" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

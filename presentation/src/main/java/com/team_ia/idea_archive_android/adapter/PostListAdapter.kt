@@ -39,6 +39,9 @@ class PostListAdapter(private val itemList: List<PostModel>?) : ListAdapter<Post
                 } else {
                     tvHeartCount.text = item.heartCount.toString()
                 }
+                postItemLayout.setOnClickListener {
+                    listener.detail(item)
+                }
             }
 
         }
@@ -57,6 +60,12 @@ class PostListAdapter(private val itemList: List<PostModel>?) : ListAdapter<Post
         holder.bind(itemList?.get(position))
     }
 
+    interface OnItemClickListener{
+        fun detail(item: PostModel?)
+    }
+    fun setItemOnClickListener(onItemClickListener: OnItemClickListener) {
+        this.itemClickListener = onItemClickListener
+    }
     companion object {
         val diffUtil = object : DiffUtil.ItemCallback<PostModel>(){
             override fun areItemsTheSame(oldItem: PostModel, newItem: PostModel): Boolean {

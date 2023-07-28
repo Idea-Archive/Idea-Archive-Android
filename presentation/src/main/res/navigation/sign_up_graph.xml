@@ -6,7 +6,7 @@
     app:startDestination="@id/signUpFragment">
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.team_ia.idea_archive_android.ui.main.SignUpFragment"
+        android:name="com.team_ia.idea_archive_android.ui.signup.SignUpFragment"
         android:label="SignUpFragment"
         tools:layout="@layout/fragment_sign_up_page">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/authCodeInputFragment"
-        android:name="com.team_ia.idea_archive_android.ui.main.AuthCodeInputFragment"
+        android:name="com.team_ia.idea_archive_android.ui.signup.AuthCodeInputFragment"
         android:label="AuthCodeInputFragment"
         tools:layout="@layout/fragment_auth_code_input_page">
         <action
@@ -31,12 +31,12 @@
     </fragment>
     <activity
         android:id="@+id/authenticationFailedActivity"
-        android:name="com.team_ia.idea_archive_android.ui.main.AuthenticationFailedActivity"
+        android:name="com.team_ia.idea_archive_android.ui.signup.AuthenticationFailedActivity"
         android:label="AuthenticationFailedActivity"
         tools:layout="@layout/activity_authentication_failed_page"/>
     <activity
         android:id="@+id/authenticationSuccessActivity"
-        android:name="com.team_ia.idea_archive_android.ui.main.AuthenticationSuccessActivity"
+        android:name="com.team_ia.idea_archive_android.ui.signup.AuthenticationSuccessActivity"
         android:label="AuthenticationSuccessActivity"
         tools:layout="@layout/activity_authentication_success_page"/>
     <activity

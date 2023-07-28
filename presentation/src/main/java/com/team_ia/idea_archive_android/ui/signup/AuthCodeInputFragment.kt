@@ -1,4 +1,4 @@
-package com.team_ia.idea_archive_android.ui.main
+package com.team_ia.idea_archive_android.ui.signup
 
 import android.util.Log
 import androidx.fragment.app.activityViewModels
@@ -22,7 +22,7 @@ class AuthCodeInputFragment :
 
     }
 
-    fun initView() = binding.apply {
+    private fun initView() = binding.apply {
         etInputAuthCode1.run {
             setOnTextChanged { _, _, _, _ ->
                 etInputAuthCode2.requestFocus()

@@ -41,7 +41,7 @@ class MainJobOpeningFragment :
         postListAdapter = PostListAdapter(viewModel.categoryPostData.value).apply {
             setItemOnClickListener(object : PostListAdapter.OnItemClickListener {
                 override fun detail(item: PostModel?) {
-
+                    item?.postId?.let { viewModel.getDetailPost(it.toLong()) }
                 }
             })
         }

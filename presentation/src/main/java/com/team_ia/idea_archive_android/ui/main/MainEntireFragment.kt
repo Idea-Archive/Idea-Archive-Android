@@ -10,6 +10,7 @@ import com.team_ia.idea_archive_android.ui.base.BaseFragment
 import com.team_ia.idea_archive_android.ui.viewmodel.MainViewModel
 import com.team_ia.idea_archive_android.utils.Event
 import com.team_ia.idea_archive_android.databinding.FragmentMainEntireBinding
+import com.team_ia.idea_archive_android.utils.ItemDecorator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,6 +44,7 @@ class MainEntireFragment : BaseFragment<FragmentMainEntireBinding>(R.layout.frag
         majorFilterListAdapter = MajorFilterListAdapter(majorFilterList)
         binding.rvMajorFilter.adapter = majorFilterListAdapter
         binding.rvEntirePost.adapter = postListAdapter
+        binding.rvEntirePost.addItemDecoration(ItemDecorator(8))
     }
 
     override fun createView() {

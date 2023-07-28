@@ -9,6 +9,7 @@ import com.team_ia.idea_archive_android.databinding.FragmentMainJobOpeningBindin
 import com.team_ia.idea_archive_android.ui.base.BaseFragment
 import com.team_ia.idea_archive_android.ui.viewmodel.MainViewModel
 import com.team_ia.idea_archive_android.utils.Event
+import com.team_ia.idea_archive_android.utils.ItemDecorator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -48,6 +49,7 @@ class MainJobOpeningFragment :
         majorFilterListAdapter = MajorFilterListAdapter(majorFilterList)
         binding.rvMajorFilter.adapter = majorFilterListAdapter
         binding.rvJobOpeningPost.adapter = postListAdapter
+        binding.rvJobOpeningPost.addItemDecoration(ItemDecorator(8))
     }
 
     override fun observeEvent() {

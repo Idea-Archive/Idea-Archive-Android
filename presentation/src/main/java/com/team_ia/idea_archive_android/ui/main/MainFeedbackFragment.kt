@@ -8,6 +8,7 @@ import com.team_ia.idea_archive_android.databinding.FragmentMainFeedbackBinding
 import com.team_ia.idea_archive_android.ui.base.BaseFragment
 import com.team_ia.idea_archive_android.ui.viewmodel.MainViewModel
 import com.team_ia.idea_archive_android.utils.Event
+import com.team_ia.idea_archive_android.utils.ItemDecorator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,6 +29,7 @@ class MainFeedbackFragment : BaseFragment<FragmentMainFeedbackBinding>(R.layout.
             })
         }
         binding.rvFeedbackPost.adapter = postListAdapter
+        binding.rvFeedbackPost.addItemDecoration(ItemDecorator(8))
     }
 
     override fun observeEvent() {

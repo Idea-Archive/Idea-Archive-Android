@@ -8,6 +8,7 @@ import com.team_ia.idea_archive_android.databinding.FragmentMainIdeaBinding
 import com.team_ia.idea_archive_android.ui.base.BaseFragment
 import com.team_ia.idea_archive_android.ui.viewmodel.MainViewModel
 import com.team_ia.idea_archive_android.utils.Event
+import com.team_ia.idea_archive_android.utils.ItemDecorator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -28,6 +29,7 @@ class MainIdeaFragment : BaseFragment<FragmentMainIdeaBinding>(R.layout.fragment
             })
         }
         binding.rvIdeaPost.adapter = postListAdapter
+        binding.rvIdeaPost.addItemDecoration(ItemDecorator(8))
     }
 
     override fun observeEvent() {

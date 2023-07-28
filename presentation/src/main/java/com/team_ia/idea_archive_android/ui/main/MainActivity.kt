@@ -52,14 +52,14 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         if (isFabOpen) {
             closeFabMenu()
         } else {
-          openFabMenu()
+            openFabMenu()
         }
     }
 
     private fun openFabMenu() {
         ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f, 45f).apply { start() }
-        ObjectAnimator.ofFloat(binding.fbtnWritePost,"translationY", -360f).apply { start() }
-        ObjectAnimator.ofFloat(binding.fbtnWriteNotice,"translationY",-180f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", -360f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", -180f).apply { start() }
         isFabOpen = true
     }
 
@@ -69,6 +69,7 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", 0f).apply { start() }
         isFabOpen = false
     }
+
     override fun observeEvent() {
     }
 

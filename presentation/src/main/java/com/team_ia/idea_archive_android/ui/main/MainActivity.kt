@@ -1,5 +1,7 @@
 package com.team_ia.idea_archive_android.ui.main
 
+import android.animation.ObjectAnimator
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.team_ia.idea_archive_android.R
@@ -55,15 +57,16 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
     }
 
     private fun openFabMenu() {
-        binding.fbtnMainPageFloatingButton.setImageResource(R.drawable.ic_close)
-
+        ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f, 45f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWritePost,"translationY", -360f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWriteNotice,"translationY",-180f).apply { start() }
         isFabOpen = true
     }
 
     private fun closeFabMenu() {
-        binding.fbtnMainPageFloatingButton.setImageResource(R.drawable.ic_add)
-        binding.fbtnWritePost.animate().translationY(0f)
-        binding.fbtnWriteNotice.animate().translationY(0f)
+        ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f, 45f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", 0f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", 0f).apply { start() }
         isFabOpen = false
     }
     override fun observeEvent() {

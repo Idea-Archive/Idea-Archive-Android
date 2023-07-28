@@ -14,7 +14,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_main_page) {
     private val fragmentManager: FragmentManager = supportFragmentManager
-    private lateinit var postListAdapter: PostListAdapter
     private val viewModel by viewModels<MainViewModel>()
     private var isFabOpen = false
     private var category:Int = 0

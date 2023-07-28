@@ -1,13 +1,14 @@
-package com.team_ia.idea_archive_android.ui.main
+package com.team_ia.idea_archive_android.ui.signup
 
 import android.content.Intent
 import com.team_ia.idea_archive_android.R
-import com.team_ia.idea_archive_android.databinding.ActivityAuthenticationSuccessPageBinding
+import com.team_ia.idea_archive_android.databinding.ActivityAuthenticationFailedPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
-import com.team_ia.idea_archive_android.ui.base.BaseFragment
 import com.team_ia.idea_archive_android.ui.login.LoginActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-class AuthenticationSuccessActivity : BaseActivity<ActivityAuthenticationSuccessPageBinding> (R.layout.activity_authentication_success_page) {
+@AndroidEntryPoint
+class AuthenticationFailedActivity: BaseActivity<ActivityAuthenticationFailedPageBinding>(R.layout.activity_authentication_failed_page){
     override fun createView() {
         binding.btnGoBackToLoginPage.setOnClickListener {
             startActivity(Intent(this, LoginActivity::class.java))
@@ -16,7 +17,6 @@ class AuthenticationSuccessActivity : BaseActivity<ActivityAuthenticationSuccess
     }
 
     override fun observeEvent() {
-
     }
 
 }

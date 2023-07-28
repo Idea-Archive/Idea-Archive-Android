@@ -1,7 +1,5 @@
 package com.team_ia.domain.entity
 
-import com.team_ia.domain.model.PostModel
-
 data class GetDetailPostEntity(
     val postId: String,
     val title: String,

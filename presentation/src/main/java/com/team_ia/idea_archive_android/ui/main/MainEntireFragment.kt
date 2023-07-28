@@ -1,6 +1,5 @@
 package com.team_ia.idea_archive_android.ui.main
 
-import android.util.Log
 import androidx.fragment.app.activityViewModels
 import com.team_ia.domain.model.PostModel
 import com.team_ia.idea_archive_android.R
@@ -37,7 +36,7 @@ class MainEntireFragment : BaseFragment<FragmentMainEntireBinding>(R.layout.frag
         postListAdapter = PostListAdapter(viewModel.postData.value).apply {
             setItemOnClickListener(object : PostListAdapter.OnItemClickListener {
                 override fun detail(item: PostModel?) {
-
+                    item?.postId?.let { viewModel.getDetailPost(it.toLong()) }
                 }
             })
         }

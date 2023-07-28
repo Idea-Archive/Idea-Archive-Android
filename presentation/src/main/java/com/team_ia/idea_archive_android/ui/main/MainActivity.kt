@@ -16,11 +16,6 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
     private var isFabOpen = false
 
     override fun createView() {
-
-        binding.fbtnMainPageFloatingButton.setOnClickListener {
-            toggleFab()
-        }
-
         binding.tvEntire.setOnClickListener {
             changeFragment(MainEntireFragment())
         }
@@ -37,8 +32,16 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
             changeFragment(MainIdeaFragment())
         }
 
-        binding.fbtnMainPageFloatingButton.setOnClickListener { view ->
+        binding.fbtnMainPageFloatingButton.setOnClickListener {
+            toggleFab()
+        }
 
+        binding.fbtnWritePost.setOnClickListener {
+            //글쓰기 페이지로 인텐트 시키기
+        }
+
+        binding.fbtnWriteNotice.setOnClickListener {
+            // "admin"권한일때만 공지 페이지로 인텐트 시키기
         }
     }
 

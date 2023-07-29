@@ -277,13 +277,13 @@
             android:id="@+id/fbtn_write_notice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="12dp"
             android:background="@drawable/bg_floatingbutton"
             android:backgroundTint="@color/primary"
             android:src="@drawable/ic_notice"
             app:borderWidth="0dp"
             app:fabSize="mini"
-            app:layout_constraintBottom_toTopOf="@id/fbtn_write_post"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/g_fbtn_write_post_floating_button_e"
             app:layout_constraintStart_toStartOf="@id/g_fbtn_write_post_floating_button_s" />
 
@@ -291,13 +291,13 @@
             android:id="@+id/fbtn_write_post"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/bg_write_post"
             android:backgroundTint="@color/primary"
             android:src="@drawable/src_write_post"
             app:borderWidth="0dp"
             app:fabSize="mini"
-            app:layout_constraintBottom_toTopOf="@id/fbtn_main_page_floating_button"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/g_fbtn_write_post_floating_button_e"
             app:layout_constraintStart_toStartOf="@id/g_fbtn_write_post_floating_button_s" />
 

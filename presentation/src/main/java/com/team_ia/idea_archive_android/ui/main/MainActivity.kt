@@ -28,6 +28,7 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
 
     private fun onClick(){
         viewModel.getPost()
+        binding.fbtnMainPageFloatingButton.bringToFront()
         binding.fbtnMainPageFloatingButton.setOnClickListener {
             toggleFab()
         }
@@ -80,8 +81,8 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
 
     private fun openFabMenu() {
         ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f, 45f).apply { start() }
-        ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", -360f).apply { start() }
-        ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", -180f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", -360f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", -180f).apply { start() }
         isFabOpen = true
     }
 

@@ -61,9 +61,9 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
             //글쓰기 페이지로 인텐트 시키기
         }
 
-        binding.fbtnWriteNotice.setOnClickListener {
-            // "admin"권한일때만 공지 페이지로 인텐트 시키기
-        }
+//        binding.fbtnWriteNotice.setOnClickListener {
+//            // "admin"권한일때만 공지 페이지로 인텐트 시키기
+//        }
     }
     private fun changeFragment(fragment: Fragment) {
         fragmentManager.beginTransaction()
@@ -81,15 +81,17 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
 
     private fun openFabMenu() {
         ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f, 45f).apply { start() }
-        ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", -360f).apply { start() }
+        // ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", -360f).apply { start() }
         ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", -180f).apply { start() }
+        ObjectAnimator.ofFloat(binding.tvWritePostBubble, "translationY", -180f).apply { start() }
+        ObjectAnimator.ofFloat(binding.tvWritePostBubble, "translationX", -180f).apply { start() }
         isFabOpen = true
     }
 
     private fun closeFabMenu() {
         ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f, 45f).apply { start() }
         ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", 0f).apply { start() }
-        ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", 0f).apply { start() }
+        // ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", 0f).apply { start() }
         isFabOpen = false
     }
 

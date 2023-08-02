@@ -83,14 +83,16 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f, 45f).apply { start() }
         // ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", -360f).apply { start() }
         ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", -180f).apply { start() }
+        binding.tvWritePostBubble.elevation = 1f
         ObjectAnimator.ofFloat(binding.tvWritePostBubble, "translationY", -180f).apply { start() }
-        ObjectAnimator.ofFloat(binding.tvWritePostBubble, "translationX", -180f).apply { start() }
         isFabOpen = true
     }
 
     private fun closeFabMenu() {
-        ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f, 45f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f).apply { start() }
         ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", 0f).apply { start() }
+        ObjectAnimator.ofFloat(binding.tvWritePostBubble, "translationY", 0f).apply { start() }
+        binding.tvWritePostBubble.elevation = 0f
         // ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", 0f).apply { start() }
         isFabOpen = false
     }

@@ -1,10 +1,11 @@
 package com.team_ia.idea_archive_android.ui.main
 
+import android.animation.ObjectAnimator
+import android.view.View
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.team_ia.idea_archive_android.R
-import com.team_ia.idea_archive_android.adapter.PostListAdapter
 import com.team_ia.idea_archive_android.databinding.ActivityMainPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.MainViewModel
@@ -27,6 +28,7 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
 
     private fun onClick(){
         viewModel.getPost()
+        binding.fbtnMainPageFloatingButton.bringToFront()
         binding.fbtnMainPageFloatingButton.setOnClickListener {
             toggleFab()
         }
@@ -51,9 +53,17 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
             viewModel.getCategoryPost(categoryIdea)
         }
 
-        binding.fbtnMainPageFloatingButton.setOnClickListener { view ->
-
+        binding.fbtnMainPageFloatingButton.setOnClickListener {
+            toggleFab()
         }
+
+        binding.fbtnWritePost.setOnClickListener {
+            //글쓰기 페이지로 인텐트 시키기
+        }
+
+//        binding.fbtnWriteNotice.setOnClickListener {
+//            // "admin"권한일때만 공지 페이지로 인텐트 시키기
+//        }
     }
     private fun changeFragment(fragment: Fragment) {
         fragmentManager.beginTransaction()
@@ -65,22 +75,28 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         if (isFabOpen) {
             closeFabMenu()
         } else {
-          openFabMenu()
+            openFabMenu()
         }
     }
 
     private fun openFabMenu() {
-        binding.fbtnMainPageFloatingButton.setImageResource(R.drawable.ic_close)
-
+        ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f, 45f).apply { start() }
+        // ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", -360f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", -180f).apply { start() }
+        binding.tvWritePostBubble.elevation = 1f
+        ObjectAnimator.ofFloat(binding.tvWritePostBubble, "translationY", -180f).apply { start() }
         isFabOpen = true
     }
 
     private fun closeFabMenu() {
-        binding.fbtnMainPageFloatingButton.setImageResource(R.drawable.ic_add)
-        binding.fbtnWritePost.animate().translationY(0f)
-        binding.fbtnWriteNotice.animate().translationY(0f)
+        ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f).apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", 0f).apply { start() }
+        ObjectAnimator.ofFloat(binding.tvWritePostBubble, "translationY", 0f).apply { start() }
+        binding.tvWritePostBubble.elevation = 0f
+        // ObjectAnimator.ofFloat(binding.fbtnWriteNotice, "translationY", 0f).apply { start() }
         isFabOpen = false
     }
+
     override fun observeEvent() {
         observePostData()
         observeCategoryPostData()

@@ -23,12 +23,15 @@ class SignupViewModel @Inject constructor(
     private val checkVerificationCodeUseCase: CheckVerificationCodeUseCase,
     private val saveTokenUseCase: SaveTokenUseCase
 ): ViewModel() {
-    private val _emailInfo = MutableLiveData<Event>()
-    val emailInfo : LiveData<Event> get() = _emailInfo
     private val _signupInfo = MutableLiveData<Event>()
     val signupInfo : LiveData<Event> get() = _signupInfo
+    private val _emailInfo = MutableLiveData<Event>()
+    val emailInfo : LiveData<Event> get() = _emailInfo
     private val _authCodeInfo = MutableLiveData<Event>()
     val authCodeInfo : LiveData<Event> get() = _authCodeInfo
+    private val _successInfo = MutableLiveData<Event>()
+    val successInfo : LiveData<Event> get() = _successInfo
+
     fun signup (email: String, password: String, name: String) = viewModelScope.launch{
         signupUseCase(
             SignupParam(
@@ -36,7 +39,6 @@ class SignupViewModel @Inject constructor(
             )
         ).onSuccess {
             _signupInfo.value = Event.Success
-
         }.onFailure {
             _signupInfo.value =
                 it.errorHandling(badRequestAction = {saveTokenUseCase()})

@@ -1,8 +1,8 @@
 package com.team_ia.idea_archive_android.ui.main
 
 import android.content.Intent
-import android.provider.ContactsContract.Profile
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.navigation.NavigationView
@@ -10,6 +10,8 @@ import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityMainPageBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity
 import com.team_ia.idea_archive_android.ui.profile.ProfileActivity
+import com.team_ia.idea_archive_android.ui.viewmodel.MainViewModel
+import com.team_ia.idea_archive_android.utils.Event
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,37 +20,53 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
     private val fragmentManager: FragmentManager = supportFragmentManager
+    private val viewModel by viewModels<MainViewModel>()
     private var isFabOpen = false
+    private var category:Int = 0
+    private val categoryFeedback: List<String> = listOf("피드백")
+    private val categoryIdea: List<String> = listOf("아이디어")
+    private val categoryJobOpening: List<String> = listOf("구인")
 
     override fun createView() {
+        onClick()
+    }
 
+    private fun onClick(){
+        viewModel.getPost()
         binding.fbtnMainPageFloatingButton.setOnClickListener {
             toggleFab()
         }
 
         binding.tvEntire.setOnClickListener {
-            changeFragment(MainEntireFragment())
+            viewModel.getPost()
         }
 
         binding.tvJobOpening.setOnClickListener {
-            changeFragment(MainJobOpeningFragment())
+            category = 1
+            viewModel.getCategoryPost(categoryJobOpening)
         }
 
         binding.tvFeedback.setOnClickListener {
-            changeFragment(MainFeedbackFragment())
+            category = 2
+            viewModel.getCategoryPost(categoryFeedback)
+
         }
 
         binding.tvIdea.setOnClickListener {
-            changeFragment(MainIdeaFragment())
+            category = 3
+            viewModel.getCategoryPost(categoryIdea)
         }
 
         binding.fbtnMainPageFloatingButton.setOnClickListener { view ->
 
         }
 
+        binding.btnMainPageMenuBarButton.setOnClickListener {
+            binding.mainPageDrawerLayout.open()
+        }
+
         setUpViews()
     }
-
     private fun changeFragment(fragment: Fragment) {
         fragmentManager.beginTransaction()
             .replace(R.id.fcv_main_fragment_container, fragment)
@@ -118,6 +136,44 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         }
     }
     override fun observeEvent() {
+        observePostData()
+        observeCategoryPostData()
+    }
+
+    private fun observePostData() {
+        viewModel.eventData.observe(this) {
+            when (it) {
+                Event.Success -> {
+                    changeFragment(MainEntireFragment())
+                }
+                else -> {
+
+                }
+            }
+        }
+    }
+
+    private fun observeCategoryPostData(){
+        viewModel.categoryEventData.observe(this){
+            when(it){
+                Event.Success -> {
+                    when(category){
+                        1 ->{
+                            changeFragment(MainJobOpeningFragment())
+                        }
+                        2 ->{
+                            changeFragment(MainFeedbackFragment())
+                        }
+                        3 ->{
+                            changeFragment(MainIdeaFragment())
+                        }
+                    }
+                }
+                else -> {
+
+                }
+            }
+        }
     }
 
 }

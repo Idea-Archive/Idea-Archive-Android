@@ -50,4 +50,21 @@
     <string name="input_new_password_">새로운 비밀번호를 입력해주세요</string>
     <string name="need_password">회원탈퇴를 하려면\n비밀번호가 필요해요</string>
     <string name="incorrect_password">비밀번호가 일치하지 않습니다.</string>
+    <string name="new_write">새 글 쓰기</string>
+    <string name="what_category">어떤 글을 쓰시나요?</string>
+    <string name="select_category">카테고리를 골라주세요!</string>
+    <string name="what_major">원하시는 전공자가 있나요?</string>
+    <string name="tag_major">원하시는 전공만 골라 태그하실 수 있어요!</string>
+    <string name="write_title">  제목을 적어주세요.</string>
+    <string name="write_content">  당신의 아이디어를 들려주세요!</string>
+    <string name="number_of_characters">0/500  </string>
+    <string name="detail_post">상세 보기</string>
+    <string name="detail_category">#CATEGORY</string>
+    <string name="sample_text">예시</string>
+    <string name="example_name">이름</string>
+    <string name="sample_timer">1분 전</string>
+    <string name="sample_num">99+</string>
+    <string name="share">공유</string>
+    <string name="sample_num_of_comment">댓글 99+개</string>
+    <string name="write_comment">댓글 쓰기...</string>
 </resources>

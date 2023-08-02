@@ -17,4 +17,6 @@
     <color name="selector_unchecked">#EAEAEA</color>
     <color name="my_page_background">#FFF2F2F2</color>
     <color name="incorrect_red">#FFFF3120</color>
+    <color name="input_background">#F1F1F5</color>
+    <color name="separation">#E6E6E6</color>
 </resources>

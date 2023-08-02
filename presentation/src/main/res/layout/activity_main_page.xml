@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -324,7 +325,6 @@
             android:layout_height="match_parent"
             app:itemIconPadding="16dp"
             app:menu="@menu/menu_main_navi_drawer"
-            android:fitsSystemWindows="true"
-            />
+            android:fitsSystemWindows="true" />
     </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

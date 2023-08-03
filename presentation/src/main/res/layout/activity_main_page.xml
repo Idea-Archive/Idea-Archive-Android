@@ -291,7 +291,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_gravity="end">
+            android:layout_gravity="end"
+            android:background="@color/white">
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/g_iv_navi_header_profile_s"
                 android:layout_width="match_parent"
@@ -404,6 +405,13 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_percent="0.1161" />
 
+            <androidx.constraintlayout.widget.Guideline
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:id="@+id/g_header_bottom"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.1552"
+                />
 
             <ImageView
                 android:id="@+id/iv_navi_header_profile_image"
@@ -449,12 +457,15 @@
             <com.google.android.material.navigation.NavigationView
                 android:id="@+id/nv_main_navigation"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="0dp"
                 android:fitsSystemWindows="true"
                 app:itemIconPadding="16dp"
+                android:background="@color/white"
                 app:menu="@menu/menu_main_navi_drawer"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/g_header_bottom"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.drawerlayout.widget.DrawerLayout>
 

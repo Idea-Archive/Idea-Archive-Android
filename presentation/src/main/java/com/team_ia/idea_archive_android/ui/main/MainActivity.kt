@@ -3,9 +3,9 @@ package com.team_ia.idea_archive_android.ui.main
 import android.content.Intent
 import androidx.drawerlayout.widget.DrawerLayout
 import android.animation.ObjectAnimator
+import android.view.Gravity
 import android.view.View
 import androidx.activity.viewModels
-import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.navigation.NavigationView
@@ -36,8 +36,8 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
 
     private fun onClick() {
         setUpViews()
-        binding.mainPageDrawerLayout.closeDrawer(GravityCompat.END)
         viewModel.getPost()
+        drawerLayout = binding.mainPageDrawerLayout
         binding.fbtnMainPageFloatingButton.bringToFront()
         binding.fbtnMainPageFloatingButton.setOnClickListener {
             toggleFab()
@@ -68,7 +68,10 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         }
 
         binding.btnMainPageMenuBarButton.setOnClickListener {
-            binding.mainPageDrawerLayout.open()
+            drawerLayout.openDrawer(Gravity.RIGHT)
+            if (drawerLayout.isDrawerOpen(Gravity.RIGHT)){
+                drawerLayout.closeDrawer(Gravity.RIGHT)
+            }
         }
 
         binding.fbtnWritePost.setOnClickListener {
@@ -134,16 +137,7 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
 //                   // 대진님 여기다가 로그아웃 작업 하시면 됩니다.
 //                }
             }
-            drawerLayout.closeDrawer(navigationView)
             true
-        }
-    }
-
-    override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(navigationView)) {
-            drawerLayout.closeDrawer(navigationView)
-        } else {
-            super.getOnBackPressedDispatcher()
         }
     }
 

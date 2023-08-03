@@ -2,7 +2,10 @@ package com.team_ia.idea_archive_android.ui.main
 
 import android.content.Intent
 import androidx.drawerlayout.widget.DrawerLayout
+import android.animation.ObjectAnimator
+import android.view.View
 import androidx.activity.viewModels
+import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.navigation.NavigationView
@@ -22,7 +25,7 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
     private val fragmentManager: FragmentManager = supportFragmentManager
     private val viewModel by viewModels<MainViewModel>()
     private var isFabOpen = false
-    private var category:Int = 0
+    private var category: Int = 0
     private val categoryFeedback: List<String> = listOf("피드백")
     private val categoryIdea: List<String> = listOf("아이디어")
     private val categoryJobOpening: List<String> = listOf("구인")
@@ -31,8 +34,11 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         onClick()
     }
 
-    private fun onClick(){
+    private fun onClick() {
+        setUpViews()
+        binding.mainPageDrawerLayout.closeDrawer(GravityCompat.END)
         viewModel.getPost()
+        binding.fbtnMainPageFloatingButton.bringToFront()
         binding.fbtnMainPageFloatingButton.setOnClickListener {
             toggleFab()
         }
@@ -57,16 +63,23 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
             viewModel.getCategoryPost(categoryIdea)
         }
 
-        binding.fbtnMainPageFloatingButton.setOnClickListener { view ->
-
+        binding.fbtnMainPageFloatingButton.setOnClickListener {
+            toggleFab()
         }
 
         binding.btnMainPageMenuBarButton.setOnClickListener {
             binding.mainPageDrawerLayout.open()
         }
 
-        setUpViews()
+        binding.fbtnWritePost.setOnClickListener {
+            //글쓰기 페이지로 인텐트 시키기
+        }
+
+//        binding.fbtnWriteNotice.setOnClickListener {
+//            // "admin"권한일때만 공지 페이지로 인텐트 시키기
+//        }
     }
+
     private fun changeFragment(fragment: Fragment) {
         fragmentManager.beginTransaction()
             .replace(R.id.fcv_main_fragment_container, fragment)
@@ -77,20 +90,25 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         if (isFabOpen) {
             closeFabMenu()
         } else {
-          openFabMenu()
+            openFabMenu()
         }
     }
 
     private fun openFabMenu() {
-        binding.fbtnMainPageFloatingButton.setImageResource(R.drawable.ic_close)
-
+        ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f, 45f)
+            .apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", -180f).apply { start() }
+        binding.tvWritePostBubble.elevation = 1f
+        ObjectAnimator.ofFloat(binding.tvWritePostBubble, "translationY", -180f).apply { start() }
         isFabOpen = true
     }
 
     private fun closeFabMenu() {
-        binding.fbtnMainPageFloatingButton.setImageResource(R.drawable.ic_add)
-        binding.fbtnWritePost.animate().translationY(0f)
-        binding.fbtnWriteNotice.animate().translationY(0f)
+        ObjectAnimator.ofFloat(binding.fbtnMainPageFloatingButton, View.ROTATION, 0f)
+            .apply { start() }
+        ObjectAnimator.ofFloat(binding.fbtnWritePost, "translationY", 0f).apply { start() }
+        ObjectAnimator.ofFloat(binding.tvWritePostBubble, "translationY", 0f).apply { start() }
+        binding.tvWritePostBubble.elevation = 0f
         isFabOpen = false
     }
 
@@ -98,15 +116,8 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         drawerLayout = binding.mainPageDrawerLayout
         navigationView = binding.nvMainNavigation
 
-        binding.btnMainPageMenuBarButton.setOnClickListener {
-            drawerLayout.openDrawer(navigationView)
-        }
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-//                R.id.item_notice -> {
-//                      // 공지부분 퍼블리싱 후 연결
-//                }
-
                 R.id.item_view_my_post -> {
                     val intent = Intent(this, ProfileActivity::class.java)
                     startActivity(intent)
@@ -135,6 +146,7 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
             super.getOnBackPressedDispatcher()
         }
     }
+
     override fun observeEvent() {
         observePostData()
         observeCategoryPostData()
@@ -146,6 +158,7 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
                 Event.Success -> {
                     changeFragment(MainEntireFragment())
                 }
+
                 else -> {
 
                 }
@@ -153,22 +166,25 @@ class MainActivity : BaseActivity<ActivityMainPageBinding>(R.layout.activity_mai
         }
     }
 
-    private fun observeCategoryPostData(){
-        viewModel.categoryEventData.observe(this){
-            when(it){
+    private fun observeCategoryPostData() {
+        viewModel.categoryEventData.observe(this) {
+            when (it) {
                 Event.Success -> {
-                    when(category){
-                        1 ->{
+                    when (category) {
+                        1 -> {
                             changeFragment(MainJobOpeningFragment())
                         }
-                        2 ->{
+
+                        2 -> {
                             changeFragment(MainFeedbackFragment())
                         }
-                        3 ->{
+
+                        3 -> {
                             changeFragment(MainIdeaFragment())
                         }
                     }
                 }
+
                 else -> {
 
                 }

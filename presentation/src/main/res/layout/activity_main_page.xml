@@ -9,9 +9,8 @@
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/main_page_drawer_layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent">
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -232,29 +231,12 @@
                 app:layout_constraintTop_toTopOf="@id/g_tab_bar_t" />
 
             <TextView
-                android:id="@+id/tv_write_notice_bubble"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="26dp"
-                android:background="@drawable/bg_write_post_bubble"
-                android:elevation="8dp"
-                android:fontFamily="@font/pretendard_regular"
-                android:paddingStart="10dp"
-                android:paddingTop="2dp"
-                android:text="공지글 작성"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@id/tv_write_post_bubble"
-                app:layout_constraintEnd_toEndOf="@id/g_tv_write_post_bubble_e"
-                app:layout_constraintStart_toStartOf="@id/g_tv_write_post_bubble_s" />
-
-            <TextView
                 android:id="@+id/tv_write_post_bubble"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="129dp"
+                android:layout_marginBottom="60dp"
                 android:background="@drawable/bg_write_post_bubble"
-                android:elevation="8dp"
+                android:elevation="0dp"
                 android:fontFamily="@font/pretendard_regular"
                 android:paddingStart="10dp"
                 android:paddingTop="2dp"
@@ -280,31 +262,18 @@
                 app:layout_constraintStart_toStartOf="@id/g_fbtn_main_page_floating_button_s"
                 app:rippleColor="@color/primary" />
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fbtn_write_notice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/bg_floatingbutton"
-                android:backgroundTint="@color/primary"
-                android:src="@drawable/ic_notice"
-                app:borderWidth="0dp"
-                app:fabSize="mini"
-                app:layout_constraintBottom_toTopOf="@id/fbtn_write_post"
-                app:layout_constraintEnd_toEndOf="@id/g_fbtn_write_post_floating_button_e"
-                app:layout_constraintStart_toStartOf="@id/g_fbtn_write_post_floating_button_s" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/fbtn_write_post"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="50dp"
                 android:background="@drawable/bg_write_post"
                 android:backgroundTint="@color/primary"
                 android:src="@drawable/src_write_post"
                 app:borderWidth="0dp"
                 app:fabSize="mini"
-                app:layout_constraintBottom_toTopOf="@id/fbtn_main_page_floating_button"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@id/g_fbtn_write_post_floating_button_e"
                 app:layout_constraintStart_toStartOf="@id/g_fbtn_write_post_floating_button_s" />
 
@@ -323,8 +292,9 @@
             android:id="@+id/nv_main_navigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
             app:itemIconPadding="16dp"
-            app:menu="@menu/menu_main_navi_drawer"
-            android:fitsSystemWindows="true" />
+            app:menu="@menu/menu_main_navi_drawer" />
     </androidx.drawerlayout.widget.DrawerLayout>
+
 </layout>

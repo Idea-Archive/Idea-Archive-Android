@@ -44,6 +44,7 @@ class MainEntireFragment : BaseFragment<FragmentMainEntireBinding>(R.layout.frag
         binding.rvMajorFilter.adapter = majorFilterListAdapter
         binding.rvEntirePost.adapter = postListAdapter
         binding.rvEntirePost.addItemDecoration(ItemDecorator(8))
+        binding.rvMajorFilter.addItemDecoration(ItemDecorator(4))
     }
 
     override fun createView() {

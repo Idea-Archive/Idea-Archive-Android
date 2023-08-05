@@ -50,6 +50,7 @@ class MainJobOpeningFragment :
         binding.rvMajorFilter.adapter = majorFilterListAdapter
         binding.rvJobOpeningPost.adapter = postListAdapter
         binding.rvJobOpeningPost.addItemDecoration(ItemDecorator(8))
+        binding.rvMajorFilter.addItemDecoration(ItemDecorator(4))
     }
 
     override fun observeEvent() {

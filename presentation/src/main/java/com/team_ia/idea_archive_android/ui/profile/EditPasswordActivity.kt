@@ -2,10 +2,8 @@ package com.team_ia.idea_archive_android.ui.profile
 
 import android.content.Intent
 import android.util.Log
-import android.view.View
 import androidx.activity.viewModels
 import androidx.core.view.isVisible
-import com.jakewharton.rxbinding4.view.visibility
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ActivityEditPasswordBinding
 import com.team_ia.idea_archive_android.ui.base.BaseActivity

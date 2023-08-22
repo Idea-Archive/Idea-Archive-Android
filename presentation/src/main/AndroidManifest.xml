@@ -24,7 +24,6 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -71,6 +70,8 @@
         <activity android:name=".ui.signup.AuthenticationFailedActivity"
             android:exported="false"/>
         <activity android:name=".ui.write.WriteActivity"
+            android:exported="false"/>
+        <activity android:name=".ui.detail.DetailPostActivity"
             android:exported="false"/>
 
         <service

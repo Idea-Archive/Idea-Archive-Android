@@ -28,12 +28,15 @@ data class PostModel(
         @SerializedName("memberId")
         val memberId: Long,
         @SerializedName("name")
-        val name: String
+        val name: String,
+        @SerializedName("profileImageUrl")
+        val profileImage: String?
     )
 
     fun Member.toEntity() = DomainPostModel.Member(
         memberId = memberId,
-        name = name
+        name = name,
+        profileImage = profileImage
     )
 }
 
@@ -44,7 +47,7 @@ fun PostModel.toEntity() = DomainPostModel(
     category = category,
     heartCount = heartCount,
     commentCount = commentCount,
-    member = DomainMember(memberId = member.memberId, name = member.name),
+    member = DomainMember(memberId = member.memberId, name = member.name, profileImage = member.profileImage),
     heart = heart,
     createDate = createDate
 )

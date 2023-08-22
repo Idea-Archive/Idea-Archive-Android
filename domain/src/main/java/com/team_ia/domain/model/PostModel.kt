@@ -13,11 +13,13 @@ data class PostModel(
 ) {
     data class Member(
         val memberId: Long,
-        val name: String
+        val name: String,
+        val profileImage: String?
     )
 
     fun Member.toEntity() = PostModel.Member(
         memberId = memberId,
-        name = name
+        name = name,
+        profileImage = profileImage
     )
 }

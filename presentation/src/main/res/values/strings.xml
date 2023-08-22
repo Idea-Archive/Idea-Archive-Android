@@ -67,4 +67,6 @@
     <string name="share">공유</string>
     <string name="sample_num_of_comment">댓글 99+개</string>
     <string name="write_comment">댓글 쓰기...</string>
+    <string name="sample_comment_userinfo">user_name  •  N분 전</string>
+    <string name="sample_comment_content">Content</string>
 </resources>

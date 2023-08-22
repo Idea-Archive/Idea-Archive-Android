@@ -17,7 +17,6 @@ class PostItem(private val data: PostModel) : BaseActivity<ItemPostBinding>(R.la
     }
 
     override fun observeEvent() {
-        TODO("Not yet implemented")
     }
 
     fun initRecycler() {

@@ -1,14 +1,15 @@
 package com.team_ia.idea_archive_android.ui.viewmodel
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.team_ia.domain.entity.GetDetailPostEntity
 import com.team_ia.domain.param.PostCommentParam
 import com.team_ia.domain.usecase.post.DeletePostUseCase
 import com.team_ia.domain.usecase.post.PostCommentUseCase
 import com.team_ia.idea_archive_android.utils.Event
-import com.team_ia.idea_archive_android.utils.MutableEventFlow
-import com.team_ia.idea_archive_android.utils.asEvetFlow
 import com.team_ia.idea_archive_android.utils.errorHandling
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -20,8 +21,8 @@ class CommentViewModel @Inject constructor(
     private val editCommentUseCase: PostCommentUseCase,
     private val deletePostUseCase: DeletePostUseCase
 ) : ViewModel() {
-    private val _eventFlow = MutableEventFlow<Event>()
-    val eventFlow = _eventFlow.asEvetFlow()
+    private val _eventFlow = MutableLiveData<Event>()
+    val eventFlow: LiveData<Event> get() = _eventFlow
 
     fun postComment(postId: Long, content: String) = viewModelScope.launch {
         postCommentUseCase(
@@ -29,11 +30,11 @@ class CommentViewModel @Inject constructor(
                 content
             )
         ).onSuccess {
-            event(Event.Success)
+            _eventFlow.value = Event.Success
         }.onFailure {
-            event(it.errorHandling(notFoundAction = {
+            it.errorHandling(notFoundAction = {
                 Log.e("존재하지 않는 글입니다", "404")
-            }))
+            })
         }
     }
 
@@ -43,18 +44,18 @@ class CommentViewModel @Inject constructor(
                 content
             )
         ).onSuccess {
-            event(Event.Success)
+            _eventFlow.value = Event.Success
         }.onFailure {
             when (it.errorHandling()) {
                 Event.Unauthorized -> {
-                    event(it.errorHandling(unauthorizedAction = {
+                    it.errorHandling(unauthorizedAction = {
                         Log.e("인증되지 않은 회원입니다.", "401")
-                    }))
+                    })
                 }
                 Event.NotFound -> {
-                    event(it.errorHandling(notFoundAction = {
+                    it.errorHandling(notFoundAction = {
                         Log.e("존재하지 않는 댓글입니다.", "404")
-                    }))
+                    })
                 }
                 else -> {}
             }
@@ -65,26 +66,22 @@ class CommentViewModel @Inject constructor(
         deletePostUseCase(
             commentId
         ).onSuccess {
-            event(Event.Success)
+            _eventFlow.value = Event.Success
         }.onFailure {
             when (it.errorHandling()) {
                 Event.Unauthorized -> {
-                    event(it.errorHandling(unauthorizedAction = {
+                    it.errorHandling(unauthorizedAction = {
                         Log.e("인증되지 않은 회원입니다.", "401")
-                    }))
+                    })
                 }
                 Event.NotFound -> {
-                    event(it.errorHandling(notFoundAction = {
+                    it.errorHandling(notFoundAction = {
                         Log.e("존재하지 않는 댓글입니다.", "404")
-                    }))
+                    })
                 }
                 else -> {}
             }
         }
-    }
-
-    private fun event(event: Event) = viewModelScope.launch {
-        _eventFlow.emit(event)
     }
 
 }

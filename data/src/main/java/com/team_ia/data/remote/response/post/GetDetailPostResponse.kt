@@ -7,7 +7,7 @@ import com.team_ia.domain.entity.GetDetailPostEntity.Comment as EntityComment
 
 data class GetDetailPostResponse(
     @SerializedName("postId")
-    val postId: String,
+    val postId: Long,
     @SerializedName("title")
     val title: String,
     @SerializedName("content")
@@ -33,12 +33,15 @@ data class GetDetailPostResponse(
         @SerializedName("memberId")
         val memberId: Long,
         @SerializedName("name")
-        val name: String
+        val name: String,
+        @SerializedName("profileImageUrl")
+        val profileImage: String
     )
 
     fun Member.toEntity() = GetDetailPostEntity.Member(
         memberId = memberId,
-        name = name
+        name = name,
+        profileImage = profileImage
     )
 
     data class Comment(
@@ -56,7 +59,7 @@ data class GetDetailPostResponse(
         commentId = commentId,
         content = content,
         createDate = createDate,
-        member = EntityMember(memberId = member.memberId, name = member.name)
+        member = EntityMember(memberId = member.memberId, name = member.name, profileImage = member.profileImage)
     )
 }
 
@@ -65,7 +68,7 @@ fun GetDetailPostResponse.toEntity() = GetDetailPostEntity(
     title = title,
     content = content,
     category = category,
-    member = EntityMember(memberId = member.memberId, name = member.name),
+    member = EntityMember(memberId = member.memberId, name = member.name, profileImage = member.profileImage),
     comment = comment.map { it.toEntity() },
     heartCount = heartCount,
     commentCount = commentCount,

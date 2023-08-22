@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_iv_comment_porfile_e"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0615" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_iv_comment_porfile_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_comment_user_info_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.08205" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_comment_user_info_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.375" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_tv_comment_t"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.625" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_see_more_s"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.958" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/g_ibtn_see_more_b"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/iv_comment_porfile"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_default_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/g_iv_comment_porfile_e"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/g_iv_comment_porfile_b" />
+
+        <TextView
+            android:id="@+id/tv_comment_user_info"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/sample_comment_userinfo"
+            android:textSize="9sp"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="@id/g_tv_comment_user_info_s"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/g_tv_comment_user_info_b" />
+
+        <TextView
+            android:id="@+id/tv_comment_content"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/sample_comment_content"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/pretendard_medium"
+            android:gravity="center_vertical"
+            app:layout_constraintStart_toStartOf="@id/g_tv_comment_user_info_s"
+            app:layout_constraintTop_toTopOf="@id/g_tv_comment_t"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageButton
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:background="@drawable/bg_see_more_vertical_ibtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/g_ibtn_see_more_s"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/g_ibtn_see_more_b" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

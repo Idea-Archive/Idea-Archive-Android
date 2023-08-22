@@ -1,9 +1,7 @@
 package com.team_ia.domain.entity
 
-import com.team_ia.domain.model.PostModel
-
 data class GetDetailPostEntity(
-    val postId: String,
+    val postId: Long,
     val title: String,
     val content: String,
     val category: List<String>,
@@ -17,7 +15,8 @@ data class GetDetailPostEntity(
 ){
     data class Member(
         val memberId: Long,
-        val name: String
+        val name: String,
+        val profileImage: String?
     )
 
     data class Comment(
@@ -27,7 +26,7 @@ data class GetDetailPostEntity(
         val member: Member
     )
 
-    fun Comment.toEntity() = GetDetailPostEntity.Comment(
+    fun Comment.toEntity() = Comment(
         commentId = commentId,
         content = content,
         createDate = createDate,

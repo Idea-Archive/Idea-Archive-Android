@@ -3,17 +3,14 @@ package com.team_ia.idea_archive_android.adapter
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.AdapterView.OnItemClickListener
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
 import com.team_ia.domain.model.PostModel
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ItemPostBinding
 import com.team_ia.idea_archive_android.utils.formatTimeDifference
-import java.text.DecimalFormat
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
 
 class PostListAdapter(private val itemList: List<PostModel>?) : ListAdapter<PostModel, PostListAdapter.PostListViewHolder>(diffUtil){
 
@@ -28,7 +25,8 @@ class PostListAdapter(private val itemList: List<PostModel>?) : ListAdapter<Post
 
             fun bind(item: PostModel?) = binding.apply {
                 tvInformation.text = item?.member?.name + R.string.divide + item?.createDate?.formatTimeDifference()
-                tvContent.text = item?.content
+                tvContent.text = item?.title
+                ivProfile.load(item?.member?.profileImage ?:R.drawable.bg_default_profile)
                 if (item?.commentCount!! > 99) {
                     tvCommentCount.text = "99+"
                 } else {

@@ -1,11 +1,13 @@
 package com.team_ia.idea_archive_android.ui.main
 
+import android.content.Intent
 import androidx.fragment.app.activityViewModels
 import com.team_ia.domain.model.PostModel
 import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.adapter.PostListAdapter
 import com.team_ia.idea_archive_android.databinding.FragmentMainIdeaBinding
 import com.team_ia.idea_archive_android.ui.base.BaseFragment
+import com.team_ia.idea_archive_android.ui.detail.DetailPostActivity
 import com.team_ia.idea_archive_android.ui.viewmodel.MainViewModel
 import com.team_ia.idea_archive_android.utils.Event
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,6 +41,19 @@ class MainIdeaFragment : BaseFragment<FragmentMainIdeaBinding>(R.layout.fragment
             when(it){
                 Event.Success -> {
                     postListAdapter.submitList(viewModel.categoryPostData.value)
+                }
+                else -> {
+
+                }
+            }
+        }
+    }
+
+    private fun observeDetailPostData(){
+        viewModel.detailEventData.observe(this){
+            when(it){
+                Event.Success -> {
+                    startActivity(Intent(context, DetailPostActivity::class.java))
                 }
                 else -> {
 

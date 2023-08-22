@@ -32,6 +32,8 @@ class MainViewModel @Inject constructor(
     val eventData: LiveData<Event> get() = _eventData
     private val _categoryEventData = MutableLiveData<Event>()
     val categoryEventData: LiveData<Event> get() = _categoryEventData
+    private val _detailEventData = MutableLiveData<Event>()
+    val detailEventData: LiveData<Event> get() = _detailEventData
 
     private val _postData = MutableLiveData<List<PostModel>>()
     val postData: LiveData<List<PostModel>> get() = _postData
@@ -78,7 +80,7 @@ class MainViewModel @Inject constructor(
             postId = postId
         ).onSuccess {
             _detailPostData.value = it
-            event(Event.Success)
+            _detailEventData.value = Event.Success
         }.onFailure {
             event(it.errorHandling(notFoundAction = {
                 Log.e("존재하지 않는 게시글", "404")

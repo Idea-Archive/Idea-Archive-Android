@@ -1,5 +1,6 @@
 package com.team_ia.domain.usecase.post
 
+import com.team_ia.domain.entity.GetDetailPostEntity
 import com.team_ia.domain.repository.PostRepository
 import javax.inject.Inject
 

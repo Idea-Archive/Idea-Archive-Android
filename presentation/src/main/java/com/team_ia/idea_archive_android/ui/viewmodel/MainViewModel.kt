@@ -81,6 +81,9 @@ class MainViewModel @Inject constructor(
         ).onSuccess {
             _detailPostData.value = it
             _detailEventData.value = Event.Success
+            if (_detailEventData.value == Event.Success){
+                _detailEventData.value = Event.Loading
+            }
         }.onFailure {
             event(it.errorHandling(notFoundAction = {
                 Log.e("존재하지 않는 게시글", "404")

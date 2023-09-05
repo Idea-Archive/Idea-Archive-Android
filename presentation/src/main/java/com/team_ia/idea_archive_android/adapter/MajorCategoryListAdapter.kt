@@ -6,17 +6,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.team_ia.domain.entity.GetDetailPostEntity
 import com.team_ia.idea_archive_android.databinding.ItemCategoryBinding
 
-class MajorCategoryListAdapter(private val categoryList: List<String>) :
-    ListAdapter<GetDetailPostEntity, MajorCategoryListAdapter.MajorCategoryViewHolder>(diffUtil) {
+class MajorCategoryListAdapter() : ListAdapter<String, MajorCategoryListAdapter.MajorCategoryViewHolder>(diffUtil) {
     class MajorCategoryViewHolder(
         val context: Context,
         private val binding: ItemCategoryBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: String) = binding.apply {
             tvCategory.text = item
+
         }
     }
 
@@ -31,27 +30,22 @@ class MajorCategoryListAdapter(private val categoryList: List<String>) :
         )
 
     override fun onBindViewHolder(
-        holder: MajorCategoryListAdapter.MajorCategoryViewHolder,
+        holder: MajorCategoryViewHolder,
         position: Int
     ) {
-        holder.bind(categoryList[position])
+        holder.bind(getItem(position))
     }
 
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<GetDetailPostEntity>() {
-            override fun areItemsTheSame(
-                oldItem: GetDetailPostEntity,
-                newItem: GetDetailPostEntity
-            ): Boolean {
+        val diffUtil = object : DiffUtil.ItemCallback<String>() {
+            override fun areItemsTheSame(oldItem: String, newItem: String): Boolean {
                 return oldItem == newItem
             }
 
-            override fun areContentsTheSame(
-                oldItem: GetDetailPostEntity,
-                newItem: GetDetailPostEntity
-            ): Boolean {
+            override fun areContentsTheSame(oldItem: String, newItem: String): Boolean {
                 return oldItem == newItem
             }
+
         }
     }
 }

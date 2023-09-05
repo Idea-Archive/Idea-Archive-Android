@@ -27,7 +27,7 @@ data class GetDetailPostResponse(
     @SerializedName("views")
     val views: Int,
     @SerializedName("createDate")
-    val createDate: String
+    val createDate: String?
 ) {
     data class Member(
         @SerializedName("memberId")
@@ -50,7 +50,7 @@ data class GetDetailPostResponse(
         @SerializedName("content")
         val content: String,
         @SerializedName("createDate")
-        val createDate: String,
+        val createDate: String?,
         @SerializedName("member")
         val member: Member
     )

@@ -12,7 +12,7 @@ import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ItemPostBinding
 import com.team_ia.idea_archive_android.utils.formatTimeDifference
 
-class PostListAdapter(private val itemList: List<PostModel>?) : ListAdapter<PostModel, PostListAdapter.PostListViewHolder>(diffUtil){
+class PostListAdapter() : ListAdapter<PostModel, PostListAdapter.PostListViewHolder>(diffUtil) {
 
     private lateinit var itemClickListener: OnItemClickListener
 
@@ -21,28 +21,30 @@ class PostListAdapter(private val itemList: List<PostModel>?) : ListAdapter<Post
         private val binding: ItemPostBinding,
         val listener: OnItemClickListener
     ) :
-        RecyclerView.ViewHolder(binding.root){
+        RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(item: PostModel?) = binding.apply {
-                tvInformation.text = item?.member?.name + R.string.divide + item?.createDate?.formatTimeDifference()
-                tvContent.text = item?.title
-                ivProfile.load(item?.member?.profileImage ?:R.drawable.bg_default_profile)
-                if (item?.commentCount!! > 99) {
-                    tvCommentCount.text = "99+"
-                } else {
-                    tvCommentCount.text = item.commentCount.toString()
-                }
-                if (item?.heartCount!! > 99) {
-                    tvHeartCount.text = "99+"
-                } else {
-                    tvHeartCount.text = item.heartCount.toString()
-                }
-                postItemLayout.setOnClickListener {
-                    listener.detail(item)
-                }
+        fun bind(item: PostModel?) = binding.apply {
+            tvInformation.text =
+                item?.member?.name + R.string.divide + item?.createDate?.formatTimeDifference()
+            tvContent.text = item?.title
+            ivProfile.load(item?.member?.profileImage ?: R.drawable.bg_default_profile)
+            if (item?.commentCount!! > 99) {
+                tvCommentCount.text = "99+"
+            } else {
+                tvCommentCount.text = item.commentCount.toString()
             }
-
+            if (item?.heartCount!! > 99) {
+                tvHeartCount.text = "99+"
+            } else {
+                tvHeartCount.text = item.heartCount.toString()
+            }
+            postItemLayout.setOnClickListener {
+                listener.detail(item)
+            }
         }
+
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostListViewHolder =
         PostListViewHolder(
             parent.context,
@@ -55,17 +57,19 @@ class PostListAdapter(private val itemList: List<PostModel>?) : ListAdapter<Post
         )
 
     override fun onBindViewHolder(holder: PostListViewHolder, position: Int) {
-        holder.bind(itemList?.get(position))
+        holder.bind(getItem(position))
     }
 
-    interface OnItemClickListener{
+    interface OnItemClickListener {
         fun detail(item: PostModel?)
     }
+
     fun setItemOnClickListener(onItemClickListener: OnItemClickListener) {
         this.itemClickListener = onItemClickListener
     }
+
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<PostModel>(){
+        val diffUtil = object : DiffUtil.ItemCallback<PostModel>() {
             override fun areItemsTheSame(oldItem: PostModel, newItem: PostModel): Boolean {
                 return oldItem == newItem
             }

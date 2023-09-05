@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <data>
         <variable
-            name="detailData"
+            name="detail_data"
             type="com.team_ia.domain.entity.GetDetailPostEntity" />
     </data>
 
@@ -265,7 +263,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/pretendard_bold"
                         android:gravity="center_vertical"
-                        android:text="@{detailData.title}"
+                        android:text="@{detail_data.title}"
                         android:textColor="@color/black"
                         android:textSize="18sp"
                         app:layout_constraintBottom_toTopOf="@id/iv_profile_image"
@@ -293,7 +291,7 @@
                         android:layout_marginBottom="16dp"
                         android:fontFamily="@font/pretendard_regular"
                         android:gravity="center_vertical"
-                        android:text="@{detailData.Member.name}"
+                        android:text="@{detail_data.Member.name}"
                         android:textColor="@color/gray"
                         android:textSize="14sp"
                         app:layout_constraintBottom_toTopOf="@id/v_separater_first"
@@ -330,7 +328,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:fontFamily="@font/pretendard_medium"
-                        android:text="@{detailData.content}"
+                        android:text="@{detail_data.content}"
                         android:textColor="@color/black"
                         android:textSize="16.8sp"
                         android:textStyle="bold"
@@ -349,7 +347,7 @@
                         app:layout_constraintEnd_toEndOf="@id/g_ibtn_detail_edit_e"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@id/g_tv_detail_category_s"
-                        app:layout_constraintTop_toBottomOf="@id/v_separater_first"
+                        app:layout_constraintTop_toBottomOf="@id/tv_detail_content"
                         tools:listitem="@layout/item_major_category" />
 
                     <ImageButton
@@ -372,7 +370,7 @@
                         android:layout_marginBottom="15dp"
                         android:fontFamily="@font/pretendard_medium"
                         android:gravity="center_vertical"
-                        android:text="@{detailData.heartCount}"
+                        android:text="@string/sample_num"
                         android:textColor="@color/gray"
                         android:textSize="15sp"
                         app:layout_constraintBottom_toTopOf="@id/v_separater_second"
@@ -435,9 +433,9 @@
                         android:layout_width="0dp"
                         android:layout_height="20dp"
                         android:layout_marginTop="12dp"
-                        android:background="@color/white"
+                        android:background="@color/input_gray"
                         android:fontFamily="@font/pretendard_regular"
-                        android:text="@string/write_comment"
+                        android:hint="@string/write_comment"
                         android:textColor="@color/gray"
                         android:textSize="16sp"
                         app:layout_constraintEnd_toEndOf="@id/g_ibtn_detail_edit_s"
@@ -470,7 +468,7 @@
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginTop="45dp"
-                        android:visibility="invisible"
+                        android:visibility="gone"
                         android:background="@drawable/bg_comment_send_btn"
                         app:layout_constraintStart_toStartOf="@id/g_ibtn_detail_edit_s"
                         app:layout_constraintEnd_toEndOf="@id/g_ibtn_detail_edit_e"

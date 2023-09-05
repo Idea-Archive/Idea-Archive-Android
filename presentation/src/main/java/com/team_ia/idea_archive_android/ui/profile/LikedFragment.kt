@@ -21,7 +21,7 @@ class LikedFragment : BaseFragment<FragmentLikedBinding>(R.layout.fragment_liked
     }
 
     private fun initRecyclerView() {
-        adapter = PostListAdapter(viewModel.postData.value)
+        adapter = PostListAdapter()
         binding.rvLiked.addItemDecoration(ItemDecorator(8))
         binding.rvLiked.adapter = adapter
     }

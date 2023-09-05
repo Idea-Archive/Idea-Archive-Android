@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_list_graph"
+    app:startDestination="@id/fcv_fragment_main_list">
+
+    <fragment
+        android:id="@+id/fcv_fragment_main_list"
+        android:name="com.team_ia.idea_archive_android.ui.main.MainEntireFragment"
+        android:label="MainEntireFragment"
+        tools:layout="@layout/fragment_main_entire">
+        <action
+            android:id="@+id/action_mainEntireFragment_to_mainIdeaFragment"
+            app:destination="@id/mainIdeaFragment"
+            app:popUpTo="@id/fcv_fragment_main_list"/>
+        <action
+            android:id="@+id/action_mainEntireFragment_to_mainJobOpeningFragment"
+            app:destination="@id/mainJobOpeningFragment"
+            app:popUpTo="@id/fcv_fragment_main_list"/>
+        <action
+            android:id="@+id/action_mainEntireFragment_to_mainFeedbackFragment"
+            app:destination="@id/mainFeedbackFragment"
+            app:popUpTo="@id/fcv_fragment_main_list"/>
+    </fragment>
+    <fragment
+        android:id="@+id/mainIdeaFragment"
+        android:name="com.team_ia.idea_archive_android.ui.main.MainIdeaFragment"
+        android:label="MainIdeaFragment"
+        tools:layout="@layout/fragment_main_idea">
+    </fragment>
+    <fragment
+        android:id="@+id/mainFeedbackFragment"
+        android:name="com.team_ia.idea_archive_android.ui.main.MainFeedbackFragment"
+        android:label="MainFeedbackFragment"
+        tools:layout="@layout/fragment_main_feedback">
+    </fragment>
+    <fragment
+        android:id="@+id/mainJobOpeningFragment"
+        android:name="com.team_ia.idea_archive_android.ui.main.MainJobOpeningFragment"
+        android:label="MainJobOpeningFragment"
+        tools:layout="@layout/fragment_main_job_opening">
+    </fragment>
+</navigation>

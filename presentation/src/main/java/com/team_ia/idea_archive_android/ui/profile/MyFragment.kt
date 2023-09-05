@@ -22,7 +22,7 @@ class MyFragment : BaseFragment<FragmentMyBinding>(R.layout.fragment_my) {
     }
 
     private fun initRecyclerView() {
-        adapter = PostListAdapter(viewModel.postData.value)
+        adapter = PostListAdapter()
         binding.rvMyPost.addItemDecoration(ItemDecorator(8))
         binding.rvMyPost.adapter = adapter
     }

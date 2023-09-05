@@ -12,15 +12,14 @@ import com.team_ia.idea_archive_android.R
 import com.team_ia.idea_archive_android.databinding.ItemCommentBinding
 import com.team_ia.idea_archive_android.utils.formatTimeDifference
 
-class CommentListAdapter(private val commentList: List<GetDetailPostEntity.Comment>) :
-    ListAdapter<GetDetailPostEntity, CommentListAdapter.CommentViewHolder>(diffUtil) {
+class CommentListAdapter() : ListAdapter<GetDetailPostEntity.Comment, CommentListAdapter.CommentViewHolder>(diffUtil) {
 
     class CommentViewHolder(
         val context: Context,
         private val binding: ItemCommentBinding
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: GetDetailPostEntity.Comment) = binding.apply{
-            tvCommentUserInfo.text = item.member.name + R.string.divide + item.createDate.formatTimeDifference()
+            tvCommentUserInfo.text = item.member.name + R.string.divide + item.createDate?.formatTimeDifference()
             ivCommentPorfile.load(item.member.profileImage ?:R.drawable.bg_default_profile)
             tvCommentContent.text = item.content
 
@@ -39,18 +38,21 @@ class CommentListAdapter(private val commentList: List<GetDetailPostEntity.Comme
         )
 
     override fun onBindViewHolder(holder: CommentViewHolder, position: Int) {
-        holder.bind(commentList.get(position))
+        holder.bind(getItem(position))
     }
 
     companion object {
-        val diffUtil = object : DiffUtil.ItemCallback<GetDetailPostEntity>() {
-            override fun areItemsTheSame(oldItem: GetDetailPostEntity, newItem: GetDetailPostEntity): Boolean {
+        val diffUtil = object : DiffUtil.ItemCallback<GetDetailPostEntity.Comment>() {
+            override fun areItemsTheSame(
+                oldItem: GetDetailPostEntity.Comment,
+                newItem: GetDetailPostEntity.Comment
+            ): Boolean {
                 return oldItem == newItem
             }
 
             override fun areContentsTheSame(
-                oldItem: GetDetailPostEntity,
-                newItem: GetDetailPostEntity
+                oldItem: GetDetailPostEntity.Comment,
+                newItem: GetDetailPostEntity.Comment
             ): Boolean {
                 return oldItem == newItem
             }

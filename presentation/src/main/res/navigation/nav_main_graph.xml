@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_post_field">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main_list_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.team_ia.idea_archive_android.ui.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main_page">
+        <action
+            android:id="@+id/action_mainFragment_to_detailPostFragment"
+            app:destination="@id/detailPostFragment"
+            app:popUpTo="@id/mainFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailPostFragment"
+        android:name="com.team_ia.idea_archive_android.ui.detail.DetailPostFragment"
+        android:label="DetailPostFragment"
+        tools:layout="@layout/fragment_detail_post_page">
+        <action
+            android:id="@+id/action_detailPostFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/detailPostFragment"/>
+    </fragment>
 
 </navigation>

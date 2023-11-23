@@ -38,15 +38,3 @@ android {
         jvmTarget = Versions.JAVA_VERSION.toString()
     }
 }
-
-dependencies {
-
-    implementation(Dependency.JavaX.INJECT)
-
-    testImplementation(Dependency.UnitTest.JUNIT)
-    testImplementation(Dependency.UnitTest.MOCKITO)
-    implementation(Dependency.Libraries.OKHTTP)
-
-    androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
-    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
-}

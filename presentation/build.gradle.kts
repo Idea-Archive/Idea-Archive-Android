@@ -1,4 +1,3 @@
-import org.jetbrains.kotlin.cli.common.arguments.DefaultValues.ApiVersions.defaultValue
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -105,5 +104,5 @@ fun getApiKey(propertyKey: String, defalutValue: String): String {
     val propFile = rootProject.file("./local.properties")
     val properties = Properties()
     properties.load(FileInputStream(propFile))
-    return properties.getProperty(propertyKey, defaultValue)
+    return properties.getProperty(propertyKey, defalutValue)
 }
